@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { ok, err, validate } from '@agconn/api-client/server';
-import { adminMiddleware, type AdminVars } from '../../middleware/adminContext.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import {
   getEvent,
@@ -15,7 +15,7 @@ import { listAuditQuery, redactBody } from './schemas.js';
 
 export const adminAuditRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminAuditRoutes.use('*', adminMiddleware('admin'));
+adminAuditRoutes.use('*', requireAdminUser('admin'));
 
 adminAuditRoutes.get('/events', validate('query', listAuditQuery), async (c) => {
   const q = c.var.body;

@@ -7,7 +7,7 @@ Shared internal libraries consumed by `apps/` and `services/`. Each package is `
 Materialize as needed — don't pre-create empty packages.
 
 - `db/` — Prisma client, schema, migrations, RLS policy template, seed data, transaction helpers. The single source of database truth.
-- `auth/` — Clerk wrapper. Org → tenant resolution, role checks, Hono middleware factory, RSC server-side session helpers.
+- `auth/` — identity helpers shared by the api and workers: phone-first auth user provisioning (`ensureAuthUserByPhone`), declared-role and temp-email rules, role checks.
 - `i18n/` — next-intl config, locale routing, EN/ES message merging, `brand.product_name` resolution.
 - `ui/` — Tierra-themed primitives. Wordmark, FaIcon wrapper, theme-aware Button/Input/Modal where daisyUI defaults need overriding. Brand-critical layout sections live in their consuming app, not here.
 - `schemas/` — Zod schemas shared between API and frontend. Request/response shapes, `ResumeSchema`, form validators, enum sources.

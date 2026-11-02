@@ -34,7 +34,7 @@ export function NameForm({
   const submitting = patchMut.isPending;
   const [error, setError] = useState<string | null>(null);
 
-  // When server-side `initial*` updates after Clerk sync (e.g. they signed in
+  // When server-side `initial*` updates after the session loads (e.g. they signed in
   // with email), seed the draft only if the user hasn't typed anything yet.
   useEffect(() => {
     if (!loaded) return;

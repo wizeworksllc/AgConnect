@@ -12,7 +12,7 @@
 # Default-deny ingress + scoped allow rules below.
 #
 # Egress is intentionally unrestricted. Pods reach Supabase, Stripe, Twilio,
-# Resend, Sentry, Clerk, Anthropic, Cloudflare, GCP control plane, etc. —
+# Resend, Sentry, Google OAuth, Anthropic, Cloudflare, GCP control plane, etc. —
 # allow-listing each destination by IP is more brittle than the gain.
 
 # ─── Default-deny ingress for the agconn namespace ─────────────────────────

@@ -1,87 +1,50 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { authClient } from '@/lib/auth-client';
 import { SectionCard } from './SectionCard';
-import type { ClerkUser } from './types';
+import { useAction } from './useAction';
+import type { CurrentUser } from './types';
 
-const MAX_BYTES = 5 * 1024 * 1024;
+type Props = { user: CurrentUser; refetch: () => void };
 
-type Props = { user: ClerkUser };
-
-export function ProfilePhotoSection({ user }: Props) {
+export function ProfilePhotoSection({ user, refetch }: Props) {
     const t = useTranslations('employer.account.profile_photo');
-    const tErr = useTranslations('employer.account');
-    const inputRef = useRef<HTMLInputElement>(null);
-    const [busy, setBusy] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-
-    async function onPick(e: React.ChangeEvent<HTMLInputElement>) {
-        const file = e.target.files?.[0];
-        e.target.value = '';
-        if (!file) return;
-        setError(null);
-        if (file.size > MAX_BYTES) {
-            setError(t('upload_too_large'));
-            return;
-        }
-        setBusy(true);
-        try {
-            await user.setProfileImage({ file });
-        } catch {
-            setError(tErr('error_generic'));
-        } finally {
-            setBusy(false);
-        }
-    }
+    const { busy, error, run } = useAction();
 
     async function onRemove() {
-        setBusy(true);
-        setError(null);
-        try {
-            await user.setProfileImage({ file: null });
-        } catch {
-            setError(tErr('error_generic'));
-        } finally {
-            setBusy(false);
-        }
+        const ok = await run('remove', () => authClient.updateUser({ image: null }));
+        if (ok) refetch();
     }
 
     return (
         <SectionCard heading={t('heading')} subtitle={t('subtitle')}>
             <div className="flex items-center gap-5">
-                <img
-                    src={user.imageUrl}
-                    alt=""
-                    className="border-base-300 h-24 w-24 shrink-0 rounded-full border object-cover"
-                />
-                <div className="flex flex-wrap gap-2">
-                    <input
-                        ref={inputRef}
-                        type="file"
-                        accept="image/jpeg,image/png,image/webp"
-                        className="hidden"
-                        onChange={onPick}
+                {user.image ? (
+                    <img
+                        src={user.image}
+                        alt=""
+                        className="border-base-300 h-24 w-24 shrink-0 rounded-full border object-cover"
                     />
+                ) : (
+                    <div className="border-base-300 bg-base-200 flex h-24 w-24 shrink-0 items-center justify-center rounded-full border">
+                        <FontAwesomeIcon icon={faUser} className="text-base-content/40 h-9 w-9" />
+                    </div>
+                )}
+                {user.image ? (
                     <button
                         type="button"
-                        className="btn btn-sm btn-primary rounded-full"
-                        disabled={busy}
-                        onClick={() => inputRef.current?.click()}
+                        className="btn btn-sm border-base-300 rounded-full border bg-transparent"
+                        disabled={busy === 'remove'}
+                        onClick={onRemove}
                     >
-                        {t('change')}
+                        {t('remove')}
                     </button>
-                    {user.hasImage && (
-                        <button
-                            type="button"
-                            className="btn btn-sm border-base-300 rounded-full border bg-transparent"
-                            disabled={busy}
-                            onClick={onRemove}
-                        >
-                            {t('remove')}
-                        </button>
-                    )}
-                </div>
+                ) : (
+                    <p className="text-base-content/60 text-sm">{t('empty')}</p>
+                )}
             </div>
             {error && <p className="label text-error mt-3">{error}</p>}
         </SectionCard>

@@ -1,8 +1,6 @@
-import { SignOutButton } from '@clerk/nextjs';
+import { SignOutButton } from '@/components/admin-shell/SignOutButton';
 
 export const metadata = { title: 'Access denied — AGCONN Admin' };
-// Render at request time so we never prerender a Clerk-dependent component in
-// environments without admin Clerk env (e.g. local builds without secrets).
 export const dynamic = 'force-dynamic';
 
 export default function ForbiddenPage() {
@@ -12,15 +10,11 @@ export default function ForbiddenPage() {
                 <p className="eyebrow text-error">403 — Forbidden</p>
                 <h1 className="mt-2 font-serif text-2xl font-medium">Not an admin account.</h1>
                 <p className="text-base-content/70 mt-3 text-sm leading-relaxed">
-                    This console is restricted to members of the AGCONN admin organization. If you
+                    This console is restricted to AGCONN staff accounts. If you
                     believe you should have access, contact your administrator.
                 </p>
                 <div className="mt-6">
-                    <SignOutButton redirectUrl="/sign-in">
-                        <button type="button" className="btn btn-neutral btn-sm rounded-full">
-                            Sign out
-                        </button>
-                    </SignOutButton>
+                    <SignOutButton withLabel />
                 </div>
             </div>
         </main>

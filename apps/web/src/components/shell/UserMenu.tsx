@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import type { Route } from 'next';
-import { useClerk } from '@clerk/nextjs';
+import { signOutTo } from '@/lib/auth/use-current-user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronUp,
@@ -19,7 +19,7 @@ import {
 type Props = {
   locale: string;
   profileHref: string;
-  /** Optional second profile-style entry, e.g. employer's personal Clerk account distinct from the company profile. */
+  /** Optional second profile-style entry, e.g. employer's personal account distinct from the company profile. */
   accountHref?: string;
   helpHref?: string;
   /** Optional Field Mode entry — only worker shells pass this. */
@@ -54,7 +54,6 @@ export function UserMenu({
   labels,
   compact = false,
 }: Props) {
-  const { signOut } = useClerk();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
@@ -251,7 +250,7 @@ export function UserMenu({
               role="menuitem"
               onClick={() => {
                 setOpen(false);
-                signOut({ redirectUrl: `/${locale}` });
+                void signOutTo(`/${locale}`);
               }}
               className="hover:bg-base-200 text-error/90 hover:text-error flex w-full items-center gap-2.5 px-4 py-2.5 text-sm font-semibold"
             >

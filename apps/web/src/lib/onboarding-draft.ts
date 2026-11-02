@@ -5,7 +5,7 @@
 // before the API has accepted any of it. One DB, one object store, keyed by
 // step name so the keep/discard semantics are explicit per step.
 //
-// Drafts are namespaced per Clerk user (or 'anonymous' before sign-in) so
+// Drafts are namespaced per signed-in user (or 'anonymous' before sign-in) so
 // multiple workers on the same device don't collide.
 
 const DB_NAME = 'agconn-onboarding';

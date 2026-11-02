@@ -35,7 +35,6 @@ const SUBPROCESSORS: Subprocessor[] = [
     { key: 'supabase', name: 'Supabase', location: 'United States', dpaUrl: 'https://supabase.com/legal/dpa' },
     { key: 'gcp', name: 'Google Cloud Platform', location: 'us-west1 · Oregon, USA', dpaUrl: 'https://cloud.google.com/terms/data-processing-addendum' },
     { key: 'cloudflare', name: 'Cloudflare', location: 'Global edge network', dpaUrl: 'https://www.cloudflare.com/cloudflare-customer-dpa/' },
-    { key: 'clerk', name: 'Clerk', location: 'United States', dpaUrl: 'https://clerk.com/legal/dpa' },
     { key: 'google_oauth', name: 'Google (OAuth sign-in)', location: 'Global', dpaUrl: 'https://policies.google.com/privacy' },
     { key: 'twilio', name: 'Twilio', location: 'United States', dpaUrl: 'https://www.twilio.com/legal/data-protection-addendum' },
     { key: 'resend', name: 'Resend', location: 'United States', dpaUrl: 'https://resend.com/legal/dpa' },

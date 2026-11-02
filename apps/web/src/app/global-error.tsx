@@ -13,7 +13,7 @@ export default function GlobalError({
   }, [error]);
 
   // Provider-free fallback: this fires only when the root locale layout itself
-  // crashed, so next-intl, Clerk, and the daisyUI theme bootstrap are all gone.
+  // crashed, so next-intl and the daisyUI theme bootstrap are all gone.
   // Keep markup self-contained (no external classes, no provider hooks) and
   // bilingual at the same time per house rules.
   return (

@@ -1,7 +1,6 @@
-// audit-required:exempt — the sole caller is the Clerk user.created/updated
-// webhook, whose every event is durably recorded in the auth_events table
-// (same provenance basis as webhooks/clerk.ts itself). A separate audit_events
-// row would duplicate that with weaker provenance.
+// audit-required:exempt — the sole caller is the auth server's user hooks
+// (src/auth/mirror.ts), whose every sign-up is durably recorded in the
+// auth_events table. A separate audit_events row would duplicate that.
 import type { Tx } from '@agconn/db';
 
 // SMS A2P consent writer for the web path (identity keystone,
@@ -11,7 +10,7 @@ import type { Tx } from '@agconn/db';
 //
 // The SMS side (`sms_double_opt_in`) is written by confirmOptIn in
 // webhooks/twilio.ts at the moment the worker replies YES. The web side
-// (`web_otp`) is written here, from the Clerk user.created/updated webhook,
+// (`web_otp`) is written here, from the auth server's user hooks,
 // the moment a phone-verified worker identity is mirrored — the correct TCPA
 // timing, and race-free (the User row exists in the same transaction).
 //

@@ -24,7 +24,7 @@ The brand system lives under [docs/brand/](docs/brand/) — palette, typography,
 - **Icons:** FontAwesome only, per-icon imports (`@fortawesome/free-solid-svg-icons` etc.), not the kit script. No emoji anywhere — code, UI copy, commits, comments.
 - **API separation:** domain folders own routes, services, repos, schemas (`worker/`, `employer/`, `admin/`, `billing/`, `messaging/`, `landing/`). Shared `/lib` for cross-cutting. Build for future microservice extraction by lifting the folder.
 - **Bilingual at the same time:** every UI string needs both `en.json` and `es.json`. Never ship a feature in EN that doesn't have ES.
-- **Multi-tenant invariant:** every DB table has `tenant_id`. Tenant resolved server-side from the Clerk org in middleware — never passed by client.
+- **Multi-tenant invariant:** every DB table has `tenant_id`. Tenant resolved server-side from the signed-in user's `users` row in middleware — never passed by client.
 - **Comments:** default to none. Identifiers explain WHAT; only add a comment when the WHY is non-obvious (hidden constraint, subtle invariant, workaround). Operational scripts in `scripts/` are the exception — they get a header comment.
 
 ## Status

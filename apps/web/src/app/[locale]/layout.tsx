@@ -3,8 +3,6 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
-import { ClerkProvider } from '@clerk/nextjs';
-import { esES, enUS } from '@clerk/localizations';
 import { routing } from '@/i18n/routing';
 import { inter, interTight, dmMono } from '@/lib/fonts';
 import { dataThemeFor, DEFAULT_THEME, themeInitScript } from '@/lib/theme';
@@ -12,31 +10,6 @@ import { AppShellProviders } from '@/components/app-shell/AppShellProviders';
 import { WizeLens } from '@/components/providers/WizeLens';
 import '../globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
-const clerkConfigured = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
-const isProd = process.env.NODE_ENV === 'production';
-
-function MaybeClerkProvider({
-    children,
-    locale,
-}: {
-    children: React.ReactNode;
-    locale: string;
-}) {
-    if (!clerkConfigured) return <>{children}</>;
-    const localization = locale === 'es' ? esES : enUS;
-    const hideDevBadge = isProd
-        ? ({ developmentModeWarning: { display: 'none' } } as Record<string, unknown>)
-        : undefined;
-    return (
-        <ClerkProvider
-            localization={localization}
-            appearance={hideDevBadge ? { elements: hideDevBadge } : undefined}
-        >
-            {children}
-        </ClerkProvider>
-    );
-}
 
 faConfig.autoAddCss = false;
 
@@ -87,13 +60,11 @@ export default async function LocaleLayout({ children, params }: Props) {
                 />
             </head>
             <body className="bg-base-300 text-base-content antialiased">
-                <MaybeClerkProvider locale={locale}>
-                    <NextIntlClientProvider locale={locale} messages={messages}>
-                        <AppShellProviders enablePwa={process.env.NODE_ENV === 'production'}>
-                            {children}
-                        </AppShellProviders>
-                    </NextIntlClientProvider>
-                </MaybeClerkProvider>
+                <NextIntlClientProvider locale={locale} messages={messages}>
+                    <AppShellProviders enablePwa={process.env.NODE_ENV === 'production'}>
+                        {children}
+                    </AppShellProviders>
+                </NextIntlClientProvider>
                 <WizeLens />
             </body>
         </html>

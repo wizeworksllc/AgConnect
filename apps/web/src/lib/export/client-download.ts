@@ -1,6 +1,5 @@
 'use client';
 
-import { tokenStore } from '@/lib/api/token-store';
 import type { Paystub } from '@/lib/api/hooks/pay';
 import type { ShiftRow } from '@/lib/api/hooks/shifts';
 
@@ -20,8 +19,8 @@ export function downloadBlob(filename: string, body: string | Blob, contentType:
 
 // Authenticated download from /v1/* on the Hono API. Used for endpoints that
 // stream a binary or CSV payload (where the typed apiClient JSON wrapper
-// doesn't fit). Pulls the Clerk token via the same token store the apiClient
-// uses, then triggers a Blob download.
+// doesn't fit). The session cookie rides along (credentials: 'include'),
+// then the payload becomes a Blob download.
 export async function downloadFromApi(
   path: string,
   filename: string,
@@ -29,12 +28,9 @@ export async function downloadFromApi(
 ): Promise<void> {
   const baseUrl =
     process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ?? 'http://localhost:3001';
-  const getter = tokenStore.get();
-  const token = getter ? await getter() : null;
   const headers: Record<string, string> = { accept: 'text/csv, application/octet-stream' };
-  if (token) headers.authorization = `Bearer ${token}`;
   if (extraHeaders) Object.assign(headers, extraHeaders);
-  const res = await fetch(`${baseUrl}${path}`, { method: 'GET', headers, cache: 'no-store' });
+  const res = await fetch(`${baseUrl}${path}`, { method: 'GET', headers, cache: 'no-store', credentials: 'include' });
   if (!res.ok) throw new Error(`download failed: ${res.status}`);
   const blob = await res.blob();
   downloadBlob(filename, blob, blob.type || 'application/octet-stream');

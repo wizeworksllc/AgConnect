@@ -1,36 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { ClerkProvider } from '@clerk/nextjs';
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import { inter, interTight, dmMono } from '@/lib/fonts';
 import { WizeLens } from '@/components/WizeLens';
-import {
-    adminClerkPublishableKey,
-    clerkConfigured,
-} from '@/lib/clerk';
 import './globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 faConfig.autoAddCss = false;
-
-function MaybeClerkProvider({ children }: { children: React.ReactNode }) {
-    if (!clerkConfigured) return <>{children}</>;
-    return (
-        <ClerkProvider
-            publishableKey={adminClerkPublishableKey}
-            signInUrl="/sign-in"
-            signInFallbackRedirectUrl="/"
-            afterSignOutUrl="/sign-in"
-            appearance={{
-                elements:
-                    process.env.NODE_ENV === 'production'
-                        ? { developmentModeWarning: { display: 'none' } }
-                        : undefined,
-            }}
-        >
-            {children}
-        </ClerkProvider>
-    );
-}
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_ADMIN_URL?.trim() || 'http://localhost:3100'),
@@ -49,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en" data-theme="tierra-light" style={{ colorScheme: 'light' }} className={fontVars}>
             <body className="bg-base-200 text-base-content antialiased">
-                <MaybeClerkProvider>{children}</MaybeClerkProvider>
+                {children}
                 <WizeLens />
             </body>
         </html>

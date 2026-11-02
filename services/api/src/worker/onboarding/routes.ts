@@ -52,7 +52,7 @@ onboardingRoutes.get('/draft', async (c) => {
 onboardingRoutes.post('/start', async (c) => {
   const userId = c.var.userId;
 
-  // Phone + email come from the User row populated by the Clerk webhook.
+  // Phone + email come from the User row populated at sign-up by the auth server hooks.
   const user = await c.var.db.user.findUnique({ where: { id: userId } });
   if (!user) return err(c, 403, 'forbidden', 'user_missing');
 

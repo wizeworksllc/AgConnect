@@ -2,14 +2,14 @@ import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
 import { PERMISSIONS } from '@agconn/schemas';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // Platform-managed employer role catalog. tenant_id NULL = global (the only
 // mode used today). The PERMISSIONS list is shipped to the admin UI so it can
 // render a stable permission matrix. Mirrors the admin feature-flags route.
 
-export const adminRolesRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminRolesRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 adminRolesRoutes.get('/', async (c) => {
   const rows = await c.var.db.role.findMany({
@@ -80,7 +80,7 @@ adminRolesRoutes.put('/', validate('json', upsertBody), async (c) => {
 });
 
 adminRolesRoutes.delete('/:id', async (c) => {
-  if (c.var.orgRole !== 'org:super_admin') {
+  if (c.var.adminRole !== 'super_admin') {
     return err(c, 403, 'forbidden', 'super_admin required to delete a role');
   }
   const id = c.req.param('id');

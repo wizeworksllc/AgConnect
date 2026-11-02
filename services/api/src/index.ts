@@ -6,14 +6,14 @@ import { Hono } from 'hono';
 import { logger } from 'hono/logger';
 import { ok, err, onErrorEnvelope } from '@agconn/api-client/server';
 import { auditMiddleware, emitSystemAudit, type AuditCtxVars } from './middleware/audit.js';
-import { clerkAuthMiddleware } from './middleware/authContext.js';
+import { authRoutes } from './auth/routes.js';
+import { sessionMiddleware } from './auth/session.js';
 import { corsMiddleware, securityHeaders } from './lib/security.js';
 import { landingRoutes } from './landing/routes.js';
 import { publicJobsRoutes } from './landing/jobs.js';
 import { publicTrainingRoutes } from './landing/training.js';
 import { i18nRoutes } from './i18n/routes.js';
 import { resendWebhookRoutes } from './webhooks/resend.js';
-import { clerkWebhookRoutes } from './webhooks/clerk.js';
 import { twilioWebhookRoutes } from './webhooks/twilio.js';
 import { stripeWebhookRoutes } from './webhooks/stripe.js';
 import { adminAuditRoutes } from './admin/audit/routes.js';
@@ -76,9 +76,12 @@ app.use('*', logger());
 app.use('*', securityHeaders());
 app.use('*', corsMiddleware());
 
-// Clerk parses the session cookie / Authorization header into c.var.auth.
-// No-ops if Clerk env keys are missing (dev without Clerk works).
-app.use('*', clerkAuthMiddleware);
+// better-auth's own endpoints (sign-in, sign-up, codes, sessions). Mounted before the session
+// and audit middleware: they manage their own session and log to auth_events.
+app.route('/v1/auth', authRoutes);
+
+// Reads the session cookie into c.var.authUserId for requireAuth / requireAdminUser.
+app.use('*', sessionMiddleware);
 
 // Audit middleware mounts correlation id + c.var.audit.log() on every request.
 // Must precede route mounts so handlers see c.var.audit.
@@ -169,7 +172,6 @@ app.route('/v1/employer/compliance', employerComplianceRoutes);
 app.route('/v1/employer/messages', employerMessagesRoutes);
 app.route('/v1/employer/reports', employerReportsRoutes);
 app.route('/v1/webhooks/resend', resendWebhookRoutes);
-app.route('/v1/webhooks/clerk', clerkWebhookRoutes);
 app.route('/v1/webhooks/twilio', twilioWebhookRoutes);
 app.route('/v1/webhooks/stripe', stripeWebhookRoutes);
 app.route('/admin/v1/me', adminMeRoutes);

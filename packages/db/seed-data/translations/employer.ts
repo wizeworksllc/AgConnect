@@ -5,9 +5,77 @@
 import type { TranslationBundle } from '../types';
 
 export const employer: TranslationBundle = {
+    "account.cancel": {
+        en: "Cancel",
+        es: "Cancelar",
+    },
+    "account.code_label": {
+        en: "Six-digit code",
+        es: "Código de seis dígitos",
+    },
+    "account.code_sent": {
+        en: "We sent a six-digit code to {target}.",
+        es: "Enviamos un código de seis dígitos a {target}.",
+    },
+    "account.connected.connected": {
+        en: "Connected",
+        es: "Conectada",
+    },
+    "account.danger.password_label": {
+        en: "Your password",
+        es: "Tu contraseña",
+    },
+    "account.devices.signout_all": {
+        en: "Sign out of all other devices",
+        es: "Cerrar sesión en todos los demás dispositivos",
+    },
+    "account.emails.change": {
+        en: "Change email",
+        es: "Cambiar correo",
+    },
+    "account.emails.change_label": {
+        en: "New email address",
+        es: "Correo nuevo",
+    },
     "account.eyebrow": {
         en: "Account & security",
         es: "Cuenta y seguridad",
+    },
+    "account.password.need_email": {
+        en: "You don't have a password yet. Add an email address on the Profile tab, then come back here to set one.",
+        es: "Aún no tienes contraseña. Agrega un correo en la pestaña Perfil y luego regresa aquí para crear una.",
+    },
+    "account.password.none_body": {
+        en: "You sign in with a code, so your account has no password yet. We can email you a link to set one.",
+        es: "Inicias sesión con un código, así que tu cuenta aún no tiene contraseña. Podemos enviarte un enlace por correo para crear una.",
+    },
+    "account.password.set_cta": {
+        en: "Email me a link",
+        es: "Enviarme un enlace",
+    },
+    "account.password.set_sent": {
+        en: "We sent a link to {email}. Open it to set your password.",
+        es: "Enviamos un enlace a {email}. Ábrelo para crear tu contraseña.",
+    },
+    "account.phones.change": {
+        en: "Change number",
+        es: "Cambiar número",
+    },
+    "account.phones.change_label": {
+        en: "New phone number",
+        es: "Teléfono nuevo",
+    },
+    "account.profile_photo.empty": {
+        en: "No photo on file.",
+        es: "No hay foto registrada.",
+    },
+    "account.resend_code": {
+        en: "Send a new code",
+        es: "Enviar un código nuevo",
+    },
+    "account.send_code": {
+        en: "Send code",
+        es: "Enviar código",
     },
     "account.subtitle": {
         en: "Update your name, email, phone, and password. These details belong to you, not to your business — they follow you across employers.",
@@ -45,10 +113,6 @@ export const employer: TranslationBundle = {
         en: "Connect Microsoft",
         es: "Conectar Microsoft",
     },
-    "account.connected.connected_at": {
-        en: "Connected as {label}",
-        es: "Conectado como {label}",
-    },
     "account.connected.disconnect": {
         en: "Disconnect",
         es: "Desconectar",
@@ -66,8 +130,8 @@ export const employer: TranslationBundle = {
         es: "Cuentas conectadas",
     },
     "account.connected.subtitle": {
-        en: "Sign in faster with Google, Microsoft, or Apple.",
-        es: "Inicia sesión más rápido con Google, Microsoft o Apple.",
+        en: "Sign in faster with an account you already use.",
+        es: "Inicia sesión más rápido con una cuenta que ya usas.",
     },
     "account.danger.delete_button": {
         en: "Delete account permanently",
@@ -138,36 +202,20 @@ export const employer: TranslationBundle = {
         es: "nombre@ejemplo.com",
     },
     "account.emails.empty": {
-        en: "No email addresses on file.",
-        es: "No hay correos registrados.",
+        en: "No email on file.",
+        es: "No hay correo registrado.",
     },
     "account.emails.heading": {
-        en: "Email addresses",
-        es: "Correos electrónicos",
+        en: "Email address",
+        es: "Correo electrónico",
     },
     "account.emails.invalid": {
         en: "Enter a valid email address.",
         es: "Escribe un correo válido.",
     },
-    "account.emails.primary_badge": {
-        en: "PRIMARY",
-        es: "PRINCIPAL",
-    },
-    "account.emails.remove": {
-        en: "Remove",
-        es: "Eliminar",
-    },
-    "account.emails.resend": {
-        en: "Resend",
-        es: "Reenviar",
-    },
-    "account.emails.set_primary": {
-        en: "Set as primary",
-        es: "Marcar como principal",
-    },
     "account.emails.subtitle": {
-        en: "Where we send sign-in links and account notices.",
-        es: "Dónde enviamos enlaces de inicio de sesión y avisos de cuenta.",
+        en: "Where we send sign-in codes and account notices.",
+        es: "Dónde enviamos códigos de inicio de sesión y avisos de cuenta.",
     },
     "account.emails.unverified_badge": {
         en: "UNVERIFIED",
@@ -176,10 +224,6 @@ export const employer: TranslationBundle = {
     "account.emails.verified_badge": {
         en: "VERIFIED",
         es: "VERIFICADO",
-    },
-    "account.emails.verify_check_inbox": {
-        en: "Check your inbox to verify this address.",
-        es: "Revisa tu bandeja para verificar este correo.",
     },
     "account.error_generic": {
         en: "Something went wrong. Please try again.",
@@ -206,12 +250,12 @@ export const employer: TranslationBundle = {
         es: "Contraseña nueva",
     },
     "account.password.subtitle": {
-        en: "Use at least 8 characters. Mix letters, numbers, and a symbol.",
-        es: "Usa al menos 8 caracteres. Mezcla letras, números y un símbolo.",
+        en: "Use at least 10 characters. Mix letters, numbers, and a symbol.",
+        es: "Usa al menos 10 caracteres. Mezcla letras, números y un símbolo.",
     },
     "account.password.too_short": {
-        en: "Use at least 8 characters.",
-        es: "Usa al menos 8 caracteres.",
+        en: "Use at least 10 characters.",
+        es: "Usa al menos 10 caracteres.",
     },
     "account.password.update": {
         en: "Update password",
@@ -258,36 +302,20 @@ export const employer: TranslationBundle = {
         es: "+1 555 555 5555",
     },
     "account.phones.empty": {
-        en: "No phone numbers on file.",
-        es: "No hay teléfonos registrados.",
+        en: "No phone number on file.",
+        es: "No hay teléfono registrado.",
     },
     "account.phones.heading": {
-        en: "Phone numbers",
-        es: "Teléfonos",
+        en: "Phone number",
+        es: "Teléfono",
     },
     "account.phones.invalid": {
         en: "Enter a valid phone number with country code.",
         es: "Escribe un teléfono válido con código de país.",
     },
-    "account.phones.send_code": {
-        en: "Send code",
-        es: "Enviar código",
-    },
     "account.phones.subtitle": {
         en: "For SMS sign-in and urgent account alerts.",
         es: "Para iniciar sesión por SMS y avisos urgentes.",
-    },
-    "account.phones.verify": {
-        en: "Verify",
-        es: "Verificar",
-    },
-    "account.phones.verify_code_label": {
-        en: "Six-digit code",
-        es: "Código de seis dígitos",
-    },
-    "account.profile_photo.change": {
-        en: "Change photo",
-        es: "Cambiar foto",
     },
     "account.profile_photo.heading": {
         en: "Profile photo",
@@ -298,12 +326,8 @@ export const employer: TranslationBundle = {
         es: "Quitar foto",
     },
     "account.profile_photo.subtitle": {
-        en: "Square images work best. JPG, PNG, or WebP up to 5 MB.",
-        es: "Las imágenes cuadradas funcionan mejor. JPG, PNG o WebP hasta 5 MB.",
-    },
-    "account.profile_photo.upload_too_large": {
-        en: "Photo is over 5 MB. Pick a smaller file.",
-        es: "La foto supera 5 MB. Elige un archivo más pequeño.",
+        en: "Your photo comes from an account you connect, such as Google. You can remove it here.",
+        es: "Tu foto viene de una cuenta que conectas, como Google. Puedes quitarla aquí.",
     },
     "account.tab_profile": {
         en: "Profile",
@@ -329,6 +353,10 @@ export const employer: TranslationBundle = {
         en: "Code from your authenticator app",
         es: "Código de tu aplicación de autenticación",
     },
+    "account.tsv.continue": {
+        en: "Continue",
+        es: "Continuar",
+    },
     "account.tsv.disabled": {
         en: "2-step verification is off.",
         es: "La verificación en 2 pasos está desactivada.",
@@ -340,6 +368,14 @@ export const employer: TranslationBundle = {
     "account.tsv.heading": {
         en: "Two-step verification",
         es: "Verificación en dos pasos",
+    },
+    "account.tsv.need_password": {
+        en: "2-step verification needs a password. Set one in the Password section above.",
+        es: "La verificación en 2 pasos necesita una contraseña. Crea una en la sección Contraseña de arriba.",
+    },
+    "account.tsv.password_label": {
+        en: "Confirm your password",
+        es: "Confirma tu contraseña",
     },
     "account.tsv.qr_instructions": {
         en: "Scan this QR code with your authenticator app, then enter the code it shows.",
@@ -364,6 +400,10 @@ export const employer: TranslationBundle = {
     "account.tsv.verify": {
         en: "Verify and enable",
         es: "Verificar y activar",
+    },
+    "account.verify": {
+        en: "Verify",
+        es: "Verificar",
     },
     "applicant_detail.agconn_verified": {
         en: "AGCONN-verified",

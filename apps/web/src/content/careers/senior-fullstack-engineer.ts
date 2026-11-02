@@ -57,8 +57,8 @@ export const seniorFullstackEngineer: CareerRole = {
             es: 'Dominio del español, especialmente la capacidad conversacional con trabajadores del Valle Central.',
         },
         {
-            en: 'Experience with Clerk, Stripe, Twilio, or similar API-driven service integrations.',
-            es: 'Experiencia con Clerk, Stripe, Twilio o integraciones similares de servicios impulsadas por API.',
+            en: 'Experience with Stripe, Twilio, or similar API-driven service integrations.',
+            es: 'Experiencia con Stripe, Twilio o integraciones similares de servicios impulsadas por API.',
         },
         {
             en: 'Background in workforce, civic, or public-interest technology.',

@@ -3,10 +3,11 @@ import { UserRole } from '@agconn/db';
 export { UserRole };
 
 export {
-    ensureClerkUserByPhone,
-    updateClerkUserName,
-    type EnsureClerkUserResult,
-} from './clerk-provision.js';
+    ensureAuthUserByPhone,
+    updateAuthUserName,
+    type EnsureAuthUserResult,
+} from './provision-by-phone.js';
+export { PHONE_EMAIL_DOMAIN, declaredRole, langFrom, realEmail, tempEmailForPhone } from './identity.js';
 
 // Where each role's home lives within the locale tree. Unknown roles fall
 // back to the marketing root.

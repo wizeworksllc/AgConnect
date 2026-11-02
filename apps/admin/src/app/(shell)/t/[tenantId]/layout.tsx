@@ -10,7 +10,7 @@ type Props = {
 };
 
 // Tenant-scoped layout. Re-renders the chrome with the tenant switcher active
-// and the sidebar filtered to tenant-scope items. The api requireAdminOrg
+// and the sidebar filtered to tenant-scope items. The api requireAdminUser
 // middleware uses the same tenantId from the URL as the X-Admin-Tenant-Id
 // header value when this app calls the api.
 export default async function TenantShellLayout({ children, params }: Props) {

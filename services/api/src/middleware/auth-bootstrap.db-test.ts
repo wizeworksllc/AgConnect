@@ -1,9 +1,10 @@
 import { after, before, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { adminDb, pools } from '@agconn/db';
-import { findAuthUser, loadMemberships, upsertClerkUser } from './auth-bootstrap.js';
+import { mirrorIdentity } from '../auth/mirror.js';
+import { findAuthUser, loadMemberships } from './auth-bootstrap.js';
 
-// The auth bootstrap reads and provisions the Clerk user as agconn_app, before any tenant is known (pnpm test:db).
+// The auth bootstrap reads and provisions the signed-in user as agconn_app, before any tenant is known (pnpm test:db).
 const TENANT = '0f1e0000-0000-4000-8000-000000000a01';
 const PROFILE = '0f1e0000-0000-4000-8000-000000000a02';
 const MEMBER = 'auth_fixture_member';
@@ -34,7 +35,7 @@ after(async () => {
   await pools.shared.$disconnect();
 });
 
-test('findAuthUser reads the Clerk user', async () => {
+test('findAuthUser reads the signed-in user', async () => {
   const user = await findAuthUser(MEMBER);
   assert.equal(user?.tenantId, TENANT);
 });
@@ -46,15 +47,16 @@ test('loadMemberships returns the accepted membership with its role bundle', asy
   assert.equal(m?.roleKey, 'owner');
 });
 
-test('upsertClerkUser provisions a first-time user as a tenantless worker', async () => {
-  const user = await upsertClerkUser(NEWCOMER, { email: 'New@Example.com', phone: null });
+test('mirrorIdentity provisions a first-time user as a tenantless worker', async () => {
+  const user = await mirrorIdentity({ id: NEWCOMER, email: 'New@Example.com' });
   assert.equal(user.role, 'worker');
   assert.equal(user.email, 'new@example.com');
   assert.equal(user.tenantId, null);
 });
 
-test('upsertClerkUser never grants admin from user-editable Clerk metadata', async () => {
+test('mirrorIdentity never grants admin from a declared sign-up role', async () => {
   await adminDb.$executeRaw`DELETE FROM users WHERE id = ${NEWCOMER}`;
-  const user = await upsertClerkUser(NEWCOMER, { email: null, phone: null, role: 'admin' });
+  const user = await mirrorIdentity({ id: NEWCOMER, email: 'x@phone.agconn.invalid', signupRole: 'admin' });
+  assert.equal(user.email, null);
   assert.equal(user.role, 'worker');
 });

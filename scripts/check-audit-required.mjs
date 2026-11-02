@@ -23,7 +23,6 @@ const API_SRC = resolve(ROOT, 'services/api/src');
 const EXEMPT_PATHS = [
   'middleware/audit.ts',
   'middleware/authContext.ts',
-  'middleware/adminContext.ts',
   'middleware/tenantContext.ts',
   'middleware/rateLimit.ts',
   'instrument.ts',

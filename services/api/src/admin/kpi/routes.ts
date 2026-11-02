@@ -1,19 +1,14 @@
 import { Hono } from 'hono';
 import { ok, validate } from '@agconn/api-client/server';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import { csvResponse, rowsToCsv, type CsvColumn } from '../_lib/csv.js';
 import { kpiQuery } from './schemas.js';
 import { buildKpiSummary, type KpiSummary } from './service.js';
 
-export const adminKpiRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminKpiRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminKpiRoutes.use('*', clerkAdminAuthMiddleware);
-adminKpiRoutes.use('*', requireAdminOrg('admin'));
+adminKpiRoutes.use('*', requireAdminUser('admin'));
 
 adminKpiRoutes.get('/summary', validate('query', kpiQuery), async (c) => {
   const q = c.var.body;

@@ -1,24 +1,10 @@
 'use client';
 
 import { createApiClient, type ApiClient } from '@agconn/api-client/client';
-import { tokenStore } from './token-store';
 
 let _client: ApiClient | null = null;
 let _currentLocale: 'en' | 'es' = 'en';
 let _activeEmployerId: string | null = null;
-
-async function getSessionToken(): Promise<string | null> {
-  const fromStore = tokenStore.get();
-  if (fromStore) return fromStore();
-  if (typeof window === 'undefined') return null;
-  try {
-    type ClerkLike = { session?: { getToken?: () => Promise<string | null> } };
-    const w = window as unknown as { Clerk?: ClerkLike };
-    return (await w.Clerk?.session?.getToken?.()) ?? null;
-  } catch {
-    return null;
-  }
-}
 
 function getExtraHeaders(): Record<string, string> | undefined {
   return _activeEmployerId ? { 'X-Employer-Id': _activeEmployerId } : undefined;
@@ -30,7 +16,6 @@ function initClient(): ApiClient {
   return createApiClient({
     baseUrl,
     getLocale: () => _currentLocale,
-    getSession: getSessionToken,
     getHeaders: getExtraHeaders,
   });
 }

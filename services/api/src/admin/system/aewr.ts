@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // Federal H-2A Adverse Effect Wage Rate by state, set annually by USDOL ETA.
@@ -9,7 +9,7 @@ import type { AuditCtxVars } from '../../middleware/audit.js';
 // wage transparency. One row per (state_code, effective_from); effective_to
 // is null while the row is current.
 
-export const adminAewrRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminAewrRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 adminAewrRoutes.get('/', async (c) => {
     const stateCode = c.req.query('stateCode')?.toUpperCase();
@@ -103,7 +103,7 @@ adminAewrRoutes.patch('/:id', validate('json', patchBody), async (c) => {
 });
 
 adminAewrRoutes.delete('/:id', async (c) => {
-    if (c.var.orgRole !== 'org:super_admin') {
+    if (c.var.adminRole !== 'super_admin') {
         return err(c, 403, 'forbidden', 'super_admin required to delete AEWR row');
     }
     const id = c.req.param('id');

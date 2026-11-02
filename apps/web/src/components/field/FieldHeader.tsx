@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Route } from 'next';
 import { useTranslations } from 'next-intl';
-import { useClerk, useUser } from '@clerk/nextjs';
+import { signOutTo, useCurrentUser } from '@/lib/auth/use-current-user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faSun,
@@ -143,8 +143,7 @@ type AccountLabels = {
 };
 
 function AccountButton({ locale, labels }: { locale: string; labels: AccountLabels }) {
-    const { isLoaded, isSignedIn, user } = useUser();
-    const { signOut } = useClerk();
+    const { isLoaded, isSignedIn, user } = useCurrentUser();
     const [open, setOpen] = useState(false);
     const rootRef = useRef<HTMLDivElement>(null);
 
@@ -176,19 +175,17 @@ function AccountButton({ locale, labels }: { locale: string; labels: AccountLabe
     }
     if (!isSignedIn || !user) return null;
 
-    const email = user.primaryEmailAddress?.emailAddress ?? null;
-    const phone = user.primaryPhoneNumber?.phoneNumber ?? null;
+    const { email, phone } = user;
     const identifier = email ?? phone ?? '';
-    // SMS-onboarded workers have firstName/lastName synced to Clerk via
-    // `updateClerkUserName` during `completeSmsOnboarding`, so prefer the name
+    // SMS-onboarded workers have their name synced to auth_users via
+    // `updateAuthUserName` during SMS onboarding, so prefer the name
     // for the primary identity line. The contact identifier (phone or email)
     // appears underneath as the disambiguator. Falls through to identifier
     // alone for the corner case where a user signs in without a name set.
-    const fullName = (user.fullName ?? '').trim() ||
-        [user.firstName, user.lastName].filter(Boolean).join(' ').trim();
+    const fullName = user.name;
     const initials = computeInitials(
-        user.firstName ?? undefined,
-        user.lastName ?? undefined,
+        user.firstName || undefined,
+        user.lastName || undefined,
         email,
         phone,
     );
@@ -256,7 +253,7 @@ function AccountButton({ locale, labels }: { locale: string; labels: AccountLabe
                             role="menuitem"
                             onClick={() => {
                                 setOpen(false);
-                                signOut({ redirectUrl: `/${locale}` });
+                                void signOutTo(`/${locale}`);
                             }}
                             className="hover:bg-base-200 text-error/90 hover:text-error flex w-full items-center gap-2.5 px-4 py-2.5 text-sm font-semibold"
                         >

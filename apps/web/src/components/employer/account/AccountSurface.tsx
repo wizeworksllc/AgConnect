@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import type { Route } from 'next';
+import { useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { useUser } from '@clerk/nextjs';
+import { authClient } from '@/lib/auth-client';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
+import { useLinkedAccounts } from './useLinkedAccounts';
 import { ProfilePhotoSection } from './ProfilePhotoSection';
 import { PersonalInfoSection } from './PersonalInfoSection';
 import { EmailsSection } from './EmailsSection';
@@ -23,7 +26,14 @@ type Props = {
 
 export function AccountSurface({ locale, activeTab, firstName, businessName }: Props) {
     const t = useTranslations('employer.account');
-    const { isLoaded, user } = useUser();
+    const { isLoaded, user, refetch } = useCurrentUser();
+    const linked = useLinkedAccounts(user?.id ?? null);
+
+    // The session cookie caches the user for five minutes; skip it so edits show at once.
+    const reloadUser = useCallback(async () => {
+        await authClient.getSession({ query: { disableCookieCache: true } }).catch(() => null);
+        refetch();
+    }, [refetch]);
 
     const profileHref = `/${locale}/employer/account` as Route;
     const securityHref = `/${locale}/employer/account/security` as Route;
@@ -69,23 +79,27 @@ export function AccountSurface({ locale, activeTab, firstName, businessName }: P
                 </Link>
             </div>
 
-            {!isLoaded || !user ? (
+            {!isLoaded || !user || linked.accounts === null ? (
                 <AccountSkeleton activeTab={activeTab} />
             ) : activeTab === 'profile' ? (
                 <div className="grid max-w-3xl gap-5">
-                    <ProfilePhotoSection user={user} />
-                    <PersonalInfoSection user={user} />
-                    <EmailsSection user={user} />
-                    <PhoneNumbersSection user={user} />
-                    <ConnectedAccountsSection user={user} locale={locale} />
+                    <ProfilePhotoSection user={user} refetch={reloadUser} />
+                    <PersonalInfoSection user={user} refetch={reloadUser} />
+                    <EmailsSection user={user} refetch={reloadUser} />
+                    <PhoneNumbersSection user={user} refetch={reloadUser} />
+                    <ConnectedAccountsSection linked={linked} locale={locale} />
                 </div>
             ) : (
                 <div className="grid max-w-3xl gap-5">
-                    <PasswordSection user={user} />
-                    <TwoStepVerificationSection user={user} />
-                    <ActiveDevicesSection user={user} locale={locale} />
-                    <DangerZoneSection
+                    <PasswordSection user={user} hasPassword={linked.hasPassword} locale={locale} />
+                    <TwoStepVerificationSection
                         user={user}
+                        hasPassword={linked.hasPassword}
+                        refetch={reloadUser}
+                    />
+                    <ActiveDevicesSection locale={locale} />
+                    <DangerZoneSection
+                        hasPassword={linked.hasPassword}
                         locale={locale}
                         businessName={businessName}
                     />

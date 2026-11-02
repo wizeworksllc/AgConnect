@@ -10,6 +10,7 @@ export {
   validateTwilioSignature,
 } from './twilio.js';
 export { runSmsWorker, type SmsWorkerHandle } from './worker.js';
+export { sendAuthCodeSms } from './auth-code.js';
 export {
   inboundPhoneTel,
   inboundPhoneDisplay,

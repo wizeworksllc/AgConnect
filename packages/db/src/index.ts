@@ -3,7 +3,7 @@ import { pools } from './pools.js';
 import { dbClients } from './rls.js';
 
 // `prisma` is the cross-cutting client used for work that doesn't belong to a
-// specific domain pool: provisioning users from Clerk, audit writes, the four
+// specific domain pool: audit writes, the four
 // known cross-domain transactions, migration scripts, seed scripts. It is the
 // `shared` pool — this gives those operations their own bounded connection
 // budget so they cannot starve domain-specific traffic.
@@ -131,6 +131,7 @@ export type Tx = PrismaNS.TransactionClient;
 
 export { pools, type PoolName } from './pools.js';
 export { adminDb } from './admin-db.js';
+export { authDb } from './auth-db.js';
 export { insertAuditEvent } from './audit-write.js';
 export { pgBossOptions } from './pgboss.js';
 export {

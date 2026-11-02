@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useUser } from '@clerk/nextjs';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
 import { clearDraft, getDraft, setDraft } from './onboarding-draft';
 
 const SAVE_DEBOUNCE_MS = 350;
@@ -18,7 +18,7 @@ export function useOnboardingDraft<T>(
   loaded: boolean;
   clear: () => Promise<void>;
 } {
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const scope = user?.id ?? 'anonymous';
   const [value, setLocal] = useState<T>(initial);
   const [loaded, setLoaded] = useState(false);

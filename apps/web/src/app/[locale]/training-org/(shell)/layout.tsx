@@ -1,4 +1,4 @@
-import { currentUser } from '@clerk/nextjs/server';
+import { getServerSession } from '@/lib/auth/server';
 import { requireRole, UserRole } from '@/lib/auth/role';
 import { TrainingOrgSidebar } from '@/components/training-org/TrainingOrgSidebar';
 
@@ -10,10 +10,10 @@ type Props = {
 export default async function TrainingOrgShellLayout({ children, params }: Props) {
   const { locale } = await params;
   await requireRole(locale, UserRole.training_org);
-  const user = await currentUser();
+  const session = await getServerSession();
   const displayName =
-    [user?.firstName, user?.lastName].filter(Boolean).join(' ') ||
-    user?.primaryEmailAddress?.emailAddress ||
+    session?.user.name ||
+    session?.user.email ||
     (locale === 'es' ? 'Organización' : 'Organization');
 
   return (

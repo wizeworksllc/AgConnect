@@ -101,7 +101,7 @@ async function routeInbound(from: string, body: string, text: string): Promise<v
     const tokens = text.split(/\s+/);
     const optInToken = tokens.find((t) => OPT_IN_KEYWORDS.has(t));
     if (!existing && optInToken) {
-        // sms.provision makes the Clerk user and User row off the request path; re-texting is idempotent.
+        // sms.provision makes the auth user and User row off the request path; re-texting is idempotent.
         const locale = ES_OPT_IN_KEYWORDS.has(optInToken) ? 'es' : 'en';
         return bestEffort('provision', () => enqueueProvision({ phone: from, locale, keyword: optInToken }));
     }

@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // Lookup-table CRUD: Crop, RoleType, SkillTag. These are platform-level
@@ -9,7 +9,7 @@ import type { AuditCtxVars } from '../../middleware/audit.js';
 // employer onboarding, and worker profile. Mutation requires admin role;
 // destructive operations require super_admin.
 
-export const adminLookupsRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminLookupsRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 const TABLES = ['crops', 'role-types', 'skill-tags'] as const;
 type TableSlug = (typeof TABLES)[number];
@@ -144,7 +144,7 @@ adminLookupsRoutes.patch('/:table/:id', validate('json', patchBody), async (c) =
 });
 
 adminLookupsRoutes.delete('/:table/:id', async (c) => {
-  if (c.var.orgRole !== 'org:super_admin') {
+  if (c.var.adminRole !== 'super_admin') {
     return err(c, 403, 'forbidden', 'super_admin required to delete lookup row');
   }
   const t = tableOf(c.req.param('table'));

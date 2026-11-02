@@ -1,5 +1,7 @@
 # 13 — Onboarding & Identity Remediation: Overview
 
+> **Superseded 2026-11-01:** AgConnect moved from Clerk to better-auth. Where this page names Clerk, the [better-auth migration](../02-auth/09-better-auth-migration.md) is the current design.
+
 Status: planned, owner-approved 2026-05-18. Branch: `feat/onboarding-identity-remediation`.
 
 This folder is the authoritative spec for closing the onboarding/identity gaps found

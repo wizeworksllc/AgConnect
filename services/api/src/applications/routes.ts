@@ -7,6 +7,8 @@ import { enqueueSms } from '@agconn/sms';
 import { enqueueEmployerEmail } from '@agconn/email';
 import { requireAuth, requireRole, type AuthVars } from '../middleware/authContext.js';
 import type { AuditCtxVars } from '../middleware/audit.js';
+import { authNameParts } from '../auth/names.js';
+
 
 export const applicationsRoutes = new Hono<{ Variables: AuthVars & AuditCtxVars }>();
 
@@ -42,15 +44,7 @@ jobApplyRoute.post('/:jobId/apply', async (c) => {
     // skills/county snapshots have somewhere to land.
     let profile = await c.var.db.workerProfile.findUnique({ where: { id: userId } });
     if (!profile) {
-        let firstName = '';
-        let lastName = '';
-        try {
-            const cu = await c.get('clerk').users.getUser(userId);
-            firstName = cu.firstName ?? '';
-            lastName = cu.lastName ?? '';
-        } catch {
-            /* Clerk lookup is best-effort — proceed with empty names. */
-        }
+        const { firstName, lastName } = await authNameParts(userId);
         profile = await c.var.db.workerProfile.create({
             data: {
                 id: userId,

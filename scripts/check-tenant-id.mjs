@@ -28,6 +28,8 @@ const SCHEMA = resolve(here, '..', 'packages/db/prisma/schema.prisma');
 //   5. Platform-level federal datasets and their sync metadata. Synced from
 //      external sources (DOL/WHD, USDOL ETA) and read cross-tenant; no
 //      tenant owns the rows.
+//   6. better-auth identity tables. Identity exists before any tenant, and
+//      RLS lets only app.role = 'auth' (authDb) touch them.
 const EXEMPT_MODELS = new Set([
     // category 1
     'Tenant',
@@ -47,6 +49,12 @@ const EXEMPT_MODELS = new Set([
     'MspaFlcRegistry',
     'MspaSyncRun',
     'AewrRate',
+    // category 6 — better-auth identity
+    'AuthUser',
+    'AuthSession',
+    'AuthAccount',
+    'AuthVerification',
+    'AuthTwoFactor',
 ]);
 
 // Models that are PRESENT but only optionally tied to a tenant. They MUST

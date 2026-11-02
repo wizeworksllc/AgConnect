@@ -136,7 +136,6 @@
         "shared": {
             "brand": "AGCONN",
             "back_home": "Volver al inicio",
-            "powered_by": "Asegurado por Clerk",
             "or": "o",
             "google": "Continuar con Google",
             "submit": "Continuar",
@@ -152,10 +151,18 @@
                 "invalid_email": "Ingresa un correo válido.",
                 "invalid_identifier": "Ingresa tu número de teléfono o tu correo electrónico.",
                 "invalid_code": "Ese código no coincide. Inténtalo de nuevo.",
-                "weak_password": "La contraseña debe tener al menos 8 caracteres.",
-                "no_account": "No encontramos una cuenta con esa información."
+                "weak_password": "La contraseña debe tener al menos 10 caracteres.",
+                "no_account": "No encontramos una cuenta con esa información.",
+                "wrong_password": "El correo y la contraseña no coinciden.",
+                "account_exists": "Ya existe una cuenta con ese correo. Inicia sesión.",
+                "code_expired": "Ese código ya venció. Regresa y pide uno nuevo.",
+                "too_many_attempts": "Demasiados intentos. Regresa y pide un código nuevo.",
+                "password_mismatch": "Las dos contraseñas no coinciden.",
+                "link_expired": "Este enlace venció o ya se usó."
             },
-            "grant_aligned": "Alineado con CDFA y F3 · Valle Central · 2026"
+            "grant_aligned": "Alineado con CDFA y F3 · Valle Central · 2026",
+            "microsoft": "Continuar con Microsoft",
+            "apple": "Continuar con Apple"
         },
         "pitch": {
             "worker": {
@@ -173,7 +180,7 @@
                 "lead": "Contrata tu próxima cuadrilla, rápido.",
                 "proof": {
                     "p1": "Verificación de licencia FLC + carpeta de cumplimiento Cal/OSHA, lista para auditoría",
-                    "p2": "Búsqueda de trabajadores, transmisiones, mensajería multicanal (SMS, WhatsApp, app)",
+                    "p2": "Búsqueda de trabajadores, transmisiones, mensajería SMS + en-app",
                     "p3": "Cálculo de nómina con descansos pagados a destajo (AB 1513) y AEWR para H-2A"
                 }
             },
@@ -191,7 +198,6 @@
             "meta_title": "Inicia sesión en AGCONN",
             "eyebrow": "Bienvenido de vuelta",
             "title_a": "Inicia sesión en",
-            "title_b": "AGCONN",
             "subtitle": "Usa tu teléfono o correo — el que tengas en tu cuenta.",
             "identifier_label": "Teléfono o correo",
             "identifier_placeholder": "(555) 123-4567 o tu@ejemplo.com",
@@ -204,7 +210,15 @@
             "back_to_identifier": "Usar otra cuenta",
             "no_account": "¿Nuevo aquí?",
             "sign_up_worker": "Crear cuenta como trabajador",
-            "sign_up_employer": "Soy empleador →"
+            "sign_up_employer": "Soy empleador →",
+            "email_code_instead": "Recibir un código por correo",
+            "totp_subtitle": "Abre tu app de autenticación e ingresa el código de 6 dígitos de AGCONN.",
+            "totp_label": "Código de autenticación",
+            "backup_code_label": "Código de respaldo",
+            "use_backup_code": "Usar un código de respaldo",
+            "use_totp": "Usar tu app de autenticación",
+            "forgot_password": "¿Olvidaste tu contraseña?",
+            "reset_sent": "Si hay una cuenta con {target}, le enviamos un enlace para restablecer la contraseña."
         },
         "sign_up_worker": {
             "meta_title": "Crear cuenta — Trabajadores · AGCONN",
@@ -222,7 +236,7 @@
             "email_label": "Correo electrónico",
             "email_placeholder": "tu@ejemplo.com",
             "password_label": "Elige una contraseña",
-            "password_help": "Al menos 8 caracteres.",
+            "password_help": "Al menos 10 caracteres.",
             "verify_phone_subtitle": "Enviamos un código de 6 dígitos a {target}.",
             "verify_email_subtitle": "Enviamos un código de 6 dígitos a {target}.",
             "code_label": "Código de 6 dígitos",
@@ -233,7 +247,13 @@
             "and": "y",
             "privacy_link": "Política de privacidad",
             "hire_instead": "¿Contratando cuadrillas?",
-            "employer_link": "Crear cuenta como empleador →"
+            "employer_link": "Crear cuenta como empleador →",
+            "identifier_label": "Teléfono o correo",
+            "identifier_placeholder": "(555) 123-4567 o tu@ejemplo.com",
+            "identifier_help": "Por teléfono recibes un código de 6 dígitos por SMS. Por correo, después de elegir contraseña.",
+            "password_subtitle": "Elige una contraseña para {target}. Después enviaremos un código de 6 dígitos al correo.",
+            "california_notice_prefix": "Residentes de California:",
+            "california_notice_link": "consulta nuestro Aviso al momento de la recopilación"
         },
         "sign_up_employer": {
             "meta_title": "Crear cuenta — Empleadores · AGCONN",
@@ -245,18 +265,8 @@
             "first_name_placeholder": "Elena",
             "last_name_label": "Apellido",
             "last_name_placeholder": "Sánchez",
-            "company_label": "Nombre de empresa / FLC",
-            "company_placeholder": "Sunridge Vineyards LLC",
-            "company_help": "Opcional — puedes agregarlo o cambiarlo durante el onboarding.",
-            "email_label": "Correo de trabajo",
-            "email_placeholder": "tu@tugranja.com",
-            "email_help": "Aquí enviamos avisos de cumplimiento, carpetas de auditoría y recibos.",
-            "phone_label": "Número de celular (opcional)",
-            "phone_placeholder": "(555) 123-4567",
-            "phone_help": "Opcional — habilita inicio de sesión por SMS y comunicación rápida con cuadrillas.",
             "password_label": "Elige una contraseña",
-            "password_help": "Al menos 8 caracteres.",
-            "verify_subtitle": "Enviamos un código de 6 dígitos a {target}.",
+            "password_help": "Al menos 10 caracteres.",
             "code_label": "Código de 6 dígitos",
             "have_account": "¿Ya tienes cuenta?",
             "sign_in_link": "Inicia sesión",
@@ -264,7 +274,27 @@
             "terms_prefix": "Al continuar aceptas nuestros",
             "terms_link": "Términos",
             "and": "y",
-            "privacy_link": "Política de privacidad"
+            "privacy_link": "Política de privacidad",
+            "identifier_label": "Teléfono o correo",
+            "identifier_placeholder": "(555) 123-4567 o tu@tugranja.com",
+            "identifier_help": "Por teléfono recibes un código de 6 dígitos por SMS. Por correo, después de elegir contraseña.",
+            "password_subtitle": "Elige una contraseña para {target}. Después enviaremos un código de 6 dígitos al correo.",
+            "verify_phone_subtitle": "Enviamos un código de 6 dígitos a {target}.",
+            "verify_email_subtitle": "Enviamos un código de 6 dígitos a {target}.",
+            "california_notice_prefix": "Residentes de California:",
+            "california_notice_link": "consulta nuestro Aviso al momento de la recopilación"
+        },
+        "reset_password": {
+            "meta_title": "Restablecer tu contraseña · AGCONN",
+            "eyebrow": "Restablecer contraseña",
+            "title": "Elige una contraseña nueva.",
+            "subtitle": "Usa al menos 10 caracteres. Con ella vas a iniciar sesión.",
+            "password_label": "Contraseña nueva",
+            "password_help": "Al menos 10 caracteres.",
+            "confirm_label": "Escríbela de nuevo",
+            "invalid_title": "Este enlace ya no funciona.",
+            "invalid_body": "Los enlaces para restablecer duran poco y sirven una sola vez. Ve a iniciar sesión y elige ¿Olvidaste tu contraseña? para recibir uno nuevo.",
+            "back_to_sign_in": "Ir a iniciar sesión"
         }
     },
     "landing": {

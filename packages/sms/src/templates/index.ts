@@ -231,6 +231,12 @@ export const smsTemplates = {
         vars: ['county'] as const,
         category: 'transactional',
     }),
+    'auth.code': def({
+        en: 'Your AGCONN code is {code}. It expires in 5 minutes. Do not share it.',
+        es: 'Tu código de AGCONN es {code}. Vence en 5 minutos. No lo compartas.',
+        vars: ['code'] as const,
+        category: 'transactional',
+    }),
 } as const;
 
 export type SmsTemplateName = keyof typeof smsTemplates;

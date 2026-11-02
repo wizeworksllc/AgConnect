@@ -21,29 +21,13 @@ export function DownloadButton({ path, label, icon, filename, variant = 'pill-da
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function getClerkToken(): Promise<string | null> {
-    if (typeof window === 'undefined') return null;
-    try {
-      type ClerkLike = { session?: { getToken?: () => Promise<string | null> } };
-      const w = window as unknown as { Clerk?: ClerkLike };
-      const t = await w.Clerk?.session?.getToken?.();
-      return t ?? null;
-    } catch {
-      return null;
-    }
-  }
-
   async function download() {
     setBusy(true);
     setError(null);
     try {
-      const token = await getClerkToken();
       const res = await fetch(`${BASE_URL}${path}`, {
         method: 'GET',
-        headers: {
-          ...(token ? { authorization: `Bearer ${token}` } : {}),
-          'accept-language': locale,
-        },
+        headers: { 'accept-language': locale },
         credentials: 'include',
       });
       if (!res.ok) {

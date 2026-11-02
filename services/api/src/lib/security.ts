@@ -18,7 +18,15 @@ export function corsMiddleware(origins: Set<string> = allowedOrigins()) {
   return cors({
     origin: (origin) => (origins.has(origin) ? origin : null),
     allowMethods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization', 'x-correlation-id'],
+    allowHeaders: [
+      'Content-Type',
+      'Authorization',
+      'Accept-Language',
+      'x-correlation-id',
+      'X-Employer-Id',
+      'x-agconn-locale',
+      'x-agconn-signup-role',
+    ],
     exposeHeaders: ['x-correlation-id'],
     credentials: true,
   });

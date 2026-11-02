@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // Code defaults: keys we know about so the admin UI can present a stable
@@ -17,7 +17,7 @@ const KNOWN_FLAGS = [
   { key: 'admin.bulk_export', label: 'Bulk PII export for admins' },
 ] as const;
 
-export const adminFlagsRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminFlagsRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 adminFlagsRoutes.get('/', async (c) => {
   const rows = await c.var.db.featureFlag.findMany({
@@ -125,7 +125,7 @@ adminFlagsRoutes.put('/', validate('json', upsertBody), async (c) => {
 });
 
 adminFlagsRoutes.delete('/:id', async (c) => {
-  if (c.var.orgRole !== 'org:super_admin') {
+  if (c.var.adminRole !== 'super_admin') {
     return err(c, 403, 'forbidden', 'super_admin required to delete flag override');
   }
   const id = c.req.param('id');

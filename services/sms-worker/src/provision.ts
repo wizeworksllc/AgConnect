@@ -1,12 +1,12 @@
 // Identity-keystone consumer (docs/00-foundation/13-onboarding-identity-remediation/).
-// Drains sms.provision: ensures a Clerk user exists for the inbound phone,
-// upserts the local User row keyed by the real Clerk id (never an sms_* id),
+// Drains sms.provision: ensures an auth user exists for the inbound phone,
+// upserts the local User row keyed by the auth user id (never an sms_* id),
 // and hands off the confirm SMS to the sms.send queue. Idempotent end to end —
 // safe under duplicate inbound and pg-boss retries.
 
 import type { Job, PgBoss } from 'pg-boss';
 import { insertAuditEvent, serviceDb, UserRole, Lang } from '@agconn/db';
-import { ensureClerkUserByPhone } from '@agconn/auth';
+import { ensureAuthUserByPhone } from '@agconn/auth';
 import {
   enqueueSms,
   SMS_PROVISION_QUEUE,
@@ -69,57 +69,47 @@ async function handle(job: Job<SmsProvisionJob>): Promise<void> {
   const { phone, locale, keyword } = job.data;
   const lang = locale === 'en' ? Lang.en : Lang.es;
 
-  const { clerkUserId, created } = await ensureClerkUserByPhone(phone, {
-    role: UserRole.worker,
-    locale: lang,
-  });
+  const { authUserId, created } = await ensureAuthUserByPhone(phone, { locale: lang });
 
-  // Upsert keyed by the real Clerk id. create sets the pending-confirm state;
+  // Upsert keyed by the auth user id. create sets the pending-confirm state;
   // update is deliberately minimal — it backfills the phone but never clobbers
   // smsOptInState / onboarded / consent for a user who already exists (e.g.
-  // a prior web signup texting the keyword). The clerk user.created webhook
-  // reconciles role/lang/email idempotently and does not touch these fields.
+  // a prior web signup texting the keyword).
   await serviceDb.$transaction(async (tx) => {
     await tx.$executeRawUnsafe(`SET LOCAL app.role = 'webhook'`);
     await tx.user.upsert({
-      where: { id: clerkUserId },
+      where: { id: authUserId },
       update: { phone },
       create: {
-        id: clerkUserId,
+        id: authUserId,
         role: UserRole.worker,
         phone,
         preferredLang: lang,
         smsOptInState: 'pending_confirm',
       },
     });
-    // RACE FIX: ensureClerkUserByPhone's createUser fires the Clerk
-    // user.created webhook, which can upsert this row FIRST (with
-    // sms_opt_in_state=null — clerk.ts doesn't know about SMS opt-in). When
-    // that wins, the upsert above takes its update branch and never sets
-    // pending_confirm, so the worker's YES is unrecognized and the flow dies
-    // silently. COALESCE promotes a not-yet-opted-in row into pending_confirm
-    // without clobbering a real prior user (web signup / already consented).
-    // Order-independent: whichever of provision/webhook lands first, the row
-    // ends up pending_confirm and a genuine non-null state is preserved.
+    // A prior web sign-up takes the update branch above; COALESCE promotes
+    // that not-yet-opted-in row into pending_confirm without clobbering a
+    // real state (already consented, already pending).
     await tx.$executeRawUnsafe(
       `UPDATE "users" SET "sms_opt_in_state" = COALESCE("sms_opt_in_state", 'pending_confirm') WHERE "id" = $1`,
-      clerkUserId,
+      authUserId,
     );
   });
 
-  await emitOptInPending(clerkUserId, { phone, keyword, locale, clerkCreated: created });
+  await emitOptInPending(authUserId, { phone, keyword, locale, authCreated: created });
 
   await enqueueSms({
     tenantId: SYSTEM_TENANT_ID,
-    userId: clerkUserId,
+    userId: authUserId,
     template: 'sms.optin.confirm',
     vars: {},
-    jobKey: `optin-confirm-${clerkUserId}`,
+    jobKey: `optin-confirm-${authUserId}`,
   });
 
-  console.log('[provision] ensured clerk user', {
+  console.log('[provision] ensured auth user', {
     created,
-    userIdTail: clerkUserId.slice(-6),
+    userIdTail: authUserId.slice(-6),
     keyword,
   });
 }

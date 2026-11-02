@@ -60,13 +60,14 @@ Injected into the `agconn-env` K8s Secret at deploy time. Rotation = redeploy.
 |---|---|
 | `ADMIN_BEARER_TOKEN` | `openssl rand -hex 32` |
 
-### Clerk — 3
+### better-auth — 1 (+ optional social sign-in)
 
-| Name |
-|---|
-| `CLERK_SECRET_KEY` |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` |
-| `CLERK_WEBHOOK_SECRET` |
+| Name | Notes |
+|---|---|
+| `BETTER_AUTH_SECRET` | `openssl rand -hex 32`; rotating signs everyone out |
+| `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | optional; redirect `https://api.agconn.com/v1/auth/callback/google` |
+| `MICROSOFT_CLIENT_ID` / `MICROSOFT_CLIENT_SECRET` | optional |
+| `APPLE_CLIENT_ID` / `APPLE_CLIENT_SECRET` | optional |
 
 ### Resend (email) — 2
 

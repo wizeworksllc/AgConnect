@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { currentUser } from '@clerk/nextjs/server';
+import { getServerSession } from '@/lib/auth/server';
 import { getEmployerProfile } from '@/lib/api/employer';
 import { AccountSurface } from '@/components/employer/account/AccountSurface';
 
@@ -27,13 +27,13 @@ export default async function EmployerAccountPage({ params }: Props) {
         notFound();
     }
 
-    const [user, profile] = await Promise.all([currentUser(), getEmployerProfile()]);
-    if (!user || !profile) {
+    const [session, profile] = await Promise.all([getServerSession(), getEmployerProfile()]);
+    if (!session || !profile) {
         notFound();
     }
 
     const businessName = profile.dbaName?.trim() || profile.legalName.trim();
-    const firstName = user.firstName?.trim() ?? '';
+    const firstName = session.user.name.trim().split(/\s+/)[0] ?? '';
 
     return (
         <AccountSurface

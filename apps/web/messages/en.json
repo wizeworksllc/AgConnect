@@ -136,7 +136,6 @@
         "shared": {
             "brand": "AGCONN",
             "back_home": "Back to home",
-            "powered_by": "Secured by Clerk",
             "or": "or",
             "google": "Continue with Google",
             "submit": "Continue",
@@ -152,10 +151,18 @@
                 "invalid_email": "Enter a valid email address.",
                 "invalid_identifier": "Enter your phone number or email address.",
                 "invalid_code": "That code didn't match. Try again.",
-                "weak_password": "Password must be at least 8 characters.",
-                "no_account": "We couldn't find an account with that info."
+                "weak_password": "Password must be at least 10 characters.",
+                "no_account": "We couldn't find an account with that info.",
+                "wrong_password": "That email and password don't match.",
+                "account_exists": "An account with that email already exists. Sign in instead.",
+                "code_expired": "That code has expired. Go back and request a new one.",
+                "too_many_attempts": "Too many tries. Go back and request a new code.",
+                "password_mismatch": "The two passwords don't match.",
+                "link_expired": "This link has expired or was already used."
             },
-            "grant_aligned": "CDFA & F3 grant-aligned · Central Valley · 2026"
+            "grant_aligned": "CDFA & F3 grant-aligned · Central Valley · 2026",
+            "microsoft": "Continue with Microsoft",
+            "apple": "Continue with Apple"
         },
         "pitch": {
             "worker": {
@@ -173,7 +180,7 @@
                 "lead": "Hire your next crew, faster.",
                 "proof": {
                     "p1": "FLC license verification + Cal/OSHA compliance binder, audit-ready",
-                    "p2": "Worker search, broadcasts, multi-channel messaging (SMS, WhatsApp, in-app)",
+                    "p2": "Worker search, broadcasts, SMS + in-app messaging",
                     "p3": "Auto payroll calc with AB 1513 piece-rate breaks + AEWR for H-2A"
                 }
             },
@@ -191,7 +198,6 @@
             "meta_title": "Sign in to AGCONN",
             "eyebrow": "Welcome back",
             "title_a": "Sign in to",
-            "title_b": "AGCONN",
             "subtitle": "Use your phone or email — whichever is on your account.",
             "identifier_label": "Phone or email",
             "identifier_placeholder": "(555) 123-4567 or you@example.com",
@@ -204,7 +210,15 @@
             "back_to_identifier": "Use a different account",
             "no_account": "New here?",
             "sign_up_worker": "Sign up as a worker",
-            "sign_up_employer": "I'm an employer →"
+            "sign_up_employer": "I'm an employer →",
+            "email_code_instead": "Email me a code instead",
+            "totp_subtitle": "Open your authenticator app and enter the 6-digit code for AGCONN.",
+            "totp_label": "Authenticator code",
+            "backup_code_label": "Backup code",
+            "use_backup_code": "Use a backup code",
+            "use_totp": "Use your authenticator app",
+            "forgot_password": "Forgot password?",
+            "reset_sent": "If an account uses {target}, we sent it a link to reset the password."
         },
         "sign_up_worker": {
             "meta_title": "Sign up — Workers · AGCONN",
@@ -222,7 +236,7 @@
             "email_label": "Email address",
             "email_placeholder": "you@example.com",
             "password_label": "Choose a password",
-            "password_help": "At least 8 characters.",
+            "password_help": "At least 10 characters.",
             "verify_phone_subtitle": "We sent a 6-digit code to {target}.",
             "verify_email_subtitle": "We sent a 6-digit code to {target}.",
             "code_label": "6-digit code",
@@ -233,7 +247,13 @@
             "and": "and",
             "privacy_link": "Privacy policy",
             "hire_instead": "Hiring crews?",
-            "employer_link": "Sign up as an employer →"
+            "employer_link": "Sign up as an employer →",
+            "identifier_label": "Phone or email",
+            "identifier_placeholder": "(555) 123-4567 or you@example.com",
+            "identifier_help": "Phone gets a 6-digit SMS code. Email gets a code after you set a password.",
+            "password_subtitle": "Choose a password for {target}. We'll then email a 6-digit code to verify.",
+            "california_notice_prefix": "California residents:",
+            "california_notice_link": "see our Notice at Collection"
         },
         "sign_up_employer": {
             "meta_title": "Sign up — Employers · AGCONN",
@@ -245,18 +265,8 @@
             "first_name_placeholder": "Elena",
             "last_name_label": "Last name",
             "last_name_placeholder": "Sanchez",
-            "company_label": "Company / FLC name",
-            "company_placeholder": "Sunridge Vineyards LLC",
-            "company_help": "Optional — you can add or change this during onboarding.",
-            "email_label": "Work email",
-            "email_placeholder": "you@yourfarm.com",
-            "email_help": "Where we send compliance notices, audit binders, and receipts.",
-            "phone_label": "Mobile number (optional)",
-            "phone_placeholder": "(555) 123-4567",
-            "phone_help": "Optional — adds SMS sign-in and faster crew communication.",
             "password_label": "Choose a password",
-            "password_help": "At least 8 characters.",
-            "verify_subtitle": "We sent a 6-digit code to {target}.",
+            "password_help": "At least 10 characters.",
             "code_label": "6-digit code",
             "have_account": "Already have an account?",
             "sign_in_link": "Sign in",
@@ -264,7 +274,27 @@
             "terms_prefix": "By continuing you agree to our",
             "terms_link": "Terms",
             "and": "and",
-            "privacy_link": "Privacy policy"
+            "privacy_link": "Privacy policy",
+            "identifier_label": "Phone or email",
+            "identifier_placeholder": "(555) 123-4567 or you@yourfarm.com",
+            "identifier_help": "Phone gets a 6-digit SMS code. Email gets a code after you set a password.",
+            "password_subtitle": "Choose a password for {target}. We'll then email a 6-digit code to verify.",
+            "verify_phone_subtitle": "We sent a 6-digit code to {target}.",
+            "verify_email_subtitle": "We sent a 6-digit code to {target}.",
+            "california_notice_prefix": "California residents:",
+            "california_notice_link": "see our Notice at Collection"
+        },
+        "reset_password": {
+            "meta_title": "Reset your password · AGCONN",
+            "eyebrow": "Password reset",
+            "title": "Choose a new password.",
+            "subtitle": "Use at least 10 characters. You'll sign in with it next.",
+            "password_label": "New password",
+            "password_help": "At least 10 characters.",
+            "confirm_label": "Type it again",
+            "invalid_title": "This link no longer works.",
+            "invalid_body": "Reset links last a short time and work once. Go to sign in and choose Forgot password to get a new one.",
+            "back_to_sign_in": "Go to sign in"
         }
     },
     "landing": {

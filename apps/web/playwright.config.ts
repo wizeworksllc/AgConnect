@@ -4,8 +4,8 @@ const PORT = 3000;
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? `http://localhost:${PORT}`;
 
 // Anonymous-only smoke suite. The full authenticated worker journey is
-// gated on a signed-in Clerk session; that wiring belongs in a follow-up
-// where we either inject a saved session or stand up a Clerk dev test user
+// gated on a signed-in session; that wiring belongs in a follow-up
+// where we either inject a saved session or create a test user through the better-auth API
 // at suite start.
 
 export default defineConfig({
