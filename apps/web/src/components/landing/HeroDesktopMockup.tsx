@@ -21,19 +21,19 @@ export function HeroDesktopMockup() {
                     <span className="eyebrow text-secondary">Counties</span>
                     <ul className="menu menu-sm gap-1 p-0">
                         <li>
-                            <a className="bg-primary text-primary-content active rounded-none">Fresno · 48</a>
+                            <span className="bg-primary text-primary-content active rounded-none">Fresno · 48</span>
                         </li>
                         <li>
-                            <a className="rounded-none">Tulare · 31</a>
+                            <span className="rounded-none">Tulare · 31</span>
                         </li>
                         <li>
-                            <a className="rounded-none">Kern · 22</a>
+                            <span className="rounded-none">Kern · 22</span>
                         </li>
                         <li>
-                            <a className="rounded-none">Madera · 19</a>
+                            <span className="rounded-none">Madera · 19</span>
                         </li>
                         <li>
-                            <a className="rounded-none">Kings · 14</a>
+                            <span className="rounded-none">Kings · 14</span>
                         </li>
                     </ul>
                     <div className="border-base-300 border-t pt-3">

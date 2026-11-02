@@ -31,6 +31,10 @@ jobs:
       NEXT_PUBLIC_POSTHOG_KEY: ""
       NEXT_PUBLIC_MAPBOX_TOKEN: ""
       NEXT_PUBLIC_ADMIN_URL: http://localhost:3100
+      # The site Lighthouse loads. Without it the SEO helper falls back to
+      # agconn.com while the page is served from localhost, and the canonical
+      # audit fails on the mismatch.
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
       NEXT_TELEMETRY_DISABLED: "1"
     services:
       postgres:
