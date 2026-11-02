@@ -7,7 +7,6 @@ import { WorkerSidebar } from '@/components/worker/WorkerSidebar';
 import { WorkerTopBar } from '@/components/worker/WorkerTopBar';
 import { WorkerMobileShell } from '@/components/worker/WorkerMobileShell';
 import { FieldModeSoftPrompt } from '@/components/field/FieldModeSoftPrompt';
-import { ClerkReadyGate } from '@/components/providers/ClerkReadyGate';
 import { useMe } from '@/lib/api/hooks/me';
 import { useWorkerNavCounts } from '@/lib/api/hooks/nav-counts';
 import { homePathForRole, UserRole } from '@/lib/auth/role-client';
@@ -28,9 +27,7 @@ type Props = {
 
 export function WorkerShellClient({ locale, children }: Props) {
   return (
-    <ClerkReadyGate fallback={<ShellSkeleton />}>
-      <WorkerShellInner locale={locale}>{children}</WorkerShellInner>
-    </ClerkReadyGate>
+    <WorkerShellInner locale={locale}>{children}</WorkerShellInner>
   );
 }
 

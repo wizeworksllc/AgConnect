@@ -6,7 +6,7 @@ import type { AuditCtxVars } from '../middleware/audit.js';
 // /v1/me/* — the authenticated session inspection surface.
 //
 // Phase 0 DoD requires that /v1/me/tenant resolves the caller's tenant from
-// the Clerk session (never trusting a client-supplied tenant_id), and that
+// the auth session (never trusting a client-supplied tenant_id), and that
 // any attempt to coerce a different tenant via query param or header is
 // rejected with a 403 AND an `auth.tenant.access_denied` audit row.
 

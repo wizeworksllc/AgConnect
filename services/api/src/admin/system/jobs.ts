@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // pg-boss v12+ stores jobs in pgboss.job (partitioned by queue name). States:
@@ -9,7 +9,7 @@ import type { AuditCtxVars } from '../../middleware/audit.js';
 // We read directly via raw SQL — pg-boss does not expose a query API for ops
 // dashboards. The admin DB role has read access to the pgboss schema.
 
-export const adminSystemJobsRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminSystemJobsRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 type QueueDepthRow = {
   name: string;
@@ -107,7 +107,7 @@ adminSystemJobsRoutes.get('/recent', validate('query', listFailuresQuery), async
 const replayBody = z.object({ id: z.string().uuid() }).strict();
 
 adminSystemJobsRoutes.post('/replay', validate('json', replayBody), async (c) => {
-  if (c.var.orgRole !== 'org:super_admin') {
+  if (c.var.adminRole !== 'super_admin') {
     return err(c, 403, 'forbidden', 'super_admin required to replay jobs');
   }
   const { id } = c.var.body;

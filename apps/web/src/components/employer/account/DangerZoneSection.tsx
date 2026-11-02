@@ -6,11 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { SectionCard } from './SectionCard';
 import { DeleteAccountModal } from './DeleteAccountModal';
-import type { ClerkUser } from './types';
 
-type Props = { user: ClerkUser; locale: string; businessName: string };
+type Props = { hasPassword: boolean; locale: string; businessName: string };
 
-export function DangerZoneSection({ user, locale, businessName }: Props) {
+export function DangerZoneSection({ hasPassword, locale, businessName }: Props) {
     const t = useTranslations('employer.account');
     const tDanger = useTranslations('employer.account.danger');
     const [open, setOpen] = useState(false);
@@ -45,7 +44,7 @@ export function DangerZoneSection({ user, locale, businessName }: Props) {
             </SectionCard>
             {open && (
                 <DeleteAccountModal
-                    user={user}
+                    hasPassword={hasPassword}
                     locale={locale}
                     businessName={businessName}
                     onClose={() => setOpen(false)}

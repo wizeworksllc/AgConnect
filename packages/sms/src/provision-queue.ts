@@ -1,11 +1,10 @@
 import { getSmsBoss } from './queue.js';
 
 // Identity keystone (docs/00-foundation/13-onboarding-identity-remediation/).
-// The Twilio inbound webhook must respond fast and must not block on a Clerk
-// network call, so unknown-phone opt-in is handed to this queue. The consumer
-// (services/sms-worker) provisions a Clerk user by phone, upserts the local
-// User row, and enqueues the confirm SMS. Queue plumbing only — no Clerk or
-// auth dependency here, to keep the package graph acyclic.
+// The Twilio inbound webhook must respond fast, so unknown-phone opt-in is
+// handed to this queue. The consumer (services/sms-worker) provisions an auth
+// user by phone, upserts the local User row, and enqueues the confirm SMS.
+// Queue plumbing only — no auth dependency here, to keep the package graph acyclic.
 
 export const SMS_PROVISION_QUEUE = 'sms.provision' as const;
 
@@ -25,7 +24,7 @@ const PROVISION_OPTS = {
 } as const;
 
 /**
- * Enqueue Clerk-provisioning for an unknown inbound phone. Idempotent on the
+ * Enqueue auth-user provisioning for an unknown inbound phone. Idempotent on the
  * phone via a singleton key: duplicate inbound texts within the window fold
  * into one provisioning attempt (the consumer is itself idempotent too).
  */

@@ -3,7 +3,7 @@
 // records during browser testing. Idempotent — re-running is a no-op once
 // the records exist.
 //
-// Pass the worker's user_id (Clerk id) as argv[2]:
+// Pass the worker's user_id (auth user id) as argv[2]:
 //   pnpm tsx packages/db/scripts/seed-test-worker-data.ts user_2abc...
 //
 // If omitted, picks the most-recently-active worker_profile.

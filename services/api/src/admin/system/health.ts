@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { ok } from '@agconn/api-client/server';
-import type { AdminOrgVars } from '../../middleware/adminClerkAuth.js';
+import type { AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 // Service health board. Each entry reports either a live ping result (when we
@@ -8,7 +8,7 @@ import type { AuditCtxVars } from '../../middleware/audit.js';
 // timestamp on a table the service owns). The combination lets us tell apart
 // "service is up but idle" from "service hasn't written in N minutes".
 
-export const adminSystemHealthRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminSystemHealthRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
 type ServiceEntry = {
   name: string;

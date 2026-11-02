@@ -1,6 +1,6 @@
 # apps/admin
 
-Internal operations console. English-only UI, manages EN+ES translations for the public web app. Runs on a dedicated Clerk instance — no shared identity with workers/employers.
+Internal operations console. English-only UI, manages EN+ES translations for the public web app. Signs in through the same better-auth server as the web app; only users with `users.role = 'admin'` get in.
 
 ## Surfaces
 
@@ -13,9 +13,10 @@ Internal operations console. English-only UI, manages EN+ES translations for the
 
 ## Auth model
 
-- Two Clerk instances. Web uses `NEXT_PUBLIC_CLERK_*`; admin uses `NEXT_PUBLIC_ADMIN_CLERK_*` + `ADMIN_CLERK_SECRET_KEY`.
-- [src/proxy.ts](src/proxy.ts) binds Clerk middleware to the admin keys explicitly via `createClerkClient` so the api pod can validate JWTs from either issuer.
-- Roles: `org:admin` (read + most writes), `org:super_admin` (deletes, replays, audit redaction). The role gate lives server-side in the api at [services/api/src/middleware/adminClerkAuth.ts](../../services/api/src/middleware/adminClerkAuth.ts).
+- One better-auth server (`services/api`, `/v1/auth/*`). The session cookie lives on `.agconn.com`, so `admin.agconn.com` receives it. Staff sign in by magic link only; the link never creates an account.
+- Make an admin with `pnpm --filter @agconn/db admin:create --email you@example.com [--super]`.
+- [src/proxy.ts](src/proxy.ts) only checks that the session cookie is present. [src/lib/admin-auth.ts](src/lib/admin-auth.ts) asks the api (`/admin/v1/me`) for the admin decision.
+- Roles: `admin` (read + most writes) and `super_admin` (`users.permissions` contains `*`: deletes, replays, audit redaction). The gate lives server-side in [services/api/src/middleware/adminAuth.ts](../../services/api/src/middleware/adminAuth.ts).
 - Dev/CI bearer fallback via `ADMIN_BEARER_TOKEN`. Never wire this in prod.
 
 ## Tenant impersonation
@@ -50,7 +51,7 @@ Internal operations console. English-only UI, manages EN+ES translations for the
 ```
 src/
   app/
-    (auth)/sign-in/       — Clerk sign-in
+    (auth)/sign-in/       — magic-link sign-in
     (shell)/              — main signed-in shell (Sidebar + Topbar)
       <surface>/page.tsx  — list page
       <surface>/[id]/page.tsx — detail page
@@ -58,7 +59,7 @@ src/
       t/[tenantId]/       — tenant-scoped wrapper, re-mounts the shell
   components/admin-shell/ — Sidebar, Topbar, TenantSwitcher, nav-items
   lib/                    — adminFetch + typed wrappers per surface
-  proxy.ts                — Clerk middleware (admin instance)
+  proxy.ts                — session-cookie gate
 ```
 
 ## When adding a new surface

@@ -2,163 +2,151 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { authClient } from '@/lib/auth-client';
 import { SectionCard, StatusBadge } from './SectionCard';
-import type { ClerkUser, ClerkEmail } from './types';
+import { CodeForm } from './CodeForm';
+import { useAction } from './useAction';
+import type { CurrentUser } from './types';
 
 const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-type Props = { user: ClerkUser };
+type Props = { user: CurrentUser; refetch: () => void };
+type Pending = { kind: 'verify' | 'change'; email: string };
 
-export function EmailsSection({ user }: Props) {
+export function EmailsSection({ user, refetch }: Props) {
     const t = useTranslations('employer.account.emails');
-    const tErr = useTranslations('employer.account');
-    const [adding, setAdding] = useState('');
-    const [busy, setBusy] = useState<string | null>(null);
-    const [error, setError] = useState<string | null>(null);
+    const tAcc = useTranslations('employer.account');
+    const { busy, error, setError, run } = useAction();
+    const [editing, setEditing] = useState(false);
+    const [draft, setDraft] = useState('');
+    const [pending, setPending] = useState<Pending | null>(null);
 
-    async function withGuard(key: string, fn: () => Promise<unknown>) {
-        setBusy(key);
-        setError(null);
-        try {
-            await fn();
-        } catch {
-            setError(tErr('error_generic'));
-        } finally {
-            setBusy(null);
+    const sendCode = (p: Pending) =>
+        run('send', () =>
+            p.kind === 'verify'
+                ? authClient.emailOtp.sendVerificationOtp({ email: p.email, type: 'email-verification' })
+                : authClient.emailOtp.requestEmailChange({ newEmail: p.email }),
+        );
+
+    async function start(p: Pending) {
+        if (await sendCode(p)) {
+            setPending(p);
+            setEditing(false);
+            setDraft('');
         }
     }
 
-    async function onAdd(e: React.FormEvent) {
+    function onChange(e: React.FormEvent) {
         e.preventDefault();
-        const value = adding.trim();
-        if (!EMAIL_RX.test(value)) {
+        const email = draft.trim().toLowerCase();
+        if (!EMAIL_RX.test(email)) {
             setError(t('invalid'));
             return;
         }
-        await withGuard('add', async () => {
-            const created = await user.createEmailAddress({ email: value });
-            await created.prepareVerification({ strategy: 'email_link', redirectUrl: window.location.href });
-            setAdding('');
-        });
+        void start({ kind: 'change', email });
     }
+
+    async function onCode(otp: string) {
+        if (!pending) return;
+        const { kind, email } = pending;
+        const ok = await run('verify', () =>
+            kind === 'verify'
+                ? authClient.emailOtp.verifyEmail({ email, otp })
+                : authClient.emailOtp.changeEmail({ newEmail: email, otp }),
+        );
+        if (!ok) return;
+        setPending(null);
+        refetch();
+    }
+
+    const showForm = !pending && (editing || !user.email);
 
     return (
         <SectionCard heading={t('heading')} subtitle={t('subtitle')}>
-            {user.emailAddresses.length === 0 ? (
-                <p className="text-base-content/60 text-sm">{t('empty')}</p>
+            {user.email ? (
+                <div className="flex flex-wrap items-center gap-3">
+                    <div className="min-w-0 flex-1">
+                        <div className="text-base-content truncate text-sm font-medium">{user.email}</div>
+                        <div className="mt-1">
+                            <StatusBadge
+                                tone={user.emailVerified ? 'verified' : 'unverified'}
+                                label={user.emailVerified ? t('verified_badge') : t('unverified_badge')}
+                            />
+                        </div>
+                    </div>
+                    {!pending && !editing && (
+                        <div className="flex flex-wrap gap-2">
+                            {!user.emailVerified && (
+                                <button
+                                    type="button"
+                                    className="btn btn-xs border-base-300 rounded-full border bg-transparent"
+                                    onClick={() => void start({ kind: 'verify', email: user.email ?? '' })}
+                                    disabled={busy === 'send'}
+                                >
+                                    {tAcc('send_code')}
+                                </button>
+                            )}
+                            <button
+                                type="button"
+                                className="btn btn-xs border-base-300 rounded-full border bg-transparent"
+                                onClick={() => setEditing(true)}
+                            >
+                                {t('change')}
+                            </button>
+                        </div>
+                    )}
+                </div>
             ) : (
-                <ul className="divide-base-300 divide-y">
-                    {user.emailAddresses.map((email) => (
-                        <EmailRow
-                            key={email.id}
-                            email={email}
-                            isPrimary={email.id === user.primaryEmailAddressId}
-                            busy={busy === email.id}
-                            onSetPrimary={() =>
-                                withGuard(email.id, () =>
-                                    user.update({ primaryEmailAddressId: email.id }),
-                                )
-                            }
-                            onRemove={() => withGuard(email.id, () => email.destroy())}
-                            onResend={() =>
-                                withGuard(email.id, () =>
-                                    email.prepareVerification({
-                                        strategy: 'email_link',
-                                        redirectUrl: window.location.href,
-                                    }),
-                                )
-                            }
-                        />
-                    ))}
-                </ul>
+                <p className="text-base-content/60 text-sm">{t('empty')}</p>
             )}
 
-            <form onSubmit={onAdd} className="border-base-300 mt-5 flex flex-wrap gap-2 border-t pt-5">
-                <fieldset className="fieldset w-full min-w-0 flex-1">
-                    <input
-                        type="email"
-                        className="input w-full"
-                        value={adding}
-                        onChange={(e) => setAdding(e.target.value)}
-                        placeholder={t('add_placeholder')}
-                        autoComplete="email"
-                    />
-                </fieldset>
-                <button
-                    type="submit"
-                    className="btn btn-sm btn-primary rounded-full self-end"
-                    disabled={busy === 'add' || adding.trim().length === 0}
-                >
-                    {t('add')}
-                </button>
-            </form>
+            {pending && (
+                <CodeForm
+                    sentTo={pending.email}
+                    busy={busy !== null}
+                    onSubmit={onCode}
+                    onResend={() => void sendCode(pending)}
+                    onCancel={() => setPending(null)}
+                />
+            )}
+
+            {showForm && (
+                <form onSubmit={onChange} className="border-base-300 mt-5 flex flex-wrap gap-2 border-t pt-5">
+                    <fieldset className="fieldset w-full min-w-0 flex-1">
+                        <legend className="fieldset-legend">
+                            {user.email ? t('change_label') : t('heading')}
+                        </legend>
+                        <input
+                            type="email"
+                            className="input w-full"
+                            value={draft}
+                            onChange={(e) => setDraft(e.target.value)}
+                            placeholder={t('add_placeholder')}
+                            autoComplete="email"
+                        />
+                    </fieldset>
+                    <div className="flex gap-2 self-end">
+                        <button
+                            type="submit"
+                            className="btn btn-sm btn-primary rounded-full"
+                            disabled={busy === 'send' || draft.trim().length === 0}
+                        >
+                            {user.email ? t('change') : t('add')}
+                        </button>
+                        {user.email && (
+                            <button
+                                type="button"
+                                className="btn btn-sm rounded-full border-transparent bg-transparent"
+                                onClick={() => setEditing(false)}
+                            >
+                                {tAcc('cancel')}
+                            </button>
+                        )}
+                    </div>
+                </form>
+            )}
 
             {error && <p className="label text-error mt-3">{error}</p>}
         </SectionCard>
-    );
-}
-
-type RowProps = {
-    email: ClerkEmail;
-    isPrimary: boolean;
-    busy: boolean;
-    onSetPrimary: () => void;
-    onRemove: () => void;
-    onResend: () => void;
-};
-
-function EmailRow({ email, isPrimary, busy, onSetPrimary, onRemove, onResend }: RowProps) {
-    const t = useTranslations('employer.account.emails');
-    const verified = email.verification?.status === 'verified';
-    return (
-        <li className="flex flex-wrap items-center gap-3 py-3">
-            <div className="min-w-0 flex-1">
-                <div className="text-base-content truncate text-sm font-medium">
-                    {email.emailAddress}
-                </div>
-                <div className="mt-1 flex flex-wrap items-center gap-1.5">
-                    {isPrimary && <StatusBadge tone="primary" label={t('primary_badge')} />}
-                    <StatusBadge
-                        tone={verified ? 'verified' : 'unverified'}
-                        label={verified ? t('verified_badge') : t('unverified_badge')}
-                    />
-                </div>
-                {!verified && (
-                    <p className="text-base-content/60 mt-1 text-xs">{t('verify_check_inbox')}</p>
-                )}
-            </div>
-            <div className="flex flex-wrap gap-2">
-                {!verified && (
-                    <button
-                        type="button"
-                        className="btn btn-xs border-base-300 rounded-full border bg-transparent"
-                        onClick={onResend}
-                        disabled={busy}
-                    >
-                        {t('resend')}
-                    </button>
-                )}
-                {!isPrimary && verified && (
-                    <button
-                        type="button"
-                        className="btn btn-xs border-base-300 rounded-full border bg-transparent"
-                        onClick={onSetPrimary}
-                        disabled={busy}
-                    >
-                        {t('set_primary')}
-                    </button>
-                )}
-                {!isPrimary && (
-                    <button
-                        type="button"
-                        className="btn btn-xs text-error/90 rounded-full border-transparent bg-transparent"
-                        onClick={onRemove}
-                        disabled={busy}
-                    >
-                        {t('remove')}
-                    </button>
-                )}
-            </div>
-        </li>
     );
 }

@@ -1,6 +1,5 @@
 import type { Context } from 'hono';
 import { createMiddleware } from 'hono/factory';
-import { clerkMiddleware, getAuth } from '@clerk/hono';
 import { err } from '@agconn/api-client/server';
 import {
     dbClients,
@@ -12,14 +11,10 @@ import {
     type User,
 } from '@agconn/db';
 import { hasPermission, type Permission } from '@agconn/schemas';
-import {
-    findAuthUser,
-    loadMemberships,
-    upsertClerkUser,
-    type EmployerMembership,
-} from './auth-bootstrap.js';
+import { provisionFromAuth, type SessionVars } from '../auth/session.js';
+import { findAuthUser, loadMemberships, type EmployerMembership } from './auth-bootstrap.js';
 
-// Clerk authenticates; the users row and accepted employer_contacts memberships decide role and permissions.
+// better-auth authenticates (sessionMiddleware); the users row and accepted employer_contacts memberships decide role and permissions.
 // The active employer comes from X-Employer-Id (or the sole membership) and pins app.employer_id for RLS.
 
 export type { EmployerMembership };
@@ -37,31 +32,6 @@ export type AuthVars = {
     employerScope: string | null;
 };
 
-export const clerkAuthMiddleware = clerkMiddleware({
-    publishableKey:
-        process.env.CLERK_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
-    secretKey: process.env.CLERK_SECRET_KEY,
-});
-
-// The user.created webhook normally creates the row; a brand-new session can arrive first.
-async function provisionFromClerk(c: Context, userId: string): Promise<User | null> {
-    try {
-        const cu = await c.get('clerk').users.getUser(userId);
-        const email =
-            cu.emailAddresses.find((e) => e.id === cu.primaryEmailAddressId)?.emailAddress ??
-            cu.emailAddresses[0]?.emailAddress ??
-            null;
-        const phone =
-            cu.phoneNumbers.find((p) => p.id === cu.primaryPhoneNumberId)?.phoneNumber ??
-            cu.phoneNumbers[0]?.phoneNumber ??
-            null;
-        const meta = (cu.unsafeMetadata ?? {}) as { role?: string; locale?: string };
-        return await upsertClerkUser(userId, { email, phone, role: meta.role, locale: meta.locale });
-    } catch {
-        return null;
-    }
-}
-
 function resolveActiveEmployer(
     memberships: EmployerMembership[],
     requested: string | undefined,
@@ -73,7 +43,7 @@ function resolveActiveEmployer(
     return memberships.length === 1 ? memberships[0]! : null;
 }
 
-type AuthContext = Context<{ Variables: AuthVars }>;
+type AuthContext = Context<{ Variables: AuthVars & SessionVars }>;
 
 function setAuthVars(c: AuthContext, poolName: PoolName, user: User, memberships: EmployerMembership[], active: EmployerMembership | null) {
     c.set('db', dbClients[poolName]);
@@ -90,12 +60,12 @@ function setAuthVars(c: AuthContext, poolName: PoolName, user: User, memberships
 
 // requireAuth('worker'), requireAuth('employer'), ... hands each domain its own pool via c.var.db.
 export const requireAuth = (poolName: PoolName) =>
-    createMiddleware<{ Variables: AuthVars }>(async (c, next) => {
-        const auth = getAuth(c);
-        if (!auth?.userId) {
+    createMiddleware<{ Variables: AuthVars & SessionVars }>(async (c, next) => {
+        const authUserId = c.var.authUserId;
+        if (!authUserId) {
             return err(c, 401, 'unauthenticated');
         }
-        const user = (await findAuthUser(auth.userId)) ?? (await provisionFromClerk(c, auth.userId));
+        const user = (await findAuthUser(authUserId)) ?? (await provisionFromAuth(authUserId));
         if (!user) {
             return err(c, 403, 'no_tenant');
         }

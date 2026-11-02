@@ -5,7 +5,7 @@ import { denyUnlessAdmin } from '@/lib/api-route-auth';
 // Server-side proxy: takes the GET request from the in-page link, builds the
 // upstream POST body, streams the binary response back to the browser. Doing
 // the proxy here (rather than calling /admin/v1/* from the browser directly)
-// keeps Clerk tokens off the wire and centralizes auth forwarding.
+// keeps session cookies server-side and centralizes auth forwarding.
 
 export const dynamic = 'force-dynamic';
 

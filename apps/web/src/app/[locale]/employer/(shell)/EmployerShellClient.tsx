@@ -7,7 +7,6 @@ import { EmployerSidebar } from '@/components/employer/EmployerSidebar';
 import { EmployerTopBar } from '@/components/employer/EmployerTopBar';
 import { EmployerMobileShell } from '@/components/employer/EmployerMobileShell';
 import { VerificationBanner } from '@/components/employer/VerificationBanner';
-import { ClerkReadyGate } from '@/components/providers/ClerkReadyGate';
 import { useMe } from '@/lib/api/hooks/me';
 import { useMyMembershipsSuspense } from '@/lib/api/hooks/members';
 import {
@@ -26,11 +25,9 @@ type Props = {
 
 export function EmployerShellClient({ locale, children }: Props) {
   return (
-    <ClerkReadyGate fallback={<EmployerShellSkeleton />}>
-      <Suspense fallback={<EmployerShellSkeleton />}>
-        <EmployerShellInner locale={locale}>{children}</EmployerShellInner>
-      </Suspense>
-    </ClerkReadyGate>
+    <Suspense fallback={<EmployerShellSkeleton />}>
+      <EmployerShellInner locale={locale}>{children}</EmployerShellInner>
+    </Suspense>
   );
 }
 

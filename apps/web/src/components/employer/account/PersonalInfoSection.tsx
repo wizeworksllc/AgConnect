@@ -2,51 +2,35 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { authClient } from '@/lib/auth-client';
 import { SectionCard } from './SectionCard';
-import type { ClerkUser } from './types';
+import { useAction } from './useAction';
+import type { CurrentUser } from './types';
 
-type Props = { user: ClerkUser };
+type Props = { user: CurrentUser; refetch: () => void };
 
-export function PersonalInfoSection({ user }: Props) {
+export function PersonalInfoSection({ user, refetch }: Props) {
     const t = useTranslations('employer.account.personal_info');
-    const tErr = useTranslations('employer.account');
-    const [firstName, setFirstName] = useState(user.firstName ?? '');
-    const [lastName, setLastName] = useState(user.lastName ?? '');
-    const [busy, setBusy] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const { busy, error, setError, run } = useAction();
+    const [firstName, setFirstName] = useState(user.firstName);
+    const [lastName, setLastName] = useState(user.lastName);
     const [success, setSuccess] = useState(false);
 
-    function validate(): string | null {
-        if (firstName.length > 64 || lastName.length > 64) return t('too_long');
-        return null;
-    }
+    const fullName = `${firstName.trim()} ${lastName.trim()}`.trim();
+    const dirty = fullName !== user.name;
 
     async function onSave(e: React.FormEvent) {
         e.preventDefault();
-        setError(null);
         setSuccess(false);
-        const v = validate();
-        if (v) {
-            setError(v);
+        if (firstName.length > 64 || lastName.length > 64) {
+            setError(t('too_long'));
             return;
         }
-        setBusy(true);
-        try {
-            await user.update({
-                firstName: firstName.trim(),
-                lastName: lastName.trim(),
-            });
-            setSuccess(true);
-        } catch {
-            setError(tErr('error_generic'));
-        } finally {
-            setBusy(false);
-        }
+        const ok = await run('save', () => authClient.updateUser({ name: fullName }));
+        if (!ok) return;
+        setSuccess(true);
+        refetch();
     }
-
-    const dirty =
-        (user.firstName ?? '') !== firstName.trim() ||
-        (user.lastName ?? '') !== lastName.trim();
 
     return (
         <SectionCard heading={t('heading')} subtitle={t('subtitle')}>
@@ -74,9 +58,7 @@ export function PersonalInfoSection({ user }: Props) {
                     />
                 </fieldset>
 
-                {error && (
-                    <p className="label text-error sm:col-span-2">{error}</p>
-                )}
+                {error && <p className="label text-error sm:col-span-2">{error}</p>}
                 {success && !error && (
                     <p className="label text-success sm:col-span-2">{t('save_success')}</p>
                 )}
@@ -85,7 +67,7 @@ export function PersonalInfoSection({ user }: Props) {
                     <button
                         type="submit"
                         className="btn btn-sm btn-primary rounded-full"
-                        disabled={busy || !dirty}
+                        disabled={busy === 'save' || !dirty || fullName.length === 0}
                     >
                         {t('save')}
                     </button>

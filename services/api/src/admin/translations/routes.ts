@@ -1,11 +1,7 @@
 import { Hono } from 'hono';
 import { ok, err, validate } from '@agconn/api-client/server';
 import { Lang, TranslationStatus } from '@agconn/db';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import {
   listTranslationsQuery,
@@ -16,11 +12,10 @@ import { listTranslations, listNamespaces } from './service.js';
 import { revalidateTranslations } from './revalidate.js';
 
 export const adminTranslationsRoutes = new Hono<{
-  Variables: AdminOrgVars & AuditCtxVars;
+  Variables: AdminVars & AuditCtxVars;
 }>();
 
-adminTranslationsRoutes.use('*', clerkAdminAuthMiddleware);
-adminTranslationsRoutes.use('*', requireAdminOrg('admin'));
+adminTranslationsRoutes.use('*', requireAdminUser('admin'));
 
 adminTranslationsRoutes.get('/namespaces', async (c) => {
   const scope = (c.req.query('scope') ?? 'platform') as 'platform' | 'tenant';
@@ -150,7 +145,7 @@ adminTranslationsRoutes.post(
 );
 
 adminTranslationsRoutes.delete('/:id', async (c) => {
-  if (c.var.orgRole !== 'org:super_admin') {
+  if (c.var.adminRole !== 'super_admin') {
     return err(c, 403, 'forbidden', 'super_admin required for delete');
   }
   const id = c.req.param('id');

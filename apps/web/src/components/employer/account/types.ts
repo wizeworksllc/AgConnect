@@ -1,6 +1,13 @@
-import type { useUser } from '@clerk/nextjs';
+export type { CurrentUser } from '@/lib/auth/use-current-user';
 
-export type ClerkUser = NonNullable<ReturnType<typeof useUser>['user']>;
-export type ClerkEmail = ClerkUser['emailAddresses'][number];
-export type ClerkPhone = ClerkUser['phoneNumbers'][number];
-export type ClerkExternalAccount = ClerkUser['externalAccounts'][number];
+export type LinkedAccount = {
+    id: string;
+    providerId: string;
+    accountId: string;
+};
+
+export type LinkedAccounts = {
+    accounts: LinkedAccount[] | null;
+    hasPassword: boolean;
+    reload: () => void;
+};

@@ -1,17 +1,12 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
-export const adminWorkRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminWorkRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminWorkRoutes.use('*', clerkAdminAuthMiddleware);
-adminWorkRoutes.use('*', requireAdminOrg('admin'));
+adminWorkRoutes.use('*', requireAdminUser('admin'));
 
 const CountyEnum = z.enum(['Fresno', 'Kern', 'Kings', 'Madera', 'Tulare']);
 const arrayOf = <T extends z.ZodTypeAny>(item: T) =>

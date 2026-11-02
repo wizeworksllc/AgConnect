@@ -1,18 +1,13 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import { rowsToCsv, csvResponse } from '../_lib/csv.js';
 
-export const adminOpsRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminOpsRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminOpsRoutes.use('*', clerkAdminAuthMiddleware);
-adminOpsRoutes.use('*', requireAdminOrg('admin'));
+adminOpsRoutes.use('*', requireAdminUser('admin'));
 
 // PII redaction: phone → +1 (***) ***-1234; email → j***@example.com.
 // Defaults to redacted; admin requests ?reveal=true and the call is logged.

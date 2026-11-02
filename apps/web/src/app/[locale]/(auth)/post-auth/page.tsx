@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation';
 import type { Route } from 'next';
-import { auth } from '@clerk/nextjs/server';
 import { isOk } from '@agconn/api-client';
 import { getServerApiClient } from '@/lib/api/server-client';
+import { getServerSession } from '@/lib/auth/server';
 import { shellFromUA } from '@/lib/shell-from-ua';
 
 export const dynamic = 'force-dynamic';
@@ -12,9 +12,8 @@ type Props = { params: Promise<{ locale: string }> };
 
 export default async function PostAuthPage({ params }: Props) {
   const { locale } = await params;
-  const session = await auth().catch(() => null);
-  const userId = session?.userId ?? null;
-  if (!userId) {
+  const session = await getServerSession();
+  if (!session) {
     redirect(`/${locale}/sign-in` as Route);
   }
 
@@ -24,10 +23,9 @@ export default async function PostAuthPage({ params }: Props) {
       redirect(`/${locale}/employer/dashboard`);
     case 'admin':
     case 'training_org':
-      // Admin lives on its own subdomain backed by a separate Clerk instance.
-      // A web-Clerk session shouldn't carry these roles in practice; if it
-      // does (legacy data), drop them onto the worker dashboard rather than
-      // a removed /admin route.
+      // Admin lives on its own subdomain (admin.agconn.com). A training org
+      // has no web dashboard yet, so both land on the worker dashboard rather
+      // than a removed /admin route.
       redirect(`/${locale}/worker/dashboard`);
     case 'worker': {
       // UA-sniff: mobile workers land in the mobile-first /field shell;

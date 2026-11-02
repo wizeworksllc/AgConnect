@@ -3,7 +3,7 @@ import { ok, err, validate } from '@agconn/api-client/server';
 import { FORMAT_MIME, toCsv, toXlsx } from '@agconn/reporting';
 import { ParticipantPepperMissingError } from '@agconn/reporting';
 import { enqueueGrantReportEmail } from '@agconn/email';
-import { adminMiddleware, type AdminVars } from '../../middleware/adminContext.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import {
   signGrantReportUrl,
@@ -18,7 +18,7 @@ import {
 
 export const adminReportsRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminReportsRoutes.use('*', adminMiddleware('admin'));
+adminReportsRoutes.use('*', requireAdminUser('admin'));
 
 adminReportsRoutes.get(
   '/placement/preview',

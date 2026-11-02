@@ -1,20 +1,19 @@
 import 'server-only';
-import { auth } from '@clerk/nextjs/server';
+import { headers as requestHeaders } from 'next/headers';
 import { bearerFallback } from './admin-access';
 
 // Server-side API client for the admin app. All admin pages call /admin/v1/*
 // via this helper — the admin app never touches Prisma directly.
 //
 // Auth flow:
-//   1. Take the Clerk session token via auth().getToken() (admin Clerk instance,
-//      since middleware is bound to its keys).
-//   2. Forward as Bearer to api; api's clerkAdminAuthMiddleware validates the
-//      JWT against the same admin instance.
+//   1. Forward the visitor's cookies (the better-auth session cookie lives on
+//      .agconn.com, so admin.agconn.com receives it).
+//   2. The api's requireAdminUser reads the session and checks users.role.
 //   3. Pass the active tenant id (read from the /t/<id>/... URL by the caller)
 //      as X-Admin-Tenant-Id so api can pin RLS to that tenant.
 //
-// Dev/CI fallback: if no Clerk session, fall back to ADMIN_BEARER_TOKEN. Lets
-// admin pages render during local dev without a real Clerk login. Never in production.
+// Dev/CI fallback: with no session cookie, fall back to ADMIN_BEARER_TOKEN. Lets
+// admin pages render during local dev without signing in. Never in production.
 
 const API_BASE = process.env.API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:3001';
 const ADMIN_BEARER = process.env.ADMIN_BEARER_TOKEN ?? '';
@@ -53,15 +52,14 @@ function buildUrl(path: string, query?: AdminFetchOptions['query']): string {
   return url.toString();
 }
 
-async function authHeader(): Promise<string | null> {
+async function sessionCookie(): Promise<string | null> {
   try {
-    const session = await auth();
-    const token = await session.getToken();
-    if (token) return `Bearer ${token}`;
+    const cookie = (await requestHeaders()).get('cookie');
+    return cookie?.includes('session_token') ? cookie : null;
   } catch {
-    // No active Clerk context (e.g. local build smoke test). Fall through.
+    // No request context (e.g. local build smoke test).
+    return null;
   }
-  return bearerFallback(ADMIN_BEARER, process.env.NODE_ENV);
 }
 
 export async function adminFetch<T>(
@@ -78,8 +76,10 @@ export async function adminFetch<T>(
     'accept-language': 'en',
     ...(options.headers ?? {}),
   };
-  const authz = await authHeader();
-  if (authz) headers.authorization = authz;
+  const cookie = await sessionCookie();
+  const fallback = cookie ? null : bearerFallback(ADMIN_BEARER, process.env.NODE_ENV);
+  if (cookie) headers.cookie = cookie;
+  if (fallback) headers.authorization = fallback;
   if (options.tenantId) headers['x-admin-tenant-id'] = options.tenantId;
   if (options.body !== undefined) headers['content-type'] = 'application/json';
 

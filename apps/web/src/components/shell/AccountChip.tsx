@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
-import { useClerk, useUser } from '@clerk/nextjs';
+import { signOutTo, useCurrentUser } from '@/lib/auth/use-current-user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faRightFromBracket,
@@ -37,8 +37,7 @@ function computeSwitchHref(pathname: string): {
 }
 
 export function AccountChip({ locale, labels }: Props) {
-    const { isLoaded, isSignedIn, user } = useUser();
-    const { signOut } = useClerk();
+    const { isLoaded, isSignedIn, user } = useCurrentUser();
     const pathname = usePathname() ?? '';
     const switchEntry = computeSwitchHref(pathname);
     const [open, setOpen] = useState(false);
@@ -72,12 +71,11 @@ export function AccountChip({ locale, labels }: Props) {
     }
     if (!isSignedIn || !user) return null;
 
-    const email = user.primaryEmailAddress?.emailAddress ?? null;
-    const phone = user.primaryPhoneNumber?.phoneNumber ?? null;
+    const { email, phone } = user;
     const identifier = email ?? phone ?? '';
     const initials = computeInitials(
-        user.firstName ?? undefined,
-        user.lastName ?? undefined,
+        user.firstName || undefined,
+        user.lastName || undefined,
         email,
         phone,
     );
@@ -131,7 +129,7 @@ export function AccountChip({ locale, labels }: Props) {
                         role="menuitem"
                         onClick={() => {
                             setOpen(false);
-                            signOut({ redirectUrl: `/${locale}` });
+                            void signOutTo(`/${locale}`);
                         }}
                         className="hover:bg-base-200 text-error/90 hover:text-error flex w-full items-center gap-2.5 px-4 py-2.5 text-sm font-semibold"
                     >

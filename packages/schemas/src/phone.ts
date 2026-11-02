@@ -1,6 +1,6 @@
 // Canonical US phone normalizer. Single source of truth for E.164 across
 // every surface that touches a phone number — web auth forms, the Twilio
-// inbound webhook, and the Clerk provisioning primitive — so the three
+// inbound webhook, and the phone provisioning primitive — so the three
 // never disagree on format. See
 // docs/00-foundation/13-onboarding-identity-remediation/02-phase-0-recon.md (0.4).
 //

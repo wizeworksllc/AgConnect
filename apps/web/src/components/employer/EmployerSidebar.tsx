@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useUser } from '@clerk/nextjs';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChartLine,
@@ -95,13 +95,13 @@ export function EmployerSidebar({
     const tBadge = useTranslations('employer.shell.badges');
     const tMenu = useTranslations('employer.shell.user_menu');
     const pathname = usePathname();
-    const { user } = useUser();
+    const { user } = useCurrentUser();
     const userFirstName = user?.firstName ?? '';
     const userLastName = user?.lastName ?? '';
     const userFullName =
         [userFirstName, userLastName].filter(Boolean).join(' ') ||
-        user?.primaryEmailAddress?.emailAddress ||
-        user?.primaryPhoneNumber?.phoneNumber ||
+        user?.email ||
+        user?.phone ||
         null;
 
     const allItems: NavItem[] = [

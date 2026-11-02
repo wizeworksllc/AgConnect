@@ -8,13 +8,10 @@ import { startProvisionWorker } from './provision.js';
 // WizeLens: one trace per job batch; see packages/db/src/wizelens.ts.
 traceWorker('agconn-sms-worker', PgBoss);
 
-// CLERK_SECRET_KEY is required by the sms.provision consumer (identity
-// keystone) — fail fast at startup rather than on the first inbound SMS.
 const ENV_KEYS_REQUIRED = [
   'DATABASE_URL',
   'AUDIT_HMAC_KEY',
   'PUBLIC_API_URL',
-  'CLERK_SECRET_KEY',
 ] as const;
 
 function assertEnv(): void {

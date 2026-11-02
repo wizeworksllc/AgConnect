@@ -1,5 +1,7 @@
 # 02 — Auth: Edge Cases & Risks
 
+> **Superseded 2026-11-01:** AgConnect moved from Clerk to better-auth. Where this page names Clerk, the [better-auth migration](09-better-auth-migration.md) is the current design.
+
 ## Clerk → DB drift
 
 The mirror approach trades a remote round trip for the risk of staying out of sync.

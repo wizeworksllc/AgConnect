@@ -1,7 +1,7 @@
 // End-to-end validation of /employer/crews backend functionality.
 //
 // Approach: mount the real route files in an in-process Hono app, replace the
-// Clerk + RLS auth chain with a lightweight middleware that pins a known test
+// session + RLS auth chain with a lightweight middleware that pins a known test
 // employer, and drive the routes via `app.request()` against the live dev
 // database. Each step asserts both the response envelope and the underlying
 // database state.
@@ -39,7 +39,7 @@ function assert(label: string, cond: unknown, detail?: string): void {
 // Post-RBAC, an employer is an `employer_profiles` row and access is granted
 // through an accepted `employer_contacts` membership that links a platform User
 // to that profile via a permissioned Role. The validation needs all three:
-// the user id (for the mocked Clerk session), the employer profile id (the
+// the user id (for the mocked session), the employer profile id (the
 // `employer_id` FK on crews/shifts/jobs), and the tenant id.
 async function findOrCreateEmployer(): Promise<{
   userId: string;
@@ -183,12 +183,12 @@ async function main(): Promise<void> {
   const { workerUserId, jobId } = hire;
   console.log(`  active hire: ${workerUserId}  job: ${jobId}`);
 
-  // Bypass Clerk by injecting `clerkAuth` directly (a function that
-  // @clerk/hono's getAuth() will call). The real `requireAuth` middleware
+  // Bypass the session lookup by setting `authUserId` directly (what
+  // sessionMiddleware would set). The real `requireAuth` middleware
   // runs after, hitting Prisma + RLS exactly like in production. Audit
   // sink is stubbed; everything else is the real chain.
   const mockAuth = createMiddleware(async (c, next) => {
-    c.set('clerkAuth', () => ({ userId }));
+    c.set('authUserId', userId);
     c.set('audit', { log: async () => {} });
     await next();
   });

@@ -1,6 +1,6 @@
-import { UserButton } from '@clerk/nextjs';
 import { TenantSwitcher, type TenantOption } from './TenantSwitcher';
 import { CommandPalette } from './CommandPalette';
+import { SignOutButton } from './SignOutButton';
 
 type Props = {
     user: { fullName: string | null; email: string | null };
@@ -26,7 +26,7 @@ export function Topbar({ user, tenants, activeTenantId }: Props) {
                         <span className="text-base-content/60 text-xs">{user.email}</span>
                     )}
                 </div>
-                <UserButton appearance={{ elements: { userButtonAvatarBox: 'h-8 w-8' } }} />
+                <SignOutButton />
             </div>
         </header>
     );

@@ -46,9 +46,7 @@ const REQUIRED = [
   'DATABASE_URL', 'DIRECT_URL',
   'AUDIT_HMAC_KEY', 'AUDIT_HMAC_KEY_VERSION',
   'ADMIN_BEARER_TOKEN', 'PARTICIPANT_PEPPER',
-  'CLERK_SECRET_KEY', 'NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY',
-  'CLERK_WEBHOOK_SECRET', 'CLERK_ENCRYPTION_KEY',
-  'ADMIN_CLERK_SECRET_KEY', 'NEXT_PUBLIC_ADMIN_CLERK_PUBLISHABLE_KEY',
+  'BETTER_AUTH_SECRET',
   'NEXT_PUBLIC_ADMIN_URL',
   'RESEND_API_KEY', 'RESEND_WEBHOOK_SECRET',
   'WAITLIST_TOKEN_SECRET',
@@ -70,6 +68,9 @@ const OPTIONAL = [
   'STRIPE_PRICE_PRO_FOUNDER_MONTHLY', 'STRIPE_PRICE_PRO_FOUNDER_YEARLY',
   'STRIPE_PRICE_ENT_FOUNDER_MONTHLY', 'STRIPE_PRICE_ENT_FOUNDER_YEARLY',
   'ANTHROPIC_API_KEY', 'OPENAI_API_KEY', 'LLM_FALLBACKS',
+  'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET',
+  'MICROSOFT_CLIENT_ID', 'MICROSOFT_CLIENT_SECRET',
+  'APPLE_CLIENT_ID', 'APPLE_CLIENT_SECRET',
 ];
 
 // Values that are production facts or freshly generated key material, rather
@@ -84,7 +85,7 @@ const DERIVED = {
   // agree about escaping. A trailing CR in key material silently reconstructs a
   // DIFFERENT key rather than failing.
   INTERNAL_REVALIDATE_SECRET: () => randomBytes(48).toString('base64'),
-  CLERK_ENCRYPTION_KEY: () => randomBytes(32).toString('hex'),
+  BETTER_AUTH_SECRET: () => randomBytes(32).toString('hex'),
 };
 
 // Credentials whose prefix says which mode they belong to. Loading a test-mode
@@ -92,8 +93,6 @@ const DERIVED = {
 // check, and authenticates nobody real — the failure this script most wants to
 // prevent, because nothing downstream reports it as an error.
 const MODE_HINTS = [
-  { match: /^(CLERK_SECRET_KEY|ADMIN_CLERK_SECRET_KEY)$/, test: /^sk_test_/ },
-  { match: /_CLERK_PUBLISHABLE_KEY$/, test: /^pk_test_/ },
   { match: /^STRIPE_SECRET_KEY$/, test: /^sk_test_/ },
 ];
 
@@ -208,7 +207,7 @@ if (missing.length) {
   console.log(`\nMISSING — ${missing.length} required value(s) not in ${ENV_FILE}:`);
   for (const m of missing) console.log(`  ${m}  ->  az keyvault secret set --vault-name ${VAULT} --name ${vaultName(m)} --value '...'`);
   console.log('\nThese cannot be recovered from GitHub Actions secrets — that store is write-only.');
-  console.log('Get them from the vendor dashboard (Clerk, Resend, Twilio, Stripe).');
+  console.log('Get them from the vendor dashboard (Google, Resend, Twilio, Stripe).');
 }
 
 if (!APPLY) {

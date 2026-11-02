@@ -1,5 +1,7 @@
 # 02 — Auth: Overview
 
+> **Superseded 2026-11-01:** AgConnect moved from Clerk to better-auth. Where this page names Clerk, the [better-auth migration](09-better-auth-migration.md) is the current design.
+
 ## Purpose
 
 All authentication for AGCONN runs through Clerk. The choice is recorded in kickoff ADR-003: Clerk's multi-tenant Organization model maps directly to AGCONN's tenant + employer structure, the SMS OTP flow is purpose-built for low-friction phone signup, and the role/metadata system gives us per-user RBAC without building auth infrastructure.

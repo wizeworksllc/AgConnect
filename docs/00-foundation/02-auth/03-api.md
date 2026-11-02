@@ -1,5 +1,7 @@
 # 02 — Auth: API & Middleware
 
+> **Superseded 2026-11-01:** AgConnect moved from Clerk to better-auth. Where this page names Clerk, the [better-auth migration](09-better-auth-migration.md) is the current design.
+
 ## Hono middleware stack
 
 ```ts

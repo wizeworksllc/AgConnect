@@ -29,4 +29,5 @@ export type {
   GrantReportEmailTemplate,
 } from './queue.js';
 export { runEmailWorker } from './worker.js';
+export { sendAuthEmail, type AuthEmail } from './auth.js';
 export type { EmailWorkerHandle } from './worker.js';

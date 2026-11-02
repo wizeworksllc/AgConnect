@@ -1,5 +1,7 @@
 # 01 — Multi-tenancy: Overview
 
+> **Superseded 2026-11-01:** AgConnect moved from Clerk to better-auth. Where this page names Clerk, the [better-auth migration](../02-auth/09-better-auth-migration.md) is the current design.
+
 ## Purpose
 
 Every AGCONN deployment serves multiple isolated organizational tenants. A tenant is an organizational deployment of AGCONN — for example, a regional workforce board, a state agency partner, or a white-label licensee. For MVP, there is one tenant (`AGCONN Central Valley`); the architecture supports adding more without schema migration.

@@ -18,7 +18,8 @@ export type PoolName =
   | 'wallet'
   | 'admin'
   | 'i18n'
-  | 'webhooks';
+  | 'webhooks'
+  | 'auth';
 
 const POOL_SIZES: Record<PoolName, number> = {
   shared: 10,
@@ -34,6 +35,7 @@ const POOL_SIZES: Record<PoolName, number> = {
   admin: 5,
   i18n: 5,
   webhooks: 5,
+  auth: 5,
 };
 
 // DB_POOL_<NAME> sets one pool's size; DB_POOL_MAX caps every pool in the process (set per Deployment).

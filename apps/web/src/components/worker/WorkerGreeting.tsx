@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useUser } from '@clerk/nextjs';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
 import { useProfileSuspense } from '@/lib/api/hooks/profile';
 import { useMyShiftsSuspense } from '@/lib/api/hooks/shifts';
 import { useRecommendedJobsSuspense } from '@/lib/api/hooks/jobs';
@@ -71,14 +71,14 @@ function formatContext(locale: string, county?: string | null): string {
 export function WorkerGreeting() {
     const locale = useLocale();
     const t = useTranslations('worker.dashboard.greeting');
-    const { user: clerkUser } = useUser();
+    const { user: authUser } = useCurrentUser();
     const { data: profile } = useProfileSuspense();
     const { data: shifts } = useMyShiftsSuspense();
     const { data: matched } = useRecommendedJobsSuspense();
 
     const name =
         profile.firstName ||
-        clerkUser?.firstName ||
+        authUser?.firstName ||
         (locale === 'es' ? 'Trabajador' : 'there');
     const county = profile.county ?? null;
     const now = Date.now();

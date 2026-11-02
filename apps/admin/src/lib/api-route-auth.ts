@@ -1,14 +1,13 @@
 import 'server-only';
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
-import { apiAccess } from './admin-access';
-import { isAdminRole } from './clerk';
+import { accessFromStatus } from './admin-access';
+import { fetchAdminSession } from './admin-auth';
 
 // Call first in every /api route handler: a 401/403 response, or null when the caller is an admin.
 export async function denyUnlessAdmin(): Promise<NextResponse | null> {
-  const session = await auth().catch(() => null);
-  const access = apiAccess(session?.userId, session?.orgId, isAdminRole(session?.orgRole));
+  const { status } = await fetchAdminSession().catch(() => ({ status: 401 }));
+  const access = accessFromStatus(status);
   if (access === 'allow') return null;
-  const status = access === 'unauthenticated' ? 401 : 403;
-  return NextResponse.json({ ok: false, error: { code: access } }, { status });
+  const code = access === 'unauthenticated' ? 401 : 403;
+  return NextResponse.json({ ok: false, error: { code: access } }, { status: code });
 }

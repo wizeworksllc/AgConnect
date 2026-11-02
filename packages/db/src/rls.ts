@@ -10,7 +10,8 @@ export type RlsRole =
   | 'admin'
   | 'system'
   | 'audit_redact'
-  | 'audit_purge';
+  | 'audit_purge'
+  | 'auth';
 
 export interface RlsContext {
   role: RlsRole;
@@ -29,6 +30,7 @@ const ALLOWED_ROLES: ReadonlySet<RlsRole> = new Set([
   'system',
   'audit_redact',
   'audit_purge',
+  'auth',
 ]);
 
 const als = new AsyncLocalStorage<RlsContext>();
@@ -75,15 +77,18 @@ type AnyFn = (...a: unknown[]) => unknown;
 type TxWork<T> = (tx: Prisma.TransactionClient) => Promise<T>;
 
 // One short transaction per call: apply the ALS context (or the fixed one), run the work, commit.
-function inRlsTx<T>(prisma: PrismaClient, fixed: RlsContext | undefined, work: TxWork<T>, opts?: unknown) {
+// A forced context ignores any active runWithRlsContext (authDb must stay app.role = 'auth' everywhere).
+type Fixed = { ctx: RlsContext; force?: boolean } | undefined;
+
+function inRlsTx<T>(prisma: PrismaClient, fixed: Fixed, work: TxWork<T>, opts?: unknown) {
   return prisma.$transaction(async (tx) => {
-    const ctx = als.getStore() ?? fixed;
+    const ctx = fixed?.force ? fixed.ctx : (als.getStore() ?? fixed?.ctx);
     if (ctx) await applyRlsToTx(tx, ctx);
     return work(tx);
   }, opts as Parameters<PrismaClient['$transaction']>[1]);
 }
 
-function transactionOp(prisma: PrismaClient, fixed: RlsContext | undefined) {
+function transactionOp(prisma: PrismaClient, fixed: Fixed) {
   return ((arg: unknown, opts?: unknown) => {
     if (typeof arg === 'function') return inRlsTx(prisma, fixed, arg as TxWork<unknown>, opts);
     throw new Error(
@@ -92,7 +97,7 @@ function transactionOp(prisma: PrismaClient, fixed: RlsContext | undefined) {
   }) as PrismaClient['$transaction'];
 }
 
-function modelProxy(prisma: PrismaClient, fixed: RlsContext | undefined, model: string, target: object) {
+function modelProxy(prisma: PrismaClient, fixed: Fixed, model: string, target: object) {
   return new Proxy(target, {
     get(_t, op) {
       if (typeof op !== 'string' || op === 'then') return undefined;
@@ -108,7 +113,8 @@ function modelProxy(prisma: PrismaClient, fixed: RlsContext | undefined, model: 
 
 // A client whose every model call, raw query and $transaction(callback) runs in its own RLS-scoped transaction.
 // `fixed` applies when no runWithRlsContext is active (the admin client for seeds and scripts).
-export function makeRlsClient(prisma: PrismaClient, fixed?: RlsContext): PrismaClient {
+export function makeRlsClient(prisma: PrismaClient, ctx?: RlsContext, opts: { force?: boolean } = {}): PrismaClient {
+  const fixed: Fixed = ctx ? { ctx, force: opts.force } : undefined;
   const handler: ProxyHandler<PrismaClient> = {
     get(_target, prop) {
       if (typeof prop !== 'string' || prop === 'then') return undefined;

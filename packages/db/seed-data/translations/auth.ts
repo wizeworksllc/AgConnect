@@ -37,12 +37,44 @@ export const auth: TranslationBundle = {
         es: "No encontramos una cuenta con esa información.",
     },
     "shared.errors.weak_password": {
-        en: "Password must be at least 8 characters.",
-        es: "La contraseña debe tener al menos 8 caracteres.",
+        en: "Password must be at least 10 characters.",
+        es: "La contraseña debe tener al menos 10 caracteres.",
+    },
+    "shared.errors.wrong_password": {
+        en: "That email and password don't match.",
+        es: "El correo y la contraseña no coinciden.",
+    },
+    "shared.errors.account_exists": {
+        en: "An account with that email already exists. Sign in instead.",
+        es: "Ya existe una cuenta con ese correo. Inicia sesión.",
+    },
+    "shared.errors.code_expired": {
+        en: "That code has expired. Go back and request a new one.",
+        es: "Ese código ya venció. Regresa y pide uno nuevo.",
+    },
+    "shared.errors.too_many_attempts": {
+        en: "Too many tries. Go back and request a new code.",
+        es: "Demasiados intentos. Regresa y pide un código nuevo.",
+    },
+    "shared.errors.password_mismatch": {
+        en: "The two passwords don't match.",
+        es: "Las dos contraseñas no coinciden.",
+    },
+    "shared.errors.link_expired": {
+        en: "This link has expired or was already used.",
+        es: "Este enlace venció o ya se usó.",
     },
     "shared.google": {
         en: "Continue with Google",
         es: "Continuar con Google",
+    },
+    "shared.microsoft": {
+        en: "Continue with Microsoft",
+        es: "Continuar con Microsoft",
+    },
+    "shared.apple": {
+        en: "Continue with Apple",
+        es: "Continuar con Apple",
     },
     "shared.grant_aligned": {
         en: "CDFA & F3 grant-aligned · Central Valley · 2026",
@@ -51,10 +83,6 @@ export const auth: TranslationBundle = {
     "shared.or": {
         en: "or",
         es: "o",
-    },
-    "shared.powered_by": {
-        en: "Secured by Clerk",
-        es: "Asegurado por Clerk",
     },
     "shared.resend": {
         en: "Send a new code",
@@ -220,6 +248,78 @@ export const auth: TranslationBundle = {
         en: "I'm an employer →",
         es: "Soy empleador →",
     },
+    "sign_in.email_code_instead": {
+        en: "Email me a code instead",
+        es: "Recibir un código por correo",
+    },
+    "sign_in.forgot_password": {
+        en: "Forgot password?",
+        es: "¿Olvidaste tu contraseña?",
+    },
+    "sign_in.reset_sent": {
+        en: "If an account uses {target}, we sent it a link to reset the password.",
+        es: "Si hay una cuenta con {target}, le enviamos un enlace para restablecer la contraseña.",
+    },
+    "sign_in.totp_subtitle": {
+        en: "Open your authenticator app and enter the 6-digit code for AGCONN.",
+        es: "Abre tu app de autenticación e ingresa el código de 6 dígitos de AGCONN.",
+    },
+    "sign_in.totp_label": {
+        en: "Authenticator code",
+        es: "Código de autenticación",
+    },
+    "sign_in.backup_code_label": {
+        en: "Backup code",
+        es: "Código de respaldo",
+    },
+    "sign_in.use_backup_code": {
+        en: "Use a backup code",
+        es: "Usar un código de respaldo",
+    },
+    "sign_in.use_totp": {
+        en: "Use your authenticator app",
+        es: "Usar tu app de autenticación",
+    },
+    "reset_password.meta_title": {
+        en: "Reset your password · AGCONN",
+        es: "Restablecer tu contraseña · AGCONN",
+    },
+    "reset_password.eyebrow": {
+        en: "Password reset",
+        es: "Restablecer contraseña",
+    },
+    "reset_password.title": {
+        en: "Choose a new password.",
+        es: "Elige una contraseña nueva.",
+    },
+    "reset_password.subtitle": {
+        en: "Use at least 10 characters. You'll sign in with it next.",
+        es: "Usa al menos 10 caracteres. Con ella vas a iniciar sesión.",
+    },
+    "reset_password.password_label": {
+        en: "New password",
+        es: "Contraseña nueva",
+    },
+    "reset_password.password_help": {
+        en: "At least 10 characters.",
+        es: "Al menos 10 caracteres.",
+    },
+    "reset_password.confirm_label": {
+        en: "Type it again",
+        es: "Escríbela de nuevo",
+    },
+    "reset_password.invalid_title": {
+        en: "This link no longer works.",
+        es: "Este enlace ya no funciona.",
+    },
+    "reset_password.invalid_body": {
+        en: "Reset links last a short time and work once. Go to sign in and choose Forgot password to get a new one.",
+        es: "Los enlaces para restablecer duran poco y sirven una sola vez. Ve a iniciar sesión y elige ¿Olvidaste tu contraseña? para recibir uno nuevo.",
+    },
+    "reset_password.back_to_sign_in": {
+        en: "Go to sign in",
+        es: "Ir a iniciar sesión",
+    },
 
     // Worker sign-up (phone OR email)
     "sign_up_worker.meta_title": {
@@ -295,8 +395,8 @@ export const auth: TranslationBundle = {
         es: "Elige una contraseña",
     },
     "sign_up_worker.password_help": {
-        en: "At least 8 characters.",
-        es: "Al menos 8 caracteres.",
+        en: "At least 10 characters.",
+        es: "Al menos 10 caracteres.",
     },
     "sign_up_worker.password_subtitle": {
         en: "Choose a password for {target}. We'll then email a 6-digit code to verify.",
@@ -409,8 +509,8 @@ export const auth: TranslationBundle = {
         es: "Elige una contraseña",
     },
     "sign_up_employer.password_help": {
-        en: "At least 8 characters.",
-        es: "Al menos 8 caracteres.",
+        en: "At least 10 characters.",
+        es: "Al menos 10 caracteres.",
     },
     "sign_up_employer.password_subtitle": {
         en: "Choose a password for {target}. We'll then email a 6-digit code to verify.",

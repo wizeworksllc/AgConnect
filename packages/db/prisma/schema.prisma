@@ -479,11 +479,12 @@ model AuditEvent {
   @@map("audit_events")
 }
 
-// User mirror of Clerk identity. id == Clerk userId. Mirror fields are kept
-// in sync via webhooks (services/api/src/webhooks/clerk.ts). PII like phone
-// + email is stored here too for joins; Clerk remains the source of truth.
+// App user. id == AuthUser.id (better-auth). Created by the auth server's
+// user.create hook (services/api/src/auth/hooks.ts) or by SMS provisioning
+// (@agconn/auth). Role, permissions, tenant and consent live here, never in
+// the auth tables.
 model User {
-  id            String   @id // matches Clerk userId
+  id            String   @id // matches AuthUser.id
   tenantId      String?  @map("tenant_id") @db.Uuid
   role          UserRole
   permissions   String[] @default([]) // fine-grained scopes within role; '*' = wildcard
@@ -552,8 +553,7 @@ model User {
 // One employer account. Membership + ownership live on employer_contacts:
 // the row with role.key = 'owner' (and owner_contact_id pointing at it) is
 // the account owner, reassignable by the owner or a platform admin. A tenant
-// can host many employer profiles. clerkOrgId is legacy/inert (Clerk orgs are
-// not used; tenant + employer resolve relationally).
+// can host many employer profiles. Tenant + employer resolve relationally.
 // See docs/20-employer/01-flc-verification/02-data-model.md and 05-subscription-billing/02-data-model.md.
 model EmployerProfile {
   id                      String            @id @default(uuid()) @db.Uuid
@@ -562,7 +562,6 @@ model EmployerProfile {
   // app invariant is exactly one non-deleted owner contact per profile.
   ownerContactId          String?           @unique @map("owner_contact_id") @db.Uuid
   tenantId                String            @map("tenant_id") @db.Uuid
-  clerkOrgId              String?           @unique @map("clerk_org_id")
   legalName               String            @map("legal_name")
   dbaName                 String?           @map("dba_name")
   contactEmail            String?           @map("contact_email")
@@ -802,9 +801,8 @@ model SmsOptOut {
   @@map("sms_opt_out")
 }
 
-// Clerk webhook audit. Distinct from audit_events (which is the application
-// audit log). auth_events is replay-able + idempotent: webhook handler
-// upserts on (event_type, payload->>'id') to handle Svix retries.
+// Identity event log (sign-up, sign-in, account delete) written by the auth
+// server hooks. Distinct from audit_events (the application audit log).
 model AuthEvent {
   id          String          @id @default(uuid()) @db.Uuid
   tenantId    String?         @map("tenant_id") @db.Uuid
@@ -827,7 +825,7 @@ model AuthEvent {
 // Worker profile — extends User for the `worker` role. PK == User.id.
 // See docs/10-worker/01-onboarding/02-data-model.md.
 model WorkerProfile {
-  id             String        @id // matches User.id (Clerk userId)
+  id             String        @id // matches User.id
   firstName      String        @map("first_name")
   lastName       String        @map("last_name")
   zipCode        String?       @map("zip_code")
@@ -1828,4 +1826,94 @@ model ReportRun {
   @@index([reportType, generatedAt])
   @@index([tenantId, generatedAt])
   @@map("report_runs")
+}
+
+// better-auth identity tables (docs/00-foundation/02-auth/09-better-auth-migration.md).
+// Only the auth server and SMS provisioning touch them, through authDb
+// (app.role = 'auth'). Global by design: identity exists before any tenant.
+model AuthUser {
+  id                  String   @id
+  name                String
+  email               String   @unique
+  emailVerified       Boolean  @default(false) @map("email_verified")
+  image               String?
+  phoneNumber         String?  @unique @map("phone_number")
+  phoneNumberVerified Boolean? @map("phone_number_verified")
+  twoFactorEnabled    Boolean? @default(false) @map("two_factor_enabled")
+  signupRole          String?  @map("signup_role")
+  locale              String?
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  sessions   AuthSession[]
+  accounts   AuthAccount[]
+  twoFactors AuthTwoFactor[]
+
+  @@map("auth_users")
+}
+
+model AuthSession {
+  id        String   @id
+  token     String   @unique
+  userId    String   @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user AuthUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("auth_sessions")
+}
+
+model AuthAccount {
+  id                    String    @id
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  userId                String    @map("user_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  user AuthUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("auth_accounts")
+}
+
+model AuthVerification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime @map("expires_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@index([identifier])
+  @@map("auth_verifications")
+}
+
+model AuthTwoFactor {
+  id          String   @id
+  secret      String
+  backupCodes String   @map("backup_codes")
+  userId      String   @map("user_id")
+  verified    Boolean? @default(true)
+  // better-auth locks TOTP after repeated wrong codes.
+  failedVerificationCount Int?      @default(0) @map("failed_verification_count")
+  lockedUntil             DateTime? @map("locked_until")
+
+  user AuthUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([secret])
+  @@map("auth_two_factors")
 }

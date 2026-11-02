@@ -8,13 +8,8 @@ export function bearerFallback(token: string, nodeEnv: string | undefined): stri
   return `Bearer ${token}`;
 }
 
-// Decides whether a Clerk session may call an /api route handler.
-export function apiAccess(
-  userId: string | null | undefined,
-  orgId: string | null | undefined,
-  isAdmin: boolean,
-): ApiAccess {
-  if (!userId) return 'unauthenticated';
-  if (!orgId || !isAdmin) return 'forbidden';
-  return 'allow';
+// The API decides who is an admin (/admin/v1/me); this maps its answer to an access decision.
+export function accessFromStatus(status: number): ApiAccess {
+  if (status >= 200 && status < 300) return 'allow';
+  return status === 401 ? 'unauthenticated' : 'forbidden';
 }

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useUser } from '@clerk/nextjs';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChartLine,
@@ -68,14 +68,14 @@ type Props = {
 export function WorkerSidebar({ active, locale, variant = 'inline', counts }: Props) {
     const t = useTranslations('worker.dashboard.sidebar');
     const pathname = usePathname();
-    const { user } = useUser();
+    const { user } = useCurrentUser();
     const derived = ITEMS.find((it) => pathname.startsWith(`/${locale}${it.path}`))?.key;
     const current = active ?? derived;
 
     const firstName = user?.firstName ?? '';
     const lastName = user?.lastName ?? '';
-    const email = user?.primaryEmailAddress?.emailAddress ?? null;
-    const phone = user?.primaryPhoneNumber?.phoneNumber ?? null;
+    const email = user?.email ?? null;
+    const phone = user?.phone ?? null;
     const fullName =
         [firstName, lastName].filter(Boolean).join(' ') ||
         email ||

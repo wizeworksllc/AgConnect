@@ -1,19 +1,14 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { ok, err, validate } from '@agconn/api-client/server';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 
 export const adminDirectoryRoutes = new Hono<{
-  Variables: AdminOrgVars & AuditCtxVars;
+  Variables: AdminVars & AuditCtxVars;
 }>();
 
-adminDirectoryRoutes.use('*', clerkAdminAuthMiddleware);
-adminDirectoryRoutes.use('*', requireAdminOrg('admin'));
+adminDirectoryRoutes.use('*', requireAdminUser('admin'));
 
 // ─── tenants ─────────────────────────────────────────────────────────────────
 
@@ -111,7 +106,7 @@ adminDirectoryRoutes.patch(
   '/tenants/:id',
   validate('json', patchTenantBody),
   async (c) => {
-    if (c.var.orgRole !== 'org:super_admin') {
+    if (c.var.adminRole !== 'super_admin') {
       return err(c, 403, 'forbidden', 'super_admin required to mutate tenants');
     }
     const id = c.req.param('id');

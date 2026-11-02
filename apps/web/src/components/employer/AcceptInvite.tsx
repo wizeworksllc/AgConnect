@@ -11,8 +11,8 @@ import { useActiveEmployer } from '@/lib/context/active-employer-context';
 
 type Props = { token: string; locale: string };
 
-// Accepting links the invite to whatever identity is signed in (Clerk
-// protects this route, so there always is one) — reusing an existing
+// Accepting links the invite to whatever identity is signed in (the session
+// gate in proxy.ts protects this route, so there always is one) — reusing an existing
 // worker account rather than ever creating a second one.
 export function AcceptInvite({ token, locale }: Props) {
     const t = useTranslations('employer.accept_invite');

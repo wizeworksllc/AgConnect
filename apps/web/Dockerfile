@@ -46,7 +46,6 @@ WORKDIR /repo
 # Next.js inlines NEXT_PUBLIC_* into the client bundle at build time, so these
 # have to be present here rather than being injected at K8s runtime. The deploy
 # workflow passes them as --build-arg from GitHub Actions secrets.
-ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
 ARG NEXT_PUBLIC_SENTRY_DSN=""
 ARG NEXT_PUBLIC_POSTHOG_KEY=""
 ARG NEXT_PUBLIC_MAPBOX_TOKEN=""
@@ -56,7 +55,6 @@ ARG SENTRY_RELEASE=""
 # prisma.config.ts requires DATABASE_URL + DIRECT_URL for codegen; the build
 # never connects, so dummy localhost values are fine.
 ENV NEXT_TELEMETRY_DISABLED=1 \
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY \
     NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN \
     NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY \
     NEXT_PUBLIC_MAPBOX_TOKEN=$NEXT_PUBLIC_MAPBOX_TOKEN \

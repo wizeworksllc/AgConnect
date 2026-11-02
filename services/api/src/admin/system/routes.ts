@@ -1,9 +1,5 @@
 import { Hono } from 'hono';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import { adminFlagsRoutes } from './flags.js';
 import { adminSystemJobsRoutes } from './jobs.js';
@@ -12,10 +8,9 @@ import { adminLookupsRoutes } from './lookups.js';
 import { adminAewrRoutes } from './aewr.js';
 import { adminRolesRoutes } from './roles.js';
 
-export const adminSystemRoutes = new Hono<{ Variables: AdminOrgVars & AuditCtxVars }>();
+export const adminSystemRoutes = new Hono<{ Variables: AdminVars & AuditCtxVars }>();
 
-adminSystemRoutes.use('*', clerkAdminAuthMiddleware);
-adminSystemRoutes.use('*', requireAdminOrg('admin'));
+adminSystemRoutes.use('*', requireAdminUser('admin'));
 
 adminSystemRoutes.route('/flags', adminFlagsRoutes);
 adminSystemRoutes.route('/jobs', adminSystemJobsRoutes);

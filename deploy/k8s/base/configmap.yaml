@@ -38,10 +38,10 @@ data:
   NEXT_PUBLIC_POSTHOG_HOST: "https://us.i.posthog.com"
   POSTHOG_HOST: "https://us.i.posthog.com"
   RESEND_FROM_EMAIL: "AGCONN <hello@agconn.com>"
-  NEXT_PUBLIC_CLERK_SIGN_IN_URL: "/en/sign-in"
-  NEXT_PUBLIC_CLERK_SIGN_UP_URL: "/en/sign-up"
-  NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL: "/en"
-  NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL: "/en"
+  # better-auth (services/api/src/auth). The session cookie lives on .agconn.com
+  # so agconn.com, admin.agconn.com and api.agconn.com all see it.
+  BETTER_AUTH_URL: "https://api.agconn.com"
+  AUTH_COOKIE_DOMAIN: "agconn.com"
   # TEMPORARY pre-launch test switch — disables the 9PM-7AM PT SMS quiet-hours
   # window so the sole tester isn't blocked mid-flow. Read by both api
   # (enqueue-time defer) and sms-worker (pre-send check) via isQuietHours().

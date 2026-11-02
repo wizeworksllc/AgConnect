@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "@agconn/db": "workspace:*",
-    "@agconn/schemas": "workspace:*",
-    "@clerk/backend": "^3.4.3"
+    "@agconn/schemas": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

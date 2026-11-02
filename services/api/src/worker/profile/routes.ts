@@ -4,6 +4,8 @@ import { County, Lang } from '@agconn/db';
 import { PatchProfileBody } from '@agconn/schemas';
 import { requireAuth, requireRole, type AuthVars } from '../../middleware/authContext.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
+import { authNameParts } from '../../auth/names.js';
+
 
 export const profileRoutes = new Hono<{ Variables: AuthVars & AuditCtxVars }>();
 
@@ -14,20 +16,12 @@ profileRoutes.get('/', async (c) => {
     const userId = c.var.userId;
     const user = await c.var.db.user.findUnique({ where: { id: userId } });
     if (!user) return err(c, 404, 'not_found');
-    // Auto-create a stub worker_profile prefilled from Clerk so the editor has
+    // Auto-create a stub worker_profile prefilled from the auth name so the editor has
     // somewhere to land. Workers shouldn't be gated on a separate "onboarding"
     // step — the apply flow does the same thing.
     let profile = await c.var.db.workerProfile.findUnique({ where: { id: userId } });
     if (!profile) {
-        let firstName = '';
-        let lastName = '';
-        try {
-            const cu = await c.get('clerk').users.getUser(userId);
-            firstName = cu.firstName ?? '';
-            lastName = cu.lastName ?? '';
-        } catch {
-            /* Clerk lookup is best-effort — proceed with empty names. */
-        }
+        const { firstName, lastName } = await authNameParts(userId);
         profile = await c.var.db.workerProfile.create({
             data: { id: userId, firstName, lastName },
         });

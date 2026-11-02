@@ -7,7 +7,7 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ??
   'http://localhost:3001';
 
-// No Clerk session — anonymous public-tenant browse for SEO.
+// No session — anonymous public-tenant browse for SEO.
 async function publicClient() {
   const locale = (await getLocale().catch(() => 'en')) as 'en' | 'es';
   return createApiClient({

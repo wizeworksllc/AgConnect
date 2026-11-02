@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useUser } from '@clerk/nextjs';
+import { useCurrentUser } from '@/lib/auth/use-current-user';
 import {
   useEmployerProfileSuspense,
   useDashboardStatsSuspense,
@@ -25,7 +25,7 @@ import { SkeletonCard } from '@/components/ui/skeleton';
 function DashboardInner() {
   const locale = useLocale();
   const t = useTranslations('employer.dashboard');
-  const { user } = useUser();
+  const { user } = useCurrentUser();
   const { data: profile } = useEmployerProfileSuspense();
   const { data: stats } = useDashboardStatsSuspense();
   const { data: jobs } = useEmployerJobsSuspense();

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 // Anonymous-only UI smoke for the /employer/crews surface. Authenticated flow
-// is gated on a Clerk session and is covered by the manual sign-off checklist
+// is gated on a session and is covered by the manual sign-off checklist
 // in docs/sign-off.
 
 test.describe('/employer/crews · anonymous redirect', () => {
@@ -18,7 +18,7 @@ test.describe('/employer/crews · anonymous redirect', () => {
   test('week query parameter survives the redirect', async ({ page }) => {
     await page.goto('/en/employer/crews?week=2026-06-01');
     await expect(page).toHaveURL(/sign-in/);
-    // Clerk preserves the original URL via redirect_url.
+    // proxy.ts preserves the original URL via redirect_url.
     await expect(page).toHaveURL(/employer%2Fcrews/);
     await expect(page).toHaveURL(/week%3D2026-06-01/);
   });

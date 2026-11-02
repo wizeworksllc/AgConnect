@@ -1,11 +1,7 @@
 import { Hono } from 'hono';
 import { ok, err, validate } from '@agconn/api-client/server';
 import { FORMAT_MIME, toCsv, toXlsx, type CsvCell } from '@agconn/reporting';
-import {
-  clerkAdminAuthMiddleware,
-  requireAdminOrg,
-  type AdminOrgVars,
-} from '../../middleware/adminClerkAuth.js';
+import { requireAdminUser, type AdminVars } from '../../middleware/adminAuth.js';
 import type { AuditCtxVars } from '../../middleware/audit.js';
 import {
   trainingReportQuery,
@@ -17,11 +13,10 @@ import {
 } from './training.js';
 
 export const adminTrainingReportRoutes = new Hono<{
-  Variables: AdminOrgVars & AuditCtxVars;
+  Variables: AdminVars & AuditCtxVars;
 }>();
 
-adminTrainingReportRoutes.use('*', clerkAdminAuthMiddleware);
-adminTrainingReportRoutes.use('*', requireAdminOrg('admin'));
+adminTrainingReportRoutes.use('*', requireAdminUser('admin'));
 
 adminTrainingReportRoutes.get(
   '/preview',

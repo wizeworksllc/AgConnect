@@ -1,7 +1,7 @@
 import { enqueueSms } from '@agconn/sms';
 import { dbClients, County } from '@agconn/db';
 import type { SkillSlug } from '@agconn/schemas';
-import { updateClerkUserName } from '@agconn/auth';
+import { updateAuthUserName } from '@agconn/auth';
 import { emitSystemAudit } from '../middleware/audit.js';
 import { completeOnboarding } from '../worker/onboarding/service.js';
 import { SYSTEM_TENANT_ID, enqueueOnboard, setOnboarding } from './twilio-optin.js';
@@ -82,7 +82,7 @@ async function completeSmsOnboarding(userId: string, draft: OnboardingDraft, ski
         resourceId: userId,
         metadata: { phase: 'sms_onboarding_complete', county: String(draft.county), status: result.status },
     });
-    await syncClerkName(userId, draft.firstName, draft.lastName);
+    await syncAuthName(userId, draft.firstName, draft.lastName);
     await enqueueSms({
         tenantId: SYSTEM_TENANT_ID,
         userId,
@@ -109,12 +109,12 @@ function saveSmsProfile(userId: string, draft: OnboardingDraft, skills: string[]
     });
 }
 
-// Clerk mirrors the name; a Clerk failure must not fail onboarding (WorkerProfile is the source of truth).
-async function syncClerkName(userId: string, firstName: string, lastName: string): Promise<void> {
+// auth_users mirrors the name; a failure must not fail onboarding (WorkerProfile is the source of truth).
+async function syncAuthName(userId: string, firstName: string, lastName: string): Promise<void> {
     try {
-        await updateClerkUserName(userId, { firstName, lastName });
+        await updateAuthUserName(userId, { firstName, lastName });
     } catch (e) {
-        console.error('[twilio] clerk name sync failed (non-fatal)', {
+        console.error('[twilio] auth name sync failed (non-fatal)', {
             userIdTail: userId.slice(-6),
             err: e instanceof Error ? e.message : String(e),
         });
@@ -122,7 +122,7 @@ async function syncClerkName(userId: string, firstName: string, lastName: string
             action: 'system.sms.dropped',
             resourceType: 'user',
             resourceId: userId,
-            metadata: { reason: 'clerk_name_sync_failed', phase: 'sms_onboarding_complete' },
+            metadata: { reason: 'auth_name_sync_failed', phase: 'sms_onboarding_complete' },
         }).catch(() => {});
     }
 }
