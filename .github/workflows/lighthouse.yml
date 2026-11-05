@@ -72,6 +72,25 @@ jobs:
       - name: Build apps/web
         run: pnpm --filter @agconn/web build
 
+      # A web pod with no translations fails its pages, so the audited pages need
+      # the API. These values exist only for this job and protect nothing real.
+      - name: Start the API
+        env:
+          PORT: "3001"
+          AUDIT_HMAC_KEY: lighthouse-ci-only-not-a-real-key-lighthouse-ci-only
+          AUDIT_HMAC_KEY_VERSION: "1"
+          BETTER_AUTH_SECRET: lighthouse-ci-only-not-a-real-secret-lighthouse-ci-only
+          BETTER_AUTH_URL: http://localhost:3001
+        run: |
+          pnpm --filter @agconn/api build
+          nohup pnpm --filter @agconn/api start > /tmp/api.log 2>&1 &
+          for _ in $(seq 1 30); do
+            curl -fsS "http://localhost:3001/v1/i18n/messages?locale=en" > /dev/null 2>&1 && exit 0
+            sleep 2
+          done
+          cat /tmp/api.log
+          exit 1
+
       - name: Run Lighthouse CI
         run: |
           pnpm dlx @lhci/cli@0.14.0 autorun
