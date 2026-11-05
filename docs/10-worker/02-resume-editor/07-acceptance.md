@@ -47,4 +47,4 @@
 - All add/edit/remove paths covered by tests.
 - Visual regression test fixtures captured for empty editor, fully-populated editor, edit-mode, preview-mode (EN + ES).
 - a11y check: Lighthouse a11y ≥ 95 on `/profile`.
-- Sentry tags every save failure with `field` for diagnosis.
+- WizeLens tags every save failure with `field` for diagnosis.

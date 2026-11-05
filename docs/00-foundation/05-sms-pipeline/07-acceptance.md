@@ -11,7 +11,7 @@
 - [ ] Twilio status callback updates `sms_log.status` and `deliveredAt` / `failedAt` correctly.
 - [ ] Twilio webhook signature failures return 401 and the row is not updated.
 - [ ] `singletonKey` (jobKey) prevents duplicate sends — re-enqueueing the same key is a no-op.
-- [ ] Failed sends retry 3× with backoff (30s, 5m, 30m). On exhaust, status = `failed_exhausted` and Sentry alert fires.
+- [ ] Failed sends retry 3× with backoff (30s, 5m, 30m). On exhaust, status = `failed_exhausted` and WizeLens alert fires.
 
 ## Non-functional
 
@@ -56,5 +56,5 @@
 - All templates in [06-messaging.md](06-messaging.md) implemented and reviewed.
 - Twilio Messaging Service configured with: Sender Pool, Inbound webhook, Status callback URL, default keyword auto-replies (STOP, HELP) enabled.
 - pg-boss `send-sms` worker deployed as its own Kubernetes Deployment with HPA configured.
-- Sentry alert configured: `sms.failed_exhausted` triggers PagerDuty.
+- WizeLens alert configured: `sms.failed_exhausted` triggers PagerDuty.
 - Admin runbook: how to bulk opt-out (e.g., emergency stop), how to inspect a delivery failure.

@@ -38,5 +38,5 @@
 ## Definition of done
 
 - All views tested.
-- Sentry tags every export.
+- WizeLens tags every export.
 - Admin runbook: how to debug an employer flagged for unusually low hire rate.

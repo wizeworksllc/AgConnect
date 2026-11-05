@@ -24,8 +24,6 @@ Real-Postgres job that:
 6. Runs `pnpm --filter @agconn/web i18n:check` against the seeded DB.
 7. Builds `packages/` then `apps/web` as a smoke check.
 
-Sentry source map upload is skipped on PR builds (`SENTRY_AUTH_TOKEN=""`).
-
 ## deploy.yml
 
 Two jobs.
@@ -39,7 +37,7 @@ Each leg:
 1. Federates to GCP via Workload Identity Federation (`google-github-actions/auth`).
 2. Configures docker for Artifact Registry.
 3. Builds and pushes with `cache-from`/`cache-to` GHA scope per image.
-4. `NEXT_PUBLIC_*` build-args are inlined into web/admin client bundles. `SENTRY_RELEASE=${{ github.sha }}` is passed as a build-arg and an env var so all SDKs tag events with the deploy commit.
+4. `NEXT_PUBLIC_*` build-args are inlined into web/admin client bundles.
 
 *Trivy CVE scan gate is deferred at MVP — see Phase 6 item 6.8 in [GAP-CLOSURE-PLAN.md](../../GAP-CLOSURE-PLAN.md). When re-enabled it slots in as step 5.*
 
@@ -89,7 +87,7 @@ Three-stage `node:22-bookworm-slim` shape. See `services/api/Dockerfile` as the 
 2. **build** — copy the full repo, generate the Prisma client, build `./packages/**`, then build the target.
 3. **runtime** — slim base, non-root `agconn` user (uid 1001), `CMD ["node", "<service>/dist/index.js"]`.
 
-Web and admin pass `NEXT_PUBLIC_*` as build-args so Next inlines them into the client bundle. `SENTRY_RELEASE` is both a build-arg (client bundle) and a runtime env (server SDK).
+Web and admin pass `NEXT_PUBLIC_*` as build-args so Next inlines them into the client bundle.
 
 ## Secrets in CI
 
@@ -99,7 +97,7 @@ GitHub repository secrets (see `actionsecrets.md` for the full list). Highlights
 - `FONTAWESOME_TOKEN` — passed as a buildkit secret, never inlined.
 - `DATABASE_URL`, `DIRECT_URL` — Supabase Postgres pooler + direct URLs.
 - Clerk web + Clerk admin keys (two separate Clerk instances).
-- Sentry DSNs (web + admin), `SENTRY_AUTH_TOKEN` for source map upload, `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_PROJECT_ADMIN`.
+- WizeLens ingest keys, one per app (`WIZELENS_KEY_WEB`, `WIZELENS_KEY_API`, and so on).
 - Stripe live keys + price IDs (5 tiers).
 - Twilio SID + token + messaging service SID + inbound number.
 - Resend API key + webhook secret.

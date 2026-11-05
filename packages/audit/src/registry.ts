@@ -3,7 +3,7 @@
 //   4 y  (1460)   — employment + recruitment records: CA Labor Code §1174(d)
 //   7 y  (2555)   — placement, billing, training, cert, FLC, tenant, admin:
 //                   composite of WIOA §116, 2 CFR §200.334, IRS §6001
-//   90 d          — error.unhandled (Sentry has the detail)
+//   90 d          — error.unhandled (WizeLens has the detail)
 // See docs/00-foundation/12-audit-log/02-data-model.md.
 
 type RegistryEntry = {

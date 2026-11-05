@@ -22,25 +22,27 @@ type RouteProps = { params: Promise<{ locale: Locale }> };
 export const dynamicParams = false;
 export const revalidate = 86400;
 
-const LAST_REVIEWED = '2026-05-09';
+const LAST_REVIEWED = '2026-11-04';
 
 interface Subprocessor {
     key: string;
     name: string;
     location: string;
-    dpaUrl: string;
+    termsUrl: string;
+    terms: 'dpa' | 'policy';
 }
 
 const SUBPROCESSORS: Subprocessor[] = [
-    { key: 'supabase', name: 'Supabase', location: 'United States', dpaUrl: 'https://supabase.com/legal/dpa' },
-    { key: 'gcp', name: 'Google Cloud Platform', location: 'us-west1 · Oregon, USA', dpaUrl: 'https://cloud.google.com/terms/data-processing-addendum' },
-    { key: 'cloudflare', name: 'Cloudflare', location: 'Global edge network', dpaUrl: 'https://www.cloudflare.com/cloudflare-customer-dpa/' },
-    { key: 'google_oauth', name: 'Google (OAuth sign-in)', location: 'Global', dpaUrl: 'https://policies.google.com/privacy' },
-    { key: 'twilio', name: 'Twilio', location: 'United States', dpaUrl: 'https://www.twilio.com/legal/data-protection-addendum' },
-    { key: 'resend', name: 'Resend', location: 'United States', dpaUrl: 'https://resend.com/legal/dpa' },
-    { key: 'stripe', name: 'Stripe', location: 'United States', dpaUrl: 'https://stripe.com/legal/dpa' },
-    { key: 'posthog', name: 'PostHog', location: 'United States · us.i.posthog.com', dpaUrl: 'https://posthog.com/dpa' },
-    { key: 'sentry', name: 'Sentry', location: 'United States', dpaUrl: 'https://sentry.io/legal/dpa/' },
+    { key: 'azure', name: 'Microsoft Azure', location: 'Central US · United States', terms: 'dpa', termsUrl: 'https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA' },
+    { key: 'cloudflare', name: 'Cloudflare', location: 'Global edge network', terms: 'dpa', termsUrl: 'https://www.cloudflare.com/cloudflare-customer-dpa/' },
+    { key: 'google_oauth', name: 'Google (OAuth sign-in)', location: 'Global', terms: 'policy', termsUrl: 'https://policies.google.com/privacy' },
+    { key: 'twilio', name: 'Twilio', location: 'United States', terms: 'dpa', termsUrl: 'https://www.twilio.com/legal/data-protection-addendum' },
+    { key: 'resend', name: 'Resend', location: 'United States', terms: 'dpa', termsUrl: 'https://resend.com/legal/dpa' },
+    { key: 'stripe', name: 'Stripe', location: 'United States', terms: 'dpa', termsUrl: 'https://stripe.com/legal/dpa' },
+    { key: 'posthog', name: 'PostHog', location: 'United States · us.i.posthog.com', terms: 'policy', termsUrl: 'https://posthog.com/privacy' },
+    { key: 'anthropic', name: 'Anthropic', location: 'Global', terms: 'dpa', termsUrl: 'https://www.anthropic.com/legal/data-processing-addendum' },
+    { key: 'mapbox', name: 'Mapbox', location: 'United States', terms: 'dpa', termsUrl: 'https://www.mapbox.com/legal/dpa' },
+    { key: 'wizelens', name: 'WizeLens', location: 'Central US · Azure, United States', terms: 'policy', termsUrl: 'https://wizelens.com/privacy' },
 ];
 
 const COMMITMENTS = [
@@ -137,12 +139,12 @@ export default async function SubprocessorsPage({ params }: RouteProps) {
                                 </div>
 
                                 <a
-                                    href={sp.dpaUrl}
+                                    href={sp.termsUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-primary inline-flex items-center gap-2 self-start font-sans text-sm font-semibold hover:underline"
                                 >
-                                    <span>{t('dpa_link_label')}</span>
+                                    <span>{t(sp.terms === 'dpa' ? 'dpa_link_label' : 'policy_link_label')}</span>
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-xs" />
                                 </a>
                             </li>

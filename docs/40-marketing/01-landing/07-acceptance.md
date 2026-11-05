@@ -70,7 +70,7 @@
 ## Privacy
 
 - [ ] Phone numbers entered into the Final CTA worker form are NOT stored if the user abandons before OTP — they exist only in Clerk's signin attempt, not our DB.
-- [ ] Waitlist phone numbers are stored only in `waitlist`, never logged in plain text in Sentry breadcrumbs.
+- [ ] Waitlist phone numbers are stored only in `waitlist`, never logged in plain text in WizeLens logs.
 - [ ] Impact Numbers tile suppression triggers when count < 25 (verified by integration test).
 
 ## Test scenarios

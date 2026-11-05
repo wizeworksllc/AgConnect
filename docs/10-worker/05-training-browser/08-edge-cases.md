@@ -75,7 +75,7 @@ Org marks completion; cert job fails (parser, blob upload, etc.).
 **Mitigation:**
 
 - pg-boss retries 3× with backoff.
-- After exhaust: Sentry alert; admin re-fires manually via `/admin/v1/enrollments/:id/regenerate-cert`.
+- After exhaust: WizeLens alert; admin re-fires manually via `/admin/v1/enrollments/:id/regenerate-cert`.
 - Worker doesn't see "Completed" until `cert_url` is set — defer the worker-visible status update until cert is ready.
 
 > **Inferred:** Worker UI can show "Completed — generating certificate…" briefly. If it takes > 5 minutes, show "Certificate processing — we'll text you when it's ready" and rely on the SMS to notify.

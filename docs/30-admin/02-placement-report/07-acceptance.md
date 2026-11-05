@@ -50,5 +50,5 @@
 - Action item completed: at least one CDFA / EDD contact has reviewed a sample CSV.
 - Field labels documented in a `WIOA_FIELDS.md` reference.
 - All filters tested.
-- Sentry tags every export with `rowCount`, `format`, `userId`.
+- WizeLens tags every export with `rowCount`, `format`, `userId`.
 - Admin runbook: how to re-generate a corrupted past report.

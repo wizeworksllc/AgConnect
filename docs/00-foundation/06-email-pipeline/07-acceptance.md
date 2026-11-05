@@ -57,5 +57,5 @@
 - DNS records (SPF, DKIM, DMARC) committed to infra repo and deployed.
 - Resend webhook secret stored in Azure Key Vault.
 - Email preview UI accessible via `pnpm --filter email preview`.
-- Sentry alert on `email.failed_exhausted` rate > 1/hour.
+- WizeLens alert on `email.failed_exhausted` rate > 1/hour.
 - Admin runbook: how to view a user's email log, how to manually suppress, how to lift a suppression after support ticket.

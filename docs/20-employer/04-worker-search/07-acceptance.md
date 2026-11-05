@@ -51,6 +51,6 @@
 ## Definition of done
 
 - All redaction defenses tested.
-- Search log rate alerts: > 100 searches/day per employer triggers Sentry warning (potential abuse).
+- Search log rate alerts: > 100 searches/day per employer triggers WizeLens warning (potential abuse).
 - Admin runbook: how to investigate a worker complaint about being contacted.
 - Privacy review: signed off on PII surface area.

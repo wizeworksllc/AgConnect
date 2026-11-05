@@ -31,14 +31,22 @@ export async function fetchMessages(
 
 const lastGood = new Map<string, Messages>();
 
-// A failed load falls back to the last good copy for this key (or {} on a cold start).
+// A failed load falls back to the last good copy for this key. With no copy yet
+// (a pod started while the api is down) it throws: the page fails and the /en
+// readiness probe keeps the pod out of traffic, instead of showing raw keys.
+// `next build` runs with no api and renders nothing for users, so it gets {}.
 export async function withLastGood(key: string, load: () => Promise<Messages>): Promise<Messages> {
     try {
         const messages = await load();
         lastGood.set(key, messages);
         return messages;
     } catch (e) {
-        console.error('[i18n] messages unavailable, serving the last good copy', e);
-        return lastGood.get(key) ?? {};
+        const copy = lastGood.get(key);
+        if (copy) {
+            console.error('[i18n] messages unavailable, serving the last good copy', e);
+            return copy;
+        }
+        if (process.env.NEXT_PHASE === 'phase-production-build') return {};
+        throw e;
     }
 }

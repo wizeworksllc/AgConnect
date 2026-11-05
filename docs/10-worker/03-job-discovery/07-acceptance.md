@@ -56,5 +56,5 @@
 - All filter combinations covered by integration tests.
 - `JobPosting` JSON-LD validated for top 5 sample jobs in CI.
 - Lighthouse SEO ≥ 95 on listing and detail.
-- Sentry tags every search query with anonymized filters for debugging dead-end searches.
+- WizeLens tags every search query with anonymized filters for debugging dead-end searches.
 - Admin runbook: how to inspect why a saved search isn't firing.

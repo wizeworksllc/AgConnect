@@ -55,5 +55,5 @@
 - All state transitions tested.
 - Drag-and-drop tested on Chrome desktop, Safari iOS, Chrome Android.
 - Keyboard-only kanban interaction works (a11y).
-- Sentry tags every transition with `from_status`, `to_status`, `actor_user_id`.
+- WizeLens tags every transition with `from_status`, `to_status`, `actor_user_id`.
 - Admin runbook: how to revert an accidental hire (admin endpoint, sends `metadata.silent` event).

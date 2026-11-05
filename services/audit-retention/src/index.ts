@@ -6,8 +6,6 @@
 // Connects with app.role = 'audit_purge'. RLS narrows the role's grant to
 // DELETE only.
 
-import './instrument.js';
-import * as Sentry from '@sentry/node';
 import {
     auditRegistry,
     canonicalize,
@@ -111,7 +109,5 @@ async function main(): Promise<void> {
 
 main().catch(async (e) => {
     console.error('[audit-retention] fatal', e);
-    Sentry.captureException(e);
-    await Sentry.flush(2000).catch(() => undefined);
     process.exit(1);
 });

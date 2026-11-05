@@ -40,4 +40,4 @@
 
 - All RLS scoping verified.
 - Mobile Safari + Android Chrome PDF preview tested (Safari often hides embed; fallback link works).
-- Sentry tags every cert-download with `enrollmentId` for usage analytics.
+- WizeLens tags every cert-download with `enrollmentId` for usage analytics.

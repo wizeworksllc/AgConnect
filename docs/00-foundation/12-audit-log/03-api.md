@@ -111,7 +111,7 @@ export async function writeAuditWithBreaker(c: Context, row: AuditRow) {
         }
     } catch (e) {
         breaker.consecutiveFailures += 1;
-        sentry.captureException(e, { level: 'fatal', tags: { audit_write: 'failed' } });
+        console.error('[audit] write failed', e);
         if (breaker.consecutiveFailures >= FAILURE_THRESHOLD) {
             transition('open');
             // best-effort fallback so business stays available
@@ -144,22 +144,22 @@ function transition(to: typeof breaker.state) {
     if (from === to) return;
     breaker.state = to;
     if (to === 'open') breaker.openedAt = Date.now();
-    sentry.captureMessage(`audit breaker ${from} → ${to}`, 'fatal');
+    console.error(`[audit] breaker ${from} → ${to}`);
 }
 ```
 
 Properties:
 
 - **Default behavior** (closed): a failed audit write fails the parent transaction (per invariant #5).
-- **Threshold trip** (closed → open): 5 consecutive failures within 30 s. Subsequent writes are queued locally (max 1,000 events; overflow drops with a fatal Sentry log).
+- **Threshold trip** (closed → open): 5 consecutive failures within 30 s. Subsequent writes are queued locally (max 1,000 events; overflow drops with an error log that WizeLens alerts on).
 - **Cooldown** (open): for 60 s, every audit write enqueues locally without attempting the DB. Business requests succeed.
 - **Probe** (open → half_open): after 60 s, the next write attempts the DB. Success → flush the queue and transition closed. Failure → re-open.
-- **Visibility:** every state transition pages on-call via Sentry `level: fatal`.
-- **Recovery emits a meta-event:** `system.audit.breaker.recovered` records the drained count so the gap is itself audited. The window in which writes were queued (and any drops) is recoverable from Sentry + this meta-event.
+- **Visibility:** every state transition pages on-call through a WizeLens alert.
+- **Recovery emits a meta-event:** `system.audit.breaker.recovered` records the drained count so the gap is itself audited. The window in which writes were queued (and any drops) is recoverable from WizeLens + this meta-event.
 
 This trades strict atomicity during a 60-second outage for availability — explicitly acceptable because the alternative is "AGCONN returns 500 to every user any time the audit table hiccups."
 
-> **Behavior under sustained outage (> 60 s with non-recovery):** the breaker keeps cycling open / half_open / open. Business requests stay available; queue overflow drops events at 1,000 with a fatal Sentry. On-call has 60 s of warning before any drop occurs.
+> **Behavior under sustained outage (> 60 s with non-recovery):** the breaker keeps cycling open / half_open / open. Business requests stay available; queue overflow drops events at 1,000 with an error log that WizeLens alerts on. On-call has 60 s of warning before any drop occurs.
 
 Domain handlers call it inline, in the same transaction as the business write:
 
@@ -201,7 +201,7 @@ Three classes of events emit automatically; domain handlers do not write them:
 
 ### From the global Hono `onError` ([11-app-shell/03-api.md](../11-app-shell/03-api.md))
 
-- `error.unhandled` — `outcome: 'failure'`, `metadata: { errorCode, route, method }`. Fires only after a thrown exception bubbles to the top handler. The correlation id ties the event to the user's request and to the Sentry breadcrumb.
+- `error.unhandled` — `outcome: 'failure'`, `metadata: { errorCode, route, method }`. Fires only after a thrown exception bubbles to the top handler. The correlation id ties the event to the user's request and to the WizeLens log.
 
 ### From background jobs
 
@@ -409,4 +409,4 @@ A "purged" audit event is itself written (under `system.audit.retention.purged`)
 
 `audit_write_failed` is the one error that does propagate to user requests — if the audit write fails, the business write rolls back and the user gets a 500. The alternative (let the business write succeed without an audit) violates invariant #1.
 
-> **Inferred:** Hard-failing the business request on audit failure. The competing pattern (best-effort audit, log to Sentry, let the request succeed) trades availability for compliance. We choose compliance because the audit log is a load-bearing system. Mitigation for availability is in [08-edge-cases.md](08-edge-cases.md).
+> **Inferred:** Hard-failing the business request on audit failure. The competing pattern (best-effort audit, log to WizeLens, let the request succeed) trades availability for compliance. We choose compliance because the audit log is a load-bearing system. Mitigation for availability is in [08-edge-cases.md](08-edge-cases.md).

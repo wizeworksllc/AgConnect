@@ -9,8 +9,8 @@ The default behavior: a failed audit write fails the parent business request, be
 - Default state: **closed**. Audit writes fail the business request on error (atomicity preserved).
 - After 5 consecutive failures within 30 s, the breaker opens. For the next 60 s, audit writes are queued locally; business requests succeed.
 - After 60 s the breaker probes; success closes it and drains the queue. Failure re-opens.
-- Every state transition pages on-call via Sentry `level: fatal`.
-- Queue overflow at 1,000 events drops with a fatal Sentry log.
+- Every state transition pages on-call through a WizeLens alert.
+- Queue overflow at 1,000 events drops with an error log that WizeLens alerts on.
 - Recovery emits `system.audit.breaker.recovered` with the drained count so the gap is itself auditable.
 
 **Other mitigations:**

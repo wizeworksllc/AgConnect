@@ -127,7 +127,7 @@ Translate this farm-job posting field from {from} to {to}. Keep the tone profess
 
 Response: `{ translation: string }`.
 
-Cost: ~$0.005 per translation. Logged to a `translation_log` table (out of scope for MVP — log to existing pg-boss/Sentry).
+Cost: ~$0.005 per translation. Logged to a `translation_log` table (out of scope for MVP — log to existing pg-boss/WizeLens).
 
 > **Inferred:** A simple Claude call is enough — no need for a translation pipeline package since use is small. If translation volume grows, extract to `packages/i18n-translate/` with caching.
 

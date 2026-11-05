@@ -34,7 +34,7 @@ write sms_log row (status: queued)
 - Opt-out (STOP) handling per US carrier rules
 - Delivery status webhooks → `sms_log` updates
 - Retry on transient failure (3× with backoff)
-- Sentry alerting on hard failure
+- WizeLens alerting on hard failure
 
 ## What this pipeline does NOT own
 
@@ -80,7 +80,7 @@ Out of scope:
 - 99% of SMS delivered within 30 seconds (excluding quiet-hours holds).
 - 100% of opted-out users see no further marketing SMS (transactional SMS to opted-out users is a hard fail in CI).
 - Zero SMS sent between 9 PM and 7 AM Pacific to a worker.
-- All template renders are pre-validated against schema; runtime template errors fail loudly in Sentry.
+- All template renders are pre-validated against schema; runtime template errors fail loudly in WizeLens.
 
 ## Dependencies
 

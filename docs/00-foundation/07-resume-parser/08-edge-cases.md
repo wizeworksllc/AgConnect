@@ -63,7 +63,7 @@ Resumes contain phone, email, full address, work history.
 
 - Anthropic enterprise data-retention is OFF for our account (per Anthropic data-handling addendum).
 - We do not log raw resume text in our own systems; only token counts.
-- Sentry breadcrumbs do not include resume text.
+- WizeLens logs do not include resume text.
 
 ## Worker uploads a resume that's not theirs
 

@@ -7,7 +7,7 @@
 > The repository secrets below are no longer read by any workflow.
 
 Set under **Settings → Secrets and variables → Actions** at the repo level (or
-under a `prod` GitHub Environment if you want to scope them later). Total: 33.
+under a `prod` GitHub Environment if you want to scope them later). Total: 28.
 
 The deploy workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml))
 fails loudly if any are missing — nothing is silently empty.
@@ -36,7 +36,7 @@ seed the `cloudflare-api-token` Secret in the `cert-manager` namespace.
 
 ---
 
-## C. App runtime secrets (28)
+## C. App runtime secrets (23)
 
 Injected into the `agconn-env` K8s Secret at deploy time. Rotation = redeploy.
 
@@ -81,16 +81,6 @@ Injected into the `agconn-env` K8s Secret at deploy time. Rotation = redeploy.
 | Name | Notes |
 |---|---|
 | `WAITLIST_TOKEN_SECRET` | `openssl rand -base64 48` |
-
-### Sentry — 5
-
-| Name | Notes |
-|---|---|
-| `SENTRY_DSN` | server-side |
-| `NEXT_PUBLIC_SENTRY_DSN` | client-side |
-| `SENTRY_AUTH_TOKEN` | build-time only; safe to drop if you skip source-map upload |
-| `SENTRY_ORG` | |
-| `SENTRY_PROJECT` | |
 
 ### PostHog — 2
 
@@ -164,5 +154,5 @@ gh secret set WIZELENS_KEY_API -R wizeworksllc/AgConnect   # paste the key when 
 |---|---:|
 | A — GCP infra auth | 3 |
 | B — Cloudflare | 2 |
-| C — App runtime | 28 |
-| **Total** | **33** |
+| C — App runtime | 23 |
+| **Total** | **28** |

@@ -1,6 +1,4 @@
-import './instrument.js';
 import { wizelensMiddleware } from './lib/wizelens.js';
-import * as Sentry from '@sentry/node';
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { logger } from 'hono/logger';
@@ -96,11 +94,6 @@ app.onError(
                 message: info.err instanceof Error ? info.err.message : String(info.err),
                 stack: info.err instanceof Error ? info.err.stack : undefined,
             });
-            if (info.status >= 500) {
-                Sentry.captureException(info.err, {
-                    tags: { correlationId: info.correlationId, status: String(info.status) },
-                });
-            }
         },
         onUnhandled: async ({ err: e, correlationId }) => {
             // Best-effort: never throw out of the audit emit so the caller still

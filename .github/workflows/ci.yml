@@ -118,5 +118,3 @@ jobs:
               run: pnpm --filter @agconn/web build
               env:
                   NEXT_TELEMETRY_DISABLED: "1"
-                  # Disable Sentry source map upload during PR builds.
-                  SENTRY_AUTH_TOKEN: ""

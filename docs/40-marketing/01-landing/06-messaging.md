@@ -58,6 +58,6 @@ Waitlist confirmation emails do NOT respect quiet hours (email is async, recipie
 
 ## Failure handling
 
-- Email enqueue failure → caught, logged in Sentry; the waitlist row already exists, so the user's intent is preserved.
+- Email enqueue failure → caught, logged in WizeLens; the waitlist row already exists, so the user's intent is preserved.
 - pg-boss retries 3× with backoff; on exhaust, manually re-fire via admin tool.
 - The waitlist endpoint always returns 200 to the user even if email enqueue fails — the row is the contract; the email is an additive courtesy.

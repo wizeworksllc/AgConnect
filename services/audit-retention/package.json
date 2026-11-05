@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@agconn/audit": "workspace:*",
-    "@agconn/db": "workspace:*",
-    "@sentry/node": "10.76.2"
+    "@agconn/db": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

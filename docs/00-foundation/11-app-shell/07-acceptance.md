@@ -94,4 +94,4 @@
 - A CI check validates the manifest, runs Lighthouse against the worker dashboard, and asserts thresholds.
 - The i18n parity check (`packages/i18n/scripts/check-parity.ts`) runs in CI and fails on missing keys in either locale.
 - The native Spanish reviewer has signed off on the `shell.*` namespace.
-- Sentry is wired so every `internal_error` and every client `<ErrorBoundary>` mount is captured with the correlation id and component stack.
+- WizeLens is wired so every `internal_error` and every client `<ErrorBoundary>` mount is captured with the correlation id and component stack.

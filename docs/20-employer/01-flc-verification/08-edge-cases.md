@@ -49,7 +49,7 @@ The data.gov dataset is updated monthly upstream. A registered FLC could be abse
 
 - `mspaVerifiedAt = null` does NOT block the FLC verified badge — the DLSE check is the primary signal.
 - The MSPA snapshot is shown on the public profile when present (with the housing/transport/driving auth flags) but not absent-shamed.
-- `mspa_sync_run.status = failed` triggers a Sentry alert; the prior dataset stays in place rather than being nuked.
+- `mspa_sync_run.status = failed` triggers a WizeLens alert; the prior dataset stays in place rather than being nuked.
 - The bulk sync refuses to ingest a parsed file with zero rows (parser regression guard).
 
 ## Re-verification cadence

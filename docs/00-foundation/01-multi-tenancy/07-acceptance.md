@@ -44,4 +44,4 @@
 - All RLS policies present on every tenant-scoped table — verified by a CI script that introspects `pg_policy` and asserts coverage.
 - A linter/Prisma generator script (`packages/db/scripts/check-tenant-id.ts`) fails the build if any new model is missing `tenantId` (allowlist for `Tenant`, `MigrationLog`).
 - Test coverage > 90% on `tenantMiddleware` and admin tenant CRUD.
-- Sentry breadcrumb on every tenant resolution (`tenantId`, `userRole`) for incident debugging.
+- WizeLens log on every tenant resolution (`tenantId`, `userRole`) for incident debugging.

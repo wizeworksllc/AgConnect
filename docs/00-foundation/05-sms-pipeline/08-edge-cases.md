@@ -10,7 +10,7 @@ Carrier registration approval takes 1–4 weeks. Without it, US carriers may fil
 
 Twilio's REST API is down or returns 5xx for an extended window.
 
-**Behavior:** pg-boss retries 3× with backoff. On exhaust, the job is marked `failed`, Sentry alerts. Messages are not lost — re-enqueue manually after recovery via admin tool.
+**Behavior:** pg-boss retries 3× with backoff. On exhaust, the job is marked `failed`, WizeLens alerts. Messages are not lost — re-enqueue manually after recovery via admin tool.
 
 > **Inferred:** Multi-provider failover (Twilio → MessageBird) is post-MVP. For MVP, accept Twilio as a single point of failure and rely on Twilio's own redundancy.
 
@@ -83,7 +83,7 @@ Twilio retries status callbacks on 5xx but eventually gives up.
 
 **Behavior:** `sms_log.status` may stay at `sent` instead of progressing to `delivered`. This is acceptable — `sent` means Twilio accepted the message. `delivered` is informational.
 
-**Mitigation:** Sentry alert if > 5% of `sent` rows lack a `delivered` or `failed` update within 24h.
+**Mitigation:** WizeLens alert if > 5% of `sent` rows lack a `delivered` or `failed` update within 24h.
 
 ## Privacy: SMS body in logs
 
@@ -92,7 +92,7 @@ Twilio retries status callbacks on 5xx but eventually gives up.
 **Mitigation:**
 
 - `sms_log` access is restricted by RLS to the user's own and admin.
-- Sentry breadcrumbs scrub `body` before reporting.
+- WizeLens logs scrub `body` before reporting.
 - Log retention 13 months, then archived/deleted.
 
 ## Locale switch mid-flow

@@ -191,7 +191,7 @@ The retention service has its own pg user with limited grants (DELETE on `audit_
 
 ## Allowed metadata keys per action
 
-Metadata is constrained by a server-side allowlist. The library refuses to write keys outside the allowlist for an action, replacing them with `"[unsanctioned]"` and emitting a Sentry warning.
+Metadata is constrained by a server-side allowlist. The library refuses to write keys outside the allowlist for an action, replacing them with `"[unsanctioned]"` and emitting a WizeLens warning.
 
 ```ts
 // packages/audit/src/registry.ts
@@ -387,7 +387,7 @@ export const auditRegistry = {
     },
     'error.unhandled': {
         resourceType: 'request',
-        retentionDays: 90,                        // Sentry has the detail; correlation only
+        retentionDays: 90,                        // WizeLens has the detail; correlation only
         metadata: ['errorCode', 'route', 'method'] as const,
     },
 } as const;
@@ -401,7 +401,7 @@ Each duration above is grounded in a binding obligation or a defensible industry
 
 | bucket | days  | actions                                                     | citation                                                                                          |
 | ------ | ----- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 90 d   | 90    | `error.unhandled`                                           | Sentry retains 90 d on our plan; the audit row is correlation glue only.                          |
+| 90 d   | 90    | `error.unhandled`                                           | WizeLens has the detail; the audit row is correlation glue only.                          |
 | 13 mo  | 395   | `auth.login`, `auth.logout`, `auth.failed_login`            | SOC-2 CC7.2 — security event YoY comparison window. Pattern-matches AWS / GCP / Azure SOC reports. |
 | 4 y    | 1460  | `worker.profile.*`, `worker.resume.*`, `job.posting.*`      | CA Labor Code §1174(d) — employer must keep employment + recruitment records 4 years.             |
 | 7 y    | 2555  | placement, billing, training, cert, FLC, tenant, admin, role | Composite of: WIOA §116 + 2 CFR §200.334 (federal grant records, 3 y post grant + safety margin); IRS §6001 (7 y for tax-relevant records); industry norm for security-significant insider-abuse investigation. |

@@ -30,7 +30,7 @@ Rules:
 - **`message`** is localized server-side using the `Accept-Language` header (which the client sets from the active locale — see [04-i18n](../04-i18n/)). The server falls back to English if the locale is missing.
 - **`fields`** is the only correct way to attach errors to specific form fields. Keys are dotted paths matching the request body shape (e.g., `"profile.email"`).
 - **`toast`** is a **hint**, not a hard requirement. The default is `'error'` for 5xx and `false` for 4xx (the form/page is expected to render the field/page error inline). Endpoints can override (e.g., a 4xx that should still toast: `toast: 'warning'`).
-- **`details`** is for the client log / Sentry breadcrumb only. Never render it.
+- **`details`** is for the client log / WizeLens log only. Never render it.
 
 Every successful response wraps payload in `data`:
 
@@ -142,7 +142,7 @@ api.onError((e, c) => {
 });
 ```
 
-The correlation id is also written to a Sentry breadcrumb and to the audit log (see [12-audit-log/03-api.md](../12-audit-log/03-api.md) — `error.unhandled` action).
+The correlation id is also written to a WizeLens log and to the audit log (see [12-audit-log/03-api.md](../12-audit-log/03-api.md) — `error.unhandled` action).
 
 ## Client API: `apiClient`
 
