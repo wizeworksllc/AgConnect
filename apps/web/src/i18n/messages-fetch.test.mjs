@@ -22,5 +22,17 @@ test('a failure after a success serves the last good copy', async () => {
   const good = { nav: { home: 'Inicio' } };
   assert.deepEqual(await withLastGood('es|global', async () => good), good);
   assert.deepEqual(await withLastGood('es|global', async () => { throw new Error('down'); }), good);
-  assert.deepEqual(await withLastGood('en|global', async () => { throw new Error('down'); }), {});
+});
+
+test('a failure with no good copy throws, so a cold pod never shows raw keys', async () => {
+  await assert.rejects(withLastGood('en|cold', async () => { throw new Error('down'); }), /down/);
+});
+
+test('next build has no api, so a failure with no good copy gives an empty tree', async () => {
+  process.env.NEXT_PHASE = 'phase-production-build';
+  try {
+    assert.deepEqual(await withLastGood('en|build', async () => { throw new Error('down'); }), {});
+  } finally {
+    delete process.env.NEXT_PHASE;
+  }
 });
