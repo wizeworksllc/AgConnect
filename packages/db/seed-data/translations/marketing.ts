@@ -214,10 +214,10 @@ export const marketing: TranslationBundle = {
         es: "Cambios de subprocesadores",
     },
     "impact_page.transparency.subprocessors.body": {
-        en: "Adds, removes, and replacements among the infrastructure providers that touch your data. The current list and the standing commitments for any change are at /subprocessors. To date: no subprocessors added, removed, or replaced since launch.",
-        es: "Adiciones, remociones y reemplazos entre los proveedores de infraestructura que tocan tus datos. La lista actual y los compromisos permanentes para cualquier cambio están en /subprocessors. Hasta hoy: ningún subprocesador agregado, removido ni reemplazado desde el lanzamiento.",
+        en: "Adds, removes, and replacements among the infrastructure providers that touch your data. The current list and the standing commitments for any change are at /subprocessors. Changes to date: Microsoft Azure replaced Google Cloud and Supabase; WizeLens replaced Sentry; Anthropic and Mapbox were added to the list.",
+        es: "Adiciones, remociones y reemplazos entre los proveedores de infraestructura que tocan tus datos. La lista actual y los compromisos permanentes para cualquier cambio están en /subprocessors. Cambios hasta hoy: Microsoft Azure reemplazó a Google Cloud y Supabase; WizeLens reemplazó a Sentry; Anthropic y Mapbox se agregaron a la lista.",
     },
-    "impact_page.transparency.subprocessors.value": { en: "0 changes since launch", es: "0 cambios desde el lanzamiento" },
+    "impact_page.transparency.subprocessors.value": { en: "Last change: November 2026", es: "Último cambio: noviembre de 2026" },
     "impact_page.transparency.actions.title": {
         en: "Account actions",
         es: "Acciones sobre cuentas",
@@ -1125,8 +1125,8 @@ export const marketing: TranslationBundle = {
         es: "Usamos tus datos para: (1) emparejar trabajadores con trabajos y programas de capacitación en su área; (2) enviar notificaciones transaccionales sobre tu cuenta (códigos de inicio de sesión, estado de aplicación, emisión de certificados, recibos de facturación) y las alertas de SMS, correo y push a las que te suscribes; (3) generar certificados tras completar capacitación; (4) verificar licencias FLC de empleadores contra registros estatales; (5) detectar y prevenir fraude, abuso e incidentes de seguridad; (6) producir reportes agregados requeridos por subvenciones (sin identificación individual); (7) mejorar la plataforma mediante analítica de producto agregada. Eso es todo. No usamos tus datos para publicidad, perfilado publicitario ni para entrenar modelos de IA de terceros.",
     },
     "privacy.share.body": {
-        en: "We share your data with: (1) employers — only when you apply to their job, share your skills wallet, or accept their hiring outreach; (2) training organizations — only when you enroll in their program; (3) infrastructure subprocessors that operate the platform on our behalf under written data processing agreements: Supabase (Postgres database and object storage, United States), Google Cloud Platform (application hosting via Google Kubernetes Engine, us-west1 region), Cloudflare (CDN, DNS, and DDoS protection — receives IP address and request metadata), Twilio (SMS delivery), Resend (transactional email), Stripe (employer billing only — workers never enter payment details), PostHog (product analytics — IP, device, and event data; you can opt out from your account settings), Sentry (application error diagnostics — IP, user agent, and error context); (4) law enforcement or other government authorities — only in response to a valid court order, subpoena, or warrant, and we publish an annual transparency report summarizing requests received. We never sell, rent, trade, or share your personal information for cross-context behavioral advertising. We never share with data brokers. We never share with U.S. Immigration and Customs Enforcement (ICE) or U.S. Customs and Border Protection (CBP) absent a judicial warrant signed by a judge.",
-        es: "Compartimos tus datos con: (1) empleadores — solo cuando aplicas a su trabajo, compartes tu cartera de habilidades o aceptas su oferta de contratación; (2) organizaciones de capacitación — solo cuando te inscribes en su programa; (3) subprocesadores de infraestructura que operan la plataforma en nuestro nombre bajo acuerdos escritos de procesamiento de datos: Supabase (base de datos Postgres y almacenamiento de objetos, Estados Unidos), Google Cloud Platform (alojamiento de la aplicación vía Google Kubernetes Engine, región us-west1), Cloudflare (CDN, DNS y protección DDoS — recibe dirección IP y metadatos de solicitud), Twilio (envío de SMS), Resend (correo transaccional), Stripe (solo facturación de empleadores — los trabajadores nunca ingresan datos de pago), PostHog (analítica de producto — IP, dispositivo y eventos; puedes excluirte desde la configuración de tu cuenta), Sentry (diagnóstico de errores de la aplicación — IP, agente de usuario y contexto del error); (4) autoridades policiales u otras autoridades gubernamentales — solo en respuesta a una orden judicial válida, citación o mandamiento, y publicamos un reporte anual de transparencia que resume las solicitudes recibidas. Nunca vendemos, alquilamos, intercambiamos ni compartimos tu información personal para publicidad conductual entre contextos. Nunca compartimos con corredores de datos. Nunca compartimos con el Servicio de Inmigración y Control de Aduanas (ICE) ni con Aduanas y Protección Fronteriza (CBP) de EE. UU. sin una orden judicial firmada por un juez.",
+        en: "We share your data with: (1) employers — only when you apply to their job, share your skills wallet, or accept their hiring outreach; (2) training organizations — only when you enroll in their program; (3) infrastructure subprocessors that operate the platform on our behalf under written terms: Microsoft Azure (application hosting, Postgres database, and object storage, Central US region), Cloudflare (CDN, DNS, and DDoS protection — receives IP address and request metadata), Twilio (SMS delivery), Resend (transactional email), Stripe (employer billing only — workers never enter payment details), PostHog (product analytics — IP, device, and event data; you can opt out from your account settings), Google (sign-in, only if you choose it — email, name, and Google account ID), Anthropic (resume parsing — resume contents), Mapbox (address search and maps — typed address, IP, and browser data), WizeLens, operated by WizeWorks LLC (application performance and error diagnostics — IP, user agent, user ID, request details, and error context); (4) law enforcement or other government authorities — only in response to a valid court order, subpoena, or warrant, and we publish an annual transparency report summarizing requests received. We never sell, rent, trade, or share your personal information for cross-context behavioral advertising. We never share with data brokers. We never share with U.S. Immigration and Customs Enforcement (ICE) or U.S. Customs and Border Protection (CBP) absent a judicial warrant signed by a judge.",
+        es: "Compartimos tus datos con: (1) empleadores — solo cuando aplicas a su trabajo, compartes tu cartera de habilidades o aceptas su oferta de contratación; (2) organizaciones de capacitación — solo cuando te inscribes en su programa; (3) subprocesadores de infraestructura que operan la plataforma en nuestro nombre bajo términos por escrito: Microsoft Azure (alojamiento de la aplicación, base de datos Postgres y almacenamiento de objetos, región Central US), Cloudflare (CDN, DNS y protección DDoS — recibe dirección IP y metadatos de solicitud), Twilio (envío de SMS), Resend (correo transaccional), Stripe (solo facturación de empleadores — los trabajadores nunca ingresan datos de pago), PostHog (analítica de producto — IP, dispositivo y eventos; puedes excluirte desde la configuración de tu cuenta), Google (inicio de sesión, solo si lo eliges — correo, nombre e ID de cuenta de Google), Anthropic (análisis de currículums — contenido del currículum), Mapbox (búsqueda de direcciones y mapas — dirección escrita, IP y datos del navegador), WizeLens, operado por WizeWorks LLC (diagnóstico de rendimiento y errores de la aplicación — IP, agente de usuario, ID de usuario, detalles de la solicitud y contexto del error); (4) autoridades policiales u otras autoridades gubernamentales — solo en respuesta a una orden judicial válida, citación o mandamiento, y publicamos un reporte anual de transparencia que resume las solicitudes recibidas. Nunca vendemos, alquilamos, intercambiamos ni compartimos tu información personal para publicidad conductual entre contextos. Nunca compartimos con corredores de datos. Nunca compartimos con el Servicio de Inmigración y Control de Aduanas (ICE) ni con Aduanas y Protección Fronteriza (CBP) de EE. UU. sin una orden judicial firmada por un juez.",
     },
     "privacy.cookies.body": {
         en: "We use cookies and local storage for three purposes only: (1) strictly necessary — keeping you signed in, remembering your language preference, and protecting against cross-site request forgery; you cannot disable these without breaking the platform; (2) security — Cloudflare bot management and rate limiting that protect the service from abuse; (3) product analytics — PostHog, used to understand which features are used and which are broken so we can improve them. Analytics cookies can be turned off from your account settings or by sending the Global Privacy Control (GPC) signal; we honor GPC. We do not use advertising, retargeting, or cross-site tracking cookies. We do not use Google Analytics, Meta Pixel, or any third-party advertising tag.",
@@ -1137,8 +1137,8 @@ export const marketing: TranslationBundle = {
         es: "Cuentas activas: datos guardados durante la vida de la cuenta. Cuentas eliminadas: removidas en menos de 30 días, excepto donde la retención es legalmente requerida (registros fiscales 7 años, registro de auditoría 7 años por la política de Audit Log). Cuentas inactivas (sin inicio de sesión por 24 meses): te escribimos, luego eliminamos después de 30 días más. Los respaldos que contienen tus datos se rotan y sobrescriben en un ciclo de 35 días. Las estadísticas agregadas y desidentificadas derivadas de tus datos pueden conservarse indefinidamente para reportes de subvenciones e investigación de la plataforma.",
     },
     "privacy.security.body": {
-        en: "Your data is stored in Supabase (Postgres database and object storage) in the United States, and processed on Google Cloud Platform in the us-west1 region (Oregon). Production data is encrypted in transit (TLS 1.2 or higher) and at rest (AES-256). Database access is row-level isolated by tenant; staff access is logged, role-based, and limited to operational necessity. We follow OWASP guidelines for application security, run automated dependency vulnerability scanning, and require multi-factor authentication for all administrative access. No system is perfectly secure, and no transmission over the internet is guaranteed safe. If we discover a security incident affecting your personal information, we will notify affected California residents in accordance with California Civil Code §1798.82 and notify other users without unreasonable delay, by email, SMS, or in-product notice as appropriate.",
-        es: "Tus datos se almacenan en Supabase (base de datos Postgres y almacenamiento de objetos) en Estados Unidos, y se procesan en Google Cloud Platform en la región us-west1 (Oregón). Los datos de producción se cifran en tránsito (TLS 1.2 o superior) y en reposo (AES-256). El acceso a la base de datos está aislado a nivel de fila por inquilino; el acceso del personal se registra, se basa en roles y se limita a lo operativamente necesario. Seguimos las pautas OWASP para seguridad de aplicaciones, ejecutamos escaneo automatizado de vulnerabilidades en dependencias y requerimos autenticación multifactor para todo acceso administrativo. Ningún sistema es perfectamente seguro, y ninguna transmisión por internet es garantizada como segura. Si descubrimos un incidente de seguridad que afecte tu información personal, notificaremos a los residentes de California afectados según el Código Civil de California §1798.82 y notificaremos a otros usuarios sin demora indebida, por correo, SMS o aviso en el producto según corresponda.",
+        en: "Your data is stored and processed on Microsoft Azure in the Central US region (United States), in a Postgres database and object storage. Production data is encrypted in transit (TLS 1.2 or higher) and at rest (AES-256). Database access is row-level isolated by tenant; staff access is logged, role-based, and limited to operational necessity. We follow OWASP guidelines for application security, run automated dependency vulnerability scanning, and require multi-factor authentication for all administrative access. No system is perfectly secure, and no transmission over the internet is guaranteed safe. If we discover a security incident affecting your personal information, we will notify affected California residents in accordance with California Civil Code §1798.82 and notify other users without unreasonable delay, by email, SMS, or in-product notice as appropriate.",
+        es: "Tus datos se almacenan y se procesan en Microsoft Azure en la región Central US (Estados Unidos), en una base de datos Postgres y almacenamiento de objetos. Los datos de producción se cifran en tránsito (TLS 1.2 o superior) y en reposo (AES-256). El acceso a la base de datos está aislado a nivel de fila por inquilino; el acceso del personal se registra, se basa en roles y se limita a lo operativamente necesario. Seguimos las pautas OWASP para seguridad de aplicaciones, ejecutamos escaneo automatizado de vulnerabilidades en dependencias y requerimos autenticación multifactor para todo acceso administrativo. Ningún sistema es perfectamente seguro, y ninguna transmisión por internet es garantizada como segura. Si descubrimos un incidente de seguridad que afecte tu información personal, notificaremos a los residentes de California afectados según el Código Civil de California §1798.82 y notificaremos a otros usuarios sin demora indebida, por correo, SMS o aviso en el producto según corresponda.",
     },
     "privacy.children.body": {
         en: "AGCONN is for adults. You must be 18 or older to create an account. We do not knowingly collect personal information from children under 13, and the platform is not directed at children. If you are a parent or guardian and believe your child has provided us with personal information, contact privacy@agconn.com and we will delete it.",
@@ -1236,13 +1236,13 @@ export const marketing: TranslationBundle = {
         es: "Quién más toca tus datos.",
     },
     "subprocessors.intro": {
-        en: "AGCONN relies on a small set of infrastructure providers to operate the platform. Each one has signed a written data processing agreement, sees only the data needed for its role, and is named here so you can audit the chain end to end. This page is the single source of truth — when it changes, the privacy policy is updated to match.",
-        es: "AGCONN depende de un conjunto pequeño de proveedores de infraestructura para operar la plataforma. Cada uno ha firmado un acuerdo de procesamiento de datos por escrito, ve únicamente los datos necesarios para su función y aparece aquí para que puedas auditar la cadena de extremo a extremo. Esta página es la fuente única de verdad — cuando cambia, la política de privacidad se actualiza para coincidir.",
+        en: "AGCONN relies on a small set of infrastructure providers to operate the platform. Each one works under written terms, sees only the data needed for its role, and is named here so you can audit the chain end to end. This page is the single source of truth — when it changes, the privacy policy is updated to match.",
+        es: "AGCONN depende de un conjunto pequeño de proveedores de infraestructura para operar la plataforma. Cada uno trabaja bajo términos por escrito, ve únicamente los datos necesarios para su función y aparece aquí para que puedas auditar la cadena de extremo a extremo. Esta página es la fuente única de verdad — cuando cambia, la política de privacidad se actualiza para coincidir.",
     },
     "subprocessors.meta.title": { en: "Subprocessors — AGCONN", es: "Subprocesadores — AGCONN" },
     "subprocessors.meta.description": {
-        en: "Every infrastructure provider AGCONN shares data with: name, purpose, data category, location, and link to its data processing agreement.",
-        es: "Cada proveedor de infraestructura con quien AGCONN comparte datos: nombre, propósito, categoría de datos, ubicación y enlace a su acuerdo de procesamiento de datos.",
+        en: "Every infrastructure provider AGCONN shares data with: name, purpose, data category, location, and link to the terms that apply.",
+        es: "Cada proveedor de infraestructura con quien AGCONN comparte datos: nombre, propósito, categoría de datos, ubicación y enlace a los términos que aplican.",
     },
     "subprocessors.last_reviewed_label": { en: "Last reviewed", es: "Última revisión" },
     "subprocessors.table.col.name": { en: "Provider", es: "Proveedor" },
@@ -1251,22 +1251,15 @@ export const marketing: TranslationBundle = {
     "subprocessors.table.col.location": { en: "Location", es: "Ubicación" },
     "subprocessors.table.col.dpa": { en: "Agreement", es: "Acuerdo" },
     "subprocessors.dpa_link_label": { en: "View DPA", es: "Ver acuerdo" },
+    "subprocessors.policy_link_label": { en: "View policy", es: "Ver política" },
 
-    "subprocessors.row.supabase.purpose": {
-        en: "Postgres database and object storage — the system of record for every account, job posting, application, certificate, and uploaded file.",
-        es: "Base de datos Postgres y almacenamiento de objetos — el registro central de cada cuenta, publicación de trabajo, aplicación, certificado y archivo subido.",
+    "subprocessors.row.azure.purpose": {
+        en: "Application hosting and data storage — runs the AGCONN web app, API, and background workers on Azure Kubernetes Service, and holds the Postgres database and file storage: the system of record for every account, job posting, application, certificate, and uploaded file.",
+        es: "Alojamiento de la aplicación y almacenamiento de datos — ejecuta la app web, API y trabajadores en segundo plano de AGCONN en Azure Kubernetes Service, y guarda la base de datos Postgres y el almacenamiento de archivos: el registro central de cada cuenta, publicación de trabajo, aplicación, certificado y archivo subido.",
     },
-    "subprocessors.row.supabase.data": {
-        en: "All application data, including resumes, certificates, and identity records",
-        es: "Todos los datos de la aplicación, incluyendo currículums, certificados y registros de identidad",
-    },
-    "subprocessors.row.gcp.purpose": {
-        en: "Application hosting — runs the AGCONN web app, API, and background workers on Google Kubernetes Engine, with container images stored in Artifact Registry.",
-        es: "Alojamiento de la aplicación — ejecuta la app web, API y trabajadores en segundo plano de AGCONN en Google Kubernetes Engine, con imágenes de contenedor almacenadas en Artifact Registry.",
-    },
-    "subprocessors.row.gcp.data": {
-        en: "App runtime traffic and logs (transient); IP and request metadata",
-        es: "Tráfico y registros del tiempo de ejecución de la app (transitorio); IP y metadatos de solicitud",
+    "subprocessors.row.azure.data": {
+        en: "All application data, including resumes, certificates, and identity records; app traffic and logs; IP and request metadata",
+        es: "Todos los datos de la aplicación, incluyendo currículums, certificados y registros de identidad; tráfico y registros de la app; IP y metadatos de solicitud",
     },
     "subprocessors.row.cloudflare.purpose": {
         en: "Content delivery network, DNS, TLS termination, bot management, and DDoS protection — every visitor's request flows through Cloudflare before reaching the origin.",
@@ -1277,8 +1270,8 @@ export const marketing: TranslationBundle = {
         es: "Dirección IP, metadatos TLS, URL y encabezados de solicitud, señales de bots/amenazas",
     },
     "subprocessors.row.google_oauth.purpose": {
-        en: "Google sign-in (OAuth 2.0) — used only when an employer or admin chooses to sign in with Google instead of email or phone.",
-        es: "Inicio de sesión con Google (OAuth 2.0) — usado únicamente cuando un empleador o administrador elige iniciar sesión con Google en lugar de correo o teléfono.",
+        en: "Google sign-in (OAuth 2.0) — used only when someone chooses to sign in with Google instead of email or phone.",
+        es: "Inicio de sesión con Google (OAuth 2.0) — usado únicamente cuando alguien elige iniciar sesión con Google en lugar de correo o teléfono.",
     },
     "subprocessors.row.google_oauth.data": {
         en: "Email address, name, and Google account ID. We do not request access to contacts, calendar, or drive.",
@@ -1316,13 +1309,29 @@ export const marketing: TranslationBundle = {
         en: "IP address, device and browser data, page-view events, custom feature events (opt-in only)",
         es: "Dirección IP, datos de dispositivo y navegador, eventos de vista de página, eventos personalizados de funciones (solo con opt-in)",
     },
-    "subprocessors.row.sentry.purpose": {
-        en: "Application error diagnostics — captures unhandled exceptions and performance traces so engineers can fix bugs.",
-        es: "Diagnóstico de errores de la aplicación — captura excepciones no manejadas y trazas de rendimiento para que los ingenieros puedan arreglar errores.",
+    "subprocessors.row.anthropic.purpose": {
+        en: "Resume parsing — reads the resume a worker uploads and turns it into structured profile fields.",
+        es: "Análisis de currículums — lee el currículum que sube un trabajador y lo convierte en campos estructurados del perfil.",
     },
-    "subprocessors.row.sentry.data": {
-        en: "IP address, user agent, error stack trace, request URL and breadcrumbs (sensitive fields scrubbed)",
-        es: "Dirección IP, agente de usuario, stack trace del error, URL de solicitud y breadcrumbs (campos sensibles depurados)",
+    "subprocessors.row.anthropic.data": {
+        en: "Resume contents (name, contact details, work history)",
+        es: "Contenido del currículum (nombre, datos de contacto, historial laboral)",
+    },
+    "subprocessors.row.mapbox.purpose": {
+        en: "Address search and maps — helps employers enter a work site address and shows its location on a map.",
+        es: "Búsqueda de direcciones y mapas — ayuda a los empleadores a ingresar la dirección de un lugar de trabajo y muestra su ubicación en un mapa.",
+    },
+    "subprocessors.row.mapbox.data": {
+        en: "Typed address or map location, IP address, and browser data",
+        es: "Dirección escrita o ubicación en el mapa, dirección IP y datos del navegador",
+    },
+    "subprocessors.row.wizelens.purpose": {
+        en: "Application performance and error diagnostics — records request traces, logs, and unhandled errors so engineers can find and fix bugs. Operated by WizeWorks LLC.",
+        es: "Diagnóstico de rendimiento y errores de la aplicación — registra trazas de solicitudes, registros y errores no manejados para que los ingenieros puedan encontrar y arreglar fallas. Operado por WizeWorks LLC.",
+    },
+    "subprocessors.row.wizelens.data": {
+        en: "IP address, user agent, user ID, request URL and timing, error stack traces, and log lines (passwords, tokens, and card numbers are redacted before storage)",
+        es: "Dirección IP, agente de usuario, ID de usuario, URL y tiempos de solicitud, stack trace del error y líneas de registro (contraseñas, tokens y números de tarjeta se ocultan antes de guardarse)",
     },
 
     "subprocessors.commitments.headline": {
@@ -1333,10 +1342,10 @@ export const marketing: TranslationBundle = {
         en: "These rules apply to every subprocessor on this list, present and future.",
         es: "Estas reglas aplican a cada subprocesador en esta lista, presente y futuro.",
     },
-    "subprocessors.commitments.dpa.title": { en: "Written DPA before any data flows", es: "DPA por escrito antes de cualquier flujo de datos" },
+    "subprocessors.commitments.dpa.title": { en: "Written terms before any data flows", es: "Términos por escrito antes de cualquier flujo de datos" },
     "subprocessors.commitments.dpa.body": {
-        en: "Every provider on this list has executed a data processing agreement that obligates them to process AGCONN data only on our instructions, apply industry-standard security, support data-subject requests, and notify us of any incident.",
-        es: "Cada proveedor en esta lista ha firmado un acuerdo de procesamiento de datos que los obliga a procesar datos de AGCONN solo bajo nuestras instrucciones, aplicar seguridad estándar de la industria, apoyar solicitudes de los titulares de los datos y notificarnos de cualquier incidente.",
+        en: "Every provider on this list works under written terms, and each entry links to the terms that apply. A data processing agreement obligates the provider to process AGCONN data only on our instructions, apply industry-standard security, support data-subject requests, and notify us of any incident. Where an entry links to a policy, that provider's published privacy policy applies.",
+        es: "Cada proveedor en esta lista trabaja bajo términos por escrito, y cada entrada enlaza a los términos que aplican. Un acuerdo de procesamiento de datos obliga al proveedor a procesar datos de AGCONN solo bajo nuestras instrucciones, aplicar seguridad estándar de la industria, apoyar solicitudes de los titulares de los datos y notificarnos de cualquier incidente. Cuando una entrada enlaza a una política, aplica la política de privacidad publicada de ese proveedor.",
     },
     "subprocessors.commitments.scope.title": { en: "Minimum necessary access", es: "Acceso mínimo necesario" },
     "subprocessors.commitments.scope.body": {
