@@ -1,5 +1,4 @@
 import type { NextConfig } from 'next';
-import { withSentryConfig } from '@sentry/nextjs';
 import { SECURITY_HEADERS } from './src/lib/security-headers';
 
 const nextConfig: NextConfig = {
@@ -17,8 +16,7 @@ const nextConfig: NextConfig = {
   // packages before `next build` via `pnpm --filter "@agconn/admin^..." build`.
   // The webpack() block below is preserved for explicit `next build --webpack`
   // runs only; under Turbopack it is ignored. Having any `turbopack` key here
-  // also satisfies Next 16's "webpack config but no turbopack config" check,
-  // which fires when `withSentryConfig` is skipped (no DSN).
+  // also satisfies Next 16's "webpack config but no turbopack config" check.
   turbopack: {},
   webpack(config) {
     config.resolve.conditionNames = ['source', ...(config.resolve.conditionNames ?? [])];
@@ -40,23 +38,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Sentry is opt-in. Without a DSN there's nothing to report to, so skip the
-// wrapper entirely — that avoids the source-map upload step looking for an
-// auth token and emitting warnings (or, in some plugin versions, failing the
-// build). Set NEXT_PUBLIC_SENTRY_DSN_ADMIN to enable.
-const sentryDsn = process.env.NEXT_PUBLIC_SENTRY_DSN_ADMIN;
-
-export default sentryDsn
-  ? withSentryConfig(nextConfig, {
-      org: process.env.SENTRY_ORG,
-      project: process.env.SENTRY_PROJECT_ADMIN,
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-      release: process.env.SENTRY_RELEASE
-        ? { name: process.env.SENTRY_RELEASE }
-        : undefined,
-      widenClientFileUpload: true,
-      tunnelRoute: '/monitoring',
-      silent: !process.env.CI,
-      disableLogger: true,
-    })
-  : nextConfig;
+export default nextConfig;

@@ -170,4 +170,4 @@ twilioWebhookRouter.post('/inbound', async (c) => {
 | `template_not_found` | 500 | (internal) — template name not in dictionary |
 | `interpolation_failed` | 500 | required var missing in template render |
 
-These last two should never reach a client; they fail the pg-boss job with a Sentry alert.
+These last two should never reach a client; they fail the pg-boss job with a WizeLens alert.

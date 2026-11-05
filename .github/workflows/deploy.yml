@@ -113,8 +113,7 @@ jobs:
         run: |
           set -euo pipefail
           required=(FONTAWESOME_TOKEN)
-          optional=(NEXT_PUBLIC_SENTRY_DSN NEXT_PUBLIC_SENTRY_DSN_ADMIN
-                    NEXT_PUBLIC_POSTHOG_KEY NEXT_PUBLIC_MAPBOX_TOKEN)
+          optional=(NEXT_PUBLIC_POSTHOG_KEY NEXT_PUBLIC_MAPBOX_TOKEN)
           missing=()
           for name in "${required[@]}" "${optional[@]}"; do
             if value=$(az keyvault secret show --vault-name "$VAULT" --name "${name//_/-}" \
@@ -159,13 +158,10 @@ jobs:
           build-args: |
             NODE_VERSION=22.12.0
             PNPM_VERSION=10.9.0
-            NEXT_PUBLIC_SENTRY_DSN=${{ steps.kv.outputs.NEXT_PUBLIC_SENTRY_DSN }}
             NEXT_PUBLIC_POSTHOG_KEY=${{ steps.kv.outputs.NEXT_PUBLIC_POSTHOG_KEY }}
             NEXT_PUBLIC_MAPBOX_TOKEN=${{ steps.kv.outputs.NEXT_PUBLIC_MAPBOX_TOKEN }}
             NEXT_PUBLIC_API_BASE_URL=https://api.agconn.com
             NEXT_PUBLIC_ADMIN_URL=https://admin.agconn.com
-            NEXT_PUBLIC_SENTRY_DSN_ADMIN=${{ steps.kv.outputs.NEXT_PUBLIC_SENTRY_DSN_ADMIN }}
-            SENTRY_RELEASE=${{ github.sha }}
           secrets: |
             fontawesome_token=${{ steps.kv.outputs.FONTAWESOME_TOKEN }}
 
@@ -223,7 +219,7 @@ jobs:
       # ---------------------------------------------------------------------
       - name: Apply the runtime Secret
         env:
-          SENTRY_RELEASE: ${{ github.sha }}
+          WIZELENS_RELEASE: ${{ github.sha }}
         run: |
           set -euo pipefail
           umask 077
@@ -253,9 +249,6 @@ jobs:
             STRIPE_PRICE_ENT_MONTHLY STRIPE_PRICE_ENT_YEARLY
             STRIPE_PRICE_PRO_FOUNDER_MONTHLY STRIPE_PRICE_PRO_FOUNDER_YEARLY
             STRIPE_PRICE_ENT_FOUNDER_MONTHLY STRIPE_PRICE_ENT_FOUNDER_YEARLY
-            SENTRY_DSN NEXT_PUBLIC_SENTRY_DSN SENTRY_AUTH_TOKEN
-            SENTRY_ORG SENTRY_PROJECT SENTRY_PROJECT_ADMIN
-            NEXT_PUBLIC_SENTRY_DSN_ADMIN
             NEXT_PUBLIC_POSTHOG_KEY POSTHOG_API_KEY
             NEXT_PUBLIC_MAPBOX_TOKEN
             ANTHROPIC_API_KEY OPENAI_API_KEY
@@ -271,7 +264,7 @@ jobs:
 
           # Empty values are SKIPPED, never written as "". A key present with an
           # empty value would shadow the ConfigMap entry of the same name.
-          printf 'SENTRY_RELEASE=%s\n' "$SENTRY_RELEASE" > /tmp/agconn.env
+          printf 'WIZELENS_RELEASE=%s\n' "$WIZELENS_RELEASE" > /tmp/agconn.env
           missing=()
           for name in "${required[@]}" "${optional[@]}"; do
             kv_name="${name//_/-}"

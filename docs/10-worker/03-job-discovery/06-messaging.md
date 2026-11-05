@@ -27,7 +27,7 @@ Standard quiet hours (9 PM – 7 AM PT) apply. Alerts queued during quiet hours 
 Beyond the 3-per-dispatch limit, set a soft cap:
 
 - **Per-worker:** ≤ 5 alerts per day. Beyond that, hold remaining and re-evaluate the next day.
-- **Per-tenant:** if total dispatch fan-out exceeds 1000 SMS in 5 minutes, log a warning to Sentry and consider downgrading dispatch cadence.
+- **Per-tenant:** if total dispatch fan-out exceeds 1000 SMS in 5 minutes, log a warning to WizeLens and consider downgrading dispatch cadence.
 
 ## Saved search confirmation (optional)
 

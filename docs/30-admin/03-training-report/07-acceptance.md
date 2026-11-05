@@ -42,5 +42,5 @@
 
 - All views tested.
 - Field labels documented in `WIOA_FIELDS.md` or a sibling `CDFA_FIELDS.md` once partner contact validates.
-- Sentry logging.
+- WizeLens logging.
 - Admin runbook: how to debug a discrepancy with KPI tile.

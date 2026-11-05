@@ -15,7 +15,7 @@ A burst of bounces or complaints destroys deliverability for weeks.
 
 Resend's API is down or returns 5xx.
 
-**Behavior:** pg-boss retries 3× with backoff. Sentry alert at exhaust. Messages can be re-enqueued manually after recovery. No multi-provider failover in MVP.
+**Behavior:** pg-boss retries 3× with backoff. WizeLens alert at exhaust. Messages can be re-enqueued manually after recovery. No multi-provider failover in MVP.
 
 ## Clerk magic-link path
 
@@ -73,7 +73,7 @@ Same as SMS: emails use `users.preferredLang` at the moment the worker picks up 
 `email_log.subject` and the React Email render output contain user-facing copy that may include the user's first name and partial details. PII handling:
 
 - Only admins and the user themselves can read their own `email_log` rows (RLS).
-- Sentry breadcrumbs scrub `vars` and `subject` before reporting.
+- WizeLens logs scrub `vars` and `subject` before reporting.
 - Retention 13 months → archive → hard delete.
 
 ## Open questions

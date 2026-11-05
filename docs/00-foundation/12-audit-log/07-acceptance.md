@@ -11,7 +11,7 @@
     - [ ] `error.unhandled` on every top-level unhandled exception.
     - [ ] `job.<name>.completed` on every pg-boss job (success or failure).
 - [ ] Audit writes happen inside the same Prisma transaction as the business write — failure of either rolls back both.
-- [ ] Metadata keys outside the per-action allowlist are replaced with `"[unsanctioned]"` and a Sentry warning is logged.
+- [ ] Metadata keys outside the per-action allowlist are replaced with `"[unsanctioned]"` and a WizeLens warning is logged.
 - [ ] `actor_user_agent` is truncated to 256 chars at write time.
 - [ ] Forwarded IP is parsed correctly when `x-forwarded-for` contains a chain (uses the first hop).
 - [ ] System events (`actor_type = 'system'`) write with `actor_id = null` and `app.role = 'system'`.
@@ -37,9 +37,9 @@
 - [ ] After 60 s in open state, the next write probes (half_open).
 - [ ] Probe success transitions to closed and drains the queue.
 - [ ] Probe failure re-opens for another 60 s.
-- [ ] Every state transition emits a Sentry event at `level: fatal`.
+- [ ] Every state transition logs an error that a WizeLens alert picks up.
 - [ ] Recovery emits exactly one `system.audit.breaker.recovered` event per drain with `drainedCount` and `droppedCount`.
-- [ ] Queue overflow at 1,000 events drops with a fatal Sentry log; the dropped event is not silently lost from the operator's perspective.
+- [ ] Queue overflow at 1,000 events drops with an error log that WizeLens alerts on; the dropped event is not silently lost from the operator's perspective.
 - [ ] An integration test forces 5 consecutive failures (via mock), verifies open transition, restores writes, verifies queue drain.
 
 ## Functional — bilingual-by-design admin viewer
@@ -113,7 +113,7 @@
 
 ### Unit
 
-1. **Allowlist enforcement** — `c.var.audit.log({ action: 'auth.login', metadata: { method: 'sms_otp', extra: 'leaked' } })` writes `{ method: 'sms_otp', extra: '[unsanctioned]' }` and emits a Sentry warning.
+1. **Allowlist enforcement** — `c.var.audit.log({ action: 'auth.login', metadata: { method: 'sms_otp', extra: 'leaked' } })` writes `{ method: 'sms_otp', extra: '[unsanctioned]' }` and emits a WizeLens warning.
 2. **Action description coverage** — every action in `auditRegistry` has a description in `auditActionDescriptions` (compile-time check).
 3. **UA / IP truncation** — a 4 KB UA is truncated to 256 chars; `x-forwarded-for: a, b, c` parses to `a`.
 4. **Outcome derivation** — a thrown error in a handler that has already called `c.var.audit.log({...})` does NOT write a duplicate; the unhandled error path adds `error.unhandled` separately.
@@ -146,5 +146,5 @@
 - The `audit_events` table has RLS enabled and policies verified by `packages/db/scripts/check-rls.ts`.
 - `audit_purge` and `audit_redact` Postgres roles exist with the documented narrow grants.
 - A CI gate runs the synthetic load test on every PR that touches `packages/audit/**` or `apps/api/src/middleware/audit.ts`.
-- Sentry receives every failed audit write tagged `severity: critical`.
+- WizeLens receives every failed audit write tagged `severity: critical`.
 - ADR-006 is written and merged, capturing the "audit on the critical path" decision.

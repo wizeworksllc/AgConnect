@@ -23,5 +23,6 @@ export function serverTraces(): boolean {
 
 export function WizeLens() {
     const enabled = useSyncExternalStore(noSubscribe, serverTraces, () => false);
-    return <WizeLensProvider enabled={enabled} hud={DEVELOPMENT} />;
+    // Production serves no source maps, so fetching them on each error only fails.
+    return <WizeLensProvider enabled={enabled} hud={DEVELOPMENT} resolveFrames={DEVELOPMENT} />;
 }

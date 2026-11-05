@@ -1,6 +1,5 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { withSentryConfig } from '@sentry/nextjs';
 import { SECURITY_HEADERS } from './src/lib/security-headers';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
@@ -59,17 +58,4 @@ const nextConfig: NextConfig = {
     },
 };
 
-const composed = withNextIntl(nextConfig);
-
-export default withSentryConfig(composed, {
-    org: process.env.SENTRY_ORG,
-    project: process.env.SENTRY_PROJECT,
-    authToken: process.env.SENTRY_AUTH_TOKEN,
-    release: process.env.SENTRY_RELEASE
-        ? { name: process.env.SENTRY_RELEASE }
-        : undefined,
-    widenClientFileUpload: true,
-    tunnelRoute: '/monitoring',
-    silent: !process.env.CI,
-    disableLogger: true,
-});
+export default withNextIntl(nextConfig);

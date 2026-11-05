@@ -50,5 +50,5 @@
 - Eval set committed to `packages/resume-parser/eval/` with ground-truth JSON.
 - Eval runner script: `pnpm --filter resume-parser eval` produces a report with aggregate metrics.
 - Anthropic data retention confirmed disabled (signed via Anthropic enterprise/data-handling addendum).
-- Sentry captures every parse failure with token usage and (scrubbed) input length.
+- WizeLens captures every parse failure with token usage and (scrubbed) input length.
 - Admin runbook: how to re-parse a resume manually, how to inspect a failed parse.

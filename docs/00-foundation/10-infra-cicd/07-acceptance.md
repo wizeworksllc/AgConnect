@@ -34,7 +34,7 @@
 
 ## Observability
 
-- [x] Sentry receives errors from web, admin, api, audit-retention, audit-verifier; events tagged with `release = GITHUB_SHA` and `environment = APP_ENV`.
+- [x] WizeLens receives traces and errors from web, admin, api and the pg-boss workers.
 - [x] GCP Cloud Logging collects stdout from every pod; structured JSON logs flow through.
 - [x] Lighthouse CI runs on PRs touching `apps/web/`; thresholds Perf ≥80 / A11y ≥95 / SEO ≥95 gate merge.
 - [ ] Cloud Monitoring dashboards: API request rate, error rate, latency P50/P99; pg-boss queue depth; pod CPU/memory. *(default GKE dashboards only; custom dashboards TODO.)*

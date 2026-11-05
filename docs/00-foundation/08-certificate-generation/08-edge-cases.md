@@ -31,7 +31,7 @@ Worker name with 50+ characters or program title spanning 3 lines breaks the lay
 
 If `programTitleEs` is missing (CHECK constraint should prevent this; but defensive):
 
-**Behavior:** render only `titleEn` and add a Sentry warning. Don't fail the cert generation.
+**Behavior:** render only `titleEn` and add a WizeLens warning. Don't fail the cert generation.
 
 ## Tenant logo missing or invalid URL
 

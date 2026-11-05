@@ -6,7 +6,7 @@ import { clearMessagesCache } from '../../i18n/messages-store.js';
 //
 // Failure here is non-fatal — the next-intl `unstable_cache` revalidate window
 // (5 min) is the floor. The hook just makes propagation feel instant when it
-// works. We log + Sentry on failure but never throw out of the caller.
+// works. We log on failure but never throw out of the caller.
 
 const WEB_BASE =
   process.env.WEB_INTERNAL_BASE_URL?.replace(/\/$/, '') ??

@@ -46,21 +46,16 @@ WORKDIR /repo
 # Next.js inlines NEXT_PUBLIC_* into the client bundle at build time, so these
 # have to be present here rather than being injected at K8s runtime. The deploy
 # workflow passes them as --build-arg from GitHub Actions secrets.
-ARG NEXT_PUBLIC_SENTRY_DSN=""
 ARG NEXT_PUBLIC_POSTHOG_KEY=""
 ARG NEXT_PUBLIC_MAPBOX_TOKEN=""
 ARG NEXT_PUBLIC_API_BASE_URL=""
-ARG SENTRY_RELEASE=""
 
 # prisma.config.ts requires DATABASE_URL + DIRECT_URL for codegen; the build
 # never connects, so dummy localhost values are fine.
 ENV NEXT_TELEMETRY_DISABLED=1 \
-    NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN \
     NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY \
     NEXT_PUBLIC_MAPBOX_TOKEN=$NEXT_PUBLIC_MAPBOX_TOKEN \
     NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL \
-    NEXT_PUBLIC_SENTRY_RELEASE=$SENTRY_RELEASE \
-    SENTRY_RELEASE=$SENTRY_RELEASE \
     DATABASE_URL=postgresql://build:build@localhost:5432/build \
     DIRECT_URL=postgresql://build:build@localhost:5432/build
 
@@ -76,12 +71,10 @@ RUN pnpm --filter @agconn/db db:generate \
 # ─── runtime: minimal node + standalone server ───────────────────────────────
 FROM node:${NODE_VERSION}-bookworm-slim AS runtime
 WORKDIR /app
-ARG SENTRY_RELEASE=""
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1 \
     PORT=3000 \
-    HOSTNAME=0.0.0.0 \
-    SENTRY_RELEASE=$SENTRY_RELEASE
+    HOSTNAME=0.0.0.0
 
 RUN useradd --system --create-home --shell /usr/sbin/nologin --uid 1001 agconn
 

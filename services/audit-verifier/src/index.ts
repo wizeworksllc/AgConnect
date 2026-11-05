@@ -3,8 +3,6 @@
 // Mismatches additionally emit `system.audit.tamper_detected` and exit non-zero
 // so the orchestrator can page on-call.
 
-import './instrument.js';
-import * as Sentry from '@sentry/node';
 import {
     auditRegistry,
     canonicalize,
@@ -154,7 +152,5 @@ async function main(): Promise<void> {
 
 main().catch(async (e) => {
     console.error('[audit-verifier] fatal', e);
-    Sentry.captureException(e);
-    await Sentry.flush(2000).catch(() => undefined);
     process.exit(1);
 });

@@ -17,7 +17,7 @@ Migration succeeds in dev but fails in prod (different data shape).
 
 - The `db-migrate-<SHA>` Job runs **before** the kustomize apply step. Job failure exits the workflow before any Deployment is updated; the previous version keeps serving.
 - Workflow dumps Job logs on failure so the failed migration is in the GitHub Actions run output.
-- Sentry alert fires on the Job pod's error logs. On-call manually reverses the migration via `psql` and the rollback SQL committed in the migration folder.
+- WizeLens alert fires on the Job pod's error logs. On-call manually reverses the migration via `psql` and the rollback SQL committed in the migration folder.
 
 ## Secrets rotation
 
@@ -40,7 +40,7 @@ Let's Encrypt rate-limit hit, or Cloudflare DNS01 challenge fails.
 **Mitigation:**
 
 - cert-manager retries automatically with exponential backoff.
-- Sentry alert on `cert-manager` namespace error log entries.
+- WizeLens alert on `cert-manager` namespace error log entries.
 - Cloudflare API token has DNS edit scope only; rotated via the same process as other secrets.
 
 ## Cluster upgrade
@@ -80,7 +80,7 @@ Connection limits on the Supabase pooler must accommodate the sum of pod connect
 **Mitigation:**
 
 - Supabase Pro tier ships with sufficient pooler capacity for current pod counts.
-- Alert if Prisma reports `connection_limit` errors via Sentry.
+- Alert if Prisma reports `connection_limit` errors via WizeLens.
 - Use the pooler URL for the `DATABASE_URL` and the direct URL only for `DIRECT_URL` (used by `prisma migrate`).
 
 ## Costs runaway
@@ -101,17 +101,15 @@ Many open PRs create many namespaces; cluster resources are finite.
 
 - Preview deployments use minimal resources (`replicas: 1`, half the prod CPU/memory requests).
 - Auto-cleanup on PR close via the `preview.yml` workflow.
-- Hard cap: > 10 preview namespaces → block new previews; alert via Sentry.
+- Hard cap: > 10 preview namespaces → block new previews; alert via WizeLens.
 
-## Sentry quota
+## WizeLens volume
 
-Sentry has event quotas; an error storm can exhaust the monthly quota in hours.
+An error storm sends many more traces than normal.
 
 **Mitigation:**
 
-- `tracesSampleRate: 0.1` in prod for every service.
-- Replay session rate `0.1` on web; `1.0` only on error.
-- Sentry-side rate limits and spike protection configured at the project level.
+- `WIZELENS_SAMPLE_RATE: "0.25"` in prod for every service (deploy/k8s/base/configmap.yaml).
 
 ## Image vulnerability discovery post-deploy
 
@@ -149,7 +147,7 @@ A single bad job poisons the queue (e.g., parser worker hits a bug on a specific
 
 - pg-boss retry limit (3) and `failed_exhausted` status.
 - Every worker catches errors per-job; the worker process never exits on a bad job.
-- Sentry alert on `failed_exhausted` rate spike.
+- WizeLens alert on `failed_exhausted` rate spike.
 
 ## Spot node preemption mid-job
 

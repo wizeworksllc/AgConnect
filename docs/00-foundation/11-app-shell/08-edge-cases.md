@@ -46,7 +46,7 @@ A bad SW deploy can serve stale or broken HTML to every returning user.
 - Service worker uses a versioned cache name (`agconn-v${BUILD_HASH}`); old caches are deleted on activate.
 - The skip-waiting / claim-clients flow only runs on user-initiated refresh (the "update ready" toast), never automatically. So a bad SW reaches at most users who tap the refresh toast — and the toast is only shown after the new SW reaches `installed` state successfully.
 - A `?clear-sw` query param triggers a hard unregister + reload, available as a debug escape hatch.
-- Sentry tagged with `sw.version` so a bad-version regression is identifiable.
+- WizeLens tagged with `sw.version` so a bad-version regression is identifiable.
 
 > **Inferred:** No automatic activation on deploy. Forcing skip-waiting on every deploy can create a broken experience mid-form for active users. The "soft activate" model trades freshness for safety; users see a small toast and choose when to refresh.
 
@@ -114,7 +114,7 @@ Tracked here so feature authors don't independently invent worse versions.
 
 A zod issue's `code` (e.g., `invalid_email`) does not match a `shell.validation.<code>` key.
 
-**Mitigation:** the `validate()` middleware falls back to `shell.validation.custom` and logs a Sentry warning so we add the missing key.
+**Mitigation:** the `validate()` middleware falls back to `shell.validation.custom` and logs a WizeLens warning so we add the missing key.
 
 ## Reduced motion
 

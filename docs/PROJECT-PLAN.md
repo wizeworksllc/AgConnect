@@ -250,7 +250,7 @@ Document each version's mock vs. real in `40-marketing/01-landing/08-edge-cases.
 - Engage a native Mexican-Spanish reviewer (regional Central Valley accent / register).
 - Engage a CDFA / EDD Local Area contact for grant-report column sign-off.
 - A2P 10DLC carrier registration (start Day 1 — takes 1–4 weeks).
-- Sentry, PagerDuty, Stripe, Anthropic, Azure subscription accounts created.
+- WizeLens, PagerDuty, Stripe, Anthropic, Azure subscription accounts created.
 - Logo finalized and `brand/09-logo.md` written.
 - Identify 1 anchor FLC employer + 1 grower + 1 training org for soft launch.
 

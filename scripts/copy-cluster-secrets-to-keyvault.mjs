@@ -36,9 +36,9 @@ const SOURCES = ['agconn-env', 'agconn-kv-handoff'];
 const APPLY = process.argv.includes('--apply');
 const OVERWRITE = process.argv.includes('--overwrite');
 
-// SENTRY_RELEASE is the commit sha of the last deploy, set per run from
+// WIZELENS_RELEASE is the commit sha of the last deploy, set per run from
 // github.sha. Storing it would freeze every later release at that commit.
-const SKIP = new Set(['SENTRY_RELEASE']);
+const SKIP = new Set(['WIZELENS_RELEASE']);
 
 const VAULT_URL = `https://${VAULT}.vault.azure.net`;
 const API = 'api-version=7.4';

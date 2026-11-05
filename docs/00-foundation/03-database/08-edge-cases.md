@@ -39,7 +39,7 @@ Default Prisma `connection_limit` is `num_cpus * 2 + 1`. On a 2-vCPU pod, that's
 
 - Pin `connection_limit=10` per pod for predictability.
 - PgBouncer pool size = (pods × connection_limit) + headroom. Configure in Azure.
-- Sentry alert on `connection_limit` errors.
+- WizeLens alert on `connection_limit` errors.
 
 ## RLS bypass via service role
 

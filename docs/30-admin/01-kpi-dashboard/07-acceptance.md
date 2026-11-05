@@ -42,6 +42,6 @@
 ## Definition of done
 
 - All KPI calculations covered by tests with golden datasets.
-- Sentry tags every dashboard view + filter combo for usage analytics.
+- WizeLens tags every dashboard view + filter combo for usage analytics.
 - Materialized view migration plan documented (in case scale demands it).
 - Admin runbook: how to debug a discrepancy (KPI vs detail report mismatch).

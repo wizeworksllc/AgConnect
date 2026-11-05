@@ -77,5 +77,5 @@ We don't send these directly; Clerk does. But for grant reporting and analytics,
 
 ## Failure handling
 
-- SMS failure: pg-boss retries 3× with exponential backoff (30s, 5m, 30m). On exhaust → Sentry alert + row in `sms_log` with `status = 'failed_exhausted'`. The user's account is NOT blocked.
+- SMS failure: pg-boss retries 3× with exponential backoff (30s, 5m, 30m). On exhaust → WizeLens alert + row in `sms_log` with `status = 'failed_exhausted'`. The user's account is NOT blocked.
 - Email failure: Resend returns 4xx → drop and log. 5xx → pg-boss retries 3× same backoff.

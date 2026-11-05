@@ -48,5 +48,5 @@
 
 - All state-machine transitions covered by tests.
 - SMS + email idempotency keys verified (no duplicate sends from double-firing webhooks).
-- Sentry tags every status transition with `from_status`, `to_status`, `actor_role`.
+- WizeLens tags every status transition with `from_status`, `to_status`, `actor_role`.
 - Admin runbook: how to correct a status mistake silently (using `metadata.silent`).

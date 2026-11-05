@@ -75,7 +75,7 @@ Internal-only Next.js, port 3100. Cloudflare WAF + Clerk admin instance guard in
 - api:   ClusterIP, port 80 → 3001
 ```
 
-Worker pods have no Service. Outbound only (Supabase, Twilio, Resend, Anthropic, Stripe, Sentry).
+Worker pods have no Service. Outbound only (Supabase, Twilio, Resend, Anthropic, Stripe, WizeLens).
 
 ## Ingress + TLS
 
@@ -99,7 +99,7 @@ The intended topology, when enabled, is default-deny ingress for the `agconn` na
 - `admin` accepts TCP/3100 from pods in the `ingress-nginx` namespace.
 - `api` accepts TCP/3001 from `ingress-nginx` **and** from any pod in `agconn` (web RSCs call api server-to-server).
 
-Egress is unrestricted — every pod can reach Supabase, Stripe, Twilio, Resend, Sentry, Clerk, Anthropic, Cloudflare, and GCP control plane. Allow-listing those destinations by IP is more brittle than the gain.
+Egress is unrestricted — every pod can reach Supabase, Stripe, Twilio, Resend, WizeLens, Clerk, Anthropic, Cloudflare, and GCP control plane. Allow-listing those destinations by IP is more brittle than the gain.
 
 ## HorizontalPodAutoscaler
 
@@ -107,7 +107,7 @@ Egress is unrestricted — every pod can reach Supabase, Stripe, Twilio, Resend,
 
 ## Secrets
 
-GitHub Actions secrets → applied as a single `agconn-env` K8s Secret on every deploy. Each Deployment `envFrom`s that Secret + a non-sensitive `agconn-config` ConfigMap. There is no in-cluster KMS or CSI secret store at MVP. Sentry release tag (`SENTRY_RELEASE = GITHUB_SHA`) is included in the Secret.
+GitHub Actions secrets → applied as a single `agconn-env` K8s Secret on every deploy. Each Deployment `envFrom`s that Secret + a non-sensitive `agconn-config` ConfigMap. There is no in-cluster KMS or CSI secret store at MVP.
 
 A Workload Identity binding for the K8s ServiceAccount `agconn/agconn` is provisioned by Terraform; pods that need GCP API access (Cloud Logging, Artifact Registry pulls) auth via WI, not service-account keys.
 
@@ -138,11 +138,11 @@ Init Container was rejected because every web/admin/api pod would re-run migrati
 ## Observability
 
 - **GCP Cloud Logging** — stdout from every pod is collected automatically. Structured JSON logs from each service flow through this.
-- **Sentry** — initialized in `apps/web`, `apps/admin`, `services/api`, `services/audit-retention`, `services/audit-verifier`. Release is tagged with `GITHUB_SHA` so regressions bisect to a commit.
+- **WizeLens** — traces and errors from `apps/web`, `apps/admin`, `services/api` and the pg-boss workers, send-only to `WIZELENS_HUB` in production. Deploys set `WIZELENS_RELEASE = GITHUB_SHA` so regressions bisect to a commit.
 - **Cloud Monitoring dashboards** — request rate, error rate, P50/P99 latency, HPA replica counts. Custom dashboards are TODO; default GKE cluster overview is sufficient day-1.
 - **Lighthouse CI** — runs on PRs that touch `apps/web/`, gates Perf ≥80 / A11y ≥95 / SEO ≥95 on top public pages.
 
-In-cluster Prometheus/Grafana was rejected at MVP — Cloud Logging + Sentry cover the diagnostic surface, and a Prometheus stack adds two pods worth of memory pressure on a small cluster.
+In-cluster Prometheus/Grafana was rejected at MVP — Cloud Logging + WizeLens cover the diagnostic surface, and a Prometheus stack adds two pods worth of memory pressure on a small cluster.
 
 ## Backups
 
@@ -163,4 +163,4 @@ In-cluster Prometheus/Grafana was rejected at MVP — Cloud Logging + Sentry cov
 | Bandwidth                                     | $20       |
 | **Total**                                     | **~$200** |
 
-External services (Twilio, Resend, Stripe, Anthropic, Clerk, Sentry) bill separately based on usage.
+External services (Twilio, Resend, Stripe, Anthropic, Clerk, WizeLens) bill separately based on usage.

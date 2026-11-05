@@ -51,5 +51,5 @@
 
 - All Clerk webhook event types in [03-api.md](03-api.md) have handlers AND tests.
 - `auth_events` table populated on every event; failures logged with stack traces in `errorMsg`.
-- Sentry tag `event_type` on every webhook breadcrumb for incident triage.
+- WizeLens tag `event_type` on every webhook log for incident triage.
 - Clerk Dashboard configured with: SMS OTP enabled, Resend integration for magic link, Webhook endpoint pointing to `api.agconn.com/webhooks/clerk`, `CLERK_WEBHOOK_SECRET` set in Azure Key Vault.

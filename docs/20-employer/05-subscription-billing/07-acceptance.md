@@ -69,5 +69,5 @@
 - Stripe Customer Portal configured: allow plan changes, payment-method updates, cancellation.
 - All eight Stripe price IDs documented in env template; production prices created and locked.
 - `GET /v1/landing/founder-slots` deployed and consumed by both marketing pricing surfaces.
-- Sentry tags every billing event with `employerId`, `eventType`, and `priceCohort`.
+- WizeLens tags every billing event with `employerId`, `eventType`, and `priceCohort`.
 - Admin runbook: how to inspect a billing dispute, refund process (via Stripe Dashboard), how to manually adjust a plan, how to read the founder-slots count.

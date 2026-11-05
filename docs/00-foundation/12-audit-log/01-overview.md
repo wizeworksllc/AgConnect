@@ -11,7 +11,7 @@ A tenant-scoped, append-only record of every consequential action in AGCONN — 
 
 The audit log is **not**:
 
-- Application logging (errors, traces) — that goes to Sentry / structured logs.
+- Application logging (errors, traces) — that goes to WizeLens / structured logs.
 - Analytics / product metrics (page views, search queries, funnel events) — that goes to PostHog/Plausible.
 - A general-purpose event bus — async fan-out belongs in pg-boss queues or webhooks.
 
@@ -72,7 +72,7 @@ Out of scope (deferred):
 2. **Every business mutation emits an event.** A linter checks that every Hono handler with method POST/PATCH/PUT/DELETE either calls `c.var.audit.log(...)` at least once or is allow-listed (with a comment documenting why).
 3. **No PII in metadata.** `metadata` is a JSONB blob constrained by a server-side allowlist of safe keys per action. The redaction helper strips anything else.
 4. **Tamper-evident at the row level.** Every event carries an `event_hmac` computed in the application layer using a key stored in Azure Key Vault. The retention/redact roles have no access to the key. A nightly verifier recomputes HMACs across recent partitions and pages on mismatch. Combined with append-only RLS, an operator who breaks into the DB cannot silently modify, insert, or replace rows without detection. See [02-data-model.md](02-data-model.md).
-5. **Resilient to its own failures.** A failed audit write fails the parent business mutation by default — atomicity is the safer path. A built-in **circuit breaker** trips after 5 consecutive write failures within 30 seconds, opens for 60 seconds, and during that window degrades to "best-effort with replay-on-recovery" so the business stays available. The breaker is **enabled by default**; configuration knobs live in [03-api.md](03-api.md). Sentry pages on every breaker state change.
+5. **Resilient to its own failures.** A failed audit write fails the parent business mutation by default — atomicity is the safer path. A built-in **circuit breaker** trips after 5 consecutive write failures within 30 seconds, opens for 60 seconds, and during that window degrades to "best-effort with replay-on-recovery" so the business stays available. The breaker is **enabled by default**; configuration knobs live in [03-api.md](03-api.md). WizeLens pages on every breaker state change.
 6. **Tenant scoping is mandatory.** Every event has `tenant_id` set, with one allowlisted exception: cross-tenant admin actions (`admin.tenant.created`, etc.) where `tenant_id` is the *target* tenant, not the operator's. Truly tenantless system events (`system.maintenance.started`) use a sentinel tenant `00000000-0000-0000-0000-000000000000` reserved as `system`.
 7. **Action codes are stable.** Like API error codes, action strings (`worker.profile.updated`) are part of the contract. Renaming requires a migration that rewrites historic rows or a dual-write window.
 8. **Outcomes are explicit.** Every event has `outcome ∈ ('success', 'failure')`. A failed login is `auth.failed_login` with `outcome: 'success'` (the *event* succeeded — we did record a failed login attempt). A 500 during job-posting create emits `job.posting.created` with `outcome: 'failure'` and the error code in `metadata.errorCode`.
@@ -96,4 +96,4 @@ Out of scope (deferred):
 ## Non-dependencies
 
 - Audit log writes do **not** depend on pg-boss. The write happens inside the same DB transaction as the business mutation (see [03-api.md](03-api.md)) so atomicity is free.
-- Audit log does **not** depend on Sentry, but Sentry is the alert path for failed writes.
+- Audit log does **not** depend on WizeLens, but WizeLens is the alert path for failed writes.

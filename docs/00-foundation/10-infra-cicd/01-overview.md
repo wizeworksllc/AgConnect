@@ -12,8 +12,7 @@ Host AGCONN on **Google Kubernetes Engine (GKE) Standard zonal**, build and stor
 - Environment strategy — local / PR preview / prod (no separate staging cluster at MVP)
 - Secret management — GitHub Actions secrets → K8s `agconn-env` Secret
 - TLS certs via cert-manager + Let's Encrypt + Cloudflare DNS01
-- Sentry release tagging + source map upload
-- Observability — GCP Cloud Logging + Sentry (Prometheus/Grafana deferred)
+- Observability — GCP Cloud Logging + WizeLens (Prometheus/Grafana deferred)
 - Database backups — Supabase managed PITR
 
 ## Stack
@@ -27,7 +26,7 @@ Host AGCONN on **Google Kubernetes Engine (GKE) Standard zonal**, build and stor
 - **Cloudflare** — DNS + WAF (orange-cloud proxied)
 - **Trivy** — image CVE scan gate *(deferred at MVP; see Phase 6 item 6.8)*
 - **Lighthouse CI** — perf / a11y / SEO gate on top public pages
-- **Sentry** — application error tracking (web, admin, api, audit-retention, audit-verifier)
+- **WizeLens** — application tracing and error tracking (web, admin, api, pg-boss workers)
 - **Supabase** — Postgres + Storage (managed; outside cluster)
 
 ## Topology summary
@@ -107,7 +106,6 @@ In scope:
 - Secrets stored as GitHub Actions secrets → applied as a single `agconn-env` K8s Secret on every deploy
 - Production deploy with optional manual approval via GitHub Environment protection rules
 - Trivy CVE scan gate *(deferred at MVP)*
-- Sentry release tagging with `GITHUB_SHA`
 - Lighthouse CI gates on top public pages
 - Pod Security Admission `restricted` namespace label
 - NetworkPolicy default-deny ingress + scoped allow rules
@@ -117,7 +115,7 @@ Out of scope (MVP):
 - Multi-region failover
 - Blue/green deploys (rolling is fine — readiness probes + HPA)
 - Separate staging cluster (a single prod cluster + PR preview overlays covers the gap)
-- In-cluster Prometheus/Grafana (GCP Cloud Logging + Sentry suffice)
+- In-cluster Prometheus/Grafana (GCP Cloud Logging + WizeLens suffice)
 - Azure Key Vault / GCP Secret Manager CSI driver (GH secrets → K8s Secret is simpler at scale; revisit when secret-rotation tooling becomes a bottleneck)
 
 ## Success criteria
