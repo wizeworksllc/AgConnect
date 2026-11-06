@@ -22,7 +22,7 @@ type RouteProps = { params: Promise<{ locale: Locale }> };
 export const dynamicParams = false;
 export const revalidate = 86400;
 
-const LAST_REVIEWED = '2026-11-04';
+const LAST_REVIEWED = '2026-11-05';
 
 interface Subprocessor {
     key: string;
@@ -39,7 +39,6 @@ const SUBPROCESSORS: Subprocessor[] = [
     { key: 'twilio', name: 'Twilio', location: 'United States', terms: 'dpa', termsUrl: 'https://www.twilio.com/legal/data-protection-addendum' },
     { key: 'resend', name: 'Resend', location: 'United States', terms: 'dpa', termsUrl: 'https://resend.com/legal/dpa' },
     { key: 'stripe', name: 'Stripe', location: 'United States', terms: 'dpa', termsUrl: 'https://stripe.com/legal/dpa' },
-    { key: 'posthog', name: 'PostHog', location: 'United States · us.i.posthog.com', terms: 'policy', termsUrl: 'https://posthog.com/privacy' },
     { key: 'anthropic', name: 'Anthropic', location: 'Global', terms: 'dpa', termsUrl: 'https://www.anthropic.com/legal/data-processing-addendum' },
     { key: 'mapbox', name: 'Mapbox', location: 'United States', terms: 'dpa', termsUrl: 'https://www.mapbox.com/legal/dpa' },
     { key: 'wizelens', name: 'WizeLens', location: 'Central US · Azure, United States', terms: 'policy', termsUrl: 'https://wizelens.com/privacy' },

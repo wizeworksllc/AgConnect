@@ -137,6 +137,6 @@ Tracking `beforeinstallprompt` shown / accepted / dismissed without user consent
 
 ## Open questions
 
-1. **Cookie consent banner** — not yet specced. Without it, even essential analytics may need a justification path. Recommend speccing alongside `09-seo-aio` in Phase 5.
+1. **Cookie consent banner** — removed with PostHog, because AGCONN sets only essential cookies. Add one only if a future tool needs consent.
 2. **`@hookform/resolvers/zod` version** — needs to match the zod version pinned in `packages/schemas`. Lock the matrix in `package.json` resolutions.
 3. **`packages/ui` storybook?** — a Storybook setup would help reviewers see all primitives in both Tierra themes and both locales without running the whole app. Out of scope for MVP, recommended for Phase 2.

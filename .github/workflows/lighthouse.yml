@@ -27,7 +27,6 @@ jobs:
       # have to be present at build time.
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/agconn_ci?schema=public
       DIRECT_URL: postgresql://postgres:postgres@localhost:5432/agconn_ci?schema=public
-      NEXT_PUBLIC_POSTHOG_KEY: ""
       NEXT_PUBLIC_MAPBOX_TOKEN: ""
       NEXT_PUBLIC_ADMIN_URL: http://localhost:3100
       NEXT_TELEMETRY_DISABLED: "1"

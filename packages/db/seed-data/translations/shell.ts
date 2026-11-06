@@ -49,62 +49,6 @@ export const shell: TranslationBundle = {
         en: "Address suggestions",
         es: "Sugerencias de dirección",
     },
-    "consent.accept_all": {
-        en: "Accept all",
-        es: "Aceptar todo",
-    },
-    "consent.body": {
-        en: "We use essential cookies so AGCONN works. With your consent, we also use analytics cookies to learn how the app is used and improve it. You can change this any time.",
-        es: "Usamos cookies esenciales para que AGCONN funcione. Con tu consentimiento, también usamos cookies de análisis para entender cómo se usa la app y mejorarla. Puedes cambiar esto en cualquier momento.",
-    },
-    "consent.category.analytics.description": {
-        en: "Helps us understand which features matter and where workers get stuck.",
-        es: "Nos ayuda a entender qué funciones importan y dónde se atoran los trabajadores.",
-    },
-    "consent.category.analytics.label": {
-        en: "Analytics",
-        es: "Análisis",
-    },
-    "consent.category.essential.description": {
-        en: "Sign-in, security, and the audit log. Always on.",
-        es: "Inicio de sesión, seguridad y el registro de auditoría. Siempre activos.",
-    },
-    "consent.category.essential.label": {
-        en: "Essential",
-        es: "Esenciales",
-    },
-    "consent.category.functional.description": {
-        en: "Remembers your language and theme.",
-        es: "Recuerda tu idioma y tema.",
-    },
-    "consent.category.functional.label": {
-        en: "Functional",
-        es: "Funcionales",
-    },
-    "consent.back": {
-        en: "Back",
-        es: "Atrás",
-    },
-    "consent.customize": {
-        en: "Customize",
-        es: "Personalizar",
-    },
-    "consent.privacy_link": {
-        en: "Privacy policy",
-        es: "Política de privacidad",
-    },
-    "consent.reject_non_essential": {
-        en: "Only essentials",
-        es: "Solo esenciales",
-    },
-    "consent.save": {
-        en: "Save preferences",
-        es: "Guardar preferencias",
-    },
-    "consent.title": {
-        en: "Cookie preferences",
-        es: "Preferencias de cookies",
-    },
     "empty.generic.description": {
         en: "",
         es: "",

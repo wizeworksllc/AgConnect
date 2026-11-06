@@ -12,7 +12,7 @@ A tenant-scoped, append-only record of every consequential action in AGCONN — 
 The audit log is **not**:
 
 - Application logging (errors, traces) — that goes to WizeLens / structured logs.
-- Analytics / product metrics (page views, search queries, funnel events) — that goes to PostHog/Plausible.
+- Analytics / product metrics (page views, search queries, funnel events) — AGCONN does not run product analytics; WizeLens records request traces and errors.
 - A general-purpose event bus — async fan-out belongs in pg-boss queues or webhooks.
 
 If an event answers "what happened in the system at the runtime level?" it is a log. If it answers "did a person or process **do** something we'd ever need to defend or reconstruct?" it is an audit event.

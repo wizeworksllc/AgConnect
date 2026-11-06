@@ -1,5 +1,4 @@
 import { useLocale, useTranslations } from 'next-intl';
-import { CookiePreferencesLink } from './CookiePreferencesLink';
 
 export function FooterLegal() {
     const t = useTranslations('landing.legal');
@@ -37,9 +36,6 @@ export function FooterLegal() {
                             </a>
                         </li>
                     ))}
-                    <li>
-                        <CookiePreferencesLink label={t('cookie_preferences')} />
-                    </li>
                 </ul>
             </div>
         </div>

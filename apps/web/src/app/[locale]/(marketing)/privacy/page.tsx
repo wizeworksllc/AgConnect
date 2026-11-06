@@ -59,7 +59,7 @@ export default async function PrivacyPage({ params }: RouteProps) {
                 intro={t('intro')}
                 sections={sections}
                 lastUpdatedLabel={legalT('last_updated')}
-                lastUpdatedDate="2026-11-04"
+                lastUpdatedDate="2026-11-05"
                 placeholderNotice={legalT('placeholder_notice')}
                 contactNote={legalT('contact')}
                 sectionsLabel={legalT('sections_label')}
