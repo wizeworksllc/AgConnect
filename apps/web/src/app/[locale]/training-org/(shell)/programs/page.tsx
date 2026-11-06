@@ -70,7 +70,7 @@ export default async function ProgramsListPage({ params }: Props) {
                     >
                       {(isEs ? STATUS_LABEL_ES : STATUS_LABEL_EN)[p.status]}
                     </span>
-                    <span className="text-base-content/55 font-mono text-xs uppercase tracking-[0.14em]">
+                    <span className="text-base-content font-sans text-sm font-semibold">
                       {p.county}
                     </span>
                   </div>

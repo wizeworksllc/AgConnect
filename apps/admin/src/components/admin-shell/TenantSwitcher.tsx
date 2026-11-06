@@ -64,7 +64,7 @@ export function TenantSwitcher({ tenants, activeTenantId }: Props) {
                         </span>
                     </button>
                 </li>
-                {tenants.length > 0 && <li className="menu-title text-xs uppercase">Tenants</li>}
+                {tenants.length > 0 && <li className="menu-title font-sans text-sm font-semibold">Tenants</li>}
                 {tenants.map((t) => (
                     <li key={t.id}>
                         <button

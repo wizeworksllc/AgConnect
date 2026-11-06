@@ -222,7 +222,7 @@ function AccountButton({ locale, labels }: { locale: string; labels: AccountLabe
                             </>
                         ) : (
                             <>
-                                <div className="text-base-content/60 font-mono text-[10px] font-medium uppercase tracking-wider">
+                                <div className="text-base-content font-sans text-sm font-semibold">
                                     {labels.signedInAs}
                                 </div>
                                 <div className="text-base-content mt-1 truncate text-sm font-semibold">

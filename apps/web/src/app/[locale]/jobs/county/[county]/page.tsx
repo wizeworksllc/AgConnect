@@ -186,7 +186,7 @@ export default async function CountyJobsPage({ params }: Props) {
       </section>
 
       <nav className="border-base-300 mt-10 border-t pt-6" aria-label={t('county.nav.siblings_label')}>
-        <p className="text-base-content/60 m-0 text-[12px] font-semibold uppercase tracking-wide">
+        <p className="text-base-content m-0 font-sans text-sm font-semibold">
           {t('county.nav.siblings_label')}
         </p>
         <div className="mt-3 flex flex-wrap gap-2">

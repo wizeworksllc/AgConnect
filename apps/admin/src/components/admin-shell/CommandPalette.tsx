@@ -196,7 +196,7 @@ export function CommandPalette({ tenants }: Props) {
                       className="h-3.5 w-3.5 opacity-60"
                     />
                     <span className="flex-1 truncate">{c.label}</span>
-                    <span className="text-base-content/40 text-[10px] uppercase tracking-wide">
+                    <span className="text-base-content font-sans text-sm font-semibold">
                       {c.hint}
                     </span>
                     {i === index && (

@@ -68,7 +68,7 @@ export function RightRail({ draft, foremanName, memberCount, insights, locale }:
 
             {/* Yield (last 14 days). Real piecework data from shift assignments. */}
             <section className="bg-base-100 border-base-300 rounded-2xl border p-4">
-                <div className="text-base-content/60 mb-2.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="text-base-content mb-2.5 font-sans text-sm font-semibold">
                     {t('yield_label')}
                 </div>
                 {peakPieces === 0 ? (
@@ -101,7 +101,7 @@ export function RightRail({ draft, foremanName, memberCount, insights, locale }:
 
             {/* Activity feed. Filtered audit-log events for this crew. */}
             <section className="bg-base-100 border-base-300 rounded-2xl border p-4">
-                <div className="text-base-content/60 mb-2.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="text-base-content mb-2.5 font-sans text-sm font-semibold">
                     {t('activity_label')}
                 </div>
                 {insights.activity.length === 0 ? (

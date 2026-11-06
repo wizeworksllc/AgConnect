@@ -194,7 +194,7 @@ function InboxInner() {
 
       {hasActiveFilter && (
         <div className="text-base-content/70 mb-4 flex flex-wrap items-center gap-2 text-xs">
-          <span className="font-mono uppercase tracking-wider">{t('filter.active')}</span>
+          <span className="font-sans text-sm font-semibold">{t('filter.active')}</span>
           {q && (
             <Link
               href={buildHref({ q: '' }) as Route}

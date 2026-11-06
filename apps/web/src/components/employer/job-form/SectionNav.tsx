@@ -37,7 +37,7 @@ export function SectionNav({ sections }: Props) {
 
     return (
         <nav aria-label={t('section_nav_label')} className="hidden xl:block">
-            <div className="text-base-content/60 px-2.5 pb-2 font-mono text-xs font-bold uppercase tracking-[0.1em]">
+            <div className="text-base-content px-2.5 pb-2 font-sans text-sm font-semibold">
                 {t('sections_heading')}
             </div>
             <ul className="space-y-0.5">
@@ -66,7 +66,7 @@ export function SectionNav({ sections }: Props) {
                 })}
             </ul>
             <div className="bg-primary/10 text-primary mt-4 rounded-xl p-3 text-xs leading-relaxed">
-                <strong className="font-mono text-[10px] font-bold uppercase tracking-[0.06em]">
+                <strong className="font-sans text-sm font-semibold">
                     {t('tip_label')}
                 </strong>
                 <div className="mt-1">{t('tip_body')}</div>

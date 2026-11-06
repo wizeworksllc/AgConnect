@@ -152,7 +152,7 @@ function FoldersColumn({
       </ul>
       {hasActiveThread && (
         <div className="border-base-300 mt-4 border-t pt-3">
-          <div className="text-base-content/60 mb-2 font-mono text-[10px] font-bold uppercase tracking-wider">
+          <div className="text-base-content mb-2 font-sans text-sm font-semibold">
             {t('templates_label')}
           </div>
           <p className="text-base-content/50 text-[10px] leading-relaxed">

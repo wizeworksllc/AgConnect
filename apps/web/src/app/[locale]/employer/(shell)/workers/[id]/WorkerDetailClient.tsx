@@ -174,7 +174,7 @@ function WorkerDetailBody({
 function Section({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
     <div className="mt-6">
-      <h2 className="text-base-content/60 font-mono text-xs uppercase tracking-wider">{heading}</h2>
+      <h2 className="text-base-content font-sans text-base font-semibold">{heading}</h2>
       <div className="mt-2">{children}</div>
     </div>
   );

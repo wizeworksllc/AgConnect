@@ -67,7 +67,7 @@ function BillingInner() {
         <DarkHeroCard glow="gold">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <p className="text-accent font-mono text-xs uppercase tracking-wider">
+              <p className="text-accent font-sans text-sm font-semibold">
                 {t('current_plan')}
               </p>
               <h2 className="font-display mt-2 text-5xl font-light leading-none tracking-tight">

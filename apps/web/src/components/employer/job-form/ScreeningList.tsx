@@ -52,7 +52,7 @@ export function ScreeningList({ questions, onChange }: Props) {
                     <div className="min-w-0 flex-1 space-y-1">
                         <div className="text-sm font-medium">{q.questionEn}</div>
                         <div className="text-base-content/60 text-xs italic">{q.questionEs}</div>
-                        <div className="text-base-content/50 mt-0.5 font-mono text-[10px] uppercase tracking-wide">
+                        <div className="text-base-content mt-0.5 font-sans text-sm font-semibold">
                             {q.answerType === 'yes_no' ? t('answer_yes_no') : t('answer_text')}
                         </div>
                     </div>

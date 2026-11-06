@@ -40,7 +40,7 @@ export function HelpClient() {
       <section aria-labelledby="topics-heading" className="mb-8">
         <h2
           id="topics-heading"
-          className="text-base-content/60 mb-4 font-mono text-xs font-semibold uppercase tracking-wider"
+          className="text-base-content mb-4 font-sans text-base font-semibold"
         >
           {t('topics_heading')}
         </h2>

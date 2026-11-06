@@ -92,7 +92,7 @@ export function WorkerPreviewRail({
     return (
         <aside aria-label={t('rail_label')} className="hidden xl:block">
             <div className="flex items-center justify-between px-1.5 pb-2.5">
-                <span className="text-base-content/60 font-mono text-xs font-bold uppercase tracking-[0.1em]">
+                <span className="text-base-content font-sans text-sm font-semibold">
                     {t('worker_preview')}
                 </span>
                 <div className="bg-base-200 border-base-300 join rounded-full border p-0.5">
@@ -153,7 +153,7 @@ export function WorkerPreviewRail({
                 <div className="bg-base-100 border-base-300 mt-3 rounded-xl border p-3 text-xs">
                     <div className="mb-1.5 flex items-center gap-1.5">
                         <FontAwesomeIcon icon={faWandMagicSparkles} className="text-primary h-3 w-3" />
-                        <strong className="font-mono text-[10px] font-bold uppercase tracking-[0.08em]">
+                        <strong className="font-sans text-sm font-semibold">
                             {t('match_preview')}
                         </strong>
                     </div>
@@ -285,7 +285,7 @@ function SmsApplyCard({ keyword }: { keyword: string }) {
     const t = useTranslations('employer.jobs.form_v2.preview');
     return (
         <div className="bg-neutral text-neutral-content mt-3 rounded-xl p-3">
-            <div className="text-accent font-mono text-xs font-bold uppercase tracking-wider">
+            <div className="text-accent font-sans text-sm font-semibold">
                 {t('apply_by_text')}
             </div>
             <div className="mt-1 font-mono text-[13px] font-semibold">{keyword}</div>

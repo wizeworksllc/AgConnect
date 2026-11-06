@@ -49,7 +49,7 @@ export async function FeaturedProgramCard({ program, locale, featured = false }:
                     {program.locationName} · {program.county}
                 </p>
 
-                <p className={`font-mono text-xs uppercase tracking-wider ${scheduleClass}`}>
+                <p className={`${scheduleClass} font-sans text-sm font-semibold`}>
                     {spotsLabel}
                 </p>
 

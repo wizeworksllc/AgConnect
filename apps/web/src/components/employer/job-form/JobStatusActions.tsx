@@ -121,8 +121,8 @@ export function JobStatusActions({ locale, jobId, status, renotifyPaused }: Prop
                     role="status"
                     className={
                         feedback.kind === 'ok'
-                            ? 'text-success font-mono text-xs font-bold uppercase tracking-wider'
-                            : 'text-error font-mono text-xs font-bold uppercase tracking-wider'
+                            ? 'text-success font-sans text-sm font-semibold'
+                            : 'text-error font-sans text-sm font-semibold'
                     }
                 >
                     {feedback.message}

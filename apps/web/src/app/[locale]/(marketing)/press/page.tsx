@@ -153,7 +153,7 @@ export default async function PressPage({ params }: RouteProps) {
                         </p>
                         <a
                             href="mailto:press@agconn.com"
-                            className="text-primary mt-2 inline-flex items-center gap-2 self-start font-mono text-sm font-bold uppercase tracking-[0.18em] hover:underline"
+                            className="text-primary mt-2 inline-flex items-center gap-2 self-start hover:underline font-sans text-sm font-semibold"
                         >
                             <span>press@agconn.com</span>
                             <FontAwesomeIcon icon={faArrowRight} className="text-xs" />

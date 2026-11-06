@@ -35,7 +35,7 @@ export function ValidationSummary({ errors }: Props) {
                         <li key={sectionKey}>
                             <a
                                 href={sectionErrors[0]!.sectionHref}
-                                className="text-base-content/55 hover:text-base-content font-mono text-[10px] font-bold uppercase tracking-[0.08em] no-underline"
+                                className="text-base-content hover:text-base-content no-underline font-sans text-sm font-semibold"
                             >
                                 {t(`section_${sectionKey}_title`)}
                             </a>

@@ -698,8 +698,8 @@ export const landing: TranslationBundle = {
         es: "Números de nuestros propios registros.",
     },
     "impact.source": {
-        en: "SOURCE · AGCONN RECORDS",
-        es: "FUENTE · REGISTROS DE AGCONN",
+        en: "Source: AGCONN records",
+        es: "Fuente: registros de AGCONN",
     },
     "impact.tile_coming_soon": {
         en: "Coming soon",

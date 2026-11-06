@@ -76,7 +76,7 @@ export function UpNextList({ shifts, locale }: Props) {
                         >
                             <div className="flex items-start justify-between gap-2">
                                 <div className="min-w-0">
-                                    <div className="text-base-content/60 font-mono text-xs font-bold uppercase tracking-[0.06em]">
+                                    <div className="text-base-content font-sans text-sm font-semibold">
                                         {new Date(s.shift.date).toLocaleDateString(locale, {
                                             weekday: 'short',
                                             month: 'short',

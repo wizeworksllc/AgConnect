@@ -110,7 +110,7 @@ export function ShiftCard({ row, locale }: Props) {
 
             {row.shift.notes && (
                 <div className="border-base-300 border-t px-5 py-4">
-                    <p className="text-base-content/55 mb-1.5 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wide">
+                    <p className="text-base-content mb-1.5 flex items-center gap-1.5 font-sans text-sm font-semibold">
                         <FontAwesomeIcon icon={faClipboardList} className="h-3 w-3" aria-hidden />
                         {t('what_to_bring')}
                     </p>

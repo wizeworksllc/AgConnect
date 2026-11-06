@@ -62,12 +62,12 @@ function WalletInner({ locale }: { locale: string }) {
             >
               <div className="flex items-center gap-2">
                 {item.source === 'enrollment' ? (
-                  <span className="text-warning inline-flex items-center gap-1 text-xs font-semibold uppercase">
+                  <span className="text-warning inline-flex items-center gap-1 font-sans text-sm font-semibold">
                     <FontAwesomeIcon icon={faStar} className="h-3 w-3" />
                     {t('source.agconn')}
                   </span>
                 ) : (
-                  <span className="text-base-content/60 text-xs font-semibold uppercase">
+                  <span className="text-base-content font-sans text-sm font-semibold">
                     {t('source.self')}
                   </span>
                 )}
@@ -111,7 +111,7 @@ function SamplePreview() {
       </div>
       <article className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5 sm:grid-cols-[1fr_auto] sm:items-start">
         <div className="grid gap-2">
-          <span className="text-warning inline-flex items-center gap-1 text-xs font-semibold uppercase">
+          <span className="text-warning inline-flex items-center gap-1 font-sans text-sm font-semibold">
             <FontAwesomeIcon icon={faAward} className="h-3 w-3" />
             {t('badge')}
           </span>
