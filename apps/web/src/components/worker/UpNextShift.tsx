@@ -12,7 +12,7 @@ import {
 import { useMyShiftsSuspense, type ShiftRow } from '@/lib/api/hooks/shifts';
 import { UpNextActions } from './UpNextActions';
 
-function formatShiftEyebrow(iso: string, locale: string): string {
+function formatShiftTime(iso: string, locale: string): string {
     const d = new Date(iso);
     const fmt = new Intl.DateTimeFormat(locale === 'es' ? 'es-MX' : 'en-US', {
         weekday: 'long',
@@ -53,9 +53,6 @@ export function UpNextShift() {
                     }}
                 />
                 <div className="relative">
-                    <div className="text-accent font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-                        {t('empty_eyebrow')}
-                    </div>
                     <h2 className="font-serif mt-2 max-w-xl text-2xl font-medium leading-snug tracking-tight md:text-3xl">
                         {t('empty_title')}
                     </h2>
@@ -81,11 +78,11 @@ export function UpNextShift() {
         next.shift.employer;
     const isConfirmed = next.status === 'confirmed' || next.status === 'attended';
     const isDeclined = next.status === 'declined';
-    const eyebrowText = isDeclined
-        ? t('declined_eyebrow')
+    const shiftLine = isDeclined
+        ? t('declined_label')
         : isConfirmed
-            ? t('confirmed_eyebrow')
-            : formatShiftEyebrow(next.shift.startTime, locale);
+            ? t('confirmed_label')
+            : formatShiftTime(next.shift.startTime, locale);
 
     return (
         <section className="bg-neutral text-neutral-content relative mb-7 overflow-hidden rounded-3xl p-6">
@@ -99,12 +96,12 @@ export function UpNextShift() {
             />
             <div className="relative flex flex-wrap items-center justify-between gap-8">
                 <div className="min-w-0 flex-1">
-                    <div className="text-accent font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-                        {eyebrowText}
-                    </div>
                     <h2 className="font-serif mt-2 text-3xl font-medium leading-[1.05] tracking-tight md:text-4xl">
                         {title}
                     </h2>
+                    <p className="mt-1 font-sans text-sm">
+                        {shiftLine}
+                    </p>
                     <ul className="mt-3.5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-content/75">
                         <li className="inline-flex items-center gap-1.5">
                             <FontAwesomeIcon icon={faLocationDot} className="h-3.5 w-3.5" />

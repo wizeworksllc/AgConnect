@@ -8,8 +8,8 @@ export default async function TenantOverviewPage({ params }: Props) {
     return (
         <div className="space-y-6">
             <div>
-                <p className="eyebrow text-base-content/60">Tenant</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Tenant overview</h1>
+                <p className="text-base-content/60 mt-1 text-sm">Tenant</p>
                 <p className="text-base-content/70 mt-1 text-sm font-mono">{tenantId}</p>
             </div>
             <div className="bg-base-100 border-base-300 rounded-box border p-5 text-sm">

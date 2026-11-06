@@ -33,8 +33,8 @@ export function PaycheckCard() {
                     }}
                 />
                 <div className="relative">
-                    <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] opacity-80">
-                        {t('empty_eyebrow')}
+                    <div className="opacity-80 font-sans text-sm font-semibold">
+                        {t('empty_label')}
                     </div>
                     <p className="font-serif mt-2 text-xl font-medium leading-snug tracking-tight">
                         {t('empty_body')}
@@ -67,8 +67,8 @@ export function PaycheckCard() {
                 }}
             />
             <div className="relative">
-                <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] opacity-80">
-                    {t('eyebrow')}
+                <div className="opacity-80 font-sans text-sm font-semibold">
+                    {t('caption')}
                 </div>
                 <div className="mt-2.5 flex items-end justify-between gap-3">
                     <div className="font-serif text-4xl font-medium leading-none tracking-tight">

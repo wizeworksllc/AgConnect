@@ -28,9 +28,6 @@ export function NewShiftHeader({ locale, crewName }: Props) {
 
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
                 <div>
-                    <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-                        {t('eyebrow')}
-                    </p>
                     <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
                         {t('title_a')}{' '}
                         <em className="text-primary not-italic font-light">{t('title_b')}</em>

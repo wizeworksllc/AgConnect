@@ -67,7 +67,6 @@ export default async function DashboardPage({
     return (
         <div className="space-y-6">
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">
                     Welcome, <em className="not-italic font-medium">{firstName}</em>.
                 </h1>

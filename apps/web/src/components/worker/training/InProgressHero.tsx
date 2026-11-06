@@ -28,12 +28,12 @@ export function InProgressHero({ enrollment, locale }: Props) {
             />
             <div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
                 <div>
-                    <div className="text-warning font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-                        {t('eyebrow', { funder: program.funder })}
-                    </div>
                     <h2 className="font-serif mt-2 text-[32px] font-normal leading-[1.05] tracking-[-0.02em]">
                         {title}
                     </h2>
+                    <p className="mt-1 font-sans text-sm">
+                        {t('caption', { funder: program.funder })}
+                    </p>
                     <div className="mt-1 text-[13.5px] opacity-75">
                         {program.county} · {progressLabel(progress, locale)}
                     </div>

@@ -38,17 +38,9 @@ export function AccountSurface({ locale, activeTab, firstName, businessName }: P
     const profileHref = `/${locale}/employer/account` as Route;
     const securityHref = `/${locale}/employer/account/security` as Route;
 
-    const eyebrow =
-        locale === 'es'
-            ? `CUENTA${firstName ? ` · ${firstName}` : ''}`
-            : `BUSINESS ACCOUNT${firstName ? ` · ${firstName}` : ''}`;
-
     return (
         <div className=" px-5 pb-16 pt-8">
             <div className="mb-7 max-w-3xl">
-                <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-                    {eyebrow}
-                </p>
                 <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
                     {t('title_a')}{' '}
                     <em className="text-primary not-italic font-light">{t('title_b')}</em>

@@ -28,8 +28,8 @@ export function TrainingNudge() {
             <section className="bg-base-100 border-base-300 rounded-2xl border p-4">
                 <div className="mb-3 flex items-center gap-2.5">
                     <FontAwesomeIcon icon={faGraduationCap} className="text-primary h-4 w-4" />
-                    <span className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-base-content/60">
-                        {t('eyebrow')}
+                    <span className="text-base-content/60 font-sans text-sm font-semibold">
+                        {t('caption')}
                     </span>
                 </div>
                 <p className="text-base-content/70 text-sm">
@@ -55,8 +55,8 @@ export function TrainingNudge() {
         <section className="bg-base-100 border-base-300 rounded-2xl border p-4">
             <div className="mb-3 flex items-center gap-2.5">
                 <FontAwesomeIcon icon={faGraduationCap} className="text-primary h-4 w-4" />
-                <span className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-base-content/60">
-                    {t('eyebrow')}
+                <span className="text-base-content/60 font-sans text-sm font-semibold">
+                    {t('caption')}
                 </span>
             </div>
             <p className="font-serif text-lg font-medium leading-snug tracking-tight">

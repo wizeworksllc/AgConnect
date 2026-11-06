@@ -54,7 +54,7 @@ For each dimension below, mark **PASS** / **FAIL** / **N/A**. For every FAIL, gi
 **Typography**
 - Fonts limited to Fraunces / Inter / DM Mono.
 - No text below 14px (16px on inputs).
-- Eyebrow labels: 11px, UPPERCASE, 0.18em, weight 600.
+- No eyebrow labels. A small uppercase line above a heading is an AI tell. Do not use one. A fact goes in a sentence-case line under the heading. Report any you find.
 - Italic — not bold — used for in-paragraph emphasis.
 - `font-variant-numeric: tabular-nums` on numeric columns.
 

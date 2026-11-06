@@ -16,7 +16,7 @@ export function FounderBadge({ slots, activeLabel, endedLabel }: Props) {
     if (!slots.active) {
         return (
             <div className="self-start inline-flex items-center gap-2 bg-base-100 border border-secondary/30 px-4 py-2">
-                <span className="font-mono text-xs uppercase tracking-[0.22em] text-secondary">
+                <span className="font-sans text-sm font-semibold text-secondary">
                     {endedLabel}
                 </span>
             </div>
@@ -26,7 +26,7 @@ export function FounderBadge({ slots, activeLabel, endedLabel }: Props) {
     return (
         <div className="self-start inline-flex items-center gap-2 bg-primary text-primary-content px-4 py-2">
             <FontAwesomeIcon icon={faCircle} className="text-accent text-[8px]" />
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.22em]">
+            <span className="font-sans text-sm font-semibold">
                 {activeLabel}
             </span>
         </div>

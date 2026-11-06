@@ -24,26 +24,26 @@ const COPY: Record<EmployerEmailTemplate, Record<Locale, EmployerEmailCopy>> = {
     'employer.flc_pending': {
         en: {
             subject: "We're verifying your AGCONN employer account",
-            preheader: "We'll verify your business within 1 business day.",
+            preheader: 'An admin is reviewing your business details.',
             heading: 'Thanks for joining AGCONN',
             intro:
                 "We received your business details for {legalName}. Our team is reviewing them now and will email you when verification is complete.",
             body: [
                 "While you wait, you can prepare job posting drafts — just sign in and head to Jobs.",
-                "Verification typically takes less than 1 business day. We'll email you the moment your account is ready.",
+                "We'll email you when your account is ready.",
             ],
             cta: { label: 'Go to dashboard', pathByLocale: { en: '/en/employer/dashboard', es: '/es/employer/dashboard' } },
             signoff: '— The AGCONN team',
         },
         es: {
             subject: 'Estamos verificando tu cuenta de empleador de AGCONN',
-            preheader: 'Verificaremos tu negocio en 1 día hábil.',
+            preheader: 'Un administrador está revisando los datos de tu negocio.',
             heading: 'Gracias por unirte a AGCONN',
             intro:
                 'Recibimos los datos de tu negocio para {legalName}. Nuestro equipo los está revisando y te enviaremos un correo cuando la verificación esté lista.',
             body: [
                 'Mientras tanto, puedes preparar borradores de publicaciones de trabajo. Inicia sesión y ve a Trabajos.',
-                'La verificación toma menos de 1 día hábil. Te avisaremos por correo en cuanto tu cuenta esté lista.',
+                'Te avisaremos por correo cuando tu cuenta esté lista.',
             ],
             cta: { label: 'Ir al panel', pathByLocale: { en: '/en/employer/dashboard', es: '/es/employer/dashboard' } },
             signoff: '— El equipo de AGCONN',

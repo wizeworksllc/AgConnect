@@ -48,9 +48,6 @@ export function CrewEditorHeader({
 
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
                 <div>
-                    <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-                        {t(mode === 'new' ? 'eyebrow_new' : 'eyebrow_edit', { count: memberCount })}
-                    </p>
                     <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
                         {mode === 'new' ? (
                             <>
@@ -71,6 +68,9 @@ export function CrewEditorHeader({
                             </>
                         )}
                     </h1>
+                    <p className="mt-1 font-sans text-sm">
+                        {t(mode === 'new' ? 'summary_new' : 'summary_edit', { count: memberCount })}
+                    </p>
                     {mode === 'edit' && (
                         <div className="text-base-content/70 mt-2 text-sm">
                             {t('subtitle_edit', {

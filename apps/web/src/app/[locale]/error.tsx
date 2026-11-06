@@ -22,7 +22,6 @@ export default function LocaleError({
     <main className="bg-base-300 text-base-content min-h-screen">
       <ErrorState
         code="500"
-        eyebrow={t('500.eyebrow')}
         title={t('500.title')}
         description={t('500.description')}
         tryAgainLabel={t('try_again')}

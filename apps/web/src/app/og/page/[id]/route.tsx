@@ -10,7 +10,6 @@ export const revalidate = 86400;
 type Locale = 'en' | 'es';
 
 type PageCopy = {
-    eyebrow: { en: string; es: string };
     headline: { en: string; es: string };
     italicLead?: { en: string; es: string };
     subhead: { en: string; es: string };
@@ -20,7 +19,6 @@ type PageCopy = {
 
 const PAGES: Record<string, PageCopy> = {
     faq: {
-        eyebrow: { en: 'Common questions', es: 'Preguntas frecuentes' },
         headline: {
             en: 'How AGCONN works, in plain terms.',
             es: 'Cómo funciona AGCONN, en palabras claras.',
@@ -36,19 +34,17 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'primary',
     },
     impact: {
-        eyebrow: { en: 'Public impact', es: 'Impacto público' },
         headline: {
-            en: 'The numbers, without filter.',
-            es: 'Los números, sin filtro.',
+            en: 'Numbers from our own records.',
+            es: 'Números de nuestros propios registros.',
         },
         subhead: {
-            en: 'Placements, wages, training completions, verified employers — refreshed nightly, WIOA-aligned.',
-            es: 'Colocaciones, salarios, capacitaciones, empleadores verificados — al día, alineado con WIOA.',
+            en: 'Placements, wages, training completions, verified employers.',
+            es: 'Colocaciones, salarios, capacitaciones, empleadores verificados.',
         },
         accentDot: 'accent',
     },
     pricing: {
-        eyebrow: { en: 'Pricing', es: 'Precios' },
         headline: {
             en: 'Workers free. Employers pay.',
             es: 'Trabajadores gratis. Empleadores pagan.',
@@ -64,19 +60,17 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'primary',
     },
     about: {
-        eyebrow: { en: 'About AGCONN', es: 'Quiénes somos' },
         headline: {
-            en: 'Bilingual workforce infrastructure for the Central Valley.',
-            es: 'Infraestructura laboral bilingüe para el Valle Central.',
+            en: 'Bilingual workforce tools for the Central Valley.',
+            es: 'Herramientas laborales bilingües para el Valle Central.',
         },
         subhead: {
-            en: 'Verified employers, bilingual certificates, portable records — built so dignity is the default.',
-            es: 'Empleadores verificados, certificados bilingües, registros portátiles — la dignidad por defecto.',
+            en: 'Checked employers, bilingual certificates, portable records. A product of WizeWorks LLC.',
+            es: 'Empleadores revisados, certificados bilingües, registros portátiles. Un producto de WizeWorks LLC.',
         },
         accentDot: 'primary',
     },
     workers: {
-        eyebrow: { en: 'For workers', es: 'Para trabajadores' },
         italicLead: { en: 'Real work,', es: 'Trabajo real,' },
         headline: {
             en: 'in your language.',
@@ -89,31 +83,28 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'accent',
     },
     employers: {
-        eyebrow: { en: 'For employers', es: 'Para empleadores' },
         headline: {
-            en: 'Post once. Reach verified workers across five counties.',
-            es: 'Publica una vez. Llega a trabajadores verificados en cinco condados.',
+            en: 'Post bilingual jobs in five Central Valley counties.',
+            es: 'Publica trabajos bilingües en cinco condados del Valle Central.',
         },
         subhead: {
-            en: 'FLC license verified, bilingual postings, applicant Kanban, branded grant exports.',
-            es: 'Licencia FLC verificada, publicaciones bilingües, Kanban de aplicantes, reportes con marca.',
+            en: 'FLC license review, bilingual postings, applicant Kanban.',
+            es: 'Revisión de licencia FLC, publicaciones bilingües, Kanban de aplicantes.',
         },
         accentDot: 'primary',
     },
     partners: {
-        eyebrow: { en: 'For funders and partners', es: 'Para patrocinadores y socios' },
         headline: {
-            en: 'Grant-defensible reporting, on infrastructure you can audit.',
-            es: 'Reportes auditables, en una infraestructura que puedes verificar.',
+            en: 'For training organizations and workforce boards.',
+            es: 'Para organizaciones de capacitación y juntas laborales.',
         },
         subhead: {
-            en: 'WIOA-aligned exports, PIRL compliance, multi-tenant from day one — for workforce boards and county agencies.',
-            es: 'Reportes alineados con WIOA, cumplimiento PIRL, multi-inquilino — para juntas laborales y agencias.',
+            en: 'List programs, issue bilingual certificates, or talk to us about what you need.',
+            es: 'Publica programas, emite certificados bilingües o habla con nosotros sobre lo que necesitas.',
         },
         accentDot: 'primary',
     },
     'how-it-works': {
-        eyebrow: { en: 'How it works', es: 'Cómo funciona' },
         headline: {
             en: 'Sign in by SMS. Apply with a tap.',
             es: 'Ingresa por SMS. Postula con un toque.',
@@ -125,10 +116,9 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'accent',
     },
     resources: {
-        eyebrow: { en: 'Resources', es: 'Recursos' },
         headline: {
-            en: 'Worker rights, FLC compliance, CDFA training.',
-            es: 'Derechos laborales, cumplimiento FLC, capacitación CDFA.',
+            en: 'Worker rights, FLC compliance, training.',
+            es: 'Derechos laborales, cumplimiento FLC, capacitación.',
         },
         subhead: {
             en: 'Long-form articles, written for the people doing the work — and the people hiring them.',
@@ -137,7 +127,6 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'primary',
     },
     'worker-rights': {
-        eyebrow: { en: 'Worker rights', es: 'Derechos del trabajador' },
         headline: {
             en: 'Wages, hours, water, shade, transportation.',
             es: 'Salarios, horas, agua, sombra, transporte.',
@@ -149,70 +138,64 @@ const PAGES: Record<string, PageCopy> = {
         accentDot: 'accent',
     },
     'skills-wallet': {
-        eyebrow: { en: 'Skills wallet', es: 'Cartera de habilidades' },
         headline: {
             en: 'Your record. Bilingual. Portable. Yours.',
             es: 'Tu registro. Bilingüe. Portátil. Tuyo.',
         },
         subhead: {
-            en: 'Certificates, training completions, employment history — verified, hashed, and yours to carry.',
-            es: 'Certificados, capacitaciones, historial laboral — verificados, con hash, y tuyos.',
+            en: 'Certificates and training completions, yours to carry.',
+            es: 'Certificados y capacitaciones, tuyos para llevar.',
         },
         accentDot: 'primary',
     },
     promotora: {
-        eyebrow: { en: 'Promotora program', es: 'Programa de promotoras' },
         headline: {
-            en: 'Community organizers who know the work.',
-            es: 'Organizadores comunitarios que conocen el trabajo.',
+            en: 'Materials for promotoras are planned.',
+            es: 'Los materiales para promotoras están planeados.',
         },
         subhead: {
-            en: 'Bilingual community partners helping workers sign up, find work, and complete training.',
-            es: 'Socios comunitarios bilingües que ayudan a inscribir, conectar y capacitar.',
+            en: 'Email us and tell us what would help.',
+            es: 'Escríbenos y dinos qué te ayudaría.',
         },
         accentDot: 'accent',
     },
     careers: {
-        eyebrow: { en: 'Careers at AGCONN', es: 'Empleos en AGCONN' },
         headline: {
-            en: 'Build infrastructure for the people who feed California.',
-            es: 'Construye infraestructura para quienes alimentan California.',
+            en: 'We have no open roles.',
+            es: 'No tenemos puestos abiertos.',
         },
         subhead: {
-            en: 'Bilingual product, civic-grade engineering, calm process. Remote-first, Central Valley grounded.',
-            es: 'Producto bilingüe, ingeniería cívica, proceso calmado. Primero remoto, anclado al Valle Central.',
+            en: 'Subscribe to hear when roles open.',
+            es: 'Suscríbete para enterarte cuando se abran puestos.',
         },
         accentDot: 'primary',
     },
     press: {
-        eyebrow: { en: 'Press', es: 'Prensa' },
         headline: {
-            en: 'News, releases, and the record behind them.',
-            es: 'Noticias, comunicados, y el registro detrás de ellos.',
+            en: 'Facts about AGCONN, for journalists.',
+            es: 'Datos sobre AGCONN, para periodistas.',
         },
         subhead: {
-            en: 'Quotes, datelines, and contact for AGCONN — verified facts, bilingual sources.',
-            es: 'Citas, fechas y contacto para AGCONN — hechos verificados, fuentes bilingües.',
+            en: 'Press contact: press@agconn.com',
+            es: 'Contacto de prensa: press@agconn.com',
         },
         accentDot: 'primary',
     },
     trust: {
-        eyebrow: { en: 'Trust and security', es: 'Confianza y seguridad' },
         headline: {
-            en: 'Status, incidents, and how we handle your data.',
-            es: 'Estado, incidentes, y cómo manejamos tus datos.',
+            en: 'How we handle your data.',
+            es: 'Cómo manejamos tus datos.',
         },
         subhead: {
-            en: '99.9% uptime target. SMS-first auth. No data resale, ever.',
-            es: 'Objetivo de 99.9% de disponibilidad. Autenticación por SMS. Nunca revendemos datos.',
+            en: 'SMS sign-in. We do not sell worker data.',
+            es: 'Ingreso por SMS. No vendemos datos de trabajadores.',
         },
         accentDot: 'primary',
     },
     contact: {
-        eyebrow: { en: 'Contact', es: 'Contacto' },
         headline: {
-            en: 'Reach a real person, in English or Spanish.',
-            es: 'Comunícate con una persona, en español o inglés.',
+            en: 'Write to us in English or Spanish.',
+            es: 'Escríbenos en español o en inglés.',
         },
         subhead: {
             en: 'support@agconn.com · partnerships@agconn.com · press@agconn.com · security@agconn.com',
@@ -288,7 +271,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={copy.eyebrow[locale]}
                 footerLeft={
                     stat ? (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

@@ -40,10 +40,6 @@ export async function FeaturedPostingHero({ locale, job, applicants }: Props) {
             />
             <div className="relative grid grid-cols-1 gap-8 md:grid-cols-[1fr_auto] md:items-center">
                 <div>
-                    <p className="text-accent font-mono text-xs uppercase tracking-wider">
-                        {startsAt} · {job.county}
-                        {job.city ? ` · ${job.city}` : ''}
-                    </p>
                     <h2 className="font-display mt-2 text-3xl font-light leading-tight tracking-tight md:text-4xl">
                         {title} —{' '}
                         <em className="text-accent not-italic font-light">
@@ -52,6 +48,10 @@ export async function FeaturedPostingHero({ locale, job, applicants }: Props) {
                                 : t('open_count', { count: open })}
                         </em>
                     </h2>
+                    <p className="mt-1 font-sans text-sm">
+                        {startsAt} · {job.county}
+                        {job.city ? ` · ${job.city}` : ''}
+                    </p>
                     <div className="text-base-100/75 mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
                         <span className="inline-flex items-center gap-1.5">
                             <FontAwesomeIcon icon={faUsers} className="h-3.5 w-3.5" />

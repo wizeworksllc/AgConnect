@@ -39,7 +39,7 @@ The highest-violation-cost rules. If a draft conflicts with one of these, fix th
 1. **Rectangular geometry.** `border-radius: 0` on buttons, cards, badges, inputs, modals. Toggles, radios, and photo avatars are the documented exceptions.
 2. **Honey is one-of-one per screen.** Harvest honey (`#C8A24A`) is the single loud color. One honey element per visible viewport — primary CTA, single statistic, single active state. Two honey elements means one of them is wrong.
 3. **Italic for emphasis, not bold.** Inside body Inter, emphasis goes to Fraunces or Inter italic. Bold is reserved for short labels, table headers, and the first word of scannable list items.
-4. **Eyebrow labels: Inter 11px, UPPERCASE, 0.18em letter-spacing, weight 600.** Always. Don't improvise the value.
+4. **No eyebrow labels. A small uppercase line above a heading is an AI tell. Do not use one. A fact goes in a sentence-case line under the heading.**
 5. **Middot delimiter** (`·`, U+00B7) with thin spaces for inline metadata. Not bullets, dashes, or pipes.
 6. **No exclamation marks** in brand-voice copy. **No emoji** in product UI or marketing.
 7. **No shadows** on cards. Use hairline borders (ink @ 12%) and color contrast for separation.

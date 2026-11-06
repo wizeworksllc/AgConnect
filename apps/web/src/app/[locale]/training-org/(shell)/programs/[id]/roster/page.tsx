@@ -27,7 +27,7 @@ export default async function ProgramRosterPage({ params }: Props) {
       </Link>
 
       <header className="mb-6">
-        <p className="text-base-content/55 font-mono text-xs uppercase tracking-[0.18em]">
+        <p className="text-base-content/55 font-sans text-sm font-semibold">
           {isEs ? 'Lista de inscritos' : 'Roster'}
         </p>
         <h1 className="font-serif mt-2 text-[26px] font-normal leading-tight tracking-[-0.025em] sm:text-[32px]">

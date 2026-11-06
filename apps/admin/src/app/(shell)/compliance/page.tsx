@@ -26,7 +26,6 @@ export default async function CompliancePage({
     return (
         <div className="space-y-4">
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Compliance</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Per-employer compliance items and a scoreboard of the most-recent snapshot scores.

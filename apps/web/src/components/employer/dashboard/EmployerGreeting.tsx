@@ -22,13 +22,13 @@ export async function EmployerGreeting({
     return (
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-                <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-                    {[dateLine, county].filter(Boolean).join(' · ')}
-                </p>
                 <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
                     {t(greetingKey())},{' '}
                     <em className="text-primary not-italic font-light">{firstName || t('there')}</em>.
                 </h1>
+                <p className="mt-1 font-sans text-sm">
+                    {[dateLine, county].filter(Boolean).join(' · ')}
+                </p>
                 <div className="text-base-content/70 mt-2 text-sm">{summaryLine}</div>
             </div>
             <div className="flex gap-2">

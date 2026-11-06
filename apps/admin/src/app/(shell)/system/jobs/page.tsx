@@ -32,7 +32,6 @@ export default async function JobsPage({
                 </Link>
             </div>
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Job queues</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     pg-boss queue depth and the most recent failures. Replay re-enqueues a fresh copy

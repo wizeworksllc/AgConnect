@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 
 type Status = 'unsubscribed' | 'already' | 'invalid';
 
@@ -23,16 +22,12 @@ export default async function UnsubscribePage({ params, searchParams }: Props) {
     const status = parseStatus(sp?.status);
     const t = await getTranslations({ locale, namespace: 'landing.unsubscribe' });
 
-    const tone = status === 'invalid' ? 'soil' : 'moss';
-    const eyebrow = t(`${status}.eyebrow`);
     const headline = t(`${status}.headline`);
     const body = t(`${status}.body`);
 
     return (
         <main className="bg-base-100 min-h-screen">
             <section className="mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-8 px-5 py-24 md:px-8 md:py-28">
-                <EyebrowLabel tone={tone}>{eyebrow}</EyebrowLabel>
-
                 <h1 className="text-base-content font-serif text-5xl font-light italic leading-tight tracking-tight md:text-6xl">
                     {headline}
                 </h1>

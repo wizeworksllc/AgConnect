@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -35,14 +34,11 @@ export default async function PartnersPage({ params }: RouteProps) {
             <JsonLd data={organizationJsonLd()} />
             <Breadcrumb locale={locale} path="/partners" />
 
-            <MarketingPageHero eyebrow={t('eyebrow')} headline={t('headline')} intro={t('intro')} />
+            <MarketingPageHero headline={t('headline')} intro={t('intro')} />
 
             <section id="training-orgs" className="bg-base-200 w-full border-secondary/15 border-t scroll-mt-24">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('training_orgs.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('training_orgs.headline')}
                         </h2>
@@ -65,9 +61,6 @@ export default async function PartnersPage({ params }: RouteProps) {
             <section id="workforce-boards" className="bg-base-100 w-full scroll-mt-24">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.55fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-6">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('workforce_boards.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('workforce_boards.headline')}
                         </h2>
@@ -76,9 +69,6 @@ export default async function PartnersPage({ params }: RouteProps) {
                         </p>
                     </div>
                     <div className="border-secondary/20 bg-base-200 flex flex-col gap-3 self-start border p-6 lg:p-8">
-                        <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('workforce_boards.eyebrow')}
-                        </span>
                         <a
                             href="mailto:partnerships@agconn.com?subject=Tenant%20instance"
                             className="text-primary inline-flex items-center gap-2 self-start font-sans text-base font-semibold hover:underline"
@@ -93,9 +83,6 @@ export default async function PartnersPage({ params }: RouteProps) {
             <section id="wioa-exports" className="bg-primary text-primary-content w-full scroll-mt-24">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('wioa.eyebrow')}
-                        </span>
                         <h2 className="text-primary-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('wioa.headline')}
                         </h2>

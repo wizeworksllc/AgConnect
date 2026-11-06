@@ -14,28 +14,24 @@ export const landing: TranslationBundle = {
         es: "Tablero de aplicantes: aplicó → revisado → contratado, con captura de salario",
     },
     "audience.employers.bullet3": {
-        en: "DLSE/FLC license verification — admin-confirmed in 1 day",
-        es: "Verificación de licencia DLSE/FLC — confirmada por admin en 1 día",
+        en: "DLSE/FLC license check before your jobs go public",
+        es: "Revisión de licencia DLSE/FLC antes de publicar tus trabajos",
     },
     "audience.employers.bullet4": {
-        en: "Worker search across a vetted pool by skill, county, availability",
-        es: "Búsqueda en una base verificada por habilidad, condado, disponibilidad",
+        en: "Worker search by skill, county, and availability",
+        es: "Búsqueda de trabajadores por habilidad, condado y disponibilidad",
     },
     "audience.employers.cta": {
         en: "Post your first job — Free",
         es: "Publica tu primer trabajo — Gratis",
     },
-    "audience.employers.eyebrow": {
-        en: "FOR EMPLOYERS",
-        es: "PARA EMPLEADORES",
+    "audience.employers.caption": {
+        en: "For employers",
+        es: "Para empleadores",
     },
     "audience.employers.headline": {
         en: "Hire a verified crew. Skip the paperwork.",
         es: "Contrata una cuadrilla verificada. Sin papeleo.",
-    },
-    "audience.eyebrow": {
-        en: "One platform · three roles",
-        es: "Una plataforma · tres roles",
     },
     "audience.headline": {
         en: "A platform that knows who's on the other side.",
@@ -50,12 +46,12 @@ export const landing: TranslationBundle = {
         es: "Listados bilingües, capacidad y listas de espera",
     },
     "audience.training.bullet2": {
-        en: "React-PDF certificates, e-signed under UETA",
-        es: "Certificados PDF, firmados electrónicamente bajo UETA",
+        en: "Bilingual certificates with a public verification page",
+        es: "Certificados bilingües con una página pública de verificación",
     },
     "audience.training.bullet3": {
-        en: "WIOA-aligned exports for CDFA, F3, CalJOBS reporting",
-        es: "Exportes alineados con WIOA para reportes a CDFA, F3, CalJOBS",
+        en: "Program and completion records in one place",
+        es: "Registros de programas y finalizaciones en un solo lugar",
     },
     "audience.training.bullet4": {
         en: "SMS reminders 48h + 2h before each session, bilingual",
@@ -65,9 +61,9 @@ export const landing: TranslationBundle = {
         en: "Apply for an org account",
         es: "Solicita una cuenta de organización",
     },
-    "audience.training.eyebrow": {
-        en: "FOR TRAINING ORGS",
-        es: "PARA CAPACITADORES",
+    "audience.training.caption": {
+        en: "For training organizations",
+        es: "Para capacitadores",
     },
     "audience.training.headline": {
         en: "Issue credentials. Report on outcomes.",
@@ -78,8 +74,8 @@ export const landing: TranslationBundle = {
         es: "Trabajos de temporada reales, empleadores verificados, salarios documentados",
     },
     "audience.workers.bullet2": {
-        en: "Free CDFA & F3 training programs with bilingual certs",
-        es: "Capacitación gratuita de CDFA y F3 con certificados bilingües",
+        en: "Training programs with bilingual certificates",
+        es: "Programas de capacitación con certificados bilingües",
     },
     "audience.workers.bullet3": {
         en: "SMS alerts in your language. No app store, no email needed.",
@@ -93,9 +89,9 @@ export const landing: TranslationBundle = {
         en: "Sign up with your phone",
         es: "Regístrate con tu teléfono",
     },
-    "audience.workers.eyebrow": {
-        en: "FOR WORKERS",
-        es: "PARA TRABAJADORES",
+    "audience.workers.caption": {
+        en: "For workers",
+        es: "Para trabajadores",
     },
     "audience.workers.headline": {
         en: "Find work this week. Build a record that travels.",
@@ -105,10 +101,6 @@ export const landing: TranslationBundle = {
         en: "This email is already on the AGCONN list — no need to confirm again. We'll be in touch when we open in your area.",
         es: "Este correo ya está en la lista de AGCONN — no hace falta confirmar de nuevo. Te contactaremos cuando lleguemos a tu zona.",
     },
-    "confirm.already.eyebrow": {
-        en: "ALREADY CONFIRMED",
-        es: "YA ESTÁS CONFIRMADO",
-    },
     "confirm.already.headline": {
         en: "You're already in.",
         es: "Ya estás dentro.",
@@ -116,10 +108,6 @@ export const landing: TranslationBundle = {
     "confirm.confirmed.body": {
         en: "Thanks for confirming. We saved your spot on the AGCONN list — we'll reach out the moment we open in your area, in the language you signed up with.",
         es: "Gracias por confirmar. Guardamos tu lugar en la lista de AGCONN — te avisaremos en cuanto lleguemos a tu zona, en el idioma con el que te registraste.",
-    },
-    "confirm.confirmed.eyebrow": {
-        en: "CONFIRMED",
-        es: "CONFIRMADO",
     },
     "confirm.confirmed.headline": {
         en: "You're in.",
@@ -133,10 +121,6 @@ export const landing: TranslationBundle = {
         en: "Confirmation links expire after 7 days. Sign up again from the homepage and we'll send a fresh link.",
         es: "Los enlaces de confirmación caducan después de 7 días. Regístrate de nuevo desde la página principal y te enviaremos uno nuevo.",
     },
-    "confirm.expired.eyebrow": {
-        en: "LINK EXPIRED",
-        es: "ENLACE CADUCADO",
-    },
     "confirm.expired.headline": {
         en: "That link's a little old.",
         es: "Ese enlace ya está vencido.",
@@ -145,25 +129,21 @@ export const landing: TranslationBundle = {
         en: "The confirmation link looks incomplete or has already been used. Try signing up again from the homepage.",
         es: "El enlace de confirmación está incompleto o ya se utilizó. Regístrate de nuevo desde la página principal.",
     },
-    "confirm.invalid.eyebrow": {
-        en: "LINK NOT VALID",
-        es: "ENLACE NO VÁLIDO",
-    },
     "confirm.invalid.headline": {
         en: "We couldn't read that link.",
         es: "No pudimos leer ese enlace.",
     },
     "employer_showcase.body": {
-        en: "Post a bilingual job in three minutes. Watch applicants land in a kanban that captures wage on hire. Move workers across the season without re-keying anything — and let your grant officer pull a clean WIOA-aligned report on Friday afternoon.",
-        es: "Publica un trabajo bilingüe en tres minutos. Mira a los aplicantes llegar a un tablero que captura el salario al contratar. Mueve trabajadores a través de la temporada sin volver a teclear nada — y deja que tu oficial de subvención exporte un reporte WIOA limpio el viernes por la tarde.",
+        en: "Post a job in English and Spanish. See applicants on a kanban board that records the wage at hire. Keep each season in one place, so you do not type the same facts twice.",
+        es: "Publica un trabajo en inglés y español. Mira a los aplicantes en un tablero que registra el salario al contratar. Guarda cada temporada en un solo lugar, para no escribir lo mismo dos veces.",
     },
     "employer_showcase.bullet1.body": {
-        en: "Write once in either language; we generate the bilingual variant. Edit either side any time.",
-        es: "Escribe una vez en cualquier idioma; generamos la versión bilingüe. Edita ambos lados cuando quieras.",
+        en: "Write the post in English, Spanish, or both. Edit either side any time.",
+        es: "Escribe la publicación en inglés, en español o en ambos. Edita cualquiera de los dos cuando quieras.",
     },
     "employer_showcase.bullet1.title": {
-        en: "Bilingual postings, automatic.",
-        es: "Publicaciones bilingües, automáticas.",
+        en: "Bilingual postings.",
+        es: "Publicaciones bilingües.",
     },
     "employer_showcase.bullet2.body": {
         en: "Drag from Applied → Reviewed → Hired. Each hire captures wage and creates a recordable placement.",
@@ -174,8 +154,8 @@ export const landing: TranslationBundle = {
         es: "Tablero contratar-a-registro.",
     },
     "employer_showcase.bullet3.body": {
-        en: "Submit your CA DIR/DLSE license at signup; admin confirms within 1 business day. The \"Verified FLC\" badge is the only signal we ask workers to trust.",
-        es: "Envía tu licencia CA DIR/DLSE al registrarte; admin confirma en 1 día hábil. La insignia \"FLC verificado\" es la única señal que pedimos a los trabajadores que confíen.",
+        en: "Submit your CA DIR/DLSE license at signup. An admin reviews it before your jobs go public. The \"Verified FLC\" badge shows that we checked.",
+        es: "Envía tu licencia CA DIR/DLSE al registrarte. Un administrador la revisa antes de publicar tus trabajos. La insignia \"FLC verificado\" muestra que la revisamos.",
     },
     "employer_showcase.bullet3.title": {
         en: "FLC verified, before posting.",
@@ -189,61 +169,49 @@ export const landing: TranslationBundle = {
         en: "Talk to sales",
         es: "Hablar con ventas",
     },
-    "employer_showcase.eyebrow": {
-        en: "For employers",
-        es: "Para empleadores",
-    },
     "employer_showcase.headline": {
         en: "A dashboard built for the way you actually hire.",
         es: "Un panel diseñado para cómo realmente contratas.",
     },
-    "faq.eyebrow": {
-        en: "FAQ · Preguntas frecuentes",
-        es: "FAQ · Preguntas frecuentes",
-    },
     "faq.grant_card.body": {
-        en: "Email grants@agconn.com — we'll book it within 48h.",
-        es: "Escribe a grants@agconn.com — lo agendamos en 48h.",
-    },
-    "faq.grant_card.eyebrow": {
-        en: "For grant officers",
-        es: "Para oficiales de subvención",
+        en: "Email grants@agconn.com.",
+        es: "Escribe a grants@agconn.com.",
     },
     "faq.grant_card.headline": {
-        en: "Need a 30-minute walkthrough of WIOA exports?",
-        es: "¿Necesitas un recorrido de 30 minutos por los exportes WIOA?",
+        en: "Want to see how AGCONN could fit your program?",
+        es: "¿Quieres ver cómo AGCONN podría servir a tu programa?",
     },
     "faq.headline": {
         en: "Questions, in plain language.",
         es: "Preguntas, en lenguaje claro.",
     },
     "faq.intro": {
-        en: "Real questions from real conversations with workers, FLCs, and grant officers across the Valley. Don't see yours? Ask us directly.",
-        es: "Preguntas reales de conversaciones reales con trabajadores, FLCs y oficiales de subvención del Valle. ¿No ves la tuya? Pregúntanos directamente.",
+        en: "Questions that workers, FLCs, and grant officers may have. Don't see yours? Ask us directly.",
+        es: "Preguntas que pueden tener los trabajadores, los FLC y los oficiales de subvención. ¿No ves la tuya? Pregúntanos directamente.",
     },
     "faq.items.1.a": {
-        en: "Yes. Workers never pay — not for signup, not for applications, not for certificates, not for SMS notifications. The platform is funded by employer subscriptions and grant partnerships.",
-        es: "Sí. Los trabajadores nunca pagan — ni por registrarse, ni por aplicar, ni por certificados, ni por notificaciones SMS. La plataforma se financia con suscripciones de empleadores y alianzas de subvenciones.",
+        en: "Yes. Workers never pay — not for signup, not for applications, not for certificates, not for SMS notifications. Employer subscriptions fund the platform.",
+        es: "Sí. Los trabajadores nunca pagan — ni por registrarse, ni por aplicar, ni por certificados, ni por notificaciones SMS. Las suscripciones de empleadores financian la plataforma.",
     },
     "faq.items.1.q": {
         en: "Is AGCONN really free for workers?",
         es: "¿AGCONN es realmente gratis para los trabajadores?",
     },
     "faq.items.2.a": {
-        en: "Every FLC must hold an active CA DIR/DLSE license and a federal MSPA registration. We confirm both manually at signup (within 1 business day) and re-check nightly via scraper. License lapses or revocations are flagged automatically and the employer's postings are paused until resolved.",
-        es: "Cada FLC debe tener una licencia activa CA DIR/DLSE y un registro federal MSPA. Confirmamos ambos manualmente al registrarse (en 1 día hábil) y volvemos a verificar cada noche por scraper. Los lapsos o revocaciones se marcan automáticamente y las publicaciones del empleador se pausan hasta resolverse.",
+        en: "Every FLC must hold an active CA DIR/DLSE license and a federal MSPA registration. An admin reviews both before the FLC can post. We then re-check the license against the state registry every night. If a check fails, an admin reviews it.",
+        es: "Cada FLC debe tener una licencia activa CA DIR/DLSE y un registro federal MSPA. Un administrador revisa ambos antes de que el FLC pueda publicar. Después volvemos a revisar la licencia contra el registro estatal cada noche. Si una revisión falla, un administrador la revisa.",
     },
     "faq.items.2.q": {
         en: "How do you verify Farm Labor Contractors?",
         es: "¿Cómo verifican a los Contratistas de Mano de Obra Agrícola?",
     },
     "faq.items.3.a": {
-        en: "Yes. Certificates are React-PDF documents e-signed under California UETA, with cryptographic verification embedded in the file. They include the issuing organization's identifier, the program funder, dates, and a unique credential ID that's verifiable from the public certificate page.",
-        es: "Sí. Los certificados son documentos React-PDF firmados electrónicamente bajo CA UETA, con verificación criptográfica embebida. Incluyen el identificador de la organización emisora, el financiador del programa, fechas, y un ID de credencial único verificable desde la página pública del certificado.",
+        en: "Each certificate has a unique ID. Anyone can check that ID on the public certificate page, which shows the issuing organization, the program, and the dates. AGCONN does not decide if an employer or agency accepts a certificate.",
+        es: "Cada certificado tiene un ID único. Cualquiera puede revisar ese ID en la página pública del certificado, que muestra la organización emisora, el programa y las fechas. AGCONN no decide si un empleador o una agencia acepta un certificado.",
     },
     "faq.items.3.q": {
-        en: "Are AGCONN certificates legally valid?",
-        es: "¿Los certificados de AGCONN son legalmente válidos?",
+        en: "How can someone check an AGCONN certificate?",
+        es: "¿Cómo se puede revisar un certificado de AGCONN?",
     },
     "faq.items.4.a": {
         en: "No. AGCONN works on any phone that can receive SMS — no computer, no smartphone, no app store, no email. Sign up with your phone number, receive job alerts by text, and apply with one tap.",
@@ -254,32 +222,32 @@ export const landing: TranslationBundle = {
         es: "¿Necesito una computadora para usar AGCONN?",
     },
     "faq.items.5.a": {
-        en: "Exports include all required WIOA Title I fields plus CalJOBS-specific extensions: PIRL elements 100–1900, demographic data (where consented), placement details with employer + wage + start date, training program completions, credential IDs, and follow-up retention. Available as CSV and XLSX, with a custom field mapper for state-specific overlays.",
-        es: "Los exportes incluyen todos los campos requeridos del Título I de WIOA más extensiones específicas para CalJOBS: elementos PIRL 100–1900, datos demográficos (con consentimiento), detalles de colocación con empleador + salario + fecha de inicio, completaciones de capacitación, IDs de credencial, y retención de seguimiento. Disponible como CSV y XLSX, con un mapeador de campos personalizado.",
+        en: "AGCONN does not have a WIOA or PIRL export yet. If you need one, email partnerships@agconn.com and tell us what your funder requires.",
+        es: "AGCONN todavía no tiene un exporte WIOA o PIRL. Si necesitas uno, escribe a partnerships@agconn.com y dinos qué requiere tu financiador.",
     },
     "faq.items.5.q": {
-        en: "What WIOA fields do AGCONN exports include?",
-        es: "¿Qué campos WIOA incluyen los exportes de AGCONN?",
+        en: "Does AGCONN export WIOA data?",
+        es: "¿AGCONN exporta datos de WIOA?",
     },
     "faq.items.6.a": {
-        en: "Yes — at any time, in JSON or CSV, with no fee and no exit ramp. Workers can export their full profile + applications + certificates. Employers can export their postings + applicant pipeline + hires. Training orgs can export rosters + completions + certificate metadata.",
-        es: "Sí — en cualquier momento, en JSON o CSV, sin cargo y sin rampa de salida. Los trabajadores pueden exportar su perfil completo + aplicaciones + certificados. Los empleadores pueden exportar sus publicaciones + tablero de aplicantes + contrataciones. Los capacitadores pueden exportar listas + completaciones + metadatos de certificados.",
+        en: "Yes. Workers can download their certificates as PDFs. For a full copy of your data, email support@agconn.com.",
+        es: "Sí. Los trabajadores pueden descargar sus certificados como PDF. Para una copia completa de tus datos, escribe a support@agconn.com.",
     },
     "faq.items.6.q": {
         en: "Can I export my data if I leave the platform?",
         es: "¿Puedo exportar mis datos si dejo la plataforma?",
     },
     "faq.items.7.a": {
-        en: "Imperial County and the Salinas Valley are next on the roadmap (target Q4 2026), pending grant alignment with regional CDFA partners. Outside California will require state-by-state legal and licensing diligence — we're starting that work but won't commit a date until verification infrastructure is reliable.",
-        es: "El Condado Imperial y el Valle de Salinas son los siguientes en el roadmap (objetivo Q4 2026), pendiente de alineación de subvenciones con socios regionales de CDFA. Fuera de California requerirá diligencia legal y de licencias estado por estado — estamos comenzando ese trabajo pero no comprometeremos una fecha hasta que la infraestructura de verificación sea confiable.",
+        en: "We have no date to expand beyond these five counties. If you want AGCONN in your area, email partnerships@agconn.com.",
+        es: "No tenemos fecha para expandirnos más allá de estos cinco condados. Si quieres AGCONN en tu zona, escribe a partnerships@agconn.com.",
     },
     "faq.items.7.q": {
         en: "When will AGCONN expand beyond the Central Valley?",
         es: "¿Cuándo expandirá AGCONN más allá del Valle Central?",
     },
     "faq.items.8.a": {
-        en: "Yes. Worker personal data is never shared without explicit consent. Employers see only the profiles of applicants who apply to them. Grant reports are aggregated and anonymous. We comply with CCPA, FERPA (for training data), and federal WIOA privacy policy.",
-        es: "Sí. Los datos personales de los trabajadores nunca se comparten sin consentimiento explícito. Los empleadores solo ven los perfiles de quienes les aplican. Los reportes de subvención son agregados y anónimos. Cumplimos con CCPA, FERPA (para datos de capacitación), y la política federal de privacidad WIOA.",
+        en: "We do not sell worker data. An employer sees your profile when you apply to that employer, or when you opt in to worker search. Read the privacy policy for the details.",
+        es: "No vendemos datos de trabajadores. Un empleador ve tu perfil cuando le aplicas o cuando eliges aparecer en la búsqueda de trabajadores. Lee la política de privacidad para ver los detalles.",
     },
     "faq.items.8.q": {
         en: "Is my information protected?",
@@ -308,14 +276,6 @@ export const landing: TranslationBundle = {
     "featured_jobs.card.verified_grower": {
         en: "VERIFIED GROWER",
         es: "PRODUCTOR VERIFICADO",
-    },
-    "featured_jobs.eyebrow_dynamic": {
-        en: "Featured · live this week · {count} active",
-        es: "Destacados · esta semana · {count} activos",
-    },
-    "featured_jobs.eyebrow": {
-        en: "Featured · live this week",
-        es: "Destacados · esta semana",
     },
     "featured_jobs.filter.all": {
         en: "All",
@@ -349,102 +309,6 @@ export const landing: TranslationBundle = {
         en: "Real work, posted by name.",
         es: "Trabajo real, publicado a nombre.",
     },
-    "featured_jobs.jobs.1.employer": {
-        en: "Driscoll's Madera Ranch",
-        es: "Driscoll's Madera Ranch",
-    },
-    "featured_jobs.jobs.1.location": {
-        en: "Madera · 2.4 mi",
-        es: "Madera · 2.4 mi",
-    },
-    "featured_jobs.jobs.1.tags": {
-        en: "[\"Strawberry\",\"Mon–Sat\",\"No exp. required\"]",
-        es: "[\"Fresa\",\"Lun–Sáb\",\"Sin exp. requerida\"]",
-    },
-    "featured_jobs.jobs.1.title": {
-        en: "Strawberry harvest picker",
-        es: "Recolector de fresa",
-    },
-    "featured_jobs.jobs.1.type": {
-        en: "flc",
-        es: "flc",
-    },
-    "featured_jobs.jobs.1.wage": {
-        en: "$18.50–$22",
-        es: "$18.50–$22",
-    },
-    "featured_jobs.jobs.2.employer": {
-        en: "Sun-Maid Growers · Visalia",
-        es: "Sun-Maid Growers · Visalia",
-    },
-    "featured_jobs.jobs.2.location": {
-        en: "Tulare · 8.1 mi",
-        es: "Tulare · 8.1 mi",
-    },
-    "featured_jobs.jobs.2.tags": {
-        en: "[\"Cert. required\",\"Year-round\",\"Bilingual req.\"]",
-        es: "[\"Cert. requerido\",\"Todo el año\",\"Bilingüe req.\"]",
-    },
-    "featured_jobs.jobs.2.title": {
-        en: "Pesticide handler",
-        es: "Manejo de pesticidas",
-    },
-    "featured_jobs.jobs.2.type": {
-        en: "flc",
-        es: "flc",
-    },
-    "featured_jobs.jobs.2.wage": {
-        en: "$22.00",
-        es: "$22.00",
-    },
-    "featured_jobs.jobs.3.employer": {
-        en: "Wonderful Citrus · Reedley",
-        es: "Wonderful Citrus · Reedley",
-    },
-    "featured_jobs.jobs.3.location": {
-        en: "Fresno · 5.2 mi",
-        es: "Fresno · 5.2 mi",
-    },
-    "featured_jobs.jobs.3.tags": {
-        en: "[\"OSHA cert.\",\"Day shift\",\"Benefits\"]",
-        es: "[\"Cert. OSHA\",\"Turno de día\",\"Beneficios\"]",
-    },
-    "featured_jobs.jobs.3.title": {
-        en: "Forklift operator",
-        es: "Operador de montacargas",
-    },
-    "featured_jobs.jobs.3.type": {
-        en: "grower",
-        es: "grower",
-    },
-    "featured_jobs.jobs.3.wage": {
-        en: "$24.00",
-        es: "$24.00",
-    },
-    "featured_jobs.jobs.4.employer": {
-        en: "Grimmway Farms · Bakersfield",
-        es: "Grimmway Farms · Bakersfield",
-    },
-    "featured_jobs.jobs.4.location": {
-        en: "Kern · 3.7 mi",
-        es: "Kern · 3.7 mi",
-    },
-    "featured_jobs.jobs.4.tags": {
-        en: "[\"2+ yrs exp.\",\"Year-round\",\"Truck provided\"]",
-        es: "[\"2+ años exp.\",\"Todo el año\",\"Camioneta\"]",
-    },
-    "featured_jobs.jobs.4.title": {
-        en: "Irrigation technician",
-        es: "Técnico de irrigación",
-    },
-    "featured_jobs.jobs.4.type": {
-        en: "flc",
-        es: "flc",
-    },
-    "featured_jobs.jobs.4.wage": {
-        en: "$21.00",
-        es: "$21.00",
-    },
     "featured_jobs.sort": {
         en: "Sort: Wage, high → low",
         es: "Ordenar: Salario, alto → bajo",
@@ -458,8 +322,8 @@ export const landing: TranslationBundle = {
         es: "Ver todos los trabajos",
     },
     "featured_training.body": {
-        en: "Programs run by Fresno EOC, CRLA, and other regional partners — funded by CDFA, F3, and CalOSBA. Every completion produces a bilingual, e-signed certificate that lives in your skills wallet.",
-        es: "Programas dirigidos por Fresno EOC, CRLA, y otros socios regionales — financiados por CDFA, F3 y CalOSBA. Cada finalización produce un certificado bilingüe firmado electrónicamente que vive en tu cartera de habilidades.",
+        en: "Programs listed by training organizations in the Valley. When a program issues a certificate on AGCONN, it goes in your skills wallet.",
+        es: "Programas publicados por organizaciones de capacitación del Valle. Cuando un programa emite un certificado en AGCONN, se guarda en tu cartera de habilidades.",
     },
     "featured_training.card.enroll": {
         en: "Enroll",
@@ -473,149 +337,25 @@ export const landing: TranslationBundle = {
         en: "{n, plural, =0 {Waitlist only} =1 {1 of {capacity} spots left} other {# of {capacity} spots left}}",
         es: "{n, plural, =0 {Solo lista de espera} =1 {1 de {capacity} espacios disponibles} other {# de {capacity} espacios disponibles}}",
     },
-    "featured_training.eyebrow": {
-        en: "Free training · CDFA & F3 funded",
-        es: "Capacitación gratuita · financiada por CDFA y F3",
-    },
     "featured_training.headline": {
         en: "Skills you keep, in writing.",
         es: "Habilidades que conservas, por escrito.",
     },
-    "featured_training.programs.1.badge": {
-        en: "CDFA · 16 HRS",
-        es: "CDFA · 16 HRS",
-    },
-    "featured_training.programs.1.body": {
-        en: "Learn how to handle, mix, and apply restricted-use pesticides safely. CDFA-required for licensed handlers.",
-        es: "Aprende a manejar, mezclar y aplicar pesticidas de uso restringido de manera segura. Requerido por CDFA para manejadores con licencia.",
-    },
-    "featured_training.programs.1.feature": {
-        en: "false",
-        es: "false",
-    },
-    "featured_training.programs.1.price": {
-        en: "Free",
-        es: "Gratis",
-    },
-    "featured_training.programs.1.schedule": {
-        en: "Starts 5/12 · Fresno",
-        es: "Comienza 5/12 · Fresno",
-    },
-    "featured_training.programs.1.tags": {
-        en: "[\"Bilingual instructor\",\"Cert. on completion\"]",
-        es: "[\"Instructor bilingüe\",\"Cert. al completar\"]",
-    },
-    "featured_training.programs.1.title": {
-        en: "Pesticide Handler Safety Training",
-        es: "Manejo seguro de pesticidas",
-    },
-    "featured_training.programs.2.badge": {
-        en: "F3 · 24 HRS",
-        es: "F3 · 24 HRS",
-    },
-    "featured_training.programs.2.body": {
-        en: "3-day OSHA-aligned course. Hands-on instruction at Fresno EOC's Visalia training yard. Test included.",
-        es: "Curso de 3 días alineado con OSHA. Instrucción práctica en el patio de capacitación de Fresno EOC en Visalia. Examen incluido.",
-    },
-    "featured_training.programs.2.feature": {
-        en: "false",
-        es: "false",
-    },
-    "featured_training.programs.2.price": {
-        en: "Free",
-        es: "Gratis",
-    },
-    "featured_training.programs.2.schedule": {
-        en: "Starts 6/02 · Visalia",
-        es: "Comienza 6/02 · Visalia",
-    },
-    "featured_training.programs.2.tags": {
-        en: "[\"Hands-on\",\"OSHA cert.\"]",
-        es: "[\"Práctico\",\"Cert. OSHA\"]",
-    },
-    "featured_training.programs.2.title": {
-        en: "OSHA Forklift Operator Certification",
-        es: "Operación de montacargas",
-    },
-    "featured_training.programs.3.badge": {
-        en: "CalOSBA · 8 HRS",
-        es: "CalOSBA · 8 HRS",
-    },
-    "featured_training.programs.3.body": {
-        en: "One-day course at Bakersfield College's ag center. Engine basics, hydraulics, troubleshooting.",
-        es: "Curso de un día en el centro agrícola de Bakersfield College. Bases de motor, hidráulica, diagnóstico.",
-    },
-    "featured_training.programs.3.feature": {
-        en: "false",
-        es: "false",
-    },
-    "featured_training.programs.3.price": {
-        en: "Free",
-        es: "Gratis",
-    },
-    "featured_training.programs.3.schedule": {
-        en: "Starts 5/20 · Bakersfield",
-        es: "Comienza 5/20 · Bakersfield",
-    },
-    "featured_training.programs.3.tags": {
-        en: "[\"Saturday\",\"Equipment provided\"]",
-        es: "[\"Sábado\",\"Equipo provisto\"]",
-    },
-    "featured_training.programs.3.title": {
-        en: "Small Tractor Maintenance & Repair",
-        es: "Mantenimiento de tractores",
-    },
-    "featured_training.programs.4.badge": {
-        en: "CDFA · 12 HRS",
-        es: "CDFA · 12 HRS",
-    },
-    "featured_training.programs.4.body": {
-        en: "2-day program on drip system installation, monitoring, and CA water-rights basics. Worker-focused.",
-        es: "Programa de 2 días sobre instalación de sistemas de goteo, monitoreo y bases de derechos de agua de CA. Enfoque para trabajadores.",
-    },
-    "featured_training.programs.4.feature": {
-        en: "true",
-        es: "true",
-    },
-    "featured_training.programs.4.price": {
-        en: "Free + $200 stipend",
-        es: "Gratis + $200 estipendio",
-    },
-    "featured_training.programs.4.schedule": {
-        en: "Starts 6/15 · Madera",
-        es: "Comienza 6/15 · Madera",
-    },
-    "featured_training.programs.4.tags": {
-        en: "[\"High demand\",\"Stipend incl.\"]",
-        es: "[\"Alta demanda\",\"Estipendio incl.\"]",
-    },
-    "featured_training.programs.4.title": {
-        en: "Drip Irrigation & Water Stewardship",
-        es: "Riego eficiente",
-    },
     "final.body": {
-        en: "No credit card. No app store. No long form. Workers sign up with a phone in under a minute. Employers post their first job free. Training organizations apply for an org account in a click.",
-        es: "Sin tarjeta de crédito. Sin app store. Sin formularios largos. Los trabajadores se registran con un teléfono en menos de un minuto. Los empleadores publican su primer trabajo gratis. Los capacitadores solicitan una cuenta de organización con un clic.",
+        en: "No credit card. No app store. Workers sign up with a phone. Employers post their first job free. Training organizations apply for an org account.",
+        es: "Sin tarjeta de crédito. Sin app store. Los trabajadores se registran con un teléfono. Los empleadores publican su primer trabajo gratis. Los capacitadores solicitan una cuenta de organización.",
     },
     "final.employers.cta": {
         en: "Create employer account",
         es: "Crear cuenta de empleador",
     },
-    "final.employers.eyebrow": {
-        en: "FOR EMPLOYERS",
-        es: "PARA EMPLEADORES",
-    },
     "final.employers.headline": {
-        en: "Post your first job — free, in 3 minutes.",
-        es: "Publica tu primer trabajo — gratis, en 3 minutos.",
+        en: "Post your first job free.",
+        es: "Publica tu primer trabajo gratis.",
     },
     "final.employers.help": {
-        en: "FLC verification typically completes within 1 business day.",
-        es: "La verificación FLC normalmente se completa en 1 día hábil.",
-    },
-    "final.eyebrow": {
-        en: "Two ways in",
-        es: "Dos caminos",
+        en: "An admin reviews your FLC license before your jobs go public.",
+        es: "Un administrador revisa tu licencia FLC antes de publicar tus trabajos.",
     },
     "final.headline": {
         en: "Start today.",
@@ -624,10 +364,6 @@ export const landing: TranslationBundle = {
     "final.workers.cta": {
         en: "Send code",
         es: "Enviar código",
-    },
-    "final.workers.eyebrow": {
-        en: "FOR WORKERS",
-        es: "PARA TRABAJADORES",
     },
     "final.workers.headline": {
         en: "Sign up by phone — find work this week.",
@@ -701,10 +437,6 @@ export const landing: TranslationBundle = {
         en: "Worker search",
         es: "Búsqueda de trabajadores",
     },
-    "footer.col.employers.stories": {
-        en: "Customer stories",
-        es: "Historias de clientes",
-    },
     "footer.col.employers.title": {
         en: "For employers",
         es: "Para empleadores",
@@ -718,8 +450,8 @@ export const landing: TranslationBundle = {
         es: "Kit de prensa",
     },
     "footer.col.partners.research": {
-        en: "Research & data",
-        es: "Investigación y datos",
+        en: "How we count",
+        es: "Cómo contamos",
     },
     "footer.col.partners.title": {
         en: "Partners & Grant Officers",
@@ -728,10 +460,6 @@ export const landing: TranslationBundle = {
     "footer.col.partners.training_orgs": {
         en: "Training organizations",
         es: "Organizaciones de capacitación",
-    },
-    "footer.col.partners.wioa": {
-        en: "WIOA / CalJOBS exports",
-        es: "Exportes WIOA / CalJOBS",
     },
     "footer.col.partners.workforce": {
         en: "Workforce boards",
@@ -766,8 +494,8 @@ export const landing: TranslationBundle = {
         es: "Cartera de habilidades",
     },
     "footer.counties_label": {
-        en: "Now serving",
-        es: "Sirviendo ahora",
+        en: "Service area",
+        es: "Área de servicio",
     },
     "footer.counties.fresno": {
         en: "Fresno County",
@@ -790,12 +518,12 @@ export const landing: TranslationBundle = {
         es: "Condado de Tulare",
     },
     "footer.description": {
-        en: "A bilingual workforce platform connecting Central Valley farmworkers, growers, and training organizations to verified jobs, paid wages, and portable credentials.",
-        es: "Una plataforma laboral bilingüe que conecta a trabajadores agrícolas, productores y capacitadores del Valle Central con trabajos verificados, salarios pagados y credenciales portátiles.",
+        en: "A bilingual workforce platform for Central Valley farmworkers, growers, and training organizations.",
+        es: "Una plataforma laboral bilingüe para trabajadores agrícolas, productores y capacitadores del Valle Central.",
     },
     "footer.newsletter.body": {
-        en: "Quarterly updates on impact, programs, and policy. EN or ES — your choice.",
-        es: "Actualizaciones trimestrales sobre impacto, programas y políticas. EN o ES — tu elección.",
+        en: "Updates on AGCONN. EN or ES — your choice.",
+        es: "Noticias sobre AGCONN. EN o ES — tu elección.",
     },
     "footer.newsletter.cta": {
         en: "Subscribe",
@@ -834,8 +562,8 @@ export const landing: TranslationBundle = {
         es: "Encuentra trabajo agrícola en el Valle Central.",
     },
     "hero.now_serving": {
-        en: "Now serving · Fresno · Tulare · Kern · Kings · Madera",
-        es: "Ahora sirviendo · Fresno · Tulare · Kern · Kings · Madera",
+        en: "Fresno · Tulare · Kern · Kings · Madera",
+        es: "Fresno · Tulare · Kern · Kings · Madera",
     },
     "hero.phone.apply": {
         en: "Aplicar",
@@ -846,20 +574,20 @@ export const landing: TranslationBundle = {
         es: "2.4 mi",
     },
     "hero.phone.employer": {
-        en: "Driscoll's Madera Ranch",
-        es: "Driscoll's Madera Ranch",
+        en: "Sample Ranch",
+        es: "Rancho de Ejemplo",
     },
     "hero.phone.greeting": {
-        en: "Hola, María —",
-        es: "Hola, María —",
+        en: "Hola —",
+        es: "Hola —",
     },
     "hero.phone.job_title": {
         en: "Recolector de fresa",
         es: "Recolector de fresa",
     },
     "hero.phone.jobs_near": {
-        en: "14 trabajos cerca de ti.",
-        es: "14 trabajos cerca de ti.",
+        en: "Trabajos cerca de ti.",
+        es: "Trabajos cerca de ti.",
     },
     "hero.phone.lang_pill": {
         en: "ES · EN",
@@ -870,44 +598,32 @@ export const landing: TranslationBundle = {
         es: "5/12",
     },
     "hero.phone.training_label": {
-        en: "CAPACITACIÓN F3",
-        es: "CAPACITACIÓN F3",
+        en: "Capacitación",
+        es: "Capacitación",
     },
     "hero.phone.training_meta": {
-        en: "Fresno EOC · 16 hrs · Gratis",
-        es: "Fresno EOC · 16 hrs · Gratis",
+        en: "Programa de ejemplo · 16 hrs",
+        es: "Programa de ejemplo · 16 hrs",
     },
     "hero.phone.training_title": {
         en: "Manejo de pesticidas",
         es: "Manejo de pesticidas",
     },
     "hero.phone.verified_flc": {
-        en: "VERIFIED FLC",
-        es: "VERIFIED FLC",
+        en: "FLC verificado",
+        es: "FLC verificado",
     },
     "hero.phone.wage": {
         en: "$18.50–$22 / hr",
         es: "$18.50–$22 / hr",
     },
     "hero.subhead": {
-        en: "AGCONN connects Central Valley farmworkers to verified seasonal jobs and CDFA-funded training programs — bilingual from day one, with a portable record of your skills that travels with you to the next harvest.",
-        es: "AGCONN conecta a trabajadores agrícolas del Valle Central con trabajos de temporada verificados y capacitación financiada por CDFA — bilingüe desde el primer día, con un registro portátil de tus habilidades que te acompaña a la siguiente cosecha.",
+        en: "AGCONN is a new platform that connects Central Valley farmworkers to seasonal jobs from checked employers, and to training programs. It works in English and Spanish, and your record of skills stays with you.",
+        es: "AGCONN es una plataforma nueva que conecta a trabajadores agrícolas del Valle Central con trabajos de temporada de empleadores revisados y con programas de capacitación. Funciona en español e inglés, y el registro de tus habilidades se queda contigo.",
     },
     "hero.trust.line_dynamic": {
-        en: "Trusted by {workers} workers and {employers} verified employers across the Valley",
-        es: "{workers} trabajadores y {employers} empleadores verificados confían en AGCONN",
-    },
-    "hero.trust.line_fallback": {
-        en: "Built with Central Valley farmworkers and verified employers",
-        es: "Construido con trabajadores del Valle Central y empleadores verificados",
-    },
-    "hero.trust.rating": {
-        en: "4.9 / 5",
-        es: "4.9 / 5",
-    },
-    "how.eyebrow": {
-        en: "For workers · 4 steps · 6 minutes",
-        es: "Para trabajadores · 4 pasos · 6 minutos",
+        en: "{workers} workers and {employers} verified employers on AGCONN",
+        es: "{workers} trabajadores y {employers} empleadores verificados en AGCONN",
     },
     "how.headline": {
         en: "From \"hello\" to your first verified hire.",
@@ -918,8 +634,8 @@ export const landing: TranslationBundle = {
         es: "Ingresa tu número, recibe un código por SMS, ya estás dentro. Sin contraseña, sin app store, sin correo — solo un código de un solo uso en tu idioma.",
     },
     "how.step.1.tech": {
-        en: "~ 60 seconds · Twilio SMS OTP",
-        es: "~ 60 segundos · Twilio SMS OTP",
+        en: "SMS code",
+        es: "Código por SMS",
     },
     "how.step.1.title": {
         en: "Sign up with your phone",
@@ -930,8 +646,8 @@ export const landing: TranslationBundle = {
         es: "Si tienes uno en cualquier idioma, súbelo una vez. Lo procesamos y llenamos tu perfil. ¿No tienes? Agrega tus habilidades directamente. Nunca vuelves a subirlo.",
     },
     "how.step.2.tech": {
-        en: "~ 2 minutes · structured JSON, always editable",
-        es: "~ 2 minutos · JSON estructurado, siempre editable",
+        en: "Always editable",
+        es: "Siempre editable",
     },
     "how.step.2.title": {
         en: "Upload a resume — or skip it",
@@ -942,8 +658,8 @@ export const landing: TranslationBundle = {
         es: "Filtra por condado, habilidad o salario. Cada empleador tiene insignia de licencia verificada. Cada salario se muestra antes de aplicar. Alertas SMS para búsquedas guardadas.",
     },
     "how.step.3.tech": {
-        en: "Always free · 5 counties · ~140 active postings",
-        es: "Siempre gratis · 5 condados · ~140 publicaciones activas",
+        en: "Always free · 5 counties",
+        es: "Siempre gratis · 5 condados",
     },
     "how.step.3.title": {
         en: "See real jobs near you",
@@ -954,72 +670,68 @@ export const landing: TranslationBundle = {
         es: "Aplica con un toque. Rastrea por SMS. Cuando te contratan, el salario queda registrado — y la credencial entra a tu cartera, lista para la próxima cosecha.",
     },
     "how.step.4.tech": {
-        en: "Wage on record · WIOA-aligned · grant-reportable",
-        es: "Salario registrado · Alineado WIOA · reportable a subvenciones",
+        en: "Wage on record",
+        es: "Salario registrado",
     },
     "how.step.4.title": {
         en: "Get hired. On the record.",
         es: "Te contratan. Queda registrado.",
     },
     "impact.body": {
-        en: "Every metric here is grant-defensible: counted from records, exportable in WIOA-aligned formats, and audited against the source data nightly.",
-        es: "Cada métrica aquí es defendible para subvenciones: contada desde registros, exportable en formatos alineados con WIOA, y auditada contra los datos fuente cada noche.",
+        en: "These numbers come from our own records. We hide a number until we have enough records to protect people's privacy.",
+        es: "Estos números vienen de nuestros propios registros. Ocultamos un número hasta tener suficientes registros para proteger la privacidad de las personas.",
     },
     "impact.coming_soon": {
-        en: "Numbers go live as soon as we cross the reporting floor — coming soon.",
-        es: "Los números aparecerán cuando crucemos el umbral de reporte — próximamente.",
+        en: "Numbers appear here when we have enough records to publish them.",
+        es: "Los números aparecerán aquí cuando tengamos suficientes registros para publicarlos.",
     },
     "impact.cta.dashboard": {
-        en: "Want to dig in? Our public dashboard updates nightly.",
-        es: "¿Quieres profundizar? Nuestro panel público se actualiza cada noche.",
+        en: "See how we count each number.",
+        es: "Mira cómo contamos cada número.",
     },
     "impact.cta.link": {
         en: "Open the impact dashboard",
         es: "Abrir el panel de impacto",
     },
-    "impact.eyebrow": {
-        en: "Impact · Q2 2026 · Central Valley",
-        es: "Impacto · Q2 2026 · Valle Central",
-    },
     "impact.headline": {
-        en: "Numbers worth reporting on.",
-        es: "Números que vale la pena reportar.",
+        en: "Numbers from our own records.",
+        es: "Números de nuestros propios registros.",
     },
     "impact.source": {
-        en: "SOURCE · WIOA-ALIGNED · NIGHTLY · TENANT=CV",
-        es: "FUENTE · ALINEADO CON WIOA · CADA NOCHE · TENANT=CV",
+        en: "SOURCE · AGCONN RECORDS",
+        es: "FUENTE · REGISTROS DE AGCONN",
     },
     "impact.tile_coming_soon": {
         en: "Coming soon",
         es: "Próximamente",
     },
     "impact.tile.medianWage.body": {
-        en: "Above CA agricultural minimum — every hourly rate captured at hire",
-        es: "Sobre el mínimo agrícola de CA — cada tarifa por hora capturada al contratar",
+        en: "Hourly rate recorded at hire",
+        es: "Tarifa por hora registrada al contratar",
     },
     "impact.tile.medianWage.label": {
         en: "Median wage at hire",
         es: "Salario mediano al contratar",
     },
     "impact.tile.trainingsCompleted.body": {
-        en: "Bilingual certificates earned through CDFA & F3-funded programs",
-        es: "Certificados bilingües obtenidos a través de programas de CDFA y F3",
+        en: "Completions recorded on AGCONN",
+        es: "Finalizaciones registradas en AGCONN",
     },
     "impact.tile.trainingsCompleted.label": {
         en: "Trainings completed",
         es: "Capacitaciones completadas",
     },
     "impact.tile.verifiedEmployers.body": {
-        en: "FLC license or grower attestation checked by hand before any posting",
-        es: "Licencia FLC o atestación de productor revisada a mano antes de cualquier publicación",
+        en: "FLC license or grower attestation reviewed before any posting",
+        es: "Licencia FLC o atestación de productor revisada antes de cualquier publicación",
     },
     "impact.tile.verifiedEmployers.label": {
         en: "Verified employers",
         es: "Empleadores verificados",
     },
     "impact.tile.workersPlaced.body": {
-        en: "Verified seasonal hires across Fresno, Tulare, Kern, Kings & Madera",
-        es: "Contrataciones de temporada verificadas en Fresno, Tulare, Kern, Kings y Madera",
+        en: "Hires recorded in Fresno, Tulare, Kern, Kings & Madera",
+        es: "Contrataciones registradas en Fresno, Tulare, Kern, Kings y Madera",
     },
     "impact.tile.workersPlaced.label": {
         en: "Workers placed",
@@ -1125,13 +837,9 @@ export const landing: TranslationBundle = {
         en: "Compare plans in detail",
         es: "Comparar planes en detalle",
     },
-    "pricing.eyebrow": {
-        en: "Pricing · for employers",
-        es: "Precios · para empleadores",
-    },
     "pricing.footnote": {
-        en: "All plans include FLC verification, bilingual postings, SMS notifications, and grant-aligned exports.",
-        es: "Todos los planes incluyen verificación FLC, publicaciones bilingües, alertas SMS y exportes alineados con subvenciones.",
+        en: "All plans include FLC verification, bilingual postings, and SMS job alerts for workers.",
+        es: "Todos los planes incluyen verificación FLC, publicaciones bilingües y alertas SMS de empleo para trabajadores.",
     },
     "pricing.headline": {
         en: "Free for workers. Always.",
@@ -1157,17 +865,13 @@ export const landing: TranslationBundle = {
         en: "Annual · save 2 months",
         es: "Anual · ahorra 2 meses",
     },
-    "pricing.plan.free.eyebrow": {
-        en: "SEED · COMMUNITY",
-        es: "SEMILLA · COMUNIDAD",
-    },
     "pricing.plan.free.name": {
         en: "Seed",
         es: "Semilla",
     },
     "pricing.plan.free.tagline": {
-        en: "For small growers and seasonal hires. Post your first jobs and see who's in the Valley pool.",
-        es: "Para pequeños agricultores y contrataciones de temporada. Publica tus primeros empleos y descubre quién está en el Valle.",
+        en: "For small growers and seasonal hires. Post your first jobs.",
+        es: "Para pequeños agricultores y contrataciones de temporada. Publica tus primeros empleos.",
     },
     "pricing.plan.free.price.monthly.standard_amount": {
         en: "$0",
@@ -1214,8 +918,8 @@ export const landing: TranslationBundle = {
         es: "Visibilidad de la cartera de habilidades",
     },
     "pricing.plan.free.feature6": {
-        en: "Audit log (90 days)",
-        es: "Registro de auditoría (90 días)",
+        en: "Audit log",
+        es: "Registro de auditoría",
     },
     "pricing.plan.free.cta.label_founder": {
         en: "Start free",
@@ -1229,10 +933,6 @@ export const landing: TranslationBundle = {
         en: "/employer/sign-up",
         es: "/employer/sign-up",
     },
-    "pricing.plan.pro.eyebrow": {
-        en: "FIELD · GROWERS & FLCs",
-        es: "CAMPO · PRODUCTORES Y FLCs",
-    },
     "pricing.plan.pro.name": {
         en: "Field",
         es: "Campo",
@@ -1240,10 +940,6 @@ export const landing: TranslationBundle = {
     "pricing.plan.pro.tagline": {
         en: "For working FLCs and growers running crews all season. Hire faster, schedule smarter, stay compliant.",
         es: "Para contratistas y agricultores que trabajan con cuadrillas toda la temporada. Contrata más rápido, organiza mejor, mantente en cumplimiento.",
-    },
-    "pricing.plan.pro.ribbon": {
-        en: "Most popular",
-        es: "Más popular",
     },
     "pricing.plan.pro.price.monthly.standard_amount": {
         en: "$199",
@@ -1286,12 +982,12 @@ export const landing: TranslationBundle = {
         es: "Gestión de cuadrillas y turnos con confirmación por SMS",
     },
     "pricing.plan.pro.feature5": {
-        en: "H-2A / MSPA / DOL compliance + 7-year audit log",
-        es: "Cumplimiento H-2A / MSPA / DOL + registro de auditoría 7 años",
+        en: "H-2A / MSPA / DOL compliance checklist + audit log",
+        es: "Lista de cumplimiento H-2A / MSPA / DOL + registro de auditoría",
     },
     "pricing.plan.pro.feature6": {
-        en: "WIOA exports + compliance print doc",
-        es: "Exportaciones WIOA + documento de auditoría de cumplimiento",
+        en: "Compliance print doc",
+        es: "Documento impreso de cumplimiento",
     },
     "pricing.plan.pro.cta.label_founder": {
         en: "Start at founder pricing",
@@ -1305,17 +1001,13 @@ export const landing: TranslationBundle = {
         en: "/employer/sign-up?plan=field",
         es: "/employer/sign-up?plan=field",
     },
-    "pricing.plan.enterprise.eyebrow": {
-        en: "FARM · MULTI-COUNTY OPERATORS",
-        es: "RANCHO · OPERADORES MULTI-CONDADO",
-    },
     "pricing.plan.enterprise.name": {
         en: "Farm",
         es: "Rancho",
     },
     "pricing.plan.enterprise.tagline": {
-        en: "For multi-county operators and workforce boards with funder reporting obligations and large crew operations.",
-        es: "Para operadores multi-condado y juntas de fuerza laboral con obligaciones de informes a financiadores y grandes operaciones de cuadrillas.",
+        en: "For multi-county operators with large crews.",
+        es: "Para operadores multi-condado con cuadrillas grandes.",
     },
     "pricing.plan.enterprise.price.monthly.standard_amount": {
         en: "$499",
@@ -1349,21 +1041,9 @@ export const landing: TranslationBundle = {
         en: "Multi-user accounts & roles",
         es: "Cuentas multiusuario y roles",
     },
-    "pricing.plan.enterprise.feature3": {
-        en: "Branded grant exports + PIRL compliance",
-        es: "Exportaciones de subvenciones con marca + cumplimiento PIRL",
-    },
     "pricing.plan.enterprise.feature4": {
-        en: "Hire metrics dashboard (WIOA KPIs)",
-        es: "Panel de métricas de contratación (KPIs de WIOA)",
-    },
-    "pricing.plan.enterprise.feature5": {
-        en: "Tenant-isolated participant data",
-        es: "Datos de participantes aislados por inquilino",
-    },
-    "pricing.plan.enterprise.feature6": {
-        en: "Dedicated success contact + SLA",
-        es: "Contacto de éxito dedicado + SLA",
+        en: "Hire metrics dashboard",
+        es: "Panel de métricas de contratación",
     },
     "pricing.plan.enterprise.cta.label_founder": {
         en: "Talk to sales",
@@ -1377,125 +1057,9 @@ export const landing: TranslationBundle = {
         en: "mailto:sales@agconn.com?subject=Farm%20plan",
         es: "mailto:sales@agconn.com?subject=Plan%20Rancho",
     },
-    "testimonials.1.name": {
-        en: "María Hernández",
-        es: "María Hernández",
-    },
-    "testimonials.1.quote": {
-        en: "Antes pasaba dos semanas buscando trabajo cada cosecha. Ahora recibo un mensaje, aplico, y el lunes ya estoy en el campo. Y mi certificado de pesticidas vale en cualquier rancho.",
-        es: "Antes pasaba dos semanas buscando trabajo cada cosecha. Ahora recibo un mensaje, aplico, y el lunes ya estoy en el campo. Y mi certificado de pesticidas vale en cualquier rancho.",
-    },
-    "testimonials.1.role": {
-        en: "Worker · Madera County · 8 yrs",
-        es: "Trabajadora · Condado de Madera · 8 años",
-    },
-    "testimonials.1.surface": {
-        en: "moss",
-        es: "moss",
-    },
-    "testimonials.2.name": {
-        en: "Tomás Reyes",
-        es: "Tomás Reyes",
-    },
-    "testimonials.2.quote": {
-        en: "The kanban replaced our paper applicant binder. Wage capture happens at hire, not weeks later. When my F3 grant officer asked for a Q1 report, I exported it in two minutes — same fields she submits to CalJOBS.",
-        es: "The kanban replaced our paper applicant binder. Wage capture happens at hire, not weeks later. When my F3 grant officer asked for a Q1 report, I exported it in two minutes — same fields she submits to CalJOBS.",
-    },
-    "testimonials.2.role": {
-        en: "FLC · Hernández Crews · Tulare",
-        es: "FLC · Hernández Crews · Tulare",
-    },
-    "testimonials.2.surface": {
-        en: "bone",
-        es: "bone",
-    },
-    "testimonials.3.name": {
-        en: "Janelle Park, MPA",
-        es: "Janelle Park, MPA",
-    },
-    "testimonials.3.quote": {
-        en: "We were issuing certificates by hand and re-keying outcomes into CalJOBS by week's end. AGCONN generates the bilingual PDF, e-signs it, and the data flows straight into our CDFA quarterly. Hours saved, every cohort.",
-        es: "We were issuing certificates by hand and re-keying outcomes into CalJOBS by week's end. AGCONN generates the bilingual PDF, e-signs it, and the data flows straight into our CDFA quarterly. Hours saved, every cohort.",
-    },
-    "testimonials.3.role": {
-        en: "Workforce Director · Fresno EOC",
-        es: "Directora Laboral · Fresno EOC",
-    },
-    "testimonials.3.surface": {
-        en: "sage",
-        es: "sage",
-    },
-    "testimonials.eyebrow": {
-        en: "Voices from the Valley",
-        es: "Voces del Valle",
-    },
-    "testimonials.headline": {
-        en: "From the people who use it every season.",
-        es: "De las personas que lo usan cada temporada.",
-    },
-    "trust.eyebrow": {
-        en: "Built with",
-        es: "Construido con",
-    },
-    "trust.partners.calosba.caption": {
-        en: "Office of Small Biz",
-        es: "Pequeño Negocio",
-    },
-    "trust.partners.calosba.name": {
-        en: "CalOSBA",
-        es: "CalOSBA",
-    },
-    "trust.partners.cdfa.caption": {
-        en: "Cal. Dept. of Food & Ag.",
-        es: "Depto. de Alim. y Ag.",
-    },
-    "trust.partners.cdfa.name": {
-        en: "CDFA",
-        es: "CDFA",
-    },
-    "trust.partners.crla.caption": {
-        en: "Rural Legal Asst.",
-        es: "Asist. Legal Rural",
-    },
-    "trust.partners.crla.name": {
-        en: "CRLA",
-        es: "CRLA",
-    },
-    "trust.partners.edd.caption": {
-        en: "Workforce Boards",
-        es: "Juntas Laborales",
-    },
-    "trust.partners.edd.name": {
-        en: "EDD ▪︎ Local Area",
-        es: "EDD ▪︎ Área Local",
-    },
-    "trust.partners.eoc.caption": {
-        en: "Training partner",
-        es: "Socio de capacitación",
-    },
-    "trust.partners.eoc.name": {
-        en: "Fresno EOC",
-        es: "Fresno EOC",
-    },
-    "trust.partners.f3.caption": {
-        en: "Farms · Food · Future",
-        es: "Granjas · Alim. · Futuro",
-    },
-    "trust.partners.f3.name": {
-        en: "F3",
-        es: "F3",
-    },
-    "trust.subtitle": {
-        en: "Funders & partners across the Valley",
-        es: "Financiadores y socios en todo el Valle",
-    },
     "unsubscribe.already.body": {
         en: "This email isn't on the AGCONN list — nothing more to do. If you'd like to opt back in, sign up again from the homepage.",
         es: "Este correo no está en la lista de AGCONN — no hay nada más que hacer. Si quieres volver a inscribirte, regístrate desde la página principal.",
-    },
-    "unsubscribe.already.eyebrow": {
-        en: "ALREADY UNSUBSCRIBED",
-        es: "YA ESTÁS DADO DE BAJA",
     },
     "unsubscribe.already.headline": {
         en: "You're already off the list.",
@@ -1509,10 +1073,6 @@ export const landing: TranslationBundle = {
         en: "The unsubscribe link looks incomplete. If you're still receiving emails you don't want, reply to one and we'll remove you manually.",
         es: "El enlace para darte de baja está incompleto. Si sigues recibiendo correos que no quieres, responde a uno y te quitaremos manualmente.",
     },
-    "unsubscribe.invalid.eyebrow": {
-        en: "LINK NOT VALID",
-        es: "ENLACE NO VÁLIDO",
-    },
     "unsubscribe.invalid.headline": {
         en: "We couldn't read that link.",
         es: "No pudimos leer ese enlace.",
@@ -1520,10 +1080,6 @@ export const landing: TranslationBundle = {
     "unsubscribe.unsubscribed.body": {
         en: "We removed you from the AGCONN list — no more emails from us. If this was a mistake, you can sign up again from the homepage at any time.",
         es: "Te quitamos de la lista de AGCONN — no recibirás más correos de nosotros. Si fue por error, puedes registrarte de nuevo desde la página principal cuando quieras.",
-    },
-    "unsubscribe.unsubscribed.eyebrow": {
-        en: "UNSUBSCRIBED",
-        es: "DADO DE BAJA",
     },
     "unsubscribe.unsubscribed.headline": {
         en: "You're off the list.",
@@ -1534,8 +1090,8 @@ export const landing: TranslationBundle = {
         es: "Para empleadores · Publicar un trabajo",
     },
     "utility.grant_aligned": {
-        en: "CDFA & F3 grant-aligned · Central Valley · 2026",
-        es: "Alineado con CDFA y F3 · Valle Central · 2026",
+        en: "Central Valley, California",
+        es: "Valle Central, California",
     },
     "utility.help": {
         en: "Help · Ayuda",
@@ -1570,28 +1126,164 @@ export const landing: TranslationBundle = {
         es: "Claro",
     },
     "verification.body": {
-        en: "Farm Labor Contractors must hold an active CA DIR/DLSE license and a federal MSPA registration. Growers are confirmed against the California Secretary of State business registry. We don't take applicants on their word — we check the record, then re-check it nightly.",
-        es: "Los Contratistas de Mano de Obra Agrícola deben tener una licencia activa CA DIR/DLSE y un registro federal MSPA. Los productores se confirman contra el registro de empresas del Secretario de Estado de California. No tomamos a los aplicantes por su palabra — verificamos el registro, y luego lo verificamos cada noche.",
+        en: "Farm Labor Contractors must hold an active CA DIR/DLSE license and a federal MSPA registration. An admin reviews the record before an FLC can post. We then re-check the license every night.",
+        es: "Los Contratistas de Mano de Obra Agrícola deben tener una licencia activa CA DIR/DLSE y un registro federal MSPA. Un administrador revisa el registro antes de que un FLC pueda publicar. Después volvemos a revisar la licencia cada noche.",
     },
     "verification.bullet1": {
-        en: "FLC: CA Labor Code §1682 license, verified manually within 1 day, then nightly via scraper",
-        es: "FLC: licencia bajo CA Labor Code §1682, verificada manualmente en 1 día, luego cada noche por scraper",
+        en: "FLC: CA Labor Code §1682 license, reviewed by an admin, then re-checked every night",
+        es: "FLC: licencia bajo CA Labor Code §1682, revisada por un administrador y verificada de nuevo cada noche",
     },
     "verification.bullet2": {
-        en: "Grower: business name + EIN against CA Secretary of State entity search",
-        es: "Productor: nombre del negocio + EIN contra la búsqueda de entidades del Secretario de Estado",
+        en: "Grower: business name and EIN, reviewed by an admin",
+        es: "Productor: nombre del negocio y EIN, revisados por un administrador",
     },
     "verification.bullet3": {
-        en: "License lapses or expirations are flagged automatically — workers and grant officers are notified",
-        es: "Vencimientos o lapsos de licencia se marcan automáticamente — trabajadores y oficiales de subvención son notificados",
-    },
-    "verification.eyebrow": {
-        en: "The trust differentiator",
-        es: "El diferenciador de confianza",
+        en: "If a nightly check fails, an admin reviews it",
+        es: "Si una revisión nocturna falla, un administrador la revisa",
     },
     "verification.headline": {
-        en: "Every employer here has been verified — by name.",
-        es: "Cada empleador aquí ha sido verificado — por nombre.",
+        en: "We check employers by name.",
+        es: "Revisamos a los empleadores por nombre.",
+    },
+    "sample_note": {
+        en: "Sample screen. Names and numbers are examples.",
+        es: "Pantalla de ejemplo. Los nombres y números son ejemplos.",
+    },
+    "verification.card.record": {
+        en: "Sample verification record",
+        es: "Registro de verificación de ejemplo",
+    },
+    "verification.card.name": {
+        en: "Sample Ranch",
+        es: "Rancho de Ejemplo",
+    },
+    "verification.card.checked": {
+        en: "FLC license checked against CA DIR/DLSE",
+        es: "Licencia FLC revisada contra CA DIR/DLSE",
+    },
+    "verification.card.field": {
+        en: "Field",
+        es: "Campo",
+    },
+    "verification.card.value": {
+        en: "Value",
+        es: "Valor",
+    },
+    "verification.card.license": {
+        en: "License No.",
+        es: "Licencia No.",
+    },
+    "verification.card.issued": {
+        en: "Issued",
+        es: "Emitida",
+    },
+    "verification.card.expires": {
+        en: "Expires",
+        es: "Vence",
+    },
+    "verification.card.mspa": {
+        en: "MSPA Reg.",
+        es: "Reg. MSPA",
+    },
+    "verification.card.status": {
+        en: "Status",
+        es: "Estado",
+    },
+    "verification.card.verified": {
+        en: "Verified",
+        es: "Verificado",
+    },
+    "verification.card.note": {
+        en: "Sample only. An admin reviews each FLC license, then AGCONN re-checks it every night. Workers see only the badge.",
+        es: "Solo de ejemplo. Un administrador revisa cada licencia FLC y AGCONN la revisa de nuevo cada noche. Los trabajadores solo ven la insignia.",
+    },
+    "hero.phone.counties": {
+        en: "Condados",
+        es: "Condados",
+    },
+    "employer_showcase.mock.account": {
+        en: "Sample Ranch · Field plan",
+        es: "Rancho de Ejemplo · plan Campo",
+    },
+    "employer_showcase.mock.verified": {
+        en: "Verified FLC",
+        es: "FLC verificado",
+    },
+    "employer_showcase.mock.heading": {
+        en: "Applicants for a sample crew",
+        es: "Aplicantes de una cuadrilla de ejemplo",
+    },
+    "employer_showcase.mock.note": {
+        en: "Sample screen. Names and numbers are examples.",
+        es: "Pantalla de ejemplo. Los nombres y números son ejemplos.",
+    },
+    "employer_showcase.mock.column.applied": {
+        en: "Applied",
+        es: "Aplicaron",
+    },
+    "employer_showcase.mock.column.reviewed": {
+        en: "Reviewed",
+        es: "Revisados",
+    },
+    "employer_showcase.mock.column.hired": {
+        en: "Hired · wage on record",
+        es: "Contratados · salario registrado",
+    },
+    "employer_showcase.mock.card.a.name": {
+        en: "Worker A",
+        es: "Trabajador A",
+    },
+    "employer_showcase.mock.card.a.meta": {
+        en: "Picker · 5 yrs",
+        es: "Recolector · 5 años",
+    },
+    "employer_showcase.mock.card.b.name": {
+        en: "Worker B",
+        es: "Trabajador B",
+    },
+    "employer_showcase.mock.card.b.meta": {
+        en: "Pesticide handler · certificate",
+        es: "Manejo de pesticidas · certificado",
+    },
+    "employer_showcase.mock.card.c.name": {
+        en: "Worker C",
+        es: "Trabajador C",
+    },
+    "employer_showcase.mock.card.c.meta": {
+        en: "Picker · 3 yrs",
+        es: "Recolector · 3 años",
+    },
+    "employer_showcase.mock.card.d.name": {
+        en: "Worker D",
+        es: "Trabajador D",
+    },
+    "employer_showcase.mock.card.d.meta": {
+        en: "Forklift · certificate",
+        es: "Montacargas · certificado",
+    },
+    "employer_showcase.mock.card.e.name": {
+        en: "Worker E",
+        es: "Trabajador E",
+    },
+    "employer_showcase.mock.card.e.meta": {
+        en: "Picker · 8 yrs",
+        es: "Recolector · 8 años",
+    },
+    "employer_showcase.mock.card.f.name": {
+        en: "Worker F",
+        es: "Trabajador F",
+    },
+    "employer_showcase.mock.card.f.meta": {
+        en: "$19.50/hr",
+        es: "$19.50/hora",
+    },
+    "employer_showcase.mock.card.g.name": {
+        en: "Worker G",
+        es: "Trabajador G",
+    },
+    "employer_showcase.mock.card.g.meta": {
+        en: "$22.00/hr",
+        es: "$22.00/hora",
     },
     "waitlist.already_confirmed": {
         en: "You're already on the list. We'll keep you posted.",

@@ -29,7 +29,6 @@ function buildColumns(locale: string): Column[] {
                 { key: 'search', href: `/${locale}/employers#worker-search` },
                 { key: 'flc', href: `/${locale}/employers#flc-verification` },
                 { key: 'pricing', href: `/${locale}/#pricing` },
-                { key: 'stories', href: `/${locale}/#testimonials` },
                 { key: 'sales', href: 'mailto:sales@agconn.com' },
             ],
         },
@@ -38,7 +37,6 @@ function buildColumns(locale: string): Column[] {
             items: [
                 { key: 'training_orgs', href: `/${locale}/partners#training-orgs` },
                 { key: 'workforce', href: `/${locale}/partners#workforce-boards` },
-                { key: 'wioa', href: `/${locale}/partners#wioa-exports` },
                 { key: 'impact', href: `/${locale}/impact` },
                 { key: 'press', href: `/${locale}/press` },
                 { key: 'research', href: `/${locale}/impact#methodology` },
@@ -77,7 +75,7 @@ export function MarketingFooter() {
                             {t('description')}
                         </p>
                         <div className="flex flex-col gap-2 pt-2">
-                            <p className="text-accent eyebrow">{t('counties_label')}</p>
+                            <p className="text-accent font-sans text-sm font-semibold">{t('counties_label')}</p>
                             <ul className="flex flex-wrap gap-1.5">
                                 {counties.map((c) => (
                                     <li key={c}>
@@ -95,7 +93,7 @@ export function MarketingFooter() {
 
                     {cols.map((col) => (
                         <div key={col.key} className="flex flex-col gap-3.5">
-                            <h3 className="text-accent eyebrow">{t(`col.${col.key}.title`)}</h3>
+                            <h3 className="text-accent font-sans text-sm font-semibold">{t(`col.${col.key}.title`)}</h3>
                             <ul className="menu menu-sm gap-2 p-0">
                                 {col.items.map((item) => (
                                     <li key={item.key}>

@@ -14,7 +14,11 @@ type Props = {
     cohort: Cohort;
 };
 
-const features = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'] as const;
+const features = {
+    free: ['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'],
+    pro: ['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6'],
+    enterprise: ['feature1', 'feature2', 'feature4'],
+} as const;
 
 export function PlanCard({ plan, cycle, cohort }: Props) {
     const t = useTranslations(`landing.pricing.plan.${plan}`);
@@ -30,7 +34,6 @@ export function PlanCard({ plan, cycle, cohort }: Props) {
             ? 'bg-neutral text-neutral-content'
             : 'card-bordered border-base-300 bg-base-100';
 
-    const eyebrowTone = isPro || isEnterprise ? 'text-accent' : 'text-secondary';
     const nameTone = isPro ? 'text-primary-content' : isEnterprise ? 'text-neutral-content' : 'text-base-content';
     const priceTone = isPro ? 'text-primary-content' : isEnterprise ? 'text-neutral-content' : 'text-base-content';
     const subPriceTone = isPro ? 'text-primary-content/70' : isEnterprise ? 'text-neutral-content/70' : 'text-secondary';
@@ -38,7 +41,7 @@ export function PlanCard({ plan, cycle, cohort }: Props) {
     const dividerTone = isPro || isEnterprise ? 'border-secondary' : 'border-base-300';
     const featureTextTone = isPro ? 'text-primary-content' : isEnterprise ? 'text-neutral-content' : 'text-base-content';
     const iconTone = isPro || isEnterprise ? 'text-accent' : 'text-primary';
-    const noteTone = isPro || isEnterprise ? 'text-accent' : 'text-primary';
+    const noteTone = isPro ? 'text-primary-content' : isEnterprise ? 'text-accent' : 'text-primary';
     const ctaBtnClass = isPro
         ? 'btn-accent'
         : isEnterprise
@@ -52,14 +55,8 @@ export function PlanCard({ plan, cycle, cohort }: Props) {
 
     return (
         <article className={`card h-full ${containerClass}`}>
-            {isPro && (
-                <span className="badge badge-accent absolute -top-3 left-10 font-bold tracking-widest uppercase">
-                    {t('ribbon')}
-                </span>
-            )}
             <div className="card-body p-10 gap-6">
                 <div className="flex flex-col gap-2">
-                    <p className={`label ${eyebrowTone}`}>{t('eyebrow')}</p>
                     <p className={`font-serif text-3xl font-medium ${nameTone}`}>{t('name')}</p>
                     <div className="flex items-baseline gap-3">
                         <span className={`font-serif text-6xl font-semibold leading-none tabular-nums tracking-tight ${priceTone}`}>
@@ -89,7 +86,7 @@ export function PlanCard({ plan, cycle, cohort }: Props) {
                 </div>
 
                 <ul className={`flex flex-col gap-3.5 border-t pt-4 ${dividerTone}`}>
-                    {features.map((f) => (
+                    {features[plan].map((f) => (
                         <li key={f} className="flex items-start gap-2.5">
                             <FontAwesomeIcon icon={faCheck} className={`mt-1 text-lg shrink-0 ${iconTone}`} />
                             <span className={`font-sans text-sm leading-relaxed ${featureTextTone}`}>

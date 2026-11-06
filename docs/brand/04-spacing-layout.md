@@ -96,7 +96,7 @@ Every Worker, Employer, and marketing surface uses the responsive type scale ([b
 <section className="bg-base-100">
   <div className="container mx-auto px-5 py-24 md:px-8 lg:px-20 lg:py-30">
     <div className="grid grid-cols-1 gap-16 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)]">
-      <header className="lg:sticky lg:top-8 lg:self-start">…eyebrow + headline…</header>
+      <header className="lg:sticky lg:top-8 lg:self-start">…headline…</header>
       <div className="max-w-prose">…long-form copy or accordion…</div>
     </div>
   </div>

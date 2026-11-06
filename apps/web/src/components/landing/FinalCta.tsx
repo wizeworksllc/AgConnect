@@ -1,7 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { WaitlistForm } from './WaitlistForm';
 
 export function FinalCta() {
@@ -13,9 +12,6 @@ export function FinalCta() {
             {/* <BackgroundSun /> */}
             <div className="relative container mx-auto grid grid-cols-1 gap-16 px-5 py-24 md:px-8 md:py-28 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:px-20 lg:py-30">
                 <div className="flex flex-col gap-8">
-                    <EyebrowLabel tone="honey" withRule>
-                        {t('eyebrow')}
-                    </EyebrowLabel>
                     <h2 className="text-primary-content font-serif text-5xl font-semibold leading-tight tracking-tight md:text-6xl lg:text-7xl">
                         {t('headline')}
                     </h2>
@@ -36,7 +32,6 @@ function WorkerCard({ locale }: { locale: string }) {
     return (
         <div className="card bg-base-100">
             <div className="card-body p-8 gap-4">
-                <p className="text-secondary eyebrow">{t('eyebrow')}</p>
                 <p className="card-title text-base-content font-serif text-2xl font-semibold tracking-tight leading-tight">
                     {t('headline')}
                 </p>
@@ -65,7 +60,6 @@ function EmployerCard({ locale }: { locale: string }) {
     return (
         <div className="card card-bordered bg-neutral text-neutral-content border-secondary">
             <div className="card-body p-8 gap-4">
-                <p className="text-accent eyebrow">{t('eyebrow')}</p>
                 <div className='flex'>
                     <p className="card-title text-neutral-content font-serif text-2xl font-semibold tracking-tight leading-tight">
                         {t('headline')}

@@ -24,12 +24,12 @@ export default async function UserDetailPage({
             </div>
 
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
-                <p className="eyebrow text-base-content/60">User · {u.role}</p>
                 <h1 className="font-serif text-xl font-medium tracking-tight">
                     {u.workerProfile
                         ? `${u.workerProfile.firstName} ${u.workerProfile.lastName}`
                         : (u.employerProfile?.legalName ?? u.email ?? u.id)}
                 </h1>
+                <p className="text-base-content/60 mt-1 text-sm">User · {u.role}</p>
                 <p className="text-base-content/50 mt-1 font-mono text-xs">{u.id}</p>
             </header>
 

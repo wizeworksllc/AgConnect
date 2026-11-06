@@ -88,7 +88,6 @@ function DocumentsInner({ locale }: { locale: string }) {
   return (
     <div className=" px-5 pb-16 pt-8">
       <WorkerPageHeader
-        eyebrow={t('eyebrow', { date: '_none' })}
         title={
           <>
             {t('title.lead')}{' '}
@@ -118,8 +117,8 @@ function DocumentsInner({ locale }: { locale: string }) {
 
       <div className="border-base-300 bg-base-100 mb-5 grid grid-cols-1 items-center gap-8 rounded-2xl border p-[22px] lg:grid-cols-[1.4fr_1fr]">
         <div>
-          <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-            {tComp('eyebrow')}
+          <div className="text-base-content/60 font-sans text-sm font-semibold">
+            {tComp('caption')}
           </div>
           <div className="mt-2 flex items-baseline gap-3">
             <div className="font-serif text-primary text-[48px] leading-none tracking-[-0.025em]">

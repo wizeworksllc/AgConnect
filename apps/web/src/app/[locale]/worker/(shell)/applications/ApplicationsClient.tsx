@@ -72,7 +72,7 @@ function ApplicationsInner() {
   return (
     <div className=" px-5 pb-16 pt-8">
       <WorkerPageHeader
-        eyebrow={t('eyebrow_n', {
+        meta={t('summary_n', {
           active: counts.applied + counts.reviewed,
           waiting: counts.applied,
         })}

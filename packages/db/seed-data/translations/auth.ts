@@ -77,8 +77,8 @@ export const auth: TranslationBundle = {
         es: "Continuar con Apple",
     },
     "shared.grant_aligned": {
-        en: "CDFA & F3 grant-aligned · Central Valley · 2026",
-        es: "Alineado con CDFA y F3 · Valle Central · 2026",
+        en: "Central Valley, California",
+        es: "Valle Central, California",
     },
     "shared.or": {
         en: "or",
@@ -114,7 +114,7 @@ export const auth: TranslationBundle = {
     },
 
     // Pitch panel — worker
-    "pitch.worker.eyebrow": {
+    "pitch.worker.caption": {
         en: "For workers",
         es: "Para trabajadores",
     },
@@ -127,16 +127,16 @@ export const auth: TranslationBundle = {
         es: "Trabajos verificados de empleadores con licencia FLC o de productor",
     },
     "pitch.worker.proof.p2": {
-        en: "Bilingual EN/ES from day one — phone calls, texts, training, all of it",
-        es: "Bilingüe EN/ES desde el primer día — llamadas, mensajes, capacitaciones, todo",
+        en: "Bilingual EN/ES from day one — texts, training, all of it",
+        es: "Bilingüe EN/ES desde el primer día — mensajes, capacitaciones, todo",
     },
     "pitch.worker.proof.p3": {
-        en: "CDFA-funded training programs and a portable skills wallet that travels with you",
-        es: "Capacitaciones financiadas por CDFA y un portafolio de habilidades que viaja contigo",
+        en: "Training programs and a portable skills wallet that travels with you",
+        es: "Capacitaciones y un portafolio de habilidades que viaja contigo",
     },
 
     // Pitch panel — employer
-    "pitch.employer.eyebrow": {
+    "pitch.employer.caption": {
         en: "For employers",
         es: "Para empleadores",
     },
@@ -149,8 +149,8 @@ export const auth: TranslationBundle = {
         es: "Contrata tu próxima cuadrilla, rápido.",
     },
     "pitch.employer.proof.p1": {
-        en: "FLC license verification + Cal/OSHA compliance binder, audit-ready",
-        es: "Verificación de licencia FLC + carpeta de cumplimiento Cal/OSHA, lista para auditoría",
+        en: "FLC license verification and compliance records in one place",
+        es: "Verificación de licencia FLC y registros de cumplimiento en un solo lugar",
     },
     "pitch.employer.proof.p2": {
         en: "Worker search, broadcasts, SMS + in-app messaging",
@@ -162,7 +162,7 @@ export const auth: TranslationBundle = {
     },
 
     // Pitch panel — sign-in
-    "pitch.sign_in.eyebrow": {
+    "pitch.sign_in.caption": {
         en: "Welcome back",
         es: "Bienvenido de vuelta",
     },
@@ -187,10 +187,6 @@ export const auth: TranslationBundle = {
     "sign_in.meta_title": {
         en: "Sign in to AGCONN",
         es: "Inicia sesión en AGCONN",
-    },
-    "sign_in.eyebrow": {
-        en: "Welcome back",
-        es: "Bienvenido de vuelta",
     },
     "sign_in.title_a": {
         en: "Sign in to",
@@ -284,10 +280,6 @@ export const auth: TranslationBundle = {
         en: "Reset your password · AGCONN",
         es: "Restablecer tu contraseña · AGCONN",
     },
-    "reset_password.eyebrow": {
-        en: "Password reset",
-        es: "Restablecer contraseña",
-    },
     "reset_password.title": {
         en: "Choose a new password.",
         es: "Elige una contraseña nueva.",
@@ -325,10 +317,6 @@ export const auth: TranslationBundle = {
     "sign_up_worker.meta_title": {
         en: "Sign up — Workers · AGCONN",
         es: "Crear cuenta — Trabajadores · AGCONN",
-    },
-    "sign_up_worker.eyebrow": {
-        en: "Worker sign-up",
-        es: "Registro de trabajador",
     },
     "sign_up_worker.title_a": {
         en: "Find seasonal",
@@ -459,10 +447,6 @@ export const auth: TranslationBundle = {
     "sign_up_employer.meta_title": {
         en: "Sign up — Employers · AGCONN",
         es: "Crear cuenta — Empleadores · AGCONN",
-    },
-    "sign_up_employer.eyebrow": {
-        en: "Employer sign-up",
-        es: "Registro de empleador",
     },
     "sign_up_employer.title_a": {
         en: "Hire your",

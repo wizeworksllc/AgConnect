@@ -63,12 +63,12 @@ export async function OnboardingSplitShell({
                     </Link>
 
                     <div className="my-auto max-w-md py-10 lg:py-12">
-                        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
-                            {tPitch('eyebrow')}
-                        </p>
                         <h2 className="font-display mt-5 text-balance font-light leading-[1.05] tracking-tight text-4xl md:text-5xl text-base-content">
                             {tPitch('lead')}
                         </h2>
+                        <p className="mt-1 font-sans text-sm">
+                            {tPitch('caption')}
+                        </p>
 
                         <ul className="mt-9 grid gap-3.5">
                             {(['p1', 'p2', 'p3'] as const).map((k) => (
@@ -88,9 +88,6 @@ export async function OnboardingSplitShell({
                     </div>
 
                     <div className="text-base-content/45 flex flex-wrap items-center justify-between gap-4 text-[10px]">
-                        <span className="font-mono uppercase tracking-[0.18em]">
-                            {tPitch('badge')}
-                        </span>
                         <span className="inline-flex items-center gap-1.5 text-base-content/55">
                             <FontAwesomeIcon icon={faSeedling} className="h-3 w-3" />
                             <span>{tPitch('footer_note')}</span>

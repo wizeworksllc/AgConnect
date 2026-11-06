@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { VerificationCard } from './VerificationCard';
 
 const bullets = ['1', '2', '3'] as const;
@@ -17,9 +16,6 @@ export function VerificationSpotlight() {
                 </div>
 
                 <div className="flex flex-col gap-8">
-                    <EyebrowLabel tone="soil" withRule>
-                        {t('eyebrow')}
-                    </EyebrowLabel>
                     <h2 className="text-base-content font-serif text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
                         {t('headline')}
                     </h2>

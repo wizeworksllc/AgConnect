@@ -63,7 +63,6 @@ export default async function TrainingReportPage({
     return (
         <div className="space-y-6">
             <div>
-                <p className="eyebrow text-base-content/60">Platform / Reports</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Training report</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Per-enrollment exports, or aggregate views by program, funder, or training

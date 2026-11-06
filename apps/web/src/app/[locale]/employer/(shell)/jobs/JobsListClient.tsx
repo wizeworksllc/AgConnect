@@ -85,7 +85,6 @@ function JobsListInner() {
   return (
     <div className=" px-5 pb-16 pt-8">
       <JobsHeader
-        eyebrow={tHead('eyebrow')}
         titleA={tHead('title_a')}
         titleB={tHead('title_b')}
         summary={totalsLine}

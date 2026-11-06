@@ -53,7 +53,6 @@ export default async function AdminAuditPage({
     return (
         <div className="space-y-4">
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Audit log</h1>
                 <p className="text-base-content/70 mt-1 text-sm">
                     Append-only record of every sensitive action across the platform.

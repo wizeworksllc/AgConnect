@@ -106,8 +106,8 @@ function SamplePreview() {
   const t = useTranslations('worker.wallet.sample');
   return (
     <section className="border-base-300 bg-base-200/40 grid gap-3 rounded-2xl border border-dashed p-6">
-      <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-        {t('eyebrow')}
+      <div className="text-base-content/60 font-sans text-sm font-semibold">
+        {t('caption')}
       </div>
       <article className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5 sm:grid-cols-[1fr_auto] sm:items-start">
         <div className="grid gap-2">

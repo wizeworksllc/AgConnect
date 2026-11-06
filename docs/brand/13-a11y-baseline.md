@@ -31,7 +31,7 @@ The only remaining axe violation. Bucketed by Tailwind class (top offenders):
 
 Not a bulk find-replace. Two-rule policy in `globals.css` + grep:
 
-1. **Brand colors only on large text and buttons.** Body copy uses `text-base-content`. Reserve `text-primary` / `text-accent` for headlines, eyebrows, button labels, and badge text where size is ≥ 14px bold.
+1. **Brand colors only on large text and buttons.** Body copy uses `text-base-content`. Reserve `text-primary` / `text-accent` for headlines, button labels, and badge text where size is ≥ 14px bold.
 2. **Drop opacity modifiers from text classes.** `text-base-content/50` etc. → use a darker named color or the `text-secondary` token (which is designed for muted text).
 
 A quick pre-launch sweep:

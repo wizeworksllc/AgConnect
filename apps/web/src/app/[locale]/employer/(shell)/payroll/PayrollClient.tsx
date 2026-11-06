@@ -37,15 +37,15 @@ function PayrollInner() {
     <div className=" px-5 pb-16 pt-8">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-            {t('eyebrow', {
+          <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
+            {t('title_a')} <em className="text-primary not-italic font-light">{t('title_b')}</em>
+          </h1>
+          <p className="mt-1 font-sans text-sm">
+            {t('caption', {
               start: shortDate(period.startDate, locale),
               end: shortDate(period.endDate, locale),
             })}
           </p>
-          <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
-            {t('title_a')} <em className="text-primary not-italic font-light">{t('title_b')}</em>
-          </h1>
           <div className="text-base-content/70 mt-2 text-sm">
             {t('summary', {
               workers: period.totals.workers,
@@ -65,9 +65,7 @@ function PayrollInner() {
 
       <div className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-[1.4fr_1fr]">
         <DarkHeroCard glow="gold">
-          <div className="text-accent font-mono text-xs uppercase tracking-wider">
-            {t('hero_eyebrow')}
-          </div>
+          <div className="font-sans text-sm font-semibold">{t('hero_label')}</div>
           <div className="font-display mt-3 text-6xl font-light leading-none tracking-tight tabular-nums slashed-zero">
             {hasLines ? fmtCents(period.totals.netCents) : '—'}
           </div>
@@ -127,8 +125,8 @@ function PayrollInner() {
           </div>
           {h2a?.participatesInH2a ? (
             <div className="bg-accent text-accent-content rounded-2xl p-5">
-              <div className="font-mono text-xs font-bold uppercase tracking-wider">
-                {t('h2a_eyebrow')}
+              <div className="font-sans text-sm font-semibold">
+                {t('h2a_label')}
                 {!hasLines && (
                   <span className="ml-2 font-normal opacity-80">{t('h2a_no_data')}</span>
                 )}
@@ -157,8 +155,8 @@ function PayrollInner() {
             </div>
           ) : (
             <div className="bg-base-100 border-base-300 text-base-content/70 rounded-2xl border p-5">
-              <div className="font-mono text-xs font-bold uppercase tracking-wider">
-                {t('h2a_eyebrow_off')}
+              <div className="font-sans text-sm font-semibold">
+                {t('h2a_label_off')}
               </div>
               <h2 className="font-display mt-2 text-xl font-light leading-tight tracking-tight">
                 {t('h2a_headline_off')}

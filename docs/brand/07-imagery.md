@@ -69,7 +69,6 @@ Illustration is rare in the Tierra system. When it appears:
 - Icons clarify, never decorate. If the icon and the label say the same thing, keep both only if the icon adds scanability (e.g., in a vertical list).
 - Icons inherit text color (`currentColor`). Never multi-colored.
 - Square containers around icons (when used as button glyphs) match the button's text color and have no background.
-- Eyebrow labels do not take leading icons.
 
 ### Forbidden
 

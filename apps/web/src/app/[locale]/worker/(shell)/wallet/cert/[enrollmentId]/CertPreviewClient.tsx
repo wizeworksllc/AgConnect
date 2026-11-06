@@ -56,8 +56,8 @@ function CertPreviewInner({
           </div>
 
           <div className="mt-12">
-            <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-75">
-              {locale === 'es' ? 'CERTIFICADO DE FINALIZACIÓN' : 'CERTIFICATE OF COMPLETION'}
+            <div className="opacity-75 font-sans text-sm font-semibold">
+              {locale === 'es' ? 'Certificado de finalización' : 'Certificate of completion'}
             </div>
             <h1 className="font-serif mt-3 text-[44px] leading-tight tracking-[-0.025em]">
               {title}

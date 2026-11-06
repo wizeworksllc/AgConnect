@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faBookmark } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { resourcesMetadata } from '@/lib/seo/metadata';
@@ -50,9 +49,6 @@ export default async function ResourcesPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto px-5 pt-20 pb-16 md:px-8 md:pt-24 md:pb-20 lg:px-20 lg:pt-32 lg:pb-24">
                     <div className="flex flex-col gap-6 max-w-3xl">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('eyebrow')}
-                        </EyebrowLabel>
                         <h1 className="text-base-content font-serif text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-[80px]">
                             {t('headline')}
                         </h1>
@@ -61,7 +57,7 @@ export default async function ResourcesPage({ params }: RouteProps) {
                         </p>
                         <div className="mt-2 flex flex-wrap items-center gap-3">
                             <span className="bg-accent inline-block size-2 shrink-0 rounded-full" aria-hidden />
-                            <span className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                            <span className="text-secondary font-sans text-sm font-semibold">
                                 {t('cadence_label')}
                             </span>
                         </div>
@@ -77,10 +73,10 @@ export default async function ResourcesPage({ params }: RouteProps) {
                             className="group grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:items-center lg:gap-20"
                         >
                             <div className="flex flex-col gap-4">
-                                <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                <span className="text-primary-content font-sans text-sm font-semibold">
                                     {t(`categories.${feature.category}.label`)}
                                 </span>
-                                <span className="text-primary-content/70 font-mono text-xs uppercase tracking-[0.18em]">
+                                <span className="text-primary-content/70 font-sans text-sm font-semibold">
                                     {t('card.minutes', { n: feature.readingMinutes })}
                                 </span>
                             </div>
@@ -91,7 +87,7 @@ export default async function ResourcesPage({ params }: RouteProps) {
                                 <p className="text-primary-content/85 max-w-prose font-sans text-base leading-relaxed">
                                     {pickLocale(feature.summary, locale)}
                                 </p>
-                                <span className="text-accent inline-flex items-center gap-2 font-sans text-base font-semibold">
+                                <span className="text-primary-content inline-flex items-center gap-2 font-sans text-base font-semibold">
                                     <span>{t('card.read_article')}</span>
                                     <FontAwesomeIcon icon={faArrowRight} className="text-sm transition-transform group-hover:translate-x-1" />
                                 </span>
@@ -107,7 +103,6 @@ export default async function ResourcesPage({ params }: RouteProps) {
                         <div key={category} className="flex flex-col gap-10">
                             <div className="flex flex-wrap items-end justify-between gap-6 border-secondary/15 border-b pb-6">
                                 <div className="flex flex-col gap-3">
-                                    <EyebrowLabel tone="soil">{t(`categories.${category}.label`)}</EyebrowLabel>
                                     <Link
                                         href={`/${locale}/resources/category/${category}`}
                                         className="group"
@@ -132,15 +127,15 @@ export default async function ResourcesPage({ params }: RouteProps) {
                                                 href={`/${locale}/resources/${a.slug}`}
                                                 className="group flex h-full flex-col gap-4 p-8 lg:p-10"
                                             >
-                                                <div className="flex items-center gap-2">
-                                                    <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
-                                                    <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                                        {t('card.minutes', { n: a.readingMinutes })}
-                                                    </span>
-                                                </div>
                                                 <h4 className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">
                                                     {pickLocale(a.title, locale)}
                                                 </h4>
+                                                <div className="flex items-center gap-2">
+                                                    <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
+                                                    <span className="text-secondary font-sans text-sm font-semibold">
+                                                        {t('card.minutes', { n: a.readingMinutes })}
+                                                    </span>
+                                                </div>
                                                 <p className="text-secondary font-sans text-sm leading-relaxed">
                                                     {pickLocale(a.summary, locale)}
                                                 </p>
@@ -161,16 +156,13 @@ export default async function ResourcesPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-2 lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('subscribe.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('subscribe.headline')}
                         </h2>
                         <p className="text-base-content max-w-prose font-sans text-base leading-relaxed">
                             {t('subscribe.body')}
                         </p>
-                        <p className="text-secondary mt-2 font-mono text-xs uppercase tracking-[0.18em]">
+                        <p className="text-secondary mt-2 font-sans text-sm font-semibold">
                             {t('subscribe.unsubscribe')}
                         </p>
                     </div>
@@ -193,7 +185,7 @@ export default async function ResourcesPage({ params }: RouteProps) {
             <section className="bg-primary text-primary-content w-full">
                 <div className="container mx-auto flex flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:px-8 md:py-20 lg:px-20">
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                        <span className="text-accent font-sans text-sm font-semibold">
                             {t('editorial.label')}
                         </span>
                         <p className="text-primary-content font-serif text-2xl leading-tight md:text-3xl">

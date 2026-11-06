@@ -19,7 +19,7 @@ The brand promise is dignity. Accessibility is the operational version of that p
 
 ## Typography accessibility
 
-- **No text below 14px** on screen, ever. Eyebrow labels at 11px are the documented exception and must never carry essential meaning that does not also appear in adjacent text (a label is decorative-categorical, never the only place a fact appears).
+- **No text below 14px** on screen, ever. Table headers and stat captions at 11px are the documented exception.
 - **No text below 16px on form inputs** — iOS auto-zooms inputs below 16px, which breaks the layout and the sense of control.
 - **Line length** for body paragraphs: 65–75 characters. Tierra's container widths in [04-spacing-layout.md](04-spacing-layout.md) yield this naturally; do not let long-form copy expand to the full container.
 - **Line height** at body sizes is 1.5+ (Inter body is 1.55). At display sizes Inter drops as low as 1.0–1.05 — that is a display-only allowance, not a license to crunch body type.
@@ -82,7 +82,7 @@ Focus indicators are visible, generous, and brand-aligned.
 
 - Use semantic HTML. `<button>` not `<div role="button">`. `<nav>`, `<main>`, `<header>`, `<footer>` for landmarks.
 - Every page has exactly one `<h1>`. Section titles are `<h2>`; subsections `<h3>`. Don't skip levels.
-- Form inputs are wired to their label via `<label for>` or by wrapping. Eyebrow-style floating labels MUST be backed by a real `<label>` element — visual position is not a substitute for the input/label association.
+- Form inputs are wired to their label via `<label for>` or by wrapping. Floating labels MUST be backed by a real `<label>` element — visual position is not a substitute for the input/label association.
 - FontAwesome icons: when an icon is decorative (paired with text that conveys the meaning), set `aria-hidden="true"` (the `FontAwesomeIcon` component does this by default). When an icon stands alone (icon-only button), provide an `aria-label` on the button and a visible `title` on hover.
 - Status messages (toasts, inline form errors) use `role="status"` (polite) for confirmations and `role="alert"` (assertive) for errors.
 - Live regions for async content updates (`aria-live="polite"` on a results container).

@@ -8,17 +8,15 @@ export const revalidate = 86400;
 
 const COPY = {
     en: {
-        eyebrow: 'Seasonal work · Funded training',
         italic: 'From the field,',
         roman: 'to your future.',
-        subhead: 'Bilingual seasonal jobs and CDFA-funded training across the Central Valley.',
+        subhead: 'Bilingual seasonal jobs and training across the Central Valley.',
         stat: 'Verified employers · Bilingual certificates · Portable wallet',
     },
     es: {
-        eyebrow: 'Trabajo de temporada · Capacitación',
         italic: 'Del campo,',
         roman: 'a tu futuro.',
-        subhead: 'Trabajos de temporada y capacitación CDFA, en dos idiomas, en todo el Valle Central.',
+        subhead: 'Trabajos de temporada y capacitación, en dos idiomas, en todo el Valle Central.',
         stat: 'Empleadores verificados · Certificados bilingües · Cartera portátil',
     },
 } as const;
@@ -41,7 +39,6 @@ export async function GET(req: Request) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={t.eyebrow}
                 footerLeft={
                     <span
                         style={{

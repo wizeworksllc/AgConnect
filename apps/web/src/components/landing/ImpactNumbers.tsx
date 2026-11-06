@@ -1,7 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { getImpact, type Impact } from '@/lib/api/landing';
 
 type Tile = { id: 'workersPlaced' | 'medianWage' | 'trainingsCompleted' | 'verifiedEmployers'; value: string | null };
@@ -47,9 +46,6 @@ export async function ImpactNumbers() {
             <div className="container mx-auto flex flex-col gap-16 px-5 py-24 md:px-8 md:py-28 lg:px-20 lg:py-30">
                 <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
                     <div className="flex flex-1 flex-col gap-4">
-                        <EyebrowLabel tone="honey" withRule>
-                            {t('eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="font-serif text-4xl font-semibold tracking-tight md:text-5xl">
                             {t('headline')}
                         </h2>
@@ -77,7 +73,7 @@ export async function ImpactNumbers() {
                                         {t('tile_coming_soon')}
                                     </p>
                                 ) : (
-                                    <p className="text-accent font-serif text-5xl font-semibold leading-none tabular-nums tracking-tight md:text-6xl">
+                                    <p className="text-primary-content font-serif text-5xl font-semibold leading-none tabular-nums tracking-tight md:text-6xl">
                                         {tile.value}
                                     </p>
                                 )}
@@ -98,8 +94,8 @@ export async function ImpactNumbers() {
                         <span>{t('cta.link')}</span>
                         <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
                     </a>
-                    <p className="text-accent font-mono text-xs tracking-wider lg:ml-auto">
-                        {impact?.source ?? t('source')}
+                    <p className="text-primary-content font-sans text-sm lg:ml-auto">
+                        {t('source')}
                     </p>
                 </div>
             </div>

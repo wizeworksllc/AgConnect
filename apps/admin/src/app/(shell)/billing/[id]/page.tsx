@@ -24,8 +24,8 @@ export default async function BillingEventDetailPage({
             </div>
 
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
-                <p className="eyebrow text-base-content/60">Billing event</p>
                 <h1 className="font-mono text-lg">{b.eventType}</h1>
+                <p className="text-base-content/60 mt-1 text-sm">Billing event</p>
                 <p className="text-base-content/60 mt-1 text-sm">
                     <Link href={`/employers/${b.employerId}`} className="link link-hover">
                         {b.employerName}

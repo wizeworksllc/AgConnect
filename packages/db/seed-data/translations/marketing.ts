@@ -14,40 +14,32 @@ export const marketing: TranslationBundle = {
         es: "¿Qué hace AGCONN con mi número de teléfono?",
     },
     "faq_extras.employer_payouts.answer": {
-        en: "Seed plan employers are never charged — they get 2 active postings, applicant kanban, and in-app inbox messaging. SMS to applicants from kanban actions (received, interview, hired, rejected) is a Field+ feature. Field employers pay $199/mo or $1,990/yr (founder pricing $99/$990 for the first 50 paid accounts) for unlimited postings, worker search, applicant SMS, and crew scheduling. Farm employers pay $499/mo or $4,990/yr (founder pricing $299/$2,990) for multi-user accounts, branded grant exports, and PIRL compliance. Workers always receive platform-triggered SMS — new job alerts on saved searches, training reminders, account auth — regardless of which employer's posting matched. There is no per-hire fee and no commission on wages. Workers never pay anything.",
-        es: "Los empleadores del plan Semilla nunca pagan — reciben 2 publicaciones activas, tablero kanban de solicitantes y mensajería en bandeja interna. El SMS a solicitantes desde acciones del kanban (recibido, entrevista, contratado, rechazado) es una función Campo+. Los empleadores de Campo pagan $199/mes o $1,990/año (precio fundador $99/$990 para las primeras 50 cuentas pagas) por publicaciones ilimitadas, búsqueda de trabajadores, SMS a solicitantes y gestión de cuadrillas. Los empleadores de Rancho pagan $499/mes o $4,990/año (precio fundador $299/$2,990) por cuentas multiusuario, exportaciones de subvención con marca y cumplimiento PIRL. Los trabajadores siempre reciben SMS de la plataforma — alertas de empleos nuevos según sus búsquedas guardadas, recordatorios de capacitación, autenticación de cuenta — sin importar qué publicación de empleador coincidió. No hay tarifa por contratación ni comisión sobre salarios. Los trabajadores nunca pagan nada.",
+        en: "Seed plan employers are never charged — they get 2 active postings, applicant kanban, and in-app inbox messaging. SMS to applicants from kanban actions (received, interview, hired, rejected) is a Field+ feature. Field employers pay $199/mo or $1,990/yr (founder pricing $99/$990 for the first 50 paid accounts) for unlimited postings, worker search, applicant SMS, and crew scheduling. Farm employers pay $499/mo or $4,990/yr (founder pricing $299/$2,990) for multi-user accounts. Workers always receive platform-triggered SMS — new job alerts on saved searches, training reminders, account auth — regardless of which employer's posting matched. There is no per-hire fee and no commission on wages. Workers never pay anything.",
+        es: "Los empleadores del plan Semilla nunca pagan — reciben 2 publicaciones activas, tablero kanban de solicitantes y mensajería en bandeja interna. El SMS a solicitantes desde acciones del kanban (recibido, entrevista, contratado, rechazado) es una función Campo+. Los empleadores de Campo pagan $199/mes o $1,990/año (precio fundador $99/$990 para las primeras 50 cuentas pagas) por publicaciones ilimitadas, búsqueda de trabajadores, SMS a solicitantes y gestión de cuadrillas. Los empleadores de Rancho pagan $499/mes o $4,990/año (precio fundador $299/$2,990) por cuentas multiusuario. Los trabajadores siempre reciben SMS de la plataforma — alertas de empleos nuevos según sus búsquedas guardadas, recordatorios de capacitación, autenticación de cuenta — sin importar qué publicación de empleador coincidió. No hay tarifa por contratación ni comisión sobre salarios. Los trabajadores nunca pagan nada.",
     },
     "faq_extras.employer_payouts.question": {
         en: "When does an employer get charged on AGCONN?",
         es: "¿Cuándo se cobra a un empleador en AGCONN?",
     },
-    "faq_extras.platform_uptime.answer": {
-        en: "AGCONN targets 99.9% uptime measured monthly. SMS sign-in, job browse, and applications are the highest-priority paths. A public status page is coming soon; until then, incidents that affect a public surface for more than five minutes are posted to security@agconn.com subscribers and on the trust page.",
-        es: "AGCONN tiene como meta 99.9% de disponibilidad medida mensualmente. El inicio de sesión por SMS, la búsqueda de trabajos y las aplicaciones son las prioridades más altas. La página pública de estado estará disponible próximamente; mientras tanto, los incidentes que afectan una superficie pública por más de cinco minutos se publican a las personas suscritas a security@agconn.com y en la página de confianza.",
-    },
-    "faq_extras.platform_uptime.question": {
-        en: "What is the platform uptime guarantee?",
-        es: "¿Cuál es la garantía de disponibilidad de la plataforma?",
-    },
     "faq_extras.tenant_onboarding.answer": {
-        en: "Yes — AGCONN is multi-tenant from day one. Workforce boards, county agencies, or grant administrators can run an AGCONN tenant with their own employer set, training programs, and reporting dashboards. Branding stays under your organization. Contact partnerships@agconn.com to start a tenant onboarding.",
-        es: "Sí — AGCONN es multi-inquilino desde el primer día. Juntas laborales, agencias del condado o administradores de subvenciones pueden tener una instancia de AGCONN con su propio conjunto de empleadores, programas de capacitación y reportes. La marca se mantiene bajo tu organización. Contacta partnerships@agconn.com para empezar.",
+        en: "AGCONN is built to keep each tenant's data separate, but no workforce board runs its own tenant yet. To talk about it, email partnerships@agconn.com.",
+        es: "AGCONN está construido para mantener separados los datos de cada inquilino, pero ninguna junta laboral tiene su propia instancia todavía. Para hablar de esto, escribe a partnerships@agconn.com.",
     },
     "faq_extras.tenant_onboarding.question": {
         en: "Can a workforce board run their own AGCONN instance?",
         es: "¿Puede una junta laboral tener su propia instancia de AGCONN?",
     },
     "faq_extras.training_cert_validity.answer": {
-        en: "CDFA-funded trainings are recognized California-wide. Some certifications (pesticide handler, forklift operator) follow federal OSHA standards and transfer across states; others are California-specific. Each training program lists its scope on the program page. Your skills wallet preserves the certificate PDF in both languages so you can share proof with any employer.",
-        es: "Las capacitaciones financiadas por CDFA se reconocen en todo California. Algunas certificaciones (manejo de pesticidas, operador de montacargas) siguen normas federales de OSHA y se transfieren entre estados; otras son específicas de California. Cada programa indica su alcance en la página del programa. Tu cartera de habilidades guarda el PDF del certificado en ambos idiomas para que puedas compartir tu credencial con cualquier empleador.",
+        en: "It depends on the certificate. Some follow federal OSHA standards and may transfer across states. Others apply only in California. Check the program page. Your skills wallet keeps the certificate PDF in both languages, so you can show it to any employer.",
+        es: "Depende del certificado. Algunos siguen normas federales de OSHA y pueden transferirse entre estados. Otros aplican solo en California. Revisa la página del programa. Tu cartera de habilidades guarda el PDF del certificado en ambos idiomas para que puedas mostrarlo a cualquier empleador.",
     },
     "faq_extras.training_cert_validity.question": {
-        en: "Does my CDFA certificate work outside California?",
-        es: "¿Mi certificado de CDFA es válido fuera de California?",
+        en: "Does my certificate work outside California?",
+        es: "¿Mi certificado es válido fuera de California?",
     },
     "faq_extras.wage_disputes.answer": {
-        en: "Every job posting on AGCONN shows a wage range that the employer signed off on. If the actual pay is below the posted minimum, report it from the job page or by replying to your hire confirmation SMS. We log the report, contact the employer, and pause new postings from that employer if the dispute is verified. Repeat issues remove the employer from the platform.",
-        es: "Cada publicación de trabajo en AGCONN muestra un rango salarial que el empleador firmó. Si el pago real es menor al mínimo publicado, repórtalo desde la página del trabajo o respondiendo al SMS de contratación. Registramos el reporte, contactamos al empleador y pausamos nuevas publicaciones de ese empleador si se confirma. Casos repetidos retiran al empleador de la plataforma.",
+        en: "You can file a wage claim with the California Labor Commissioner. Filing is free. Free legal help is listed on our worker rights page. You can also tell us at support@agconn.com.",
+        es: "Puedes presentar un reclamo de salario ante el Comisionado del Trabajo de California. Presentarlo es gratis. En nuestra página de derechos del trabajador hay ayuda legal gratuita. También puedes avisarnos en support@agconn.com.",
     },
     "faq_extras.wage_disputes.question": {
         en: "What if my employer pays less than the posted wage?",
@@ -56,10 +48,6 @@ export const marketing: TranslationBundle = {
     "faq_page.extras_label": {
         en: "More detail",
         es: "Más detalle",
-    },
-    "faq_page.eyebrow": {
-        en: "FAQ",
-        es: "Preguntas",
     },
     "faq_page.headline": {
         en: "Questions, in plain language.",
@@ -70,8 +58,8 @@ export const marketing: TranslationBundle = {
         es: "Preguntas comunes sobre cómo funciona AGCONN para trabajadores, empleadores y capacitadores.",
     },
     "faq_page.meta.description": {
-        en: "Common questions about finding seasonal farm work, FLC verification, CDFA training, and how AGCONN keeps every record bilingual.",
-        es: "Preguntas comunes sobre cómo encontrar trabajo agrícola de temporada, verificación de FLC, capacitación de CDFA y cómo AGCONN mantiene cada registro bilingüe.",
+        en: "Common questions about finding seasonal farm work, FLC verification, training, and how AGCONN works in two languages.",
+        es: "Preguntas comunes sobre cómo encontrar trabajo agrícola de temporada, verificación de FLC, capacitación y cómo funciona AGCONN en dos idiomas.",
     },
     "faq_page.meta.title": {
         en: "FAQ — AGCONN",
@@ -90,8 +78,8 @@ export const marketing: TranslationBundle = {
         es: "Leer guías a profundidad",
     },
     "faq_page.still_questions.body": {
-        en: "We answer every email within two business days, in your language.",
-        es: "Respondemos cada correo en menos de dos días hábiles, en tu idioma.",
+        en: "Write to us in English or Spanish.",
+        es: "Escríbenos en español o en inglés.",
     },
     "faq_page.still_questions.cta_email": {
         en: "Email support@agconn.com",
@@ -117,17 +105,13 @@ export const marketing: TranslationBundle = {
         en: "That's everything we publish here today.",
         es: "Eso es todo lo que publicamos aquí por hoy.",
     },
-    "impact_page.eyebrow": {
-        en: "Public impact dashboard",
-        es: "Panel de impacto público",
-    },
     "impact_page.headline": {
         en: "How the work shows up.",
         es: "Cómo aparece el trabajo.",
     },
     "impact_page.intro": {
-        en: "Public numbers on placements, wages, training completions, and verified employers — refreshed nightly, WIOA-aligned, and grant-defensible. Each tile stays under \"coming soon\" until enough records have accrued to publish without re-identifying anyone.",
-        es: "Números públicos sobre colocaciones, salarios, capacitaciones completadas y empleadores verificados — actualizados cada noche, alineados con WIOA y defendibles para subvenciones. Cada bloque permanece como \"próximamente\" hasta que se hayan acumulado suficientes registros para publicarlo sin que nadie pueda ser identificado.",
+        en: "Public numbers on placements, wages, training completions, and verified employers, from our own records. Each tile stays under \"coming soon\" until we have enough records to publish without re-identifying anyone.",
+        es: "Números públicos sobre colocaciones, salarios, capacitaciones completadas y empleadores verificados, de nuestros propios registros. Cada bloque permanece como \"próximamente\" hasta tener suficientes registros para publicarlo sin que nadie pueda ser identificado.",
     },
     "impact_page.last_updated": {
         en: "Last updated {time}",
@@ -138,32 +122,28 @@ export const marketing: TranslationBundle = {
         es: "En vivo · últimos 12 meses",
     },
     "impact_page.pre_live_label": {
-        en: "Refreshed nightly · first numbers post-launch",
-        es: "Actualizado cada noche · primeros números después del lanzamiento",
+        en: "First numbers come when we have enough records",
+        es: "Los primeros números llegarán cuando tengamos suficientes registros",
     },
     "impact_page.meta.description": {
-        en: "Live impact dashboard for AGCONN — Central Valley placements, median wage at hire, training completions, and verified employers, refreshed nightly.",
-        es: "Panel de impacto en vivo de AGCONN — colocaciones del Valle Central, salario mediano al contratar, capacitaciones completadas y empleadores verificados, actualizados cada noche.",
+        en: "AGCONN impact dashboard: Central Valley placements, median wage at hire, training completions, and verified employers, from our own records.",
+        es: "Panel de impacto de AGCONN: colocaciones del Valle Central, salario mediano al contratar, capacitaciones completadas y empleadores verificados, de nuestros propios registros.",
     },
     "impact_page.meta.title": {
         en: "Impact dashboard — AGCONN",
         es: "Panel de impacto — AGCONN",
     },
     "impact_page.methodology.count.body": {
-        en: "Hires recorded against verified job postings, completions recorded against CDFA / F3 / CalOSBA programs, employers with passed FLC license checks. No estimates.",
-        es: "Contrataciones registradas contra ofertas verificadas, finalizaciones contra programas de CDFA / F3 / CalOSBA, empleadores con verificación de licencia FLC aprobada. Sin estimaciones.",
+        en: "Hires recorded against verified job postings, completions recorded for training programs, employers with passed FLC license checks. No estimates.",
+        es: "Contrataciones registradas contra ofertas verificadas, finalizaciones registradas para programas de capacitación, empleadores con verificación de licencia FLC aprobada. Sin estimaciones.",
     },
     "impact_page.methodology.count.title": {
         en: "What we count",
         es: "Qué contamos",
     },
-    "impact_page.methodology.eyebrow": {
-        en: "How the numbers work",
-        es: "Cómo funcionan los números",
-    },
     "impact_page.methodology.headline": {
-        en: "Grant-defensible by design.",
-        es: "Defendibles para subvenciones por diseño.",
+        en: "How we count.",
+        es: "Cómo contamos.",
     },
     "impact_page.methodology.round.body": {
         en: "Worker placements and training completions round to the nearest 10. Median wage shows two decimals. Verified employers show the exact count — there's no privacy concern with a public total.",
@@ -182,67 +162,9 @@ export const marketing: TranslationBundle = {
         es: "Cuándo ocultamos",
     },
 
-    "impact_page.transparency.eyebrow": { en: "Transparency report 2026", es: "Reporte de transparencia 2026" },
-    "impact_page.transparency.headline": {
-        en: "We will publish even when there's nothing to report.",
-        es: "Publicaremos incluso cuando no haya nada que reportar.",
-    },
-    "impact_page.transparency.intro": {
-        en: "AGCONN's first transparency report covers the period from launch through December 31, 2026 and will be published in January 2027. Here is what we will report on, and what we can already say today.",
-        es: "El primer reporte de transparencia de AGCONN cubre el período desde el lanzamiento hasta el 31 de diciembre de 2026 y se publicará en enero de 2027. Esto es sobre lo que reportaremos, y lo que ya podemos decir hoy.",
-    },
-    "impact_page.transparency.requests.title": {
-        en: "Government data requests",
-        es: "Solicitudes de datos del gobierno",
-    },
-    "impact_page.transparency.requests.body": {
-        en: "Subpoenas, court orders, and warrants we receive — count, type, whether complied with, whether the user was notified (when not legally gagged). To date: zero requests received from any local, state, or federal agency. Zero requests from U.S. Immigration and Customs Enforcement (ICE) or U.S. Customs and Border Protection (CBP) have been honored, and none will be honored absent a judicial warrant signed by a judge.",
-        es: "Citaciones, órdenes judiciales y mandamientos que recibimos — cantidad, tipo, si los cumplimos, si el usuario fue notificado (cuando no estamos legalmente impedidos). Hasta hoy: cero solicitudes recibidas de cualquier agencia local, estatal o federal. Cero solicitudes del Servicio de Inmigración y Control de Aduanas (ICE) o de Aduanas y Protección Fronteriza (CBP) de EE. UU. han sido honradas, y ninguna lo será sin una orden judicial firmada por un juez.",
-    },
-    "impact_page.transparency.requests.value": { en: "0 received to date", es: "0 recibidas hasta hoy" },
-    "impact_page.transparency.security.title": {
-        en: "Security incidents",
-        es: "Incidentes de seguridad",
-    },
-    "impact_page.transparency.security.body": {
-        en: "Any breach of personal information, any unauthorized access to production systems, any extended outage. To date: zero confirmed incidents. If one occurs, we notify affected California residents under California Civil Code §1798.82 and notify other users without unreasonable delay, regardless of cadence.",
-        es: "Cualquier filtración de información personal, cualquier acceso no autorizado a sistemas de producción, cualquier interrupción prolongada. Hasta hoy: cero incidentes confirmados. Si ocurre uno, notificamos a los residentes de California afectados bajo el Código Civil de California §1798.82 y notificamos a otros usuarios sin demora indebida, sin importar la cadencia.",
-    },
-    "impact_page.transparency.security.value": { en: "0 confirmed", es: "0 confirmados" },
-    "impact_page.transparency.subprocessors.title": {
-        en: "Subprocessor changes",
-        es: "Cambios de subprocesadores",
-    },
-    "impact_page.transparency.subprocessors.body": {
-        en: "Adds, removes, and replacements among the infrastructure providers that touch your data. The current list and the standing commitments for any change are at /subprocessors. Changes to date: Microsoft Azure replaced Google Cloud and Supabase; WizeLens replaced Sentry; Anthropic and Mapbox were added to the list; PostHog was removed.",
-        es: "Adiciones, remociones y reemplazos entre los proveedores de infraestructura que tocan tus datos. La lista actual y los compromisos permanentes para cualquier cambio están en /subprocessors. Cambios hasta hoy: Microsoft Azure reemplazó a Google Cloud y Supabase; WizeLens reemplazó a Sentry; Anthropic y Mapbox se agregaron a la lista; se quitó PostHog.",
-    },
-    "impact_page.transparency.subprocessors.value": { en: "Last change: November 2026", es: "Último cambio: noviembre de 2026" },
-    "impact_page.transparency.actions.title": {
-        en: "Account actions",
-        es: "Acciones sobre cuentas",
-    },
-    "impact_page.transparency.actions.body": {
-        en: "Suspensions for fraud, unverifiable employer profiles taken down, FLC license revocations detected and acted on, accounts banned for harassment or unlawful discrimination. We publish counts, not names. To date: too early to report; counts will be published in the 2026 annual report.",
-        es: "Suspensiones por fraude, perfiles de empleadores no verificables retirados, revocaciones de licencia FLC detectadas y atendidas, cuentas bloqueadas por acoso o discriminación ilegal. Publicamos cantidades, no nombres. Hasta hoy: demasiado pronto para reportar; las cantidades se publicarán en el reporte anual 2026.",
-    },
-    "impact_page.transparency.actions.value": { en: "Annual report — Jan 2027", es: "Reporte anual — Enero 2027" },
-    "impact_page.transparency.ai.title": {
-        en: "AI and automated decisions",
-        es: "IA y decisiones automatizadas",
-    },
-    "impact_page.transparency.ai.body": {
-        en: "Where AI is used on the platform: machine translation between English and Spanish for user-submitted content (resumes, job postings, messages), and ranking signals on job and worker search. AGCONN does not make automated hiring or eligibility decisions about workers. Workers are never ranked, scored, or rejected by an algorithm — every hiring decision is made by a human employer.",
-        es: "Dónde se usa IA en la plataforma: traducción automática entre inglés y español para contenido enviado por usuarios (currículums, publicaciones de trabajo, mensajes), y señales de ranking en búsqueda de trabajos y trabajadores. AGCONN no toma decisiones automatizadas de contratación o elegibilidad sobre trabajadores. Los trabajadores nunca son clasificados, puntuados ni rechazados por un algoritmo — cada decisión de contratación la toma un empleador humano.",
-    },
-    "impact_page.transparency.ai.value": { en: "Translation + ranking only", es: "Solo traducción + ranking" },
-    "impact_page.transparency.contact": {
-        en: "Questions about anything on this page? Email transparency@agconn.com.",
-        es: "¿Preguntas sobre algo en esta página? Escribe a transparency@agconn.com.",
-    },
     "resources.cadence_label": {
-        en: "First articles · launching after 2026-05-05",
-        es: "Primeros artículos · publicándose después de 2026-05-05",
+        en: "More articles are coming",
+        es: "Vienen más artículos",
     },
     "resources.editorial.body": {
         en: "Want to suggest a topic? We read every email.",
@@ -259,10 +181,6 @@ export const marketing: TranslationBundle = {
     "resources.editorial.label": {
         en: "Editorial",
         es: "Editorial",
-    },
-    "resources.eyebrow": {
-        en: "Resources",
-        es: "Recursos",
     },
     "resources.form_cta": {
         en: "Subscribe",
@@ -313,20 +231,20 @@ export const marketing: TranslationBundle = {
         es: "Verificación FLC, publicaciones que generan resultados, contratación sin papeleo.",
     },
     "resources.preview.categories.training_explainers.body": {
-        en: "We sit through every program before we write about it. No marketing copy, just what it is and what you'll walk away with.",
-        es: "Nos sentamos en cada programa antes de escribir sobre él. Sin copia publicitaria, solo qué es y con qué te quedarás.",
+        en: "What each program is and what you'll walk away with.",
+        es: "Qué es cada programa y con qué te quedarás.",
     },
     "resources.preview.categories.training_explainers.label": {
         en: "Training explainers",
         es: "Capacitaciones explicadas",
     },
     "resources.preview.categories.training_explainers.title": {
-        en: "What CDFA, F3, and CalOSBA actually cover — and which one is right for you.",
-        es: "Qué cubren realmente CDFA, F3 y CalOSBA — y cuál es la indicada para ti.",
+        en: "What training programs cover — and which one is right for you.",
+        es: "Qué cubren los programas de capacitación — y cuál es el indicado para ti.",
     },
     "resources.preview.categories.workers_rights.body": {
-        en: "Plain-language guides for the questions farmworkers ask most. Sourced from California labor code and verified with CRLA.",
-        es: "Guías en lenguaje claro sobre las preguntas que más hacen los trabajadores agrícolas. Basadas en el código laboral de California y verificadas con CRLA.",
+        en: "Plain-language guides for common farmworker questions, based on California labor law.",
+        es: "Guías en lenguaje claro sobre preguntas comunes de los trabajadores agrícolas, basadas en la ley laboral de California.",
     },
     "resources.preview.categories.workers_rights.label": {
         en: "Workers' rights",
@@ -340,29 +258,21 @@ export const marketing: TranslationBundle = {
         en: "· Coming soon ·",
         es: "· Próximamente ·",
     },
-    "resources.preview.eyebrow": {
-        en: "What's coming",
-        es: "Lo que viene",
-    },
     "resources.preview.headline": {
         en: "Three lanes, plain language.",
         es: "Tres temas, lenguaje claro.",
     },
     "resources.preview.intro": {
-        en: "Each lane gets monthly bilingual articles built around a single answer: what it is, who it's for, and what to do next.",
-        es: "Cada tema recibe artículos bilingües mensuales con una sola respuesta: qué es, para quién es y qué sigue.",
+        en: "Each lane gets bilingual articles built around a single answer: what it is, who it's for, and what to do next.",
+        es: "Cada tema recibe artículos bilingües con una sola respuesta: qué es, para quién es y qué sigue.",
     },
     "resources.subscribe.body": {
-        en: "One article a month, both EN and ES. We don't share your email. We don't track opens. We send when something's worth reading.",
-        es: "Un artículo al mes, en EN y ES. No compartimos tu correo. No rastreamos aperturas. Enviamos cuando hay algo que vale la pena leer.",
-    },
-    "resources.subscribe.eyebrow": {
-        en: "Get the first article",
-        es: "Recibe el primer artículo",
+        en: "Both EN and ES. We don't share your email. We send when something's worth reading.",
+        es: "En EN y ES. No compartimos tu correo. Enviamos cuando hay algo que vale la pena leer.",
     },
     "resources.subscribe.headline": {
-        en: "Monthly. Bilingual. No filler.",
-        es: "Mensual. Bilingüe. Sin relleno.",
+        en: "Bilingual. No filler.",
+        es: "Bilingüe. Sin relleno.",
     },
     "resources.subscribe.unsubscribe": {
         en: "Unsubscribe anytime · No marketing emails · No third parties",
@@ -372,7 +282,6 @@ export const marketing: TranslationBundle = {
         en: "Want to suggest a topic? Email editorial@agconn.com →",
         es: "¿Quieres sugerir un tema? Escribe a editorial@agconn.com →",
     },
-    "resources.list.eyebrow": { en: "Library", es: "Biblioteca" },
     "resources.list.headline": {
         en: "Every guide, in plain language",
         es: "Cada guía, en lenguaje claro",
@@ -393,7 +302,6 @@ export const marketing: TranslationBundle = {
     "resources.detail.back_to_list": { en: "All resources", es: "Todos los recursos" },
     "resources.detail.published": { en: "Published {date}", es: "Publicado el {date}" },
     "resources.detail.reading_time": { en: "{n} min read", es: "{n} min de lectura" },
-    "resources.detail.related_eyebrow": { en: "Keep reading", es: "Sigue leyendo" },
     "resources.detail.related_headline": {
         en: "More from the library",
         es: "Más de la biblioteca",
@@ -422,26 +330,24 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // /skills-wallet (Workers → Skills wallet info page)
     // ========================================================================
-    "skills_wallet.eyebrow": { en: "Skills wallet", es: "Cartera de habilidades" },
     "skills_wallet.headline": {
         en: "A record that travels with you, harvest to harvest.",
         es: "Un registro que viaja contigo, de cosecha en cosecha.",
     },
     "skills_wallet.intro": {
-        en: "Every CDFA, F3, and CalOSBA training you complete on AGCONN produces a bilingual, e-signed certificate stored in your skills wallet. Show it to any employer in California — proof that travels with you.",
-        es: "Cada capacitación CDFA, F3 y CalOSBA que completas en AGCONN produce un certificado bilingüe firmado electrónicamente, guardado en tu cartera de habilidades. Muéstralo a cualquier empleador en California — prueba que viaja contigo.",
+        en: "Every training you complete on AGCONN produces a bilingual certificate stored in your skills wallet. Show it to any employer in California.",
+        es: "Cada capacitación que completas en AGCONN produce un certificado bilingüe guardado en tu cartera de habilidades. Muéstralo a cualquier empleador en California.",
     },
     "skills_wallet.meta.title": { en: "Skills wallet — AGCONN", es: "Cartera de habilidades — AGCONN" },
     "skills_wallet.meta.description": {
-        en: "Earn bilingual certificates from CDFA, F3, and CalOSBA training programs. Stored in a portable skills wallet you keep forever.",
-        es: "Obtén certificados bilingües de programas de capacitación CDFA, F3 y CalOSBA. Guardados en una cartera de habilidades portátil que conservas para siempre.",
+        en: "Earn bilingual certificates from training programs. Keep them in a portable skills wallet.",
+        es: "Obtén certificados bilingües de programas de capacitación. Guárdalos en una cartera de habilidades portátil.",
     },
-    "skills_wallet.what.eyebrow": { en: "What's in it", es: "Qué incluye" },
     "skills_wallet.what.headline": { en: "Three things, in your pocket.", es: "Tres cosas, en tu bolsillo." },
     "skills_wallet.what.cert.title": { en: "Bilingual certificates", es: "Certificados bilingües" },
     "skills_wallet.what.cert.body": {
-        en: "Every completed training generates a PDF in EN and ES. Employer-readable, signed by the issuing org, timestamped for tamper-proof verification.",
-        es: "Cada capacitación completada genera un PDF en EN y ES. Legible por el empleador, firmado por la organización emisora, con marca de tiempo para verificación a prueba de manipulación.",
+        en: "Every completed training generates a PDF in EN and ES, with a public verification page.",
+        es: "Cada capacitación completada genera un PDF en EN y ES, con una página pública de verificación.",
     },
     "skills_wallet.what.history.title": { en: "Hire history", es: "Historial de contratación" },
     "skills_wallet.what.history.body": {
@@ -453,7 +359,6 @@ export const marketing: TranslationBundle = {
         en: "One-tap share: send a verified certificate or the full wallet to a new employer via SMS or QR code. They see exactly what you choose to show.",
         es: "Compartir con un toque: envía un certificado verificado o la cartera completa a un nuevo empleador por SMS o código QR. Ven exactamente lo que elijas mostrar.",
     },
-    "skills_wallet.privacy.eyebrow": { en: "Privacy", es: "Privacidad" },
     "skills_wallet.privacy.headline": { en: "You own this. Always.", es: "Esto te pertenece. Siempre." },
     "skills_wallet.privacy.body": {
         en: "AGCONN never shares your wallet without your explicit consent. You can export the entire record as PDFs at any time, and you can delete your account in one tap — wallet contents are removed from our systems within 30 days.",
@@ -464,7 +369,6 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // /worker-rights (Workers → Worker rights info page)
     // ========================================================================
-    "worker_rights.eyebrow": { en: "Worker rights · Derechos", es: "Derechos del trabajador" },
     "worker_rights.headline": {
         en: "Know what's owed. Know how to ask.",
         es: "Conoce lo que te corresponde. Aprende a pedirlo.",
@@ -478,7 +382,6 @@ export const marketing: TranslationBundle = {
         en: "Plain-language guide to California farmworker rights: minimum wage, overtime, rest breaks, transportation, retaliation protections, and where to get free legal help.",
         es: "Guía en lenguaje claro sobre los derechos de los trabajadores agrícolas en California: salario mínimo, tiempo extra, descansos, transporte, protecciones contra represalias, y dónde obtener ayuda legal gratuita.",
     },
-    "worker_rights.topics.eyebrow": { en: "What you're entitled to", es: "Lo que te corresponde" },
     "worker_rights.topics.headline": {
         en: "Six rights every farmworker has.",
         es: "Seis derechos que tiene cada trabajador agrícola.",
@@ -490,8 +393,8 @@ export const marketing: TranslationBundle = {
     },
     "worker_rights.topics.overtime.title": { en: "Overtime", es: "Tiempo extra" },
     "worker_rights.topics.overtime.body": {
-        en: "Time-and-a-half after 8 hours per day or 40 hours per week. Double-time after 12 hours per day. Phased in for farmwork through 2022; fully effective today.",
-        es: "Una vez y media después de 8 horas por día o 40 horas por semana. Tiempo doble después de 12 horas por día. Fue gradual para trabajo agrícola hasta 2022; ya está totalmente vigente.",
+        en: "Time-and-a-half after 8 hours per day or 40 hours per week. Double-time after 12 hours per day. California phased this in for farmwork through 2025, so it now applies to employers of every size.",
+        es: "Una vez y media después de 8 horas por día o 40 horas por semana. Tiempo doble después de 12 horas por día. California lo aplicó de forma gradual al trabajo agrícola hasta 2025, así que ahora aplica a empleadores de cualquier tamaño.",
     },
     "worker_rights.topics.breaks.title": { en: "Rest and meal breaks", es: "Descansos y comidas" },
     "worker_rights.topics.breaks.body": {
@@ -513,10 +416,9 @@ export const marketing: TranslationBundle = {
         es: "Tu estatus no cambia tus derechos",
     },
     "worker_rights.topics.immigration.body": {
-        en: "California labor law protects every farmworker regardless of immigration status. Wage claims and safety reports cannot be denied based on documentation. ICE cannot make a workplace arrest without a judicial warrant.",
-        es: "La ley laboral de California protege a todo trabajador agrícola sin importar su estatus migratorio. Las reclamaciones de salario y reportes de seguridad no pueden ser negados por documentación. ICE no puede hacer un arresto en el lugar de trabajo sin una orden judicial.",
+        en: "California labor law protects every farmworker regardless of immigration status. Wage claims and safety reports cannot be denied based on documentation. Immigration agents need a warrant signed by a judge to enter non-public work areas without the employer's consent.",
+        es: "La ley laboral de California protege a todo trabajador agrícola sin importar su estatus migratorio. Las reclamaciones de salario y reportes de seguridad no pueden ser negados por documentación. Los agentes de inmigración necesitan una orden firmada por un juez para entrar a áreas de trabajo no públicas sin el consentimiento del empleador.",
     },
-    "worker_rights.help.eyebrow": { en: "Free legal help", es: "Ayuda legal gratuita" },
     "worker_rights.help.headline": { en: "You don't have to do this alone.", es: "No tienes que hacer esto solo." },
     "worker_rights.help.crla.name": {
         en: "California Rural Legal Assistance (CRLA)",
@@ -544,85 +446,67 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // /promotora (Workers → Promotora resources)
     // ========================================================================
-    "promotora.eyebrow": { en: "Promotora resources · coming soon", es: "Recursos para promotoras · próximamente" },
     "promotora.headline": {
-        en: "Building with promotora networks, not around them.",
-        es: "Construyendo con redes de promotoras, no a su alrededor.",
+        en: "Materials for promotoras are planned.",
+        es: "Los materiales para promotoras están planeados.",
     },
     "promotora.intro": {
-        en: "AGCONN is forming partnerships with promotora networks already trusted across the Central Valley. The full resource library — bilingual flyers, conversation scripts, wallet cards, monthly training webinars — is coming soon. If you're a community health worker or outreach educator, email partnerships@agconn.com to be in the first cohort.",
-        es: "AGCONN está formando alianzas con redes de promotoras ya confiables en todo el Valle Central. La biblioteca completa de recursos — folletos bilingües, guías de conversación, tarjetas de bolsillo, webinars mensuales de capacitación — estará disponible próximamente. Si eres trabajadora comunitaria de salud o educadora de extensión, escribe a partnerships@agconn.com para estar en la primera cohorte.",
+        en: "We have no promotora partners yet, and these materials do not exist yet. If you are a community health worker or outreach educator, email partnerships@agconn.com and tell us what would help.",
+        es: "Todavía no tenemos alianzas con promotoras, y estos materiales aún no existen. Si eres trabajadora comunitaria de salud o educadora de extensión, escribe a partnerships@agconn.com y dinos qué te ayudaría.",
     },
     "promotora.meta.title": { en: "Promotora resources — AGCONN", es: "Recursos para promotoras — AGCONN" },
     "promotora.meta.description": {
-        en: "Bilingual outreach materials, training webinars, and partnership info for promotora networks introducing AGCONN to Central Valley farmworker communities.",
-        es: "Materiales bilingües de extensión, webinars de capacitación e información de alianzas para redes de promotoras que presentan AGCONN a comunidades de trabajadores agrícolas del Valle Central.",
+        en: "AGCONN plans bilingual outreach materials for promotora networks. Email us to tell us what would help.",
+        es: "AGCONN planea materiales bilingües de extensión para redes de promotoras. Escríbenos para decirnos qué te ayudaría.",
     },
-    "promotora.materials.eyebrow": { en: "Outreach materials · coming soon", es: "Materiales de extensión · próximamente" },
     "promotora.materials.headline": {
-        en: "Designed with promotoras, in production now.",
-        es: "Diseñados con promotoras, en producción ahora.",
+        en: "What we plan to make.",
+        es: "Lo que planeamos hacer.",
     },
     "promotora.materials.flyer.title": { en: "One-page flyer (PDF)", es: "Folleto de una página (PDF)" },
     "promotora.materials.flyer.body": {
-        en: "Bilingual single-page introduction, designed for clipboard distribution at the worksite, parking lot, or community event. Coming soon. Email to receive the first version when it ships.",
-        es: "Introducción bilingüe de una página, diseñada para distribución con portapapeles en el sitio de trabajo, estacionamiento o evento comunitario. Próximamente. Escribe para recibir la primera versión cuando esté disponible.",
+        en: "A bilingual one-page introduction for worksites and community events. Not ready yet.",
+        es: "Una introducción bilingüe de una página para sitios de trabajo y eventos comunitarios. Todavía no está lista.",
     },
-    "promotora.materials.flyer.cta": { en: "Request the flyer →", es: "Solicitar el folleto →" },
+    "promotora.materials.flyer.cta": {
+        en: "Ask about the flyer →",
+        es: "Preguntar por el folleto →",
+    },
     "promotora.materials.script.title": { en: "Conversation script", es: "Guía de conversación" },
     "promotora.materials.script.body": {
-        en: "5-minute talking points for door-to-door or worksite intros. Written with promotora networks, covers the most common worker questions about signup, privacy, and what AGCONN does. Coming soon.",
-        es: "Puntos de conversación de 5 minutos para presentaciones puerta a puerta o en sitios de trabajo. Escrita con redes de promotoras, cubre las preguntas más comunes sobre registro, privacidad y qué hace AGCONN. Próximamente.",
+        en: "Short talking points about signup, privacy, and what AGCONN does. Not ready yet.",
+        es: "Puntos breves sobre el registro, la privacidad y qué hace AGCONN. Todavía no están listos.",
     },
-    "promotora.materials.script.cta": { en: "Request the script →", es: "Solicitar la guía →" },
+    "promotora.materials.script.cta": {
+        en: "Ask about the script →",
+        es: "Preguntar por la guía →",
+    },
     "promotora.materials.cards.title": { en: "Wallet cards", es: "Tarjetas de bolsillo" },
     "promotora.materials.cards.body": {
-        en: "Pocket-sized bilingual signup card — the SMS number and the QR code, no larger than a credit card. We'll mail packs free to verified promotora networks once the first run prints. Email to be on the list.",
-        es: "Tarjeta bilingüe de registro tamaño bolsillo — el número de SMS y el código QR, no más grande que una tarjeta de crédito. Enviaremos paquetes gratis a redes de promotoras verificadas en cuanto se imprima la primera tirada. Escribe para estar en la lista.",
+        en: "A pocket-sized bilingual signup card with the SMS number and a QR code. Not ready yet.",
+        es: "Una tarjeta bilingüe de registro tamaño bolsillo con el número de SMS y un código QR. Todavía no está lista.",
     },
-    "promotora.materials.cards.cta": { en: "Request wallet cards →", es: "Solicitar tarjetas →" },
-    "promotora.training.eyebrow": { en: "Training · coming soon", es: "Capacitación · próximamente" },
-    "promotora.training.headline": {
-        en: "Bilingual webinars, starting soon.",
-        es: "Webinars bilingües, empezando pronto.",
+    "promotora.materials.cards.cta": {
+        en: "Ask about wallet cards →",
+        es: "Preguntar por las tarjetas →",
     },
-    "promotora.training.body": {
-        en: "We're launching a monthly bilingual webinar with promotora networks — new features, questions, and learnings from the field. Recorded and posted in English and Spanish. Sign up to hear when the first session lands.",
-        es: "Estamos lanzando un webinar bilingüe mensual con redes de promotoras — nuevas funciones, preguntas y aprendizajes del campo. Grabado y publicado en inglés y español. Suscríbete para enterarte cuándo es la primera sesión.",
-    },
-    "promotora.training.cta": {
-        en: "Sign up for training updates →",
-        es: "Suscribirse a avisos de capacitación →",
-    },
-    "promotora.partner.eyebrow": { en: "Partnership · coming soon", es: "Alianza · próximamente" },
-    "promotora.partner.headline": {
-        en: "Your own AGCONN instance, on the roadmap.",
-        es: "Tu propia instancia de AGCONN, en el plan.",
-    },
-    "promotora.partner.body": {
-        en: "Workforce boards, county agencies, and large promotora networks will be able to run AGCONN as their own tenant — your branding, your reporting, your county set. Free for community-serving organizations through end of 2026 once the program opens. Email partnerships@agconn.com to be considered for the first cohort.",
-        es: "Juntas laborales, agencias del condado y grandes redes de promotoras podrán manejar AGCONN como su propia instancia — tu marca, tus reportes, tu conjunto de condados. Gratis para organizaciones comunitarias hasta fin de 2026 una vez que el programa abra. Escribe a partnerships@agconn.com para ser considerado en la primera cohorte.",
-    },
-    "promotora.partner.cta": { en: "Email partnerships@agconn.com", es: "Escribir a partnerships@agconn.com" },
 
     // ========================================================================
     // /about + #mission anchor (Company → About + Mission)
     // ========================================================================
-    "about.eyebrow": { en: "About AGCONN", es: "Sobre AGCONN" },
     "about.headline": {
         en: "A workforce platform that treats farmworkers as the point.",
         es: "Una plataforma laboral que trata a los trabajadores agrícolas como el centro.",
     },
     "about.intro": {
-        en: "AGCONN, a product of WizeWorks LLC, is building bilingual workforce infrastructure for the Central Valley. We connect farmworkers to verified seasonal jobs and CDFA-funded training — and keep their record portable, in their language, on their terms.",
-        es: "AGCONN, un producto de WizeWorks LLC, construye infraestructura laboral bilingüe para el Valle Central. Conectamos a trabajadores agrícolas con trabajos de temporada verificados y capacitación financiada por CDFA — y mantenemos su registro portátil, en su idioma, bajo sus condiciones.",
+        en: "AGCONN, a product of WizeWorks LLC, is building bilingual workforce tools for the Central Valley. We connect farmworkers to seasonal jobs from checked employers and to training programs, and keep their record portable, in their language.",
+        es: "AGCONN, un producto de WizeWorks LLC, construye herramientas laborales bilingües para el Valle Central. Conectamos a trabajadores agrícolas con trabajos de temporada de empleadores revisados y con programas de capacitación, y mantenemos su registro portátil, en su idioma.",
     },
     "about.meta.title": { en: "About — AGCONN", es: "Sobre AGCONN" },
     "about.meta.description": {
-        en: "AGCONN, a product of WizeWorks LLC, is building bilingual workforce infrastructure connecting Central Valley farmworkers, growers, and training organizations.",
-        es: "AGCONN, un producto de WizeWorks LLC, construye infraestructura laboral bilingüe que conecta a trabajadores agrícolas del Valle Central, productores y organizaciones de capacitación.",
+        en: "AGCONN, a product of WizeWorks LLC, is building bilingual workforce tools for Central Valley farmworkers, growers, and training organizations.",
+        es: "AGCONN, un producto de WizeWorks LLC, construye herramientas laborales bilingües para trabajadores agrícolas, productores y organizaciones de capacitación del Valle Central.",
     },
-    "about.mission.eyebrow": { en: "Mission", es: "Misión" },
     "about.mission.headline": {
         en: "Dignity, in two languages, by default.",
         es: "Dignidad, en dos idiomas, por defecto.",
@@ -631,7 +515,6 @@ export const marketing: TranslationBundle = {
         en: "Farmworkers feed California. They deserve workforce tools that respect their language, their privacy, and their portability. Every feature on AGCONN ships bilingual from byte zero. Every record they earn travels with them. Every employer is verified by name. That's the bar — non-negotiable.",
         es: "Los trabajadores agrícolas alimentan a California. Merecen herramientas laborales que respeten su idioma, su privacidad y su portabilidad. Cada función de AGCONN se publica bilingüe desde el primer byte. Cada registro que ganan viaja con ellos. Cada empleador está verificado por nombre. Esa es la barra — innegociable.",
     },
-    "about.values.eyebrow": { en: "What we believe", es: "Lo que creemos" },
     "about.values.headline": { en: "Three commitments.", es: "Tres compromisos." },
     "about.values.bilingual.title": { en: "Bilingual by default", es: "Bilingüe por defecto" },
     "about.values.bilingual.body": {
@@ -645,35 +528,32 @@ export const marketing: TranslationBundle = {
     },
     "about.values.portable.title": { en: "Portable records", es: "Registros portátiles" },
     "about.values.portable.body": {
-        en: "Workers own their data. Certificates, hire history, skills — exportable as PDFs at any time, deletable on request.",
-        es: "Los trabajadores son dueños de sus datos. Certificados, historial de contratación, habilidades — exportables como PDFs en cualquier momento, borrables a petición.",
+        en: "Workers own their data. Certificates download as PDFs, and we delete data on request.",
+        es: "Los trabajadores son dueños de sus datos. Los certificados se descargan como PDF, y borramos los datos a petición.",
     },
-    "about.org.eyebrow": { en: "The legal entity", es: "La entidad legal" },
     "about.org.headline": { en: "WizeWorks LLC.", es: "WizeWorks LLC." },
     "about.org.body": {
-        en: "AGCONN is a product of WizeWorks LLC, the only company behind it. AGCONN is based in Visalia, CA. Our purpose: improve workforce outcomes for California farmworkers through bilingual platform infrastructure and grant-aligned reporting.",
-        es: "AGCONN es un producto de WizeWorks LLC, la única empresa detrás de la plataforma. AGCONN tiene su sede en Visalia, CA. Nuestro propósito: mejorar los resultados laborales de los trabajadores agrícolas de California a través de infraestructura de plataforma bilingüe y reportes alineados con subvenciones.",
+        en: "AGCONN is a product of WizeWorks LLC, the only company behind it. AGCONN is based in Visalia, CA. Our purpose: improve workforce outcomes for California farmworkers through bilingual tools.",
+        es: "AGCONN es un producto de WizeWorks LLC, la única empresa detrás de la plataforma. AGCONN tiene su sede en Visalia, CA. Nuestro propósito: mejorar los resultados laborales de los trabajadores agrícolas de California con herramientas bilingües.",
     },
     "about.org.cta": { en: "Read the impact dashboard →", es: "Ver el panel de impacto →" },
 
     // ========================================================================
     // /contact (Company → Contact)
     // ========================================================================
-    "contact.eyebrow": { en: "Contact", es: "Contacto" },
     "contact.headline": {
         en: "Reach the right team, in your language.",
         es: "Llega al equipo correcto, en tu idioma.",
     },
     "contact.intro": {
-        en: "Email gets answered within two business days, in EN or ES. We don't have a phone bank yet — but every message goes to a human, not a queue.",
-        es: "Los correos se responden en menos de dos días hábiles, en EN o ES. Aún no tenemos un centro de llamadas — pero cada mensaje llega a una persona, no a una cola.",
+        en: "Write in English or Spanish. We don't have a phone line yet.",
+        es: "Escribe en español o en inglés. Todavía no tenemos línea telefónica.",
     },
     "contact.meta.title": { en: "Contact — AGCONN", es: "Contacto — AGCONN" },
     "contact.meta.description": {
-        en: "Email AGCONN for support, partnerships, sales, press, or editorial. Bilingual response within two business days.",
-        es: "Escribe a AGCONN para soporte, alianzas, ventas, prensa o editorial. Respuesta bilingüe en menos de dos días hábiles.",
+        en: "Email AGCONN for support, partnerships, sales, press, or editorial, in English or Spanish.",
+        es: "Escribe a AGCONN para soporte, alianzas, ventas, prensa o editorial, en español o en inglés.",
     },
-    "contact.routes.eyebrow": { en: "Where to write", es: "A quién escribir" },
     "contact.routes.headline": { en: "Pick the lane.", es: "Elige el carril." },
     "contact.routes.support.label": { en: "Support · Soporte", es: "Soporte · Support" },
     "contact.routes.support.email": { en: "support@agconn.com", es: "support@agconn.com" },
@@ -696,8 +576,8 @@ export const marketing: TranslationBundle = {
     "contact.routes.press.label": { en: "Press · Prensa", es: "Prensa · Press" },
     "contact.routes.press.email": { en: "press@agconn.com", es: "press@agconn.com" },
     "contact.routes.press.body": {
-        en: "Press kit, interview requests, fact-checking. We respond within one business day for journalists on deadline.",
-        es: "Kit de prensa, solicitudes de entrevista, verificación de datos. Respondemos en menos de un día hábil para periodistas con plazo.",
+        en: "Press kit, interview requests, fact-checking.",
+        es: "Kit de prensa, solicitudes de entrevista, verificación de datos.",
     },
     "contact.routes.editorial.label": { en: "Editorial", es: "Editorial" },
     "contact.routes.editorial.email": { en: "editorial@agconn.com", es: "editorial@agconn.com" },
@@ -705,7 +585,6 @@ export const marketing: TranslationBundle = {
         en: "Topic suggestions for /resources articles, corrections to existing posts.",
         es: "Sugerencias de temas para artículos de /resources, correcciones a publicaciones existentes.",
     },
-    "contact.nap.eyebrow": { en: "Mailing address", es: "Dirección postal" },
     "contact.nap.headline": { en: "WizeWorks LLC", es: "WizeWorks LLC" },
     "contact.nap.body": { en: "Visalia, CA · United States", es: "Visalia, CA · Estados Unidos" },
     "contact.nap.note": {
@@ -716,38 +595,19 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // /careers (Company → Careers)
     // ========================================================================
-    "careers.eyebrow": { en: "Careers", es: "Carreras" },
     "careers.headline": {
         en: "We're not hiring yet. We will be soon.",
         es: "Aún no estamos contratando. Pronto lo estaremos.",
     },
     "careers.intro": {
-        en: "AGCONN is in pre-launch. The first hires after launch will be a bilingual customer support lead and a partnerships manager based in the Central Valley. Subscribe to be notified when roles open.",
-        es: "AGCONN está en pre-lanzamiento. Las primeras contrataciones después del lanzamiento serán una líder de soporte al cliente bilingüe y una gerente de alianzas basada en el Valle Central. Suscríbete para recibir aviso cuando se abran puestos.",
+        en: "AGCONN is new, and we have no open roles. Subscribe to hear when that changes.",
+        es: "AGCONN es nuevo, y no tenemos puestos abiertos. Suscríbete para enterarte cuando eso cambie.",
     },
     "careers.meta.title": { en: "Careers — AGCONN", es: "Carreras — AGCONN" },
     "careers.meta.description": {
-        en: "Join AGCONN after launch. First hires include bilingual customer support and a Central Valley partnerships manager. Subscribe for openings.",
-        es: "Únete a AGCONN después del lanzamiento. Las primeras contrataciones incluyen soporte al cliente bilingüe y una gerente de alianzas del Valle Central. Suscríbete para ofertas.",
+        en: "AGCONN has no open roles right now. Subscribe to hear when roles open.",
+        es: "AGCONN no tiene puestos abiertos en este momento. Suscríbete para enterarte cuando se abran.",
     },
-    "careers.values.eyebrow": { en: "How we hire", es: "Cómo contratamos" },
-    "careers.values.headline": { en: "Three principles.", es: "Tres principios." },
-    "careers.values.bilingual.title": { en: "Bilingual roles bilingual", es: "Roles bilingües, bilingües" },
-    "careers.values.bilingual.body": {
-        en: "Customer-facing and partnership roles require working fluency in both Spanish and English. We pay for it.",
-        es: "Los roles de cara al cliente y de alianzas requieren fluidez de trabajo en español e inglés. Pagamos por ello.",
-    },
-    "careers.values.local.title": { en: "Central Valley first", es: "Valle Central primero" },
-    "careers.values.local.body": {
-        en: "Field, support, and partnership roles are based in the Valley. We value people who already know the region — county relationships, FLC networks, the harvest calendar.",
-        es: "Los roles de campo, soporte y alianzas están basados en el Valle. Valoramos a personas que ya conocen la región — relaciones del condado, redes de FLC, el calendario de cosechas.",
-    },
-    "careers.values.transparent.title": { en: "Transparent compensation", es: "Compensación transparente" },
-    "careers.values.transparent.body": {
-        en: "Every job posting includes the salary band. We don't negotiate down to a number we wouldn't print publicly.",
-        es: "Cada publicación de empleo incluye la banda salarial. No negociamos hacia abajo a un número que no publicaríamos públicamente.",
-    },
-    "careers.subscribe.eyebrow": { en: "Get notified", es: "Recibir aviso" },
     "careers.subscribe.headline": {
         en: "Drop your email. We'll write when we open roles.",
         es: "Deja tu correo. Te escribimos cuando abramos puestos.",
@@ -757,11 +617,13 @@ export const marketing: TranslationBundle = {
         es: "No compartimos. No te pipelinizamos. Enviamos un correo cuando haya un puesto real al cual postularse.",
     },
     "careers.subscribe.unsubscribe": { en: "Unsubscribe anytime", es: "Cancela cuando quieras" },
-    "careers.openings.eyebrow": { en: "Open roles", es: "Puestos abiertos" },
-    "careers.openings.headline": { en: "Hiring now", es: "Contratando ahora" },
+    "careers.openings.headline": {
+        en: "Open roles",
+        es: "Puestos abiertos",
+    },
     "careers.openings.intro": {
-        en: "Direct-hire roles, on the AGCONN payroll. Salary ranges shown reflect the band before equity and benefits.",
-        es: "Puestos de contratación directa, en la nómina de AGCONN. Los rangos salariales mostrados reflejan la banda antes de equidad y beneficios.",
+        en: "Roles appear here when we have them.",
+        es: "Los puestos aparecen aquí cuando los tenemos.",
     },
     "careers.openings.empty": {
         en: "No open roles right now. Subscribe below and we'll notify you when something opens up.",
@@ -785,7 +647,6 @@ export const marketing: TranslationBundle = {
     "careers.detail.responsibilities": { en: "What you'll do", es: "Lo que harás" },
     "careers.detail.qualifications": { en: "What we're looking for", es: "Lo que buscamos" },
     "careers.detail.nice_to_have": { en: "Nice to have", es: "Plus apreciado" },
-    "careers.detail.apply_eyebrow": { en: "Apply", es: "Postular" },
     "careers.detail.apply_headline": {
         en: "Send a short note about why this role.",
         es: "Envíe una nota breve sobre por qué este puesto.",
@@ -803,7 +664,6 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // /trust (Company → Trust & security)
     // ========================================================================
-    "trust.eyebrow": { en: "Trust & security", es: "Confianza y seguridad" },
     "trust.headline": {
         en: "Built for a population the system has failed before.",
         es: "Construido para una población que el sistema ya ha fallado antes.",
@@ -817,12 +677,11 @@ export const marketing: TranslationBundle = {
         en: "AGCONN's data, security, and privacy posture: tenant-isolated Postgres, no third-party data sales, immigration status never collected, deletion on request.",
         es: "Postura de datos, seguridad y privacidad de AGCONN: Postgres aislado por inquilino, sin venta de datos a terceros, estatus migratorio nunca recopilado, eliminación a petición.",
     },
-    "trust.principles.eyebrow": { en: "What we don't do", es: "Lo que no hacemos" },
     "trust.principles.headline": { en: "Five hard rules.", es: "Cinco reglas firmes." },
     "trust.principles.no_sale.title": { en: "We don't sell your data", es: "No vendemos tus datos" },
     "trust.principles.no_sale.body": {
-        en: "Phone numbers, emails, hire history, certificates — none of it is sold, shared with brokers, or licensed to third parties. Ever. Auditable.",
-        es: "Números de teléfono, correos, historial de contratación, certificados — nada se vende, comparte con corredores, ni licencia a terceros. Nunca. Auditable.",
+        en: "Phone numbers, emails, hire history, certificates — none of it is sold, shared with brokers, or licensed to third parties.",
+        es: "Números de teléfono, correos, historial de contratación, certificados — nada se vende, comparte con corredores, ni licencia a terceros.",
     },
     "trust.principles.no_immigration.title": { en: "We never ask immigration status", es: "Nunca preguntamos estatus migratorio" },
     "trust.principles.no_immigration.body": {
@@ -844,71 +703,66 @@ export const marketing: TranslationBundle = {
         en: "No fake urgency. No hidden auto-renewals. No pre-checked consent boxes. The CTA you see is the action you're agreeing to.",
         es: "Sin urgencia falsa. Sin renovaciones automáticas escondidas. Sin casillas de consentimiento pre-marcadas. El CTA que ves es la acción que aceptas.",
     },
-    "trust.tech.eyebrow": { en: "Technical posture", es: "Postura técnica" },
     "trust.tech.headline": {
         en: "Tenant-isolated, encrypted, and auditable.",
         es: "Aislado por inquilino, encriptado y auditable.",
     },
     "trust.tech.isolation.title": { en: "Tenant isolation via RLS", es: "Aislamiento de inquilino vía RLS" },
     "trust.tech.isolation.body": {
-        en: "Every database table enforces row-level security on tenant_id. A bug in application code cannot leak one tenant's data to another — the database physically refuses.",
-        es: "Cada tabla de la base de datos aplica seguridad a nivel de fila en tenant_id. Un error en código de aplicación no puede filtrar datos de un inquilino a otro — la base de datos lo rechaza físicamente.",
+        en: "Database tables with tenant data enforce row-level security on tenant_id. This adds a second check behind the application code.",
+        es: "Las tablas de la base de datos con datos de inquilinos aplican seguridad a nivel de fila en tenant_id. Esto agrega una segunda revisión detrás del código de la aplicación.",
     },
     "trust.tech.encryption.title": { en: "Encryption at rest and in transit", es: "Encriptación en reposo y en tránsito" },
     "trust.tech.encryption.body": {
-        en: "TLS 1.3 in transit. AES-256 at rest. Phone numbers stored as salted hashes for lookup; raw values are never logged.",
-        es: "TLS 1.3 en tránsito. AES-256 en reposo. Los números de teléfono se almacenan como hashes con sal para búsqueda; los valores en bruto nunca se registran.",
+        en: "TLS in transit. AES-256 at rest.",
+        es: "TLS en tránsito. AES-256 en reposo.",
     },
     "trust.tech.audit.title": { en: "Append-only audit log", es: "Registro de auditoría solo-añadir" },
     "trust.tech.audit.body": {
-        en: "Every privileged action — admin reads, exports, deletions — is logged with HMAC tamper-evidence. Workers can request their audit trail.",
-        es: "Cada acción privilegiada — lecturas de admin, exportaciones, eliminaciones — se registra con evidencia HMAC contra manipulación. Los trabajadores pueden solicitar su registro de auditoría.",
+        en: "Privileged actions such as admin reads, exports, and deletions are logged with HMAC tamper-evidence.",
+        es: "Las acciones privilegiadas, como lecturas de admin, exportaciones y eliminaciones, se registran con evidencia HMAC contra manipulación.",
     },
-    "trust.status.eyebrow": { en: "Service status", es: "Estado del servicio" },
     "trust.status.headline": {
-        en: "A public status page is coming soon.",
-        es: "La página pública de estado estará disponible próximamente.",
+        en: "We have no public status page yet.",
+        es: "Todavía no tenemos una página pública de estado.",
     },
     "trust.status.body": {
-        en: "AGCONN targets 99.9% uptime measured monthly across SMS sign-in, job browse, and applications. Until the public status page ships, we post incidents that affect a public surface for more than five minutes here on the trust page and to anyone subscribed at security@agconn.com.",
-        es: "AGCONN tiene como meta 99.9% de disponibilidad medida mensualmente en el inicio de sesión por SMS, la búsqueda de trabajos y las aplicaciones. Hasta que la página pública de estado esté disponible, publicamos los incidentes que afectan una superficie pública por más de cinco minutos aquí en la página de confianza y a quienes se suscriban en security@agconn.com.",
+        en: "AGCONN has no public status page or uptime guarantee yet.",
+        es: "AGCONN todavía no tiene una página pública de estado ni una garantía de disponibilidad.",
     },
     "trust.status.subscribe": {
-        en: "To receive incident notices, email",
-        es: "Para recibir avisos de incidentes, escribe a",
+        en: "To report a problem, email",
+        es: "Para reportar un problema, escribe a",
     },
 
-    "trust.report.eyebrow": { en: "Report a concern", es: "Reportar una preocupación" },
     "trust.report.headline": { en: "If something looks wrong, tell us.", es: "Si algo se ve mal, dinos." },
     "trust.report.body": {
-        en: "Security reports go to security@agconn.com. We respond within one business day. Responsible disclosure is recognized in our annual security report.",
-        es: "Los reportes de seguridad van a security@agconn.com. Respondemos en menos de un día hábil. La divulgación responsable se reconoce en nuestro reporte de seguridad anual.",
+        en: "Security reports go to security@agconn.com.",
+        es: "Los reportes de seguridad van a security@agconn.com.",
     },
     "trust.report.cta": { en: "Email security@agconn.com", es: "Escribir a security@agconn.com" },
 
     // ========================================================================
     // /press (Partners → Press kit)
     // ========================================================================
-    "press.eyebrow": { en: "Press kit", es: "Kit de prensa" },
     "press.headline": {
         en: "Plain facts, ready to quote.",
         es: "Datos claros, listos para citar.",
     },
     "press.intro": {
-        en: "Everything a journalist needs to write about AGCONN accurately. Press inquiries are answered within one business day for deadline work.",
-        es: "Todo lo que un periodista necesita para escribir sobre AGCONN con precisión. Las consultas de prensa se responden en menos de un día hábil para trabajo con plazo.",
+        en: "Facts about AGCONN, for journalists.",
+        es: "Datos sobre AGCONN, para periodistas.",
     },
     "press.meta.title": { en: "Press kit — AGCONN", es: "Kit de prensa — AGCONN" },
     "press.meta.description": {
-        en: "Press kit for AGCONN: brand assets, fact sheet, press contact. Bilingual workforce platform serving Central Valley farmworkers.",
-        es: "Kit de prensa de AGCONN: activos de marca, hoja de datos, contacto de prensa. Plataforma laboral bilingüe sirviendo a trabajadores agrícolas del Valle Central.",
+        en: "Press kit for AGCONN: fact sheet and press contact. A bilingual workforce platform for Central Valley farmworkers.",
+        es: "Kit de prensa de AGCONN: hoja de datos y contacto de prensa. Una plataforma laboral bilingüe para trabajadores agrícolas del Valle Central.",
     },
-    "press.facts.eyebrow": { en: "Fact sheet", es: "Hoja de datos" },
     "press.facts.headline": { en: "What AGCONN is.", es: "Qué es AGCONN." },
     "press.facts.what.label": { en: "What", es: "Qué" },
     "press.facts.what.body": {
-        en: "Bilingual (EN/ES) workforce platform connecting Central Valley farmworkers to verified seasonal jobs and CDFA-funded training programs.",
-        es: "Plataforma laboral bilingüe (EN/ES) que conecta a trabajadores agrícolas del Valle Central con trabajos de temporada verificados y programas de capacitación financiados por CDFA.",
+        en: "Bilingual (EN/ES) workforce platform that connects Central Valley farmworkers to seasonal jobs from checked employers and to training programs.",
+        es: "Plataforma laboral bilingüe (EN/ES) que conecta a trabajadores agrícolas del Valle Central con trabajos de temporada de empleadores revisados y con programas de capacitación.",
     },
     "press.facts.where.label": { en: "Where", es: "Dónde" },
     "press.facts.where.body": {
@@ -917,37 +771,43 @@ export const marketing: TranslationBundle = {
     },
     "press.facts.who.label": { en: "Who", es: "Quién" },
     "press.facts.who.body": {
-        en: "Audiences: farmworkers, growers and Farm Labor Contractors, training organizations (CDFA / F3 / CalOSBA / EDD grantees), grant funders. AGCONN is a product of WizeWorks LLC.",
-        es: "Audiencias: trabajadores agrícolas, productores y Contratistas de Mano de Obra Agrícola, organizaciones de capacitación (subvencionados por CDFA / F3 / CalOSBA / EDD), financiadores de subvenciones. AGCONN es un producto de WizeWorks LLC.",
+        en: "For farmworkers, growers and Farm Labor Contractors, and training organizations. AGCONN is a product of WizeWorks LLC.",
+        es: "Para trabajadores agrícolas, productores y Contratistas de Mano de Obra Agrícola, y organizaciones de capacitación. AGCONN es un producto de WizeWorks LLC.",
     },
     "press.facts.when.label": { en: "When", es: "Cuándo" },
     "press.facts.when.body": {
-        en: "Public launch: 2026-05-05. Architecture and brand work: April 2026. Build: April–May 2026.",
-        es: "Lanzamiento público: 2026-05-05. Arquitectura y trabajo de marca: abril 2026. Construcción: abril–mayo 2026.",
+        en: "Built in 2026. AGCONN is new and has no public results yet.",
+        es: "Construido en 2026. AGCONN es nuevo y todavía no tiene resultados públicos.",
     },
     "press.facts.why.label": { en: "Why", es: "Por qué" },
     "press.facts.why.body": {
-        en: "Existing workforce tools fail farmworkers on language, verification, and portability. AGCONN ships bilingual from byte zero, verifies every employer by name, and gives workers a portable record they own.",
-        es: "Las herramientas laborales existentes fallan a los trabajadores agrícolas en idioma, verificación y portabilidad. AGCONN se publica bilingüe desde el primer byte, verifica a cada empleador por nombre, y da a los trabajadores un registro portátil que les pertenece.",
+        en: "Farmworkers need work tools in their language, proof of who is hiring, and a record they keep. AGCONN is built around those three things.",
+        es: "Los trabajadores agrícolas necesitan herramientas de trabajo en su idioma, prueba de quién contrata y un registro que conservan. AGCONN está construido alrededor de esas tres cosas.",
     },
-    "press.assets.eyebrow": { en: "Brand assets", es: "Activos de marca" },
-    "press.assets.headline": { en: "Logo, palette, type.", es: "Logo, paleta, tipografía." },
+    "press.assets.headline": {
+        en: "Logo and colors.",
+        es: "Logo y colores.",
+    },
     "press.assets.body": {
-        en: "Wordmark in PNG and SVG. Tierra brand palette swatches. Type stack (Fraunces / Inter / DM Mono). Approved photography and OG-image references. ZIP archive available on request.",
-        es: "Wordmark en PNG y SVG. Muestras de paleta de la marca Tierra. Pila tipográfica (Fraunces / Inter / DM Mono). Fotografía aprobada y referencias de imágenes OG. Archivo ZIP disponible bajo solicitud.",
+        en: "Email us for the AGCONN wordmark and brand colors.",
+        es: "Escríbenos para recibir el logotipo y los colores de AGCONN.",
     },
-    "press.assets.cta": { en: "Email press@agconn.com for the press kit", es: "Escribir a press@agconn.com para el kit de prensa" },
-    "press.contact.eyebrow": { en: "Press contact", es: "Contacto de prensa" },
+    "press.assets.cta": {
+        en: "Email press@agconn.com",
+        es: "Escribir a press@agconn.com",
+    },
     "press.contact.headline": { en: "Talk to a human.", es: "Habla con una persona." },
     "press.contact.body": {
-        en: "press@agconn.com — bilingual reply within one business day.",
-        es: "press@agconn.com — respuesta bilingüe en menos de un día hábil.",
+        en: "press@agconn.com",
+        es: "press@agconn.com",
     },
-    "press.releases.eyebrow": { en: "Newsroom", es: "Sala de prensa" },
-    "press.releases.headline": { en: "Recent announcements", es: "Anuncios recientes" },
+    "press.releases.headline": {
+        en: "Announcements",
+        es: "Anuncios",
+    },
     "press.releases.intro": {
-        en: "Public releases on launches, partnerships, programs, and policy. Republish freely with attribution.",
-        es: "Comunicados públicos sobre lanzamientos, asociaciones, programas y política. Republica libremente con atribución.",
+        en: "We publish releases here when we have news.",
+        es: "Publicamos comunicados aquí cuando tenemos noticias.",
     },
     "press.releases.read_release": { en: "Read release", es: "Leer comunicado" },
     "press.releases.empty": {
@@ -958,19 +818,18 @@ export const marketing: TranslationBundle = {
     "press.detail.dateline_label": { en: "Dateline", es: "Localización" },
     "press.detail.media_contact": { en: "Media contact", es: "Contacto de medios" },
     "press.detail.media_contact_body": {
-        en: "press@agconn.com · Bilingual reply within one business day.",
-        es: "press@agconn.com · Respuesta bilingüe en menos de un día hábil.",
+        en: "press@agconn.com",
+        es: "press@agconn.com",
     },
     "press.detail.about_label": { en: "About AGCONN", es: "Sobre AGCONN" },
     "press.detail.about_body": {
-        en: "AGCONN is a bilingual workforce platform serving California Central Valley farmworkers and the growers who hire them. Headquartered in Visalia, AGCONN launched production in May 2026.",
-        es: "AGCONN es una plataforma laboral bilingüe que sirve a los trabajadores agrícolas del Valle Central de California y a los agricultores que los contratan. Con sede en Visalia, AGCONN lanzó producción en mayo de 2026.",
+        en: "AGCONN is a bilingual workforce platform for California Central Valley farmworkers and the growers who hire them. AGCONN is a product of WizeWorks LLC, based in Visalia.",
+        es: "AGCONN es una plataforma laboral bilingüe para los trabajadores agrícolas del Valle Central de California y los agricultores que los contratan. AGCONN es un producto de WizeWorks LLC, con sede en Visalia.",
     },
 
     // ========================================================================
     // /employers (Footer "For employers" overview — anchors: #worker-search, #flc-verification)
     // ========================================================================
-    "employers_page.eyebrow": { en: "For employers", es: "Para empleadores" },
     "employers_page.headline": {
         en: "Hire a verified crew. Skip the paperwork.",
         es: "Contrata una cuadrilla verificada. Sin papeleo.",
@@ -981,98 +840,93 @@ export const marketing: TranslationBundle = {
     },
     "employers_page.meta.title": { en: "For employers — AGCONN", es: "Para empleadores — AGCONN" },
     "employers_page.meta.description": {
-        en: "Post bilingual jobs to a vetted Central Valley worker pool. FLC verification, applicant review, transparent pricing. Free plan available.",
-        es: "Publica trabajos bilingües a un grupo de trabajadores verificados del Valle Central. Verificación FLC, revisión de aplicantes, precios transparentes. Plan gratis disponible.",
+        en: "Post bilingual jobs for Central Valley workers. FLC verification, applicant review, transparent pricing. Free plan available.",
+        es: "Publica trabajos bilingües para trabajadores del Valle Central. Verificación FLC, revisión de aplicantes, precios transparentes. Plan gratis disponible.",
     },
-    "employers_page.posting.eyebrow": { en: "Posting jobs", es: "Publicar trabajos" },
     "employers_page.posting.headline": {
-        en: "Bilingual posts in three minutes.",
-        es: "Publicaciones bilingües en tres minutos.",
+        en: "Bilingual posts.",
+        es: "Publicaciones bilingües.",
     },
     "employers_page.posting.body": {
-        en: "Type your job in either language. AGCONN translates the public version automatically and shows it to the right county pool. Wage range, start date, housing, transportation — all structured fields, all worker-readable.",
-        es: "Escribe tu trabajo en cualquier idioma. AGCONN traduce la versión pública automáticamente y la muestra al grupo del condado correcto. Rango salarial, fecha de inicio, vivienda, transporte — todos campos estructurados, todos legibles para el trabajador.",
+        en: "Write your job in English, Spanish, or both. Wage range, start date, housing, transportation — all structured fields, all worker-readable.",
+        es: "Escribe tu trabajo en español, en inglés o en ambos. Rango salarial, fecha de inicio, vivienda, transporte — todos campos estructurados, todos legibles para el trabajador.",
     },
     "employers_page.posting.cta": { en: "Post your first job — free", es: "Publica tu primer trabajo — gratis" },
-    "employers_page.flc.eyebrow": { en: "FLC verification", es: "Verificación FLC" },
     "employers_page.flc.headline": {
-        en: "Verified once, recognized everywhere.",
-        es: "Verificado una vez, reconocido en todas partes.",
+        en: "Checked at signup, re-checked every night.",
+        es: "Revisada al registrarte, revisada de nuevo cada noche.",
     },
     "employers_page.flc.body": {
-        en: "AGCONN checks your FLC license against the California DIR/DLSE registry on signup, then re-verifies nightly. Verified-FLC employers get a badge on every posting. Workers trust badged postings — verified is the default expectation, not a premium.",
-        es: "AGCONN verifica tu licencia FLC contra el registro DIR/DLSE de California al registrarte, luego re-verifica cada noche. Los empleadores con FLC verificado obtienen una insignia en cada publicación. Los trabajadores confían en las publicaciones con insignia — verificado es la expectativa por defecto, no un premium.",
+        en: "An admin reviews your FLC license at signup. AGCONN then re-checks it against the California DIR/DLSE registry every night. Verified FLC employers get a badge on every posting.",
+        es: "Un administrador revisa tu licencia FLC al registrarte. Después AGCONN la revisa contra el registro DIR/DLSE de California cada noche. Los empleadores con FLC verificado obtienen una insignia en cada publicación.",
     },
     "employers_page.flc.fields.license": { en: "License No.", es: "Licencia No." },
     "employers_page.flc.fields.issued": { en: "Issued", es: "Emitida" },
     "employers_page.flc.fields.expires": { en: "Expires", es: "Vence" },
     "employers_page.flc.fields.mspa": { en: "MSPA Reg.", es: "Reg. MSPA" },
-    "employers_page.flc.record_label": { en: "Verification record", es: "Registro de verificación" },
-    "employers_page.search.eyebrow": { en: "Worker search", es: "Búsqueda de trabajadores" },
+    "employers_page.flc.record_label": {
+        en: "Sample verification record",
+        es: "Registro de verificación de ejemplo",
+    },
     "employers_page.search.headline": {
-        en: "Pro plan: search a vetted pool.",
-        es: "Plan Pro: busca en un grupo verificado.",
+        en: "Field and Farm plans: search workers.",
+        es: "Planes Campo y Rancho: busca trabajadores.",
     },
     "employers_page.search.body": {
-        en: "Pro and Enterprise employers can search by skills, certifications, county, and availability across the AGCONN worker pool — workers who have opted in to be searchable. Send a direct invitation; the worker chooses to share their wallet.",
-        es: "Los empleadores Pro y Enterprise pueden buscar por habilidades, certificaciones, condado y disponibilidad en el grupo de trabajadores de AGCONN — trabajadores que se han registrado para ser buscables. Envía una invitación directa; el trabajador elige compartir su cartera.",
+        en: "Field and Farm employers can search by skills, certifications, county, and availability, among workers who opted in to be searchable. Send an invitation, and the worker chooses what to share.",
+        es: "Los empleadores de Campo y Rancho pueden buscar por habilidades, certificaciones, condado y disponibilidad, entre trabajadores que eligieron aparecer en la búsqueda. Envía una invitación, y el trabajador elige qué compartir.",
     },
-    "employers_page.pricing.eyebrow": { en: "Pricing", es: "Precios" },
     "employers_page.pricing.headline": {
         en: "Free to start. Scale when you're ready.",
         es: "Gratis para empezar. Escala cuando estés listo.",
     },
     "employers_page.pricing.body": {
-        en: "Free: 2 active postings, applicant review. Pro: unlimited postings, worker search, priority listing — $99/mo or $990/yr. Enterprise: multi-user, custom counties, branded reports — $299/mo. No per-hire fee, no commission on wages, ever.",
-        es: "Gratis: 2 publicaciones activas, revisión de aplicantes. Pro: publicaciones ilimitadas, búsqueda de trabajadores, listado prioritario — $99/mes o $990/año. Enterprise: multi-usuario, condados personalizados, reportes con marca — $299/mes. Sin tarifa por contratación, sin comisión sobre salarios, nunca.",
+        en: "Seed: free, 2 active postings, applicant review. Field: $199/mo or $1,990/yr, with founder pricing of $99/mo or $990/yr for the first 50 paid accounts. Farm: $499/mo or $4,990/yr, with founder pricing of $299/mo or $2,990/yr. No per-hire fee and no commission on wages.",
+        es: "Semilla: gratis, 2 publicaciones activas, revisión de aplicantes. Campo: $199/mes o $1,990/año, con precio fundador de $99/mes o $990/año para las primeras 50 cuentas pagas. Rancho: $499/mes o $4,990/año, con precio fundador de $299/mes o $2,990/año. Sin tarifa por contratación y sin comisión sobre salarios.",
     },
     "employers_page.pricing.cta": { en: "See full pricing →", es: "Ver precios completos →" },
 
     // ========================================================================
     // /partners (Footer "Partners & Grant Officers" overview)
     // ========================================================================
-    "partners_page.eyebrow": { en: "Partners", es: "Socios" },
     "partners_page.headline": {
-        en: "Built for the institutions that already do this work.",
-        es: "Construido para las instituciones que ya hacen este trabajo.",
+        en: "For the institutions that already do this work.",
+        es: "Para las instituciones que ya hacen este trabajo.",
     },
     "partners_page.intro": {
-        en: "Training organizations, workforce boards, county agencies, and grant officers each have a place on AGCONN. Run your own tenant, pull WIOA-aligned exports, or just embed our verified jobs feed.",
-        es: "Las organizaciones de capacitación, juntas laborales, agencias del condado y oficiales de subvenciones tienen cada uno un lugar en AGCONN. Maneja tu propia instancia, descarga exportaciones alineadas con WIOA, o simplemente incrusta nuestro feed de trabajos verificados.",
+        en: "Training organizations can list programs on AGCONN. Workforce boards, county agencies, and grant officers can talk to us about what they need. We have no partners yet.",
+        es: "Las organizaciones de capacitación pueden publicar programas en AGCONN. Las juntas laborales, agencias del condado y oficiales de subvenciones pueden hablar con nosotros sobre lo que necesitan. Todavía no tenemos socios.",
     },
     "partners_page.meta.title": { en: "Partners — AGCONN", es: "Socios — AGCONN" },
     "partners_page.meta.description": {
-        en: "AGCONN for training orgs, workforce boards, and grant funders: tenant onboarding, WIOA-aligned exports, embedded verified jobs feed, branded reporting.",
-        es: "AGCONN para organizaciones de capacitación, juntas laborales y financiadores de subvenciones: onboarding de inquilino, exportaciones alineadas con WIOA, feed de trabajos verificados incrustado, reportes con marca.",
+        en: "AGCONN for training organizations, workforce boards, and grant officers. List programs, or talk to us about what you need.",
+        es: "AGCONN para organizaciones de capacitación, juntas laborales y oficiales de subvenciones. Publica programas o habla con nosotros sobre lo que necesitas.",
     },
-    "partners_page.training_orgs.eyebrow": { en: "Training organizations", es: "Organizaciones de capacitación" },
     "partners_page.training_orgs.headline": {
-        en: "Issue credentials. Report on outcomes.",
-        es: "Emite credenciales. Reporta resultados.",
+        en: "List programs. Issue certificates.",
+        es: "Publica programas. Emite certificados.",
     },
     "partners_page.training_orgs.body": {
-        en: "List CDFA, F3, CalOSBA, or EDD-funded programs in either language. Workers enroll, complete, earn a bilingual e-signed certificate. Your reporting dashboard pulls completion rates, demographic splits, and county breakdowns — auditable for the funder.",
-        es: "Publica programas financiados por CDFA, F3, CalOSBA o EDD en cualquier idioma. Los trabajadores se inscriben, completan, obtienen un certificado bilingüe firmado electrónicamente. Tu panel de reportes extrae tasas de finalización, divisiones demográficas y desgloses por condado — auditable para el financiador.",
+        en: "List programs in either language. Workers enroll and complete them, then get a bilingual certificate with a public verification page.",
+        es: "Publica programas en cualquier idioma. Los trabajadores se inscriben y los completan, y obtienen un certificado bilingüe con una página pública de verificación.",
     },
     "partners_page.training_orgs.cta": { en: "Apply for an org account", es: "Solicitar cuenta de organización" },
-    "partners_page.workforce_boards.eyebrow": { en: "Workforce boards", es: "Juntas laborales" },
     "partners_page.workforce_boards.headline": {
-        en: "Run AGCONN as your own tenant.",
-        es: "Maneja AGCONN como tu propia instancia.",
+        en: "Talk to us about your own tenant.",
+        es: "Habla con nosotros sobre tu propia instancia.",
     },
     "partners_page.workforce_boards.body": {
-        en: "Workforce boards and county agencies can deploy AGCONN as a tenant with their own employer set, training programs, and dashboards. Branding stays under your organization. Free for community-serving organizations through end of 2026.",
-        es: "Las juntas laborales y agencias del condado pueden desplegar AGCONN como una instancia con su propio conjunto de empleadores, programas de capacitación y paneles. La marca se mantiene bajo tu organización. Gratis para organizaciones comunitarias hasta fin de 2026.",
+        en: "AGCONN is built to keep each tenant's data separate, but no workforce board or county agency runs a tenant yet. Email us to talk about what you need.",
+        es: "AGCONN está construido para mantener separados los datos de cada inquilino, pero ninguna junta laboral ni agencia del condado tiene una instancia todavía. Escríbenos para hablar de lo que necesitas.",
     },
     "partners_page.workforce_boards.cta": { en: "Email partnerships@agconn.com", es: "Escribir a partnerships@agconn.com" },
-    "partners_page.wioa.eyebrow": { en: "WIOA / CalJOBS exports", es: "Exportaciones WIOA / CalJOBS" },
     "partners_page.wioa.headline": {
-        en: "Reports your funder will accept.",
-        es: "Reportes que tu financiador aceptará.",
+        en: "No WIOA export yet.",
+        es: "Todavía no hay exporte WIOA.",
     },
     "partners_page.wioa.body": {
-        en: "Built-in CSV and XLSX exports of placement data for WIOA quarterly reporting and CalJOBS submissions. Anonymized participant IDs by default, with an opt-in for names. Field labels follow WIOA Title I conventions and are validated with a CDFA or EDD partner before each program year. Every export is logged and re-downloadable — auditable from raw data to final number.",
-        es: "Exportaciones CSV y XLSX integradas de datos de colocación para reportes trimestrales WIOA y envíos a CalJOBS. IDs anónimos de participantes por defecto, con opción para incluir nombres. Los nombres de campo siguen las convenciones del Título I de WIOA y los validamos con un socio de CDFA o EDD antes de cada año del programa. Cada exportación queda registrada y se puede volver a descargar — auditable desde los datos en bruto hasta el número final.",
+        en: "AGCONN does not have a WIOA or CalJOBS export yet. If you need one, email partnerships@agconn.com and tell us what your funder requires.",
+        es: "AGCONN todavía no tiene un exporte WIOA o CalJOBS. Si necesitas uno, escribe a partnerships@agconn.com y dinos qué requiere tu financiador.",
     },
     "partners_page.wioa.cta": { en: "See the impact dashboard →", es: "Ver el panel de impacto →" },
 
@@ -1085,13 +939,12 @@ export const marketing: TranslationBundle = {
         es: "AGCONN es un producto de WizeWorks LLC. En este documento, 'AGCONN' y 'nosotros' se refieren a WizeWorks LLC. Este documento refleja nuestras prácticas operativas actuales y se actualiza a medida que esas prácticas evolucionan; no ha sido revisado de forma independiente por asesoría legal externa. Para preguntas legales específicas sobre tu situación, consulta a un abogado calificado.",
     },
     "legal.contact": {
-        en: "Questions? Email legal@agconn.com — bilingual reply within two business days.",
-        es: "¿Preguntas? Escribe a legal@agconn.com — respuesta bilingüe en menos de dos días hábiles.",
+        en: "Questions? Email legal@agconn.com.",
+        es: "¿Preguntas? Escribe a legal@agconn.com.",
     },
     "legal.sections_label": { en: "Sections", es: "Secciones" },
     "legal.see_contacts": { en: "See all contact options", es: "Ver todos los contactos" },
 
-    "privacy.eyebrow": { en: "Privacy policy", es: "Política de privacidad" },
     "privacy.headline": {
         en: "Your data, our promises.",
         es: "Tus datos, nuestras promesas.",
@@ -1157,7 +1010,6 @@ export const marketing: TranslationBundle = {
         es: "Cuando actualizamos esta política, cambiamos la fecha de 'última actualización' en la parte superior. Para cambios sustanciales — nuevas categorías de datos que recopilamos, nuevas categorías de destinatarios con quienes compartimos o protecciones de privacidad reducidas — notificamos a titulares de cuenta activos por correo y SMS al menos 30 días antes de que el cambio entre en vigor, y publicamos un aviso en el producto. Continuar usando AGCONN después de la fecha de vigencia significa que aceptas la política actualizada; si no la aceptas, borra tu cuenta antes de esa fecha y te trataremos como eliminado bajo la sección de retención de arriba.",
     },
 
-    "terms.eyebrow": { en: "Terms of service", es: "Términos de servicio" },
     "terms.headline": {
         en: "What you agree to when you use AGCONN.",
         es: "Lo que aceptas al usar AGCONN.",
@@ -1230,7 +1082,6 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     // Subprocessors page (/subprocessors)
     // ========================================================================
-    "subprocessors.eyebrow": { en: "Subprocessors", es: "Subprocesadores" },
     "subprocessors.headline": {
         en: "Who else touches your data.",
         es: "Quién más toca tus datos.",
@@ -1363,40 +1214,38 @@ export const marketing: TranslationBundle = {
     "subprocessors.related.privacy": { en: "Read the full privacy policy", es: "Lee la política de privacidad completa" },
     "subprocessors.related.trust": { en: "See our trust principles", es: "Ver nuestros principios de confianza" },
 
-    "accessibility.eyebrow": { en: "Accessibility statement", es: "Declaración de accesibilidad" },
     "accessibility.headline": {
         en: "Built to be usable by everyone.",
         es: "Construido para ser usable por todos.",
     },
     "accessibility.intro": {
-        en: "AGCONN targets WCAG 2.2 Level AA across every public surface. We test with screen readers, keyboard-only navigation, and reduced-motion settings. Bilingual screen-reader voice (NVDA + VoiceOver) verified for both EN and ES content.",
-        es: "AGCONN cumple WCAG 2.2 Nivel AA en cada superficie pública. Probamos con lectores de pantalla, navegación solo con teclado y configuraciones de movimiento reducido. Voz bilingüe de lector de pantalla (NVDA + VoiceOver) verificada para contenido en EN y ES.",
+        en: "AGCONN aims to meet WCAG 2.1 Level AA on public pages. We have not had an outside audit, and problems remain. Tell us when you find one.",
+        es: "AGCONN busca cumplir WCAG 2.1 Nivel AA en sus páginas públicas. No hemos tenido una auditoría externa, y todavía hay problemas. Avísanos cuando encuentres uno.",
     },
     "accessibility.meta.title": { en: "Accessibility — AGCONN", es: "Accesibilidad — AGCONN" },
     "accessibility.meta.description": {
-        en: "AGCONN accessibility statement: WCAG 2.2 AA target, screen reader testing, keyboard navigation, bilingual support, contact for accessibility issues.",
-        es: "Declaración de accesibilidad de AGCONN: meta WCAG 2.2 AA, pruebas con lector de pantalla, navegación por teclado, soporte bilingüe, contacto para problemas de accesibilidad.",
+        en: "AGCONN accessibility statement: WCAG 2.1 AA target, keyboard navigation, bilingual support, contact for accessibility issues.",
+        es: "Declaración de accesibilidad de AGCONN: meta WCAG 2.1 AA, navegación por teclado, soporte bilingüe, contacto para problemas de accesibilidad.",
     },
     "accessibility.toc.standards": { en: "Standards we follow", es: "Estándares que seguimos" },
     "accessibility.toc.features": { en: "Built-in features", es: "Funciones integradas" },
     "accessibility.toc.report": { en: "Report a barrier", es: "Reportar una barrera" },
     "accessibility.standards.body": {
-        en: "WCAG 2.2 Level AA is the baseline. Specific commitments: keyboard-reachable interactive elements in source order, visible focus indicators, color contrast ratios meeting 4.5:1 for body text and 3:1 for large text, alt text on every image in both locales, captions on every video, ARIA landmarks on every page, screen-reader announcements for state changes (form errors, modal opens, accordion toggles).",
-        es: "WCAG 2.2 Nivel AA es la línea base. Compromisos específicos: elementos interactivos accesibles por teclado en orden de origen, indicadores de foco visibles, ratios de contraste de color que cumplen 4.5:1 para texto del cuerpo y 3:1 para texto grande, texto alternativo en cada imagen en ambos idiomas, subtítulos en cada video, hitos ARIA en cada página, anuncios de lector de pantalla para cambios de estado (errores de formulario, aperturas de modales, toggles de acordeón).",
+        en: "WCAG 2.1 Level AA is our target. We aim for: keyboard-reachable interactive elements in source order, visible focus indicators, color contrast ratios of 4.5:1 for body text and 3:1 for large text, alt text on images in both languages, ARIA landmarks, and screen-reader announcements for state changes such as form errors.",
+        es: "WCAG 2.1 Nivel AA es nuestra meta. Buscamos: elementos interactivos accesibles por teclado en orden de origen, indicadores de foco visibles, contraste de color de 4.5:1 para texto del cuerpo y 3:1 para texto grande, texto alternativo en imágenes en ambos idiomas, hitos ARIA y anuncios de lector de pantalla para cambios de estado como errores de formulario.",
     },
     "accessibility.features.body": {
-        en: "Reduced-motion respected via prefers-reduced-motion. Dark mode (Tierra dark) for low-light use. Font sizes scale with browser zoom up to 200%. All forms have visible labels and error messages tied to inputs via aria-describedby. Skip-to-main-content link visible on focus. Tap targets meet 44x44px minimum.",
-        es: "Movimiento reducido respetado vía prefers-reduced-motion. Modo oscuro (Tierra dark) para uso con poca luz. Los tamaños de fuente escalan con el zoom del navegador hasta 200%. Todos los formularios tienen etiquetas visibles y mensajes de error vinculados a las entradas vía aria-describedby. Enlace para saltar al contenido principal visible al enfocar. Los objetivos táctiles cumplen mínimo 44x44px.",
+        en: "We aim to respect prefers-reduced-motion, support dark mode, scale with browser zoom, tie form errors to inputs, offer a skip-to-content link, and keep tap targets at 44x44px or larger.",
+        es: "Buscamos respetar prefers-reduced-motion, ofrecer modo oscuro, escalar con el zoom del navegador, vincular errores de formulario a las entradas, ofrecer un enlace para saltar al contenido y mantener objetivos táctiles de 44x44px o más.",
     },
     "accessibility.report.body": {
-        en: "If you encounter an accessibility barrier, email accessibility@agconn.com. We respond within two business days. Critical barriers (you cannot complete a primary task) are prioritized for same-week patches.",
-        es: "Si encuentras una barrera de accesibilidad, escribe a accessibility@agconn.com. Respondemos en menos de dos días hábiles. Las barreras críticas (no puedes completar una tarea principal) se priorizan para parches en la misma semana.",
+        en: "If you encounter an accessibility barrier, email accessibility@agconn.com.",
+        es: "Si encuentras una barrera de accesibilidad, escribe a accessibility@agconn.com.",
     },
 
     // ========================================================================
     // /sms-consent — SMS opt-in disclosure (Twilio A2P 10DLC compliance)
     // ========================================================================
-    "sms_consent.eyebrow": { en: "SMS consent", es: "Consentimiento de SMS" },
     "sms_consent.headline": {
         en: "How AGCONN sends you text messages.",
         es: "Cómo AGCONN te envía mensajes de texto.",
@@ -1432,16 +1281,16 @@ export const marketing: TranslationBundle = {
         es: "Códigos de verificación de inicio de sesión (contraseñas de un solo uso para iniciar sesión), recibos y cambios de estado de solicitudes de empleo, confirmaciones de contratación y notas de rechazo de empleadores, recordatorios programados de sesiones de capacitación, notificaciones de emisión de certificados cuando completas una capacitación, mensajes de bienvenida a la cuenta, mensajes de confirmación de opt-in para la ruta de palabra clave, y respuestas a las palabras STOP y HELP. AGCONN no envía contenido de marketing, promocional ni de recaudación de fondos por este canal; esas comunicaciones requerirían un opt-in separado y explícito y no se ofrecen actualmente.",
     },
     "sms_consent.frequency.body": {
-        en: "Up to 30 messages per phone number per month under normal use; most workers receive five or fewer per month. Sign-in codes and account-event notifications are sent in real time as the event occurs; we do not batch or schedule them. Quiet hours are enforced between 9 PM and 7 AM Pacific time — no messages are sent during these hours, and any deferred message is delivered after 7 AM Pacific the following morning. Message and data rates may apply per your mobile carrier plan.",
-        es: "Hasta 30 mensajes por número de teléfono por mes bajo uso normal; la mayoría de los trabajadores reciben cinco o menos por mes. Los códigos de inicio de sesión y notificaciones de eventos de cuenta se envían en tiempo real conforme ocurre el evento; no los agrupamos ni programamos. Las horas de silencio se respetan entre 9 PM y 7 AM hora del Pacífico — no se envían mensajes durante estas horas, y cualquier mensaje diferido se entrega después de las 7 AM del Pacífico la mañana siguiente. Las tarifas de mensajes y datos pueden aplicar según tu plan de operador móvil.",
+        en: "Up to 30 messages per phone number per month under normal use. Sign-in codes and account-event notifications are sent in real time as the event occurs; we do not batch or schedule them. Quiet hours are enforced between 9 PM and 7 AM Pacific time — no messages are sent during these hours, and any deferred message is delivered after 7 AM Pacific the following morning. Message and data rates may apply per your mobile carrier plan.",
+        es: "Hasta 30 mensajes por número de teléfono por mes bajo uso normal. Los códigos de inicio de sesión y notificaciones de eventos de cuenta se envían en tiempo real conforme ocurre el evento; no los agrupamos ni programamos. Las horas de silencio se respetan entre 9 PM y 7 AM hora del Pacífico — no se envían mensajes durante estas horas, y cualquier mensaje diferido se entrega después de las 7 AM del Pacífico la mañana siguiente. Las tarifas de mensajes y datos pueden aplicar según tu plan de operador móvil.",
     },
     "sms_consent.optout.body": {
         en: "Reply STOP (or PARAR, CANCELAR, UNSUBSCRIBE, END, QUIT) to any AGCONN message to immediately stop all SMS to your number. The mobile carrier confirms the unsubscribe and AGCONN records it within seconds; no further messages will be sent to that number. You can also toggle SMS off in your account settings at agconn.com/worker/profile (workers) or agconn.com/employer/profile (employers), or visit agconn.com/unsubscribe directly. Opting out of SMS does not delete your account, does not stop email notifications, and does not affect your ability to log in (you can still receive sign-in codes by email if you opt out of SMS).",
         es: "Responde STOP (o PARAR, CANCELAR, UNSUBSCRIBE, END, QUIT) a cualquier mensaje de AGCONN para detener inmediatamente todos los SMS a tu número. El operador móvil confirma la cancelación y AGCONN la registra en segundos; no se enviarán más mensajes a ese número. También puedes desactivar SMS en la configuración de tu cuenta en agconn.com/worker/profile (trabajadores) o agconn.com/employer/profile (empleadores), o visitar agconn.com/unsubscribe directamente. Cancelar SMS no elimina tu cuenta, no detiene las notificaciones por correo, y no afecta tu capacidad de iniciar sesión (todavía puedes recibir códigos de inicio de sesión por correo si cancelas SMS).",
     },
     "sms_consent.help.body": {
-        en: "Reply HELP (or AYUDA, INFO) to any AGCONN message and you will receive a reply with a link to agconn.com/help and the contact email hello@agconn.com. For urgent issues — locked out of your account, a suspicious message claiming to be from AGCONN, harassment from another user — email security@agconn.com or use the contact form at agconn.com/contact. Bilingual support (English and Spanish) is available; we respond within two business days.",
-        es: "Responde HELP (o AYUDA, INFO) a cualquier mensaje de AGCONN y recibirás una respuesta con un enlace a agconn.com/help y el correo de contacto hello@agconn.com. Para problemas urgentes — bloqueado de tu cuenta, un mensaje sospechoso que dice ser de AGCONN, acoso de otro usuario — escribe a security@agconn.com o usa el formulario de contacto en agconn.com/contact. Soporte bilingüe (inglés y español) disponible; respondemos en menos de dos días hábiles.",
+        en: "Reply HELP (or AYUDA, INFO) to any AGCONN message and you will receive a reply with a link to agconn.com/help and the contact email hello@agconn.com. For urgent issues — locked out of your account, a suspicious message claiming to be from AGCONN, harassment from another user — email security@agconn.com or use the contact form at agconn.com/contact. You can write in English or Spanish.",
+        es: "Responde HELP (o AYUDA, INFO) a cualquier mensaje de AGCONN y recibirás una respuesta con un enlace a agconn.com/help y el correo de contacto hello@agconn.com. Para problemas urgentes — bloqueado de tu cuenta, un mensaje sospechoso que dice ser de AGCONN, acoso de otro usuario — escribe a security@agconn.com o usa el formulario de contacto en agconn.com/contact. Puedes escribir en español o en inglés.",
     },
     "sms_consent.privacy.body": {
         en: "AGCONN never sells, rents, trades, or shares your phone number for marketing or any other purpose. Your number is used only by AGCONN (the platform) and the SMS infrastructure provider that delivers messages on AGCONN's behalf under a Data Processing Agreement. Employers do not see your phone number; they communicate with you through AGCONN's in-platform messaging, which optionally relays to SMS. The full data-handling policy is at agconn.com/privacy.",
@@ -1453,82 +1302,77 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     "workers_page.meta.title": { en: "For workers — AGCONN", es: "Para trabajadores — AGCONN" },
     "workers_page.meta.description": {
-        en: "Find verified jobs, earn certifications, build a skills wallet that travels with you. Free, bilingual, built for Central Valley farmworkers.",
-        es: "Encuentra trabajos verificados, gana certificaciones, construye una cartera de habilidades que viaja contigo. Gratis, bilingüe, construido para trabajadores agrícolas del Valle Central.",
+        en: "Find jobs from checked employers, keep your certificates, and build a skills wallet that travels with you. Free and bilingual, for Central Valley farmworkers.",
+        es: "Encuentra trabajos de empleadores revisados, guarda tus certificados y construye una cartera de habilidades que viaja contigo. Gratis y bilingüe, para trabajadores agrícolas del Valle Central.",
     },
-    "workers_page.eyebrow": { en: "For workers", es: "Para trabajadores" },
     "workers_page.headline": {
         en: "Build a record that travels with you.",
         es: "Construye un registro que viaja contigo.",
     },
     "workers_page.intro": {
-        en: "AGCONN is built for the people who pick, prune, pack, and drive across the Central Valley. Free profile in Spanish or English, verified jobs, certifications you keep forever.",
-        es: "AGCONN está construido para las personas que cosechan, podan, empacan y conducen en el Valle Central. Perfil gratis en español o inglés, trabajos verificados, certificaciones que conservas para siempre.",
+        en: "AGCONN is built for the people who pick, prune, pack, and drive across the Central Valley. Free profile in Spanish or English, jobs from checked employers, and certificates you keep.",
+        es: "AGCONN está construido para las personas que cosechan, podan, empacan y conducen en el Valle Central. Perfil gratis en español o inglés, trabajos de empleadores revisados y certificados que conservas.",
     },
     "workers_page.cta_primary": { en: "Create your free profile", es: "Crea tu perfil gratis" },
     "workers_page.cta_secondary": { en: "Browse open jobs", es: "Explorar empleos abiertos" },
-    "workers_page.benefits.eyebrow": { en: "What you get", es: "Lo que obtienes" },
     "workers_page.benefits.headline": { en: "Built for the field, not for office workers.", es: "Construido para el campo, no para oficinistas." },
     "workers_page.benefits.wallet.title": { en: "Skills wallet", es: "Cartera de habilidades" },
     "workers_page.benefits.wallet.body": {
-        en: "Every certification you earn — forklift, pesticide handler, food safety — is bilingual, e-signed, and stays with you across employers and seasons. No more lost paper certificates.",
-        es: "Cada certificación que ganes — montacargas, manejador de pesticidas, seguridad alimentaria — es bilingüe, firmada electrónicamente y permanece contigo entre empleadores y temporadas. No más certificados en papel perdidos.",
+        en: "Every certificate you earn on AGCONN is bilingual and stays with you across employers and seasons. No more lost paper certificates.",
+        es: "Cada certificado que ganes en AGCONN es bilingüe y permanece contigo entre empleadores y temporadas. No más certificados en papel perdidos.",
     },
     "workers_page.benefits.search.title": { en: "Verified jobs", es: "Empleos verificados" },
     "workers_page.benefits.search.body": {
-        en: "Every employer on AGCONN shows their CA FLC license number, MSPA registration, and current bond status. We re-verify every employer annually against state records.",
-        es: "Cada empleador en AGCONN muestra su número de licencia FLC de CA, registro MSPA y estado actual de fianza. Reverificamos a cada empleador anualmente contra los registros estatales.",
+        en: "FLCs on AGCONN must hold a CA FLC license and an MSPA registration. An admin reviews them before the FLC can post, and we re-check the license every night against state records.",
+        es: "Los FLC en AGCONN deben tener una licencia FLC de CA y un registro MSPA. Un administrador los revisa antes de que el FLC pueda publicar, y volvemos a revisar la licencia cada noche contra los registros estatales.",
     },
     "workers_page.benefits.sms.title": { en: "Job alerts by SMS", es: "Alertas de empleo por SMS" },
     "workers_page.benefits.sms.body": {
-        en: "Don't have a smartphone every day? AGCONN works over text message. Sign up by SMS, get job alerts by SMS, apply by replying. No app required.",
-        es: "¿No tienes teléfono inteligente todos los días? AGCONN funciona por mensaje de texto. Regístrate por SMS, recibe alertas de empleo por SMS, postula respondiendo. No se requiere aplicación.",
+        en: "Don't have a smartphone every day? Get job alerts by SMS, and text a job's keyword to apply. No app required.",
+        es: "¿No tienes teléfono inteligente todos los días? Recibe alertas de empleo por SMS y envía por mensaje la palabra clave de un trabajo para postular. No se requiere aplicación.",
     },
     "workers_page.benefits.bilingual.title": { en: "Spanish first", es: "Español primero" },
     "workers_page.benefits.bilingual.body": {
-        en: "Every screen, every notification, every certificate is available in Spanish or English. Native Mexican-Spanish reviewers check every word — not Google-Translate Spanish.",
-        es: "Cada pantalla, cada notificación, cada certificado está disponible en español o inglés. Revisores nativos de español mexicano verifican cada palabra — no español de Google Translate.",
+        en: "Every screen, every notification, every certificate is available in Spanish or English.",
+        es: "Cada pantalla, cada notificación, cada certificado está disponible en español o inglés.",
     },
-    "workers_page.steps.eyebrow": { en: "Three minutes to start", es: "Tres minutos para empezar" },
     "workers_page.steps.headline": { en: "How it works", es: "Cómo funciona" },
     "workers_page.steps.s1.title": { en: "1. Create your profile", es: "1. Crea tu perfil" },
     "workers_page.steps.s1.body": {
-        en: "Phone number, name, the work you've done. Three minutes on a phone, in Spanish or English. We send a six-digit code to verify your number — no password to remember.",
-        es: "Número de teléfono, nombre, el trabajo que has hecho. Tres minutos en un teléfono, en español o inglés. Te enviamos un código de seis dígitos para verificar tu número — no hay contraseña que recordar.",
+        en: "Phone number, name, the work you've done, in Spanish or English. We send a six-digit code to verify your number — no password to remember.",
+        es: "Número de teléfono, nombre, el trabajo que has hecho, en español o inglés. Te enviamos un código de seis dígitos para verificar tu número — no hay contraseña que recordar.",
     },
     "workers_page.steps.s2.title": { en: "2. Add your certifications", es: "2. Agrega tus certificaciones" },
     "workers_page.steps.s2.body": {
-        en: "Take a photo of any certification you already hold — pesticide handler, forklift, food safety. We verify it against the issuing agency and add it to your skills wallet, bilingual.",
-        es: "Toma una foto de cualquier certificación que ya tengas — manejador de pesticidas, montacargas, seguridad alimentaria. La verificamos contra la agencia emisora y la agregamos a tu cartera de habilidades, bilingüe.",
+        en: "Add any certification you already hold — pesticide handler, forklift, food safety. It goes on your profile.",
+        es: "Agrega cualquier certificación que ya tengas — manejador de pesticidas, montacargas, seguridad alimentaria. Queda en tu perfil.",
     },
     "workers_page.steps.s3.title": { en: "3. Search and apply", es: "3. Busca y postula" },
     "workers_page.steps.s3.body": {
-        en: "See verified jobs filtered by crop, location, wage range, and start date. Apply with one tap. The employer sees your verified profile and certifications immediately.",
-        es: "Ve empleos verificados filtrados por cultivo, ubicación, rango salarial y fecha de inicio. Postula con un toque. El empleador ve tu perfil verificado y certificaciones inmediatamente.",
+        en: "See jobs filtered by location, wage range, and start date. Apply with one tap. The employer sees your profile and certifications.",
+        es: "Ve empleos filtrados por ubicación, rango salarial y fecha de inicio. Postula con un toque. El empleador ve tu perfil y certificaciones.",
     },
     "workers_page.steps.s4.title": { en: "4. Build your record", es: "4. Construye tu registro" },
     "workers_page.steps.s4.body": {
-        en: "Each completed job adds to your work history. Each new training adds a certificate. Over seasons, you build a portable, verifiable record that opens better-paying roles.",
-        es: "Cada trabajo completado se agrega a tu historial laboral. Cada nueva capacitación agrega un certificado. A lo largo de las temporadas, construyes un registro portátil y verificable que abre puestos mejor pagados.",
+        en: "Each recorded hire adds to your work history. Each new training adds a certificate. Over seasons, you build a record you can show the next employer.",
+        es: "Cada contratación registrada se agrega a tu historial laboral. Cada nueva capacitación agrega un certificado. A lo largo de las temporadas, construyes un registro que puedes mostrar al próximo empleador.",
     },
-    "workers_page.protection.eyebrow": { en: "Your protection", es: "Tu protección" },
     "workers_page.protection.headline": {
         en: "Your data, your call.",
         es: "Tus datos, tu decisión.",
     },
     "workers_page.protection.body": {
-        en: "AGCONN does not sell, share, or rent your phone number to anyone. We never check your immigration status. You can delete your account and all your data at any time. The skills wallet is yours — you can export it as a PDF and keep it forever, even if you stop using AGCONN.",
-        es: "AGCONN no vende, comparte ni alquila tu número de teléfono a nadie. Nunca verificamos tu estatus migratorio. Puedes eliminar tu cuenta y todos tus datos en cualquier momento. La cartera de habilidades es tuya — puedes exportarla como PDF y conservarla para siempre, incluso si dejas de usar AGCONN.",
+        en: "AGCONN does not sell, share, or rent your phone number. We never ask your immigration status. You can ask us to delete your account and your data at any time.",
+        es: "AGCONN no vende, comparte ni alquila tu número de teléfono. Nunca preguntamos tu estatus migratorio. Puedes pedirnos que eliminemos tu cuenta y tus datos en cualquier momento.",
     },
     "workers_page.protection.cta": { en: "Read our trust commitments", es: "Lee nuestros compromisos de confianza" },
-    "workers_page.cta_section.eyebrow": { en: "Free to start", es: "Gratis para empezar" },
     "workers_page.cta_section.headline": {
         en: "From the field, to your future.",
         es: "Del campo, a tu futuro.",
     },
     "workers_page.cta_section.body": {
-        en: "Three minutes. No fee. No spam. No selling your data. The skills you bring, recorded forever.",
-        es: "Tres minutos. Sin costo. Sin spam. Sin vender tus datos. Las habilidades que aportas, registradas para siempre.",
+        en: "No fee. No selling your data. The skills you bring, on your record.",
+        es: "Sin costo. Sin vender tus datos. Las habilidades que aportas, en tu registro.",
     },
     "workers_page.cta_section.button": { en: "Create your free profile", es: "Crea tu perfil gratis" },
 
@@ -1537,20 +1381,21 @@ export const marketing: TranslationBundle = {
     // ========================================================================
     "how_it_works.meta.title": { en: "How AGCONN works — AGCONN", es: "Cómo funciona AGCONN — AGCONN" },
     "how_it_works.meta.description": {
-        en: "How AGCONN pairs Central Valley farmworkers with verified employers, training programs, and workforce boards. Bilingual, mobile-first, multi-tenant.",
-        es: "Cómo AGCONN empareja a los trabajadores agrícolas del Valle Central con empleadores verificados, programas de capacitación y juntas laborales. Bilingüe, móvil primero, multi-inquilino.",
+        en: "How AGCONN connects Central Valley farmworkers with employers and training programs. Bilingual and mobile-first.",
+        es: "Cómo AGCONN conecta a los trabajadores agrícolas del Valle Central con empleadores y programas de capacitación. Bilingüe y móvil primero.",
     },
-    "how_it_works.eyebrow": { en: "How it works", es: "Cómo funciona" },
     "how_it_works.headline": {
-        en: "One platform, four audiences, one goal.",
-        es: "Una plataforma, cuatro audiencias, una meta.",
+        en: "One platform, three audiences.",
+        es: "Una plataforma, tres audiencias.",
     },
     "how_it_works.intro": {
-        en: "AGCONN connects four audiences who depend on each other but rarely share a system: farmworkers, the growers and FLCs who hire them, the training programs that certify them, and the workforce boards that fund the public-side investment. Here is how each side experiences the platform.",
-        es: "AGCONN conecta cuatro audiencias que dependen unas de otras pero rara vez comparten un sistema: trabajadores agrícolas, los agricultores y FLCs que los contratan, los programas de capacitación que los certifican y las juntas laborales que financian la inversión del lado público. Así experimenta cada lado la plataforma.",
+        en: "AGCONN connects three audiences who depend on each other but rarely share a system: farmworkers, the growers and FLCs who hire them, and the training programs that certify them. Workforce boards can talk to us about what they need.",
+        es: "AGCONN conecta tres audiencias que dependen unas de otras pero rara vez comparten un sistema: trabajadores agrícolas, los agricultores y FLC que los contratan, y los programas de capacitación que los certifican. Las juntas laborales pueden hablar con nosotros sobre lo que necesitan.",
     },
-    "how_it_works.workers.eyebrow": { en: "For workers", es: "Para trabajadores" },
-    "how_it_works.workers.headline": { en: "Free, bilingual, three minutes to start.", es: "Gratis, bilingüe, tres minutos para empezar." },
+    "how_it_works.workers.headline": {
+        en: "Free and bilingual.",
+        es: "Gratis y bilingüe.",
+    },
     "how_it_works.workers.s1.title": { en: "Sign up by phone", es: "Regístrate por teléfono" },
     "how_it_works.workers.s1.body": {
         en: "Enter your phone number. We send a six-digit code. No email, no password, no application download required.",
@@ -1558,83 +1403,99 @@ export const marketing: TranslationBundle = {
     },
     "how_it_works.workers.s2.title": { en: "Add what you bring", es: "Agrega lo que aportas" },
     "how_it_works.workers.s2.body": {
-        en: "Crops you have worked, languages you speak, certifications you hold. Optional photos of certificates so we can verify them.",
-        es: "Cultivos en los que has trabajado, idiomas que hablas, certificaciones que tienes. Fotos opcionales de certificados para que podamos verificarlas.",
+        en: "Crops you have worked, languages you speak, certifications you hold.",
+        es: "Cultivos en los que has trabajado, idiomas que hablas, certificaciones que tienes.",
     },
-    "how_it_works.workers.s3.title": { en: "Get matched", es: "Recibe coincidencias" },
+    "how_it_works.workers.s3.title": {
+        en: "Find jobs",
+        es: "Encuentra trabajos",
+    },
     "how_it_works.workers.s3.body": {
-        en: "We surface verified jobs that match your skills, your area, and your availability. Apply with a single tap. Employers see your full verified profile.",
-        es: "Mostramos trabajos verificados que coinciden con tus habilidades, tu área y tu disponibilidad. Postula con un solo toque. Los empleadores ven tu perfil verificado completo.",
+        en: "Filter jobs by your area and the work you do. Apply with a single tap. The employer sees your profile.",
+        es: "Filtra trabajos por tu área y el trabajo que haces. Postula con un solo toque. El empleador ve tu perfil.",
     },
     "how_it_works.workers.s4.title": { en: "Carry your record", es: "Lleva tu registro" },
     "how_it_works.workers.s4.body": {
-        en: "Every job and certification adds to your portable skills wallet. Show it to any employer in California — proof that travels with you.",
-        es: "Cada trabajo y certificación se agrega a tu cartera de habilidades portátil. Muéstrasela a cualquier empleador en California — prueba que viaja contigo.",
+        en: "Every recorded job and certificate adds to your skills wallet. Show it to any employer in California.",
+        es: "Cada trabajo registrado y certificado se agrega a tu cartera de habilidades. Muéstrasela a cualquier empleador en California.",
     },
-    "how_it_works.employers.eyebrow": { en: "For employers", es: "Para empleadores" },
     "how_it_works.employers.headline": { en: "Verified hiring, no paperwork drag.", es: "Contratación verificada, sin lastre de papeleo." },
     "how_it_works.employers.s1.title": { en: "Verify your business", es: "Verifica tu empresa" },
     "how_it_works.employers.s1.body": {
-        en: "Submit your CA FLC license number or grower business identifier. We check it against the Division of Labor Standards Enforcement public registry within hours.",
-        es: "Envía tu número de licencia FLC de CA o identificador de negocio de agricultor. Lo verificamos contra el registro público de la División de Cumplimiento de Estándares Laborales en horas.",
+        en: "Submit your CA FLC license number or grower business identifier. An admin reviews it before your jobs go public.",
+        es: "Envía tu número de licencia FLC de CA o identificador de negocio de agricultor. Un administrador lo revisa antes de publicar tus trabajos.",
     },
     "how_it_works.employers.s2.title": { en: "Post in either language", es: "Publica en cualquier idioma" },
     "how_it_works.employers.s2.body": {
-        en: "Write the posting once in English or Spanish. AGCONN auto-generates the translation. Workers see it in their preferred language.",
-        es: "Escribe la publicación una vez en inglés o español. AGCONN genera automáticamente la traducción. Los trabajadores la ven en su idioma preferido.",
+        en: "Write the posting in English, Spanish, or both. Workers see the language you provide.",
+        es: "Escribe la publicación en inglés, en español o en ambos. Los trabajadores ven el idioma que proporcionas.",
     },
     "how_it_works.employers.s3.title": { en: "Review applicants on your phone", es: "Revisa aplicantes en tu teléfono" },
     "how_it_works.employers.s3.body": {
-        en: "Each applicant arrives with verified contact info, work history, and certifications. Filter, accept, or decline from a phone in under a minute.",
-        es: "Cada aplicante llega con información de contacto verificada, historial laboral y certificaciones. Filtra, acepta o rechaza desde un teléfono en menos de un minuto.",
+        en: "Each applicant arrives with contact info, work history, and certifications. Filter, accept, or decline from a phone.",
+        es: "Cada aplicante llega con información de contacto, historial laboral y certificaciones. Filtra, acepta o rechaza desde un teléfono.",
     },
-    "how_it_works.employers.s4.title": { en: "Stay compliant by default", es: "Mantente en cumplimiento por defecto" },
+    "how_it_works.employers.s4.title": {
+        en: "Keep your records in one place",
+        es: "Guarda tus registros en un solo lugar",
+    },
     "how_it_works.employers.s4.body": {
-        en: "AGCONN tracks renewal dates for your FLC license, MSPA registration, and crew certifications. Get notified before any of them expire.",
-        es: "AGCONN rastrea las fechas de renovación de tu licencia FLC, registro MSPA y certificaciones de cuadrilla. Recibe notificación antes de que cualquiera expire.",
+        en: "Keep crews, shifts, and compliance records in AGCONN. You still own your compliance.",
+        es: "Guarda cuadrillas, turnos y registros de cumplimiento en AGCONN. El cumplimiento sigue siendo tu responsabilidad.",
     },
-    "how_it_works.training.eyebrow": { en: "For training programs", es: "Para programas de capacitación" },
     "how_it_works.training.headline": { en: "Reach learners who are already job-ready.", es: "Alcanza a aprendices que ya están listos para trabajar." },
     "how_it_works.training.s1.title": { en: "List your courses", es: "Lista tus cursos" },
     "how_it_works.training.s1.body": {
-        en: "Submit your CDFA, F3, CalOSBA, or county-Ag-Extension program. We list it on AGCONN with bilingual descriptions, dates, and registration links.",
-        es: "Envía tu programa CDFA, F3, CalOSBA o de Extensión Agrícola del condado. Lo listamos en AGCONN con descripciones bilingües, fechas y enlaces de registro.",
+        en: "List your program on AGCONN with bilingual descriptions and dates.",
+        es: "Publica tu programa en AGCONN con descripciones bilingües y fechas.",
     },
     "how_it_works.training.s2.title": { en: "Issue bilingual certificates", es: "Emite certificados bilingües" },
     "how_it_works.training.s2.body": {
-        en: "When a worker completes your course, AGCONN issues an e-signed bilingual certificate to their skills wallet automatically. No paper to track, no manual data entry.",
-        es: "Cuando un trabajador completa tu curso, AGCONN emite un certificado bilingüe firmado electrónicamente a su cartera de habilidades automáticamente. Sin papel que rastrear, sin entrada manual de datos.",
+        en: "When you mark a course complete, AGCONN issues a bilingual certificate to the worker's skills wallet.",
+        es: "Cuando marcas un curso como completado, AGCONN emite un certificado bilingüe a la cartera de habilidades del trabajador.",
     },
-    "how_it_works.training.s3.title": { en: "Report on outcomes", es: "Reporta sobre resultados" },
+    "how_it_works.training.s3.title": {
+        en: "See your completions",
+        es: "Ve tus finalizaciones",
+    },
     "how_it_works.training.s3.body": {
-        en: "See aggregated, anonymized outcomes for your graduates: job placement rate, wage at placement, retention at six months. Useful for grant reporting.",
-        es: "Ve resultados agregados y anonimizados para tus graduados: tasa de colocación laboral, salario al ingresar, retención a los seis meses. Útil para reportes de subvenciones.",
+        en: "See enrollments and completions for your programs in one place.",
+        es: "Ve inscripciones y finalizaciones de tus programas en un solo lugar.",
     },
-    "how_it_works.workforce.eyebrow": { en: "For workforce boards", es: "Para juntas laborales" },
-    "how_it_works.workforce.headline": { en: "WIOA reporting, automated.", es: "Reporte de WIOA, automatizado." },
-    "how_it_works.workforce.s1.title": { en: "One worker intake, two systems satisfied", es: "Una admisión de trabajador, dos sistemas satisfechos" },
+    "how_it_works.workforce.headline": {
+        en: "Tell us what you need.",
+        es: "Dinos qué necesitas.",
+    },
+    "how_it_works.workforce.s1.title": {
+        en: "One worker profile",
+        es: "Un perfil de trabajador",
+    },
     "how_it_works.workforce.s1.body": {
-        en: "Workers complete a single AGCONN profile. Required PIRL fields populate automatically for your WIOA Title I or Title III caseload.",
-        es: "Los trabajadores completan un perfil único de AGCONN. Los campos PIRL requeridos se llenan automáticamente para tu carga de casos del Título I o Título III de WIOA.",
+        en: "Workers complete one AGCONN profile, in their language.",
+        es: "Los trabajadores completan un perfil de AGCONN, en su idioma.",
     },
     "how_it_works.workforce.s2.title": { en: "Tenant-scoped data", es: "Datos a nivel de inquilino" },
     "how_it_works.workforce.s2.body": {
-        en: "Each board operates as its own tenant. Your case managers see only your participants. Data never crosses tenants without explicit consent.",
-        es: "Cada junta opera como su propio inquilino. Tus administradores de casos solo ven a tus participantes. Los datos nunca cruzan los inquilinos sin consentimiento explícito.",
+        en: "AGCONN keeps each tenant's data separate. No workforce board runs a tenant yet.",
+        es: "AGCONN mantiene separados los datos de cada inquilino. Ninguna junta laboral tiene una instancia todavía.",
     },
-    "how_it_works.workforce.s3.title": { en: "Quarterly export, audit-ready", es: "Exportación trimestral, lista para auditoría" },
+    "how_it_works.workforce.s3.title": {
+        en: "No WIOA export yet",
+        es: "Todavía no hay exporte WIOA",
+    },
     "how_it_works.workforce.s3.body": {
-        en: "AGCONN exports a PIRL-compliant file for your quarterly federal submission. Audit logs include every data change with timestamp and case manager identity.",
-        es: "AGCONN exporta un archivo compatible con PIRL para tu envío federal trimestral. Los registros de auditoría incluyen cada cambio de datos con marca de tiempo e identidad del administrador de casos.",
+        en: "AGCONN does not have a WIOA or PIRL export yet. Email partnerships@agconn.com and tell us what your funder requires.",
+        es: "AGCONN todavía no tiene un exporte WIOA o PIRL. Escribe a partnerships@agconn.com y dinos qué requiere tu financiador.",
     },
-    "how_it_works.trust.eyebrow": { en: "Trust mechanics", es: "Mecánica de confianza" },
     "how_it_works.trust.headline": { en: "How verification actually works.", es: "Cómo funciona realmente la verificación." },
     "how_it_works.trust.body": {
-        en: "Worker phone numbers are verified by SMS code. Employer FLC licenses are verified against the California Division of Labor Standards Enforcement registry, MSPA registration against the U.S. Department of Labor, and re-verified annually. Certifications are checked against issuing agency records when possible. Workforce boards verify their own organizational identity through magic-link sign-in tied to their .gov or .org domain.",
-        es: "Los números de teléfono de los trabajadores se verifican por código SMS. Las licencias FLC de los empleadores se verifican contra el registro de la División de Cumplimiento de Estándares Laborales de California, el registro MSPA contra el Departamento de Trabajo de EE. UU., y se reverifican anualmente. Las certificaciones se verifican contra los registros de la agencia emisora cuando es posible. Las juntas laborales verifican su propia identidad organizacional a través del inicio de sesión por enlace mágico vinculado a su dominio .gov o .org.",
+        en: "Worker phone numbers are verified by SMS code. An admin reviews each employer's FLC license or grower details before any job goes public. AGCONN re-checks FLC licenses against the California Division of Labor Standards Enforcement registry every night.",
+        es: "Los números de teléfono de los trabajadores se verifican por código SMS. Un administrador revisa la licencia FLC o los datos de productor de cada empleador antes de publicar cualquier trabajo. AGCONN vuelve a revisar las licencias FLC contra el registro de la División de Cumplimiento de Estándares Laborales de California cada noche.",
     },
-    "how_it_works.cta.eyebrow": { en: "Pick your starting point", es: "Elige tu punto de partida" },
-    "how_it_works.cta.headline": { en: "Start in three minutes.", es: "Empieza en tres minutos." },
+    "how_it_works.cta.headline": {
+        en: "Start here.",
+        es: "Empieza aquí.",
+    },
     "how_it_works.cta.button_workers": { en: "I'm a worker", es: "Soy trabajador" },
     "how_it_works.cta.button_employers": { en: "I hire workers", es: "Contrato trabajadores" },
     "how_it_works.cta.button_training": { en: "I run a training program", es: "Dirijo un programa de capacitación" },
@@ -1648,18 +1509,16 @@ export const marketing: TranslationBundle = {
         en: "Three plans for employers — Seed (free), Field, and Farm. Founder pricing for the first 50 paid accounts. Workers and training organizations are always free.",
         es: "Tres planes para empleadores — Semilla (gratis), Campo y Rancho. Precio fundador para las primeras 50 cuentas pagas. Los trabajadores y las organizaciones de capacitación siempre son gratis.",
     },
-    "pricing_page.eyebrow": { en: "Pricing", es: "Precios" },
     "pricing_page.headline": {
         en: "Pricing built for the people who keep the Valley fed.",
         es: "Precios construidos para las personas que alimentan al Valle.",
     },
     "pricing_page.intro": {
-        en: "Workers and training organizations are always free. Three transparent plans for employers — Seed, Field, and Farm. Founder pricing locks in for the first 50 paid accounts. No hidden fees, no surprise renewals, no auto-billing without notice.",
-        es: "Los trabajadores y las organizaciones de capacitación siempre son gratis. Tres planes transparentes para empleadores — Semilla, Campo y Rancho. El precio fundador se bloquea para las primeras 50 cuentas pagas. Sin tarifas ocultas, sin renovaciones sorpresa, sin facturación automática sin aviso.",
+        en: "Workers and training organizations are always free. Three transparent plans for employers — Seed, Field, and Farm. Founder pricing locks in for the first 50 paid accounts. No hidden fees.",
+        es: "Los trabajadores y las organizaciones de capacitación siempre son gratis. Tres planes transparentes para empleadores — Semilla, Campo y Rancho. El precio fundador se bloquea para las primeras 50 cuentas pagas. Sin tarifas ocultas.",
     },
 
     // ----- Plan grid header -----
-    "pricing_page.plans.eyebrow": { en: "Employer plans", es: "Planes de empleador" },
     "pricing_page.plans.headline": { en: "Pick the plan that matches your operation.", es: "Elige el plan que coincide con tu operación." },
 
     // ----- Billing-cycle toggle -----
@@ -1675,8 +1534,8 @@ export const marketing: TranslationBundle = {
     "pricing_page.plans.seed.label": { en: "SEED · COMMUNITY", es: "SEMILLA · COMUNIDAD" },
     "pricing_page.plans.seed.name": { en: "Seed", es: "Semilla" },
     "pricing_page.plans.seed.tagline": {
-        en: "For small growers and seasonal hires. Post your first jobs and see who's in the Valley pool.",
-        es: "Para pequeños agricultores y contrataciones de temporada. Publica tus primeros empleos y descubre quién está en el Valle.",
+        en: "For small growers and seasonal hires. Post your first jobs.",
+        es: "Para pequeños agricultores y contrataciones de temporada. Publica tus primeros empleos.",
     },
     "pricing_page.plans.seed.price.monthly.standard_amount": { en: "$0", es: "$0" },
     "pricing_page.plans.seed.price.monthly.founder_amount": { en: "$0", es: "$0" },
@@ -1689,7 +1548,10 @@ export const marketing: TranslationBundle = {
     "pricing_page.plans.seed.f3": { en: "FLC license verification badge", es: "Verificación de licencia FLC" },
     "pricing_page.plans.seed.f4": { en: "SEO-indexed public job board", es: "Bolsa de trabajo pública indexada en buscadores" },
     "pricing_page.plans.seed.f5": { en: "Worker skills wallet visibility", es: "Visibilidad de la cartera de habilidades" },
-    "pricing_page.plans.seed.f6": { en: "Audit log (90 days)", es: "Registro de auditoría (90 días)" },
+    "pricing_page.plans.seed.f6": {
+        en: "Audit log",
+        es: "Registro de auditoría",
+    },
     "pricing_page.plans.seed.cta_founder": { en: "Start free", es: "Comenzar gratis" },
     "pricing_page.plans.seed.cta_standard": { en: "Start free", es: "Comenzar gratis" },
 
@@ -1700,7 +1562,6 @@ export const marketing: TranslationBundle = {
         en: "For working FLCs and growers running crews all season. Hire faster, schedule smarter, stay compliant.",
         es: "Para contratistas y agricultores que trabajan con cuadrillas toda la temporada. Contrata más rápido, organiza mejor, mantente en cumplimiento.",
     },
-    "pricing_page.plans.field.badge": { en: "Most popular", es: "Más popular" },
     "pricing_page.plans.field.price.monthly.standard_amount": { en: "$199", es: "$199" },
     "pricing_page.plans.field.price.monthly.founder_amount": { en: "$99", es: "$99" },
     "pricing_page.plans.field.price.monthly.unit": { en: "/ mo", es: "/ mes" },
@@ -1711,8 +1572,14 @@ export const marketing: TranslationBundle = {
     "pricing_page.plans.field.f2": { en: "Worker search & invite-to-apply", es: "Búsqueda de trabajadores e invitación a aplicar" },
     "pricing_page.plans.field.f3": { en: "SMS to applicants (received, interview, hired, rejected)", es: "SMS a solicitantes (recibido, entrevista, contratado, rechazado)" },
     "pricing_page.plans.field.f4": { en: "Crew & shift scheduling with SMS confirm", es: "Gestión de cuadrillas y turnos con confirmación por SMS" },
-    "pricing_page.plans.field.f5": { en: "H-2A / MSPA / DOL compliance + 7-year audit log", es: "Cumplimiento H-2A / MSPA / DOL + registro de auditoría 7 años" },
-    "pricing_page.plans.field.f6": { en: "WIOA exports + compliance print doc", es: "Exportaciones WIOA + documento de auditoría de cumplimiento" },
+    "pricing_page.plans.field.f5": {
+        en: "H-2A / MSPA / DOL compliance checklist + audit log",
+        es: "Lista de cumplimiento H-2A / MSPA / DOL + registro de auditoría",
+    },
+    "pricing_page.plans.field.f6": {
+        en: "Compliance print doc",
+        es: "Documento impreso de cumplimiento",
+    },
     "pricing_page.plans.field.cta_founder": { en: "Start at founder pricing", es: "Comenzar con precio fundador" },
     "pricing_page.plans.field.cta_standard": { en: "Get started", es: "Comenzar" },
 
@@ -1720,8 +1587,8 @@ export const marketing: TranslationBundle = {
     "pricing_page.plans.farm.label": { en: "FARM · MULTI-COUNTY OPERATORS", es: "RANCHO · OPERADORES MULTI-CONDADO" },
     "pricing_page.plans.farm.name": { en: "Farm", es: "Rancho" },
     "pricing_page.plans.farm.tagline": {
-        en: "For multi-county operators and workforce boards with funder reporting obligations and large crew operations.",
-        es: "Para operadores multi-condado y juntas de fuerza laboral con obligaciones de informes a financiadores y grandes operaciones de cuadrillas.",
+        en: "For multi-county operators with large crews.",
+        es: "Para operadores multi-condado con cuadrillas grandes.",
     },
     "pricing_page.plans.farm.price.monthly.standard_amount": { en: "$499", es: "$499" },
     "pricing_page.plans.farm.price.monthly.founder_amount": { en: "$299", es: "$299" },
@@ -1731,10 +1598,10 @@ export const marketing: TranslationBundle = {
     "pricing_page.plans.farm.price.yearly.unit": { en: "/ yr", es: "/ año" },
     "pricing_page.plans.farm.f1": { en: "Everything in Field", es: "Todo lo incluido en Campo" },
     "pricing_page.plans.farm.f2": { en: "Multi-user accounts & roles", es: "Cuentas multiusuario y roles" },
-    "pricing_page.plans.farm.f3": { en: "Branded grant exports + PIRL compliance", es: "Exportaciones de subvenciones con marca + cumplimiento PIRL" },
-    "pricing_page.plans.farm.f4": { en: "Hire metrics dashboard (WIOA KPIs)", es: "Panel de métricas de contratación (KPIs de WIOA)" },
-    "pricing_page.plans.farm.f5": { en: "Tenant-isolated participant data", es: "Datos de participantes aislados por inquilino" },
-    "pricing_page.plans.farm.f6": { en: "Dedicated success contact + SLA", es: "Contacto de éxito dedicado + SLA" },
+    "pricing_page.plans.farm.f4": {
+        en: "Hire metrics dashboard",
+        es: "Panel de métricas de contratación",
+    },
     "pricing_page.plans.farm.cta_founder": { en: "Talk to sales", es: "Hablar con ventas" },
     "pricing_page.plans.farm.cta_standard": { en: "Talk to sales", es: "Hablar con ventas" },
 
@@ -1745,7 +1612,6 @@ export const marketing: TranslationBundle = {
     },
 
     // ----- Full feature comparison table -----
-    "pricing_page.compare.eyebrow": { en: "Full comparison", es: "Comparación completa" },
     "pricing_page.compare.headline": { en: "What's in each plan, line by line.", es: "Qué incluye cada plan, línea por línea." },
     "pricing_page.compare.intro": {
         en: "Every feature, every tier. Workers and training organizations are always free — see the band above.",
@@ -1762,7 +1628,10 @@ export const marketing: TranslationBundle = {
 
     // Hiring & Recruitment
     "pricing_page.compare.section.hiring": { en: "Hiring & Recruitment", es: "Contratación y reclutamiento" },
-    "pricing_page.compare.row.active_postings.label": { en: "Active job postings (bilingual, auto-translated)", es: "Publicaciones activas (bilingües, auto-traducidas)" },
+    "pricing_page.compare.row.active_postings.label": {
+        en: "Active job postings",
+        es: "Publicaciones activas",
+    },
     "pricing_page.compare.row.active_postings.seed": { en: "2", es: "2" },
     "pricing_page.compare.row.active_postings.field": { en: "Unlimited", es: "Ilimitadas" },
     "pricing_page.compare.row.active_postings.farm": { en: "Unlimited", es: "Ilimitadas" },
@@ -1774,10 +1643,6 @@ export const marketing: TranslationBundle = {
     "pricing_page.compare.row.worker_search.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.worker_search.field": { en: "✓", es: "✓" },
     "pricing_page.compare.row.worker_search.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.priority_listing.label": { en: "Priority listing on worker app", es: "Listado prioritario en la app del trabajador" },
-    "pricing_page.compare.row.priority_listing.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.priority_listing.field": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.priority_listing.farm": { en: "✓", es: "✓" },
     "pricing_page.compare.row.auto_match.label": { en: "Auto-match + renotify campaigns", es: "Auto-coincidencia + campañas de re-notificación" },
     "pricing_page.compare.row.auto_match.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.auto_match.field": { en: "✓", es: "✓" },
@@ -1798,9 +1663,18 @@ export const marketing: TranslationBundle = {
     "pricing_page.compare.row.flc_badge.field": { en: "✓", es: "✓" },
     "pricing_page.compare.row.flc_badge.farm": { en: "✓", es: "✓" },
     "pricing_page.compare.row.audit_log.label": { en: "Tamper-evident audit log (HMAC-signed)", es: "Registro de auditoría a prueba de manipulaciones (firmado HMAC)" },
-    "pricing_page.compare.row.audit_log.seed": { en: "90 days", es: "90 días" },
-    "pricing_page.compare.row.audit_log.field": { en: "7 years", es: "7 años" },
-    "pricing_page.compare.row.audit_log.farm": { en: "7 years", es: "7 años" },
+    "pricing_page.compare.row.audit_log.seed": {
+        en: "✓",
+        es: "✓",
+    },
+    "pricing_page.compare.row.audit_log.field": {
+        en: "✓",
+        es: "✓",
+    },
+    "pricing_page.compare.row.audit_log.farm": {
+        en: "✓",
+        es: "✓",
+    },
     "pricing_page.compare.row.compliance_checklist.label": { en: "H-2A / MSPA / DOL compliance checklist", es: "Lista de verificación H-2A / MSPA / DOL" },
     "pricing_page.compare.row.compliance_checklist.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.compliance_checklist.field": { en: "✓", es: "✓" },
@@ -1809,22 +1683,6 @@ export const marketing: TranslationBundle = {
     "pricing_page.compare.row.compliance_print.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.compliance_print.field": { en: "✓", es: "✓" },
     "pricing_page.compare.row.compliance_print.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.wioa_exports.label": { en: "WIOA exports (CSV + XLSX)", es: "Exportaciones WIOA (CSV + XLSX)" },
-    "pricing_page.compare.row.wioa_exports.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.wioa_exports.field": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.wioa_exports.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.pirl_export.label": { en: "PIRL-compliant quarterly export", es: "Exportación trimestral compatible con PIRL" },
-    "pricing_page.compare.row.pirl_export.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.pirl_export.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.pirl_export.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.branded_grant.label": { en: "Branded grant exports + cover sheets", es: "Exportes de subvención con marca + portadas" },
-    "pricing_page.compare.row.branded_grant.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.branded_grant.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.branded_grant.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.counsel_review.label": { en: "Audit logs reviewed by external counsel", es: "Registros de auditoría revisados por asesoría externa" },
-    "pricing_page.compare.row.counsel_review.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.counsel_review.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.counsel_review.farm": { en: "✓", es: "✓" },
 
     // Crew & Shift Management
     "pricing_page.compare.section.scheduling": { en: "Crew & Shift Management", es: "Gestión de cuadrillas y turnos" },
@@ -1868,7 +1726,10 @@ export const marketing: TranslationBundle = {
     "pricing_page.compare.row.broadcast.field": { en: "✓", es: "✓" },
     "pricing_page.compare.row.broadcast.farm": { en: "✓", es: "✓" },
     "pricing_page.compare.row.quiet_hours.label": { en: "Quiet-hours enforcement (9pm–7am PT)", es: "Cumplimiento de horario de silencio (9pm–7am PT)" },
-    "pricing_page.compare.row.quiet_hours.seed": { en: "—", es: "—" },
+    "pricing_page.compare.row.quiet_hours.seed": {
+        en: "✓",
+        es: "✓",
+    },
     "pricing_page.compare.row.quiet_hours.field": { en: "✓", es: "✓" },
     "pricing_page.compare.row.quiet_hours.farm": { en: "✓", es: "✓" },
 
@@ -1882,25 +1743,15 @@ export const marketing: TranslationBundle = {
     "pricing_page.compare.row.multi_user.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.multi_user.field": { en: "—", es: "—" },
     "pricing_page.compare.row.multi_user.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.custom_counties.label": { en: "Custom county coverage", es: "Cobertura de condados personalizada" },
-    "pricing_page.compare.row.custom_counties.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.custom_counties.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.custom_counties.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.hire_metrics.label": { en: "Hire metrics dashboard (WIOA KPIs)", es: "Panel de métricas de contratación (KPIs WIOA)" },
+    "pricing_page.compare.row.hire_metrics.label": {
+        en: "Hire metrics dashboard",
+        es: "Panel de métricas de contratación",
+    },
     "pricing_page.compare.row.hire_metrics.seed": { en: "—", es: "—" },
     "pricing_page.compare.row.hire_metrics.field": { en: "—", es: "—" },
     "pricing_page.compare.row.hire_metrics.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.tenant_isolation.label": { en: "Tenant-isolated participant data", es: "Datos de participantes aislados por inquilino" },
-    "pricing_page.compare.row.tenant_isolation.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.tenant_isolation.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.tenant_isolation.farm": { en: "✓", es: "✓" },
-    "pricing_page.compare.row.success_sla.label": { en: "Dedicated success contact + SLA", es: "Contacto de éxito dedicado + SLA" },
-    "pricing_page.compare.row.success_sla.seed": { en: "—", es: "—" },
-    "pricing_page.compare.row.success_sla.field": { en: "—", es: "—" },
-    "pricing_page.compare.row.success_sla.farm": { en: "✓", es: "✓" },
 
     // ----- "Always free" supporting band -----
-    "pricing_page.always_free.eyebrow": { en: "Always free", es: "Siempre gratis" },
     "pricing_page.always_free.headline": { en: "Workers and training organizations never pay.", es: "Los trabajadores y las organizaciones de capacitación nunca pagan." },
     "pricing_page.always_free.workers.title": { en: "Workers", es: "Trabajadores" },
     "pricing_page.always_free.workers.body": {
@@ -1910,18 +1761,17 @@ export const marketing: TranslationBundle = {
     "pricing_page.always_free.workers.cta": { en: "Create worker profile", es: "Crear perfil de trabajador" },
     "pricing_page.always_free.training.title": { en: "Training organizations", es: "Organizaciones de capacitación" },
     "pricing_page.always_free.training.body": {
-        en: "CDFA, F3, and CalOSBA partners list programs, issue bilingual e-signed certificates, and view aggregated outcomes — at no cost.",
-        es: "Los socios de CDFA, F3 y CalOSBA listan programas, emiten certificados bilingües firmados electrónicamente y consultan resultados agregados — sin costo.",
+        en: "Training organizations list programs, issue bilingual certificates, and view results — at no cost.",
+        es: "Las organizaciones de capacitación listan programas, emiten certificados bilingües y consultan resultados — sin costo.",
     },
     "pricing_page.always_free.training.cta": { en: "Email partnerships", es: "Escribir a alianzas" },
 
     // ----- FAQ -----
-    "pricing_page.faq.eyebrow": { en: "Pricing FAQ", es: "Preguntas frecuentes de precios" },
     "pricing_page.faq.headline": { en: "Common questions.", es: "Preguntas comunes." },
     "pricing_page.faq.q1.q": { en: "Is the worker side really always free?", es: "¿El lado del trabajador realmente siempre es gratis?" },
     "pricing_page.faq.q1.a": {
-        en: "Yes. Workers will never pay AGCONN for profile creation, job search, applications, or skills wallet access. Our worker-side cost is covered by employer subscriptions and partner contracts. We will not introduce a worker fee in the future.",
-        es: "Sí. Los trabajadores nunca pagarán a AGCONN por creación de perfil, búsqueda de empleo, postulaciones o acceso a la cartera de habilidades. Nuestro costo del lado del trabajador está cubierto por suscripciones de empleadores y contratos de socios. No introduciremos una tarifa para el trabajador en el futuro.",
+        en: "Yes. Workers will never pay AGCONN for profile creation, job search, applications, or skills wallet access. Employer subscriptions cover the worker side. We will not introduce a worker fee in the future.",
+        es: "Sí. Los trabajadores nunca pagarán a AGCONN por creación de perfil, búsqueda de empleo, postulaciones o acceso a la cartera de habilidades. Las suscripciones de empleadores cubren el lado del trabajador. No introduciremos una tarifa para el trabajador en el futuro.",
     },
     "pricing_page.faq.q2.q": { en: "How does founder pricing work?", es: "¿Cómo funciona el precio fundador?" },
     "pricing_page.faq.q2.a": {
@@ -1933,23 +1783,17 @@ export const marketing: TranslationBundle = {
         en: "Annual billing saves you two months — Field annual is $1,990 instead of $199 × 12 = $2,388 (founder annual is $990 instead of $99 × 12 = $1,188). Same features, just paid up front. You can switch from monthly to annual any time from the billing portal.",
         es: "La facturación anual te ahorra dos meses — Campo anual cuesta $1,990 en vez de $199 × 12 = $2,388 (el anual fundador es $990 en vez de $99 × 12 = $1,188). Las mismas funciones, solo pagadas por adelantado. Puedes cambiar de mensual a anual en cualquier momento desde el portal de facturación.",
     },
-    "pricing_page.faq.q4.q": { en: "Do you accept Cal/OSBA or workforce-board funding?", es: "¿Aceptan financiamiento de Cal/OSBA o de juntas laborales?" },
-    "pricing_page.faq.q4.a": {
-        en: "Yes. We invoice in formats compatible with WIOA, CDFA grant disbursement, CalOSBA contracts, and standard 1099 reporting. Procurement teams can request our W-9, COI, and standard MSA at sales@agconn.com.",
-        es: "Sí. Facturamos en formatos compatibles con WIOA, desembolso de subvenciones CDFA, contratos CalOSBA y reporte 1099 estándar. Los equipos de adquisiciones pueden solicitar nuestro W-9, COI y MSA estándar en sales@agconn.com.",
-    },
     "pricing_page.faq.q5.q": { en: "What happens if I downgrade or cancel?", es: "¿Qué pasa si bajo de plan o cancelo?" },
     "pricing_page.faq.q5.a": {
-        en: "Existing job postings stay live until their end date. Plan-gated features (worker search, scheduling, branded exports) become read-only on the next renewal. Cancelling at period end is supported from the Stripe Customer Portal — no calls, no retention scripts.",
-        es: "Las publicaciones de empleo existentes permanecen activas hasta su fecha de finalización. Las funciones por plan (búsqueda de trabajadores, gestión de turnos, exportaciones con marca) pasan a solo lectura en la próxima renovación. La cancelación al final del período se hace desde el portal de cliente de Stripe — sin llamadas, sin guiones de retención.",
+        en: "Existing job postings stay live until their end date. Cancelling at period end is supported from the Stripe Customer Portal — no calls, no retention scripts.",
+        es: "Las publicaciones de empleo existentes permanecen activas hasta su fecha de finalización. La cancelación al final del período se hace desde el portal de cliente de Stripe — sin llamadas, sin guiones de retención.",
     },
 
     // ----- Closing CTA -----
-    "pricing_page.closing.eyebrow": { en: "Get started", es: "Comenzar" },
     "pricing_page.closing.headline": { en: "Two paths in, both free to start.", es: "Dos caminos para empezar, ambos gratis para comenzar." },
     "pricing_page.closing.body": {
-        en: "Workers create a free profile in three minutes. Employers start on Seed for free, then upgrade to Field or Farm only when they need more.",
-        es: "Los trabajadores crean un perfil gratis en tres minutos. Los empleadores empiezan gratis en Semilla, luego actualizan a Campo o Rancho solo cuando necesitan más.",
+        en: "Workers create a free profile. Employers start on Seed for free, then upgrade to Field or Farm only when they need more.",
+        es: "Los trabajadores crean un perfil gratis. Los empleadores empiezan gratis en Semilla, luego actualizan a Campo o Rancho solo cuando necesitan más.",
     },
     "pricing_page.closing.cta_worker": { en: "I'm a worker", es: "Soy trabajador" },
     "pricing_page.closing.cta_employer": { en: "I hire workers", es: "Contrato trabajadores" },

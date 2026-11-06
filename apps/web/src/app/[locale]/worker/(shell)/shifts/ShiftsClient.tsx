@@ -63,7 +63,7 @@ function ShiftsInner({ locale }: { locale: string }) {
   return (
     <div className=" px-5 pb-16 pt-8">
       <WorkerPageHeader
-        eyebrow={t('eyebrow', { month: monthLabel, county })}
+        meta={t('caption', { month: monthLabel, county })}
         title={
           <>
             {t('title.lead')}{' '}
@@ -130,8 +130,8 @@ function MonthSummary({
   ];
   return (
     <div className="border-base-300 bg-base-100 rounded-2xl border p-[18px]">
-      <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-        {t('eyebrow')}
+      <div className="text-base-content/60 font-sans text-sm font-semibold">
+        {t('caption')}
       </div>
       <div className="mt-3 grid grid-cols-2 gap-3">
         {items.map((it) => (

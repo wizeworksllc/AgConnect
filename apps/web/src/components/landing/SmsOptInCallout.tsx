@@ -21,7 +21,7 @@ type Variant = 'footer' | 'page' | 'hero';
 
 const COPY = {
   en: {
-    eyebrow: 'No signup required',
+    note: 'No signup required',
     headline: 'Text JOBS to get started',
     body: "We'll text back to confirm. From then on you'll get bilingual job alerts in your area. Reply STOP any time.",
     bodyShort: "Reply YES when we ask, then you're in. STOP cancels any time.",
@@ -29,7 +29,7 @@ const COPY = {
     altWebText: 'Or sign up at agconn.com',
   },
   es: {
-    eyebrow: 'Sin registro requerido',
+    note: 'Sin registro requerido',
     headline: 'Envía TRABAJO para empezar',
     body: 'Te respondemos para confirmar. Después recibirás avisos bilingües de trabajos en tu zona. Responde STOP cuando quieras.',
     bodyShort: 'Responde SI cuando preguntemos. STOP cancela cuando quieras.',
@@ -61,13 +61,13 @@ export function SmsOptInCallout({
               aria-hidden
             />
             <div className="space-y-1">
-              <p className="text-accent eyebrow">{copy.eyebrow}</p>
               <p className="font-serif text-lg leading-tight">
                 {copy.headline}{' '}
                 <span className="text-accent font-mono tabular-nums">
                   {phoneDisplay}
                 </span>
               </p>
+              <p className="font-sans text-sm font-semibold">{copy.note}</p>
               <p className="text-neutral-content/70 max-w-xl text-sm">
                 {copy.bodyShort}
               </p>
@@ -94,13 +94,13 @@ export function SmsOptInCallout({
             aria-hidden
           />
           <div className="space-y-2">
-            <p className="text-primary eyebrow">{copy.eyebrow}</p>
             <p className="font-serif text-2xl leading-tight">
               {copy.headline}{' '}
               <span className="text-primary font-mono tabular-nums">
                 {phoneDisplay}
               </span>
             </p>
+            <p className="font-sans text-sm font-semibold">{copy.note}</p>
             <p className="text-base-content/70 text-sm">{copy.body}</p>
             <div className="flex flex-wrap gap-3 pt-2">
               <a href={smsHref} className="btn btn-primary">
@@ -129,13 +129,13 @@ export function SmsOptInCallout({
           aria-hidden
         />
         <div className="space-y-2">
-          <p className="text-primary eyebrow">{copy.eyebrow}</p>
           <p className="font-serif text-xl leading-tight">
             {copy.headline}{' '}
             <span className="text-primary font-mono tabular-nums">
               {phoneDisplay}
             </span>
           </p>
+          <p className="font-sans text-sm font-semibold">{copy.note}</p>
           <p className="text-base-content/70 text-sm">{copy.body}</p>
           <a href={smsHref} className="btn btn-primary btn-sm mt-2">
             {copy.buttonText}

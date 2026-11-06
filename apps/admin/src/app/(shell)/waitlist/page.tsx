@@ -46,7 +46,6 @@ export default async function WaitlistPage({
         <div className="space-y-4">
             <div className="flex items-baseline justify-between">
                 <div>
-                    <p className="eyebrow text-base-content/60">Platform</p>
                     <h1 className="font-serif text-2xl font-medium tracking-tight">Waitlist</h1>
                     <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                         Landing-page sign-ups grouped by audience. Filter by state to find people ready

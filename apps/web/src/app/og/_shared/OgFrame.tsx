@@ -15,13 +15,11 @@ const ROSETTA: Record<Locale, { region: string; verified: string; lang: string }
 
 export function OgFrame({
     locale,
-    eyebrow,
     children,
     footerLeft,
     footerRight,
 }: {
     locale: Locale;
-    eyebrow: string;
     children: ReactNode;
     footerLeft?: ReactNode;
     footerRight?: ReactNode;
@@ -87,27 +85,6 @@ export function OgFrame({
                         }}
                     >
                         {BRAND}
-                    </span>
-                    <span
-                        style={{
-                            display: 'flex',
-                            width: 1,
-                            height: 22,
-                            backgroundColor: palette.hairline,
-                            margin: '0 6px',
-                        }}
-                    />
-                    <span
-                        style={{
-                            fontFamily: 'Inter',
-                            fontSize: 18,
-                            fontWeight: 500,
-                            color: palette.soil,
-                            letterSpacing: 2,
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        {eyebrow}
                     </span>
                 </div>
 

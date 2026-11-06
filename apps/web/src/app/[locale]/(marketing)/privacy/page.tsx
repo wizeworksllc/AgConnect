@@ -54,7 +54,6 @@ export default async function PrivacyPage({ params }: RouteProps) {
 
             <LegalPageLayout
                 locale={locale}
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
                 sections={sections}

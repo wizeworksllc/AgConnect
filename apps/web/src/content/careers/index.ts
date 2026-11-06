@@ -1,17 +1,6 @@
 import type { CareerRole, CareerTeam } from '../types';
-import { seniorFullstackEngineer } from './senior-fullstack-engineer';
-import { promotoraLead } from './promotora-lead';
-import { workforceBoardPartnerships } from './workforce-board-partnerships';
-import { productDesigner } from './product-designer';
-import { fieldOperationsCoordinator } from './field-operations-coordinator';
 
-const ALL: CareerRole[] = [
-    seniorFullstackEngineer,
-    promotoraLead,
-    workforceBoardPartnerships,
-    productDesigner,
-    fieldOperationsCoordinator,
-];
+const ALL: CareerRole[] = [];
 
 export function getAllCareerRoles(): CareerRole[] {
     return [...ALL].sort((a, b) => (a.postedAt < b.postedAt ? 1 : -1));

@@ -245,10 +245,6 @@ export const shell: TranslationBundle = {
         en: "The link may be old, or the page may have moved.",
         es: "El enlace puede ser antiguo, o la página pudo haberse movido.",
     },
-    "page_error.404.eyebrow": {
-        en: "Page not found",
-        es: "Página no encontrada",
-    },
     "page_error.404.title": {
         en: "We couldn't find that page",
         es: "No encontramos esa página",
@@ -256,10 +252,6 @@ export const shell: TranslationBundle = {
     "page_error.500.description": {
         en: "We've been notified. Please try again.",
         es: "Ya nos enteramos. Intenta de nuevo por favor.",
-    },
-    "page_error.500.eyebrow": {
-        en: "Server error",
-        es: "Error del servidor",
     },
     "page_error.500.title": {
         en: "Something went wrong",

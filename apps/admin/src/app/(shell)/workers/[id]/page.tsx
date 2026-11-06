@@ -27,8 +27,8 @@ export default async function WorkerDetailPage({
             </div>
 
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
-                <p className="eyebrow text-base-content/60">Worker</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">{fullName}</h1>
+                <p className="text-base-content/60 mt-1 text-sm">Worker</p>
                 <p className="text-base-content/50 mt-1 font-mono text-xs">{w.id}</p>
             </header>
 

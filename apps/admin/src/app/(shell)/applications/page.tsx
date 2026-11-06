@@ -21,7 +21,6 @@ export default async function ApplicationsPage({
     return (
         <div className="space-y-4">
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Applications</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Every application across all jobs. Filter by status to triage support cases.

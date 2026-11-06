@@ -41,7 +41,7 @@ Implications:
 
 1. **Plain-spoken.** Sentence-level clarity over cleverness.
 2. **Bilingual-first.** Every brand-facing string ships in EN and ES at the same time. ES is never a translation afterthought.
-3. **Calm.** No exclamation marks, no all-caps shouting (UPPERCASE labels excepted, see [03-typography.md](03-typography.md)), no urgency theater.
+3. **Calm.** No exclamation marks, no all-caps shouting (table headers and stat captions excepted, see [03-typography.md](03-typography.md)), no urgency theater.
 4. **Specific.** Numbers, places, hours, dollars. "$19.50/hr in Fresno County, today" beats "Great pay, today!"
 5. **Respectful.** Workers and employers are addressed as adults with jobs, not as users to be activated.
 6. **Quiet pride.** When something good happens — a hire, a certificate earned — the celebration is small and deliberate. A check mark, a name, a date. Not confetti.
@@ -64,7 +64,6 @@ Recurring details that, taken together, are recognizably Tierra:
 
 - **Inter at display weights** (600–700, tightened tracking) for headlines — calm, not theatrical. Italic at any size is reserved for short emphasis runs (1–4 words inside a heading or body) — never the whole headline. The single-word italic accent inside a heading (`Buenas tardes, Miguel.`) is the canonical pattern.
 - **The middot delimiter** (`·`) between metadata fragments: `Fresno · $19.50/hr · today`.
-- **Eyebrow labels** — uppercase, 11px, 0.18em tracking — sitting above section titles. Used sparingly; not on every block. See [03-typography.md](03-typography.md) for the eyebrow variants.
 - **Inter with `tabular-nums slashed-zero`** for money, dates, hours, stats, and inline figures at every size. JetBrains Mono is reserved for code-shaped identifiers (`WIOA-1B`, certificate hashes, `#APP-2031`) — never for money or dates.
 - **Layered base surfaces** (`base-100` cards on `base-300` page, `base-200` chrome) with **hairline rules** as the default lift. Subtle elevation tokens (`--shadow-card`, `--shadow-pop`) are reserved for elevated marketing surfaces and dark feature cards — not the default product card.
 - **`accent` (gold)** is the loud color in the system — used for primary CTAs, active step indicators, count badges, ambient lighting on dark feature cards, statistic highlights, and active states. Color is information: apply where it serves intent, not where it merely fills space.

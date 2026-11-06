@@ -12,7 +12,6 @@ import {
     faClipboardList,
     faSignal,
 } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -59,14 +58,11 @@ export default async function TrustPage({ params }: RouteProps) {
             <JsonLd data={organizationJsonLd()} />
             <Breadcrumb locale={locale} path="/trust" />
 
-            <MarketingPageHero eyebrow={t('eyebrow')} headline={t('headline')} intro={t('intro')} />
+            <MarketingPageHero headline={t('headline')} intro={t('intro')} />
 
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('principles.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('principles.headline')}
                         </h2>
@@ -90,9 +86,6 @@ export default async function TrustPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('tech.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('tech.headline')}
                         </h2>
@@ -116,9 +109,6 @@ export default async function TrustPage({ params }: RouteProps) {
             <section id="status" className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-8 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('status.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('status.headline')}
                         </h2>
@@ -145,9 +135,6 @@ export default async function TrustPage({ params }: RouteProps) {
             <section className="bg-primary text-primary-content w-full">
                 <div className="container mx-auto flex flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:px-8 md:py-20 lg:px-20">
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('report.eyebrow')}
-                        </span>
                         <p className="text-primary-content font-serif text-2xl leading-tight md:text-3xl">
                             {t('report.headline')}
                         </p>

@@ -13,7 +13,6 @@ export type DashboardErrorCard = {
 
 export type DashboardErrorStateProps = {
   code: string;
-  eyebrow: string;
   title: string;
   description: string;
   primaryAction: { href: string; label: string };
@@ -23,7 +22,6 @@ export type DashboardErrorStateProps = {
 
 export function DashboardErrorState({
   code,
-  eyebrow,
   title,
   description,
   primaryAction,
@@ -34,11 +32,7 @@ export function DashboardErrorState({
     <div className="container mx-auto px-5 py-12 md:px-8 md:py-20 lg:px-20 lg:py-24">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-5 text-center">
         <div className="text-base-content/60 flex items-center justify-center gap-2.5">
-          <span className="font-mono text-xs tabular-nums tracking-[0.18em]">{code}</span>
-          <span aria-hidden className="text-base-content/30 select-none">
-            ·
-          </span>
-          <span className="eyebrow text-xs">{eyebrow}</span>
+          <span className="font-mono text-sm tabular-nums">{code}</span>
         </div>
 
         <h1 className="font-serif text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
@@ -56,7 +50,7 @@ export function DashboardErrorState({
       <div className="mx-auto mt-14 max-w-5xl md:mt-20">
         <div className="mb-6 flex items-center gap-4">
           <span className="bg-base-300 h-px flex-1" aria-hidden />
-          <p className="text-base-content/60 eyebrow text-xs">{cardsLabel}</p>
+          <p className="text-base-content/60 font-sans text-sm font-semibold">{cardsLabel}</p>
           <span className="bg-base-300 h-px flex-1" aria-hidden />
         </div>
 

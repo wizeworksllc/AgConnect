@@ -26,12 +26,12 @@ export default async function ApplicationDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Application</p>
                         <h1 className="font-serif text-xl font-medium tracking-tight">
                             <Link href={`/jobs/${a.jobId}`} className="link link-hover">
                                 {a.jobTitle}
                             </Link>
                         </h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Application</p>
                         <p className="text-base-content/60 mt-1 text-sm">
                             by{' '}
                             <Link href={`/workers/${a.workerId}`} className="link link-hover">

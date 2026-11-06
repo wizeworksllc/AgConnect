@@ -26,18 +26,16 @@ const EMPLOYMENT_LABEL: Record<CareerEmploymentType, Record<Locale, string>> = {
 
 const COPY = {
     en: {
-        eyebrow: 'Open role at AGCONN',
         teamLabel: 'Team',
         locationLabel: 'Location',
         salaryLabel: 'Salary',
-        fallbackTitle: 'Open roles at AGCONN',
+        fallbackTitle: 'AGCONN',
     },
     es: {
-        eyebrow: 'Vacante en AGCONN',
         teamLabel: 'Equipo',
         locationLabel: 'Ubicación',
         salaryLabel: 'Salario',
-        fallbackTitle: 'Vacantes abiertas en AGCONN',
+        fallbackTitle: 'AGCONN',
     },
 } as const;
 
@@ -68,7 +66,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={t.eyebrow}
                 footerLeft={
                     role ? (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

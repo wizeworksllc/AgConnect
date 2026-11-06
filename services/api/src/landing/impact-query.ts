@@ -58,7 +58,7 @@ export async function loadImpact(db: Pick<Db, '$transaction'>, now: Date): Promi
     activePostings,
     generatedAt: now.toISOString(),
     windowMonths: WINDOW_MONTHS,
-    source: 'WIOA-aligned · nightly · cross-tenant',
+    source: 'AGCONN records',
   };
 }
 

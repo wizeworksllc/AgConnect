@@ -8,7 +8,6 @@ import {
     faCommentSms,
     faLanguage,
 } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -52,7 +51,6 @@ export default async function WorkersPage({ params }: RouteProps) {
             <Breadcrumb locale={locale} path="/workers" />
 
             <MarketingPageHero
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
                 accent={
@@ -77,9 +75,6 @@ export default async function WorkersPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('benefits.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('benefits.headline')}
                         </h2>
@@ -103,9 +98,6 @@ export default async function WorkersPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('steps.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('steps.headline')}
                         </h2>
@@ -131,9 +123,6 @@ export default async function WorkersPage({ params }: RouteProps) {
             <section className="bg-primary text-primary-content w-full">
                 <div className="container mx-auto grid grid-cols-1 gap-10 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('protection.eyebrow')}
-                        </span>
                         <h2 className="text-primary-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('protection.headline')}
                         </h2>
@@ -156,9 +145,6 @@ export default async function WorkersPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:px-8 md:py-20 lg:px-20">
                     <div className="flex flex-col gap-2">
-                        <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('cta_section.eyebrow')}
-                        </span>
                         <p className="text-base-content font-serif text-2xl leading-tight md:text-3xl">
                             {t('cta_section.headline')}
                         </p>

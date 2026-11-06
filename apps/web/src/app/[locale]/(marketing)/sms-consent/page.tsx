@@ -56,7 +56,6 @@ export default async function SmsConsentPage({ params }: RouteProps) {
 
             <LegalPageLayout
                 locale={locale}
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
                 sections={sections}

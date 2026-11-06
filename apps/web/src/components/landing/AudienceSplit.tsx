@@ -1,5 +1,4 @@
 import { useLocale, useTranslations } from 'next-intl';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { AudienceCard } from './AudienceCard';
 
 export function AudienceSplit() {
@@ -11,9 +10,6 @@ export function AudienceSplit() {
             <div className="container mx-auto px-5 py-24 md:px-8 md:py-28 lg:px-20 lg:py-30">
                 <div className="flex flex-col items-center align-middle gap-10 pb-16 lg:flex-row lg:gap-16">
                     <div className="flex flex-1 flex-col gap-5">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-4xl font-medium tracking-tight md:text-6xl lg:text-6xl">
                             {t('headline')}
                         </h2>
@@ -26,7 +22,7 @@ export function AudienceSplit() {
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                     <AudienceCard
                         surface="moss"
-                        eyebrow={t('workers.eyebrow')}
+                        audience={t('workers.caption')}
                         headline={t('workers.headline')}
                         bullets={[
                             t('workers.bullet1'),
@@ -39,7 +35,7 @@ export function AudienceSplit() {
                     />
                     <AudienceCard
                         surface="bone"
-                        eyebrow={t('employers.eyebrow')}
+                        audience={t('employers.caption')}
                         headline={t('employers.headline')}
                         bullets={[
                             t('employers.bullet1'),
@@ -52,7 +48,7 @@ export function AudienceSplit() {
                     />
                     <AudienceCard
                         surface="sage"
-                        eyebrow={t('training.eyebrow')}
+                        audience={t('training.caption')}
                         headline={t('training.headline')}
                         bullets={[
                             t('training.bullet1'),

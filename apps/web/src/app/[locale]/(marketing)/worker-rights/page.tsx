@@ -8,7 +8,6 @@ import {
     faIdCard,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -53,7 +52,6 @@ export default async function WorkerRightsPage({ params }: RouteProps) {
             <Breadcrumb locale={locale} path="/worker-rights" />
 
             <MarketingPageHero
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
             />
@@ -61,9 +59,6 @@ export default async function WorkerRightsPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('topics.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('topics.headline')}
                         </h2>
@@ -88,9 +83,6 @@ export default async function WorkerRightsPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto flex flex-col gap-10 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('help.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('help.headline')}
                         </h2>
@@ -108,7 +100,7 @@ export default async function WorkerRightsPage({ params }: RouteProps) {
                                 <p className="text-secondary font-sans text-base leading-relaxed">
                                     {t(`help.${id}.body`)}
                                 </p>
-                                <p className="text-primary font-mono text-sm font-bold uppercase tracking-[0.18em]">
+                                <p className="text-primary font-sans text-sm font-semibold">
                                     {t(`help.${id}.cta`)}
                                 </p>
                             </article>

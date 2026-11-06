@@ -26,10 +26,10 @@ export default async function EnrollmentDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Enrollment</p>
                         <h1 className="font-serif text-xl font-medium tracking-tight">
                             {program.titleEn}
                         </h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Enrollment</p>
                         <p className="text-base-content/60 mt-1 text-sm">
                             <Link href={`/workers/${worker.id}`} className="link link-hover">
                                 {worker.firstName && worker.lastName

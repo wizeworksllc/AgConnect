@@ -45,8 +45,6 @@ JetBrains Mono is reserved for content that **is literally code-shaped** and ben
 
 **Money, dates, hours, and stats use Inter, not JetBrains Mono.** The slab-mono terminal feel reads as code output, not as money or human-readable data. Inter's tabular-nums handle column alignment perfectly without the code-y connotation.
 
-JetBrains Mono is also acceptable as the eyebrow typeface when the eyebrow label *is* a code (`#APP-2031`, `WIOA-1B`); see the eyebrow variants below.
-
 ## Type scale
 
 The scale is small. Tierra prefers fewer, more deliberate sizes over a long ramp. All sizes use Inter except the explicit code-identifier tokens.
@@ -63,76 +61,31 @@ The scale is small. Tierra prefers fewer, more deliberate sizes over a long ramp
 | `body`       | Inter | 16px / 1rem   | 1.55 | 400 | 0       | default body |
 | `body-s`     | Inter | 14px / 0.875rem | 1.50 | 400 | 0       | dense rows, secondary body |
 | `caption`    | Inter | 13px / 0.8125rem | 1.45 | 400 | 0       | metadata, helper text |
-| `label`      | Inter | 11px / 0.6875rem | 1.30 | 600 | 0.18em  | UPPERCASE — see eyebrow variants below |
+| `label`      | Inter | 11px / 0.6875rem | 1.30 | 600 | 0.18em  | UPPERCASE — table headers and stat captions only |
 | `code`       | JetBrains Mono | 14px / 0.875rem | 1.50 | 400 | 0      | code identifiers (`#APP-2031`, `WIOA-1B`) |
 | `code-s`     | JetBrains Mono | 12px / 0.75rem | 1.40 | 400 | 0      | dense identifier tables (cert hashes) |
 
 > **Inferred:** Pixel sizes are the canonical brand scale; the `rem` equivalents assume `font-size: 16px` on `:root`. Production `rem` values may differ if a project sets a different root size. The scale was tuned on the Tierra landing page artboard; adjust the smallest sizes (`label`, `caption`, `code-s`) cautiously — they are at the bottom of the readability cliff.
 
-## Eyebrow / label variants
+## No eyebrow labels
 
-A signature Tierra gesture. Eyebrows appear above section titles, on cards, and in metadata strips. Three variants exist in the system, each with a specific role.
+No eyebrow labels. A small uppercase line above a heading is an AI tell. Do not use one. A fact goes in a sentence-case line under the heading.
 
-### `.label` — marketing eyebrow (default)
+Examples of the fix:
 
-The brand-defining eyebrow. Used on marketing surfaces above section titles.
+- A date or a place above a greeting goes under the greeting: `Sunday, August 3 · Madera, CA`.
+- A count above a page title goes under the title: `12 open jobs · Fresno`.
+- A category name above a section title goes away. The title already says it.
 
-```css
-.label {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: color-mix(in oklab, var(--color-base-content) 65%, transparent);
-  line-height: 1.3;
-}
-```
+### Where small uppercase text is still correct
 
-- Always uppercase, always 0.18em letter-spacing. Do not improvise either.
-- Default color is `base-content` at ~65% opacity on base surfaces. On `neutral` (dark) surfaces, use `neutral-content` at ~64% opacity. **Never `accent` for a label** unless the label is itself the eye-catching accent (rare — UpNextShift "TOMORROW · 6:00 AM" is the canonical example, and it's gold against a dark surface, not against a base surface).
-- No trailing punctuation — labels do not take periods or colons.
+Use the `label` style only for these jobs:
 
-Examples: `FOR FARMWORKERS`, `ABOUT TIERRA`, `WORKER ROLE`, `STEP 02`, `EN ESPAÑOL`.
+- Table column headers.
+- Stat tile captions directly above a figure (`.label-metric`, 0.10em tracking).
+- Short status badges.
 
-### `.section-num` — page-header eyebrow
-
-Used in product chrome above page H1s. Carries metadata (date + location, breadcrumb residue) rather than a category name.
-
-```css
-.section-num {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-base-content);   /* full strength, not muted — this is metadata */
-  opacity: 0.55;                       /* a11y: prefer color-mix, not opacity, in production */
-}
-```
-
-Examples: `SUNDAY, AUGUST 3 · MADERA, CA` above the worker dashboard greeting; `JOBS · PISCA DE UVA · DETALLES` as a breadcrumb-style header.
-
-### `.label-metric` — stat tile eyebrow
-
-Used inside KPI / stat tiles where the label sits directly above a display-size figure. Tighter tracking because it pairs visually with the number, not with body copy.
-
-```css
-.label-metric {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.10em;
-  color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
-}
-```
-
-Examples: `THIS WEEK EARNED`, `HOURS LOGGED`, `ACTIVE APPLICATIONS`, `AVG PAY RATE` above dashboard KPI tiles.
-
-### When the eyebrow is itself a code
-
-If the eyebrow content is a code identifier (`#APP-2031`, `WIOA-1B`), use JetBrains Mono at the same 11px / 0.18em / weight 600 spec. The monospace cue tells the reader "this is a literal code, not a category."
+A stat tile caption is a field name, not a decoration. Examples: `HOURS LOGGED`, `AVG PAY RATE`.
 
 ## Italic and bold
 
@@ -160,7 +113,7 @@ Acceptable formats:
 
 - **Body text**: default Inter tracking (0). Do not tighten or loosen.
 - **Display Inter** at ≥32px: tighten to `-0.02em` to `-0.025em`. Inter opens up at large sizes; the negative tracking pulls it back.
-- **All-caps labels**: 0.18em for `.label` and `.section-num` (the brand-defining value); 0.10em for `.label-metric` inside KPI tiles. Anything tighter looks generic; anything looser looks decorative.
+- **All-caps labels**: 0.18em for table headers and badges; 0.10em for `.label-metric` inside KPI tiles. Anything tighter looks generic; anything looser looks decorative.
 - **Sentence case** for English headlines (`Find work today`), not Title Case. RAE-conformant **sentence case** for Spanish (`Encuentra trabajo hoy`). Title Case is reserved for proper-noun-heavy headers and is the exception.
 
 ## Font loading

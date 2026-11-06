@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { NestedBreadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -104,9 +103,7 @@ export default async function CareerRolePage({ params }: RouteProps) {
 
                         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.45fr)] lg:gap-16">
                             <div className="flex flex-col gap-6">
-                                <EyebrowLabel tone="soil" withRule>
-                                    {t(`teams.${role.team}`)}
-                                </EyebrowLabel>
+                                <span className="text-secondary font-sans text-sm font-semibold">{t(`teams.${role.team}`)}</span>
                                 <h1 className="text-base-content font-serif text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
                                     {pickLocale(role.title, locale)}
                                 </h1>
@@ -124,7 +121,7 @@ export default async function CareerRolePage({ params }: RouteProps) {
                                         { label: t('openings.posted', { date: formatDate(role.postedAt, locale) }).replace(/^[^:]+:?\s*/, ''), value: formatDate(role.postedAt, locale), hideLabel: true },
                                     ].slice(0, 4).map((item) => (
                                         <div key={item.label} className="flex flex-col gap-1 px-6 py-4 lg:px-6">
-                                            <dt className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.18em]">
+                                            <dt className="text-secondary font-sans text-sm font-semibold">
                                                 {item.label}
                                             </dt>
                                             <dd className="text-base-content font-sans text-base font-semibold">
@@ -210,9 +207,6 @@ export default async function CareerRolePage({ params }: RouteProps) {
                 <section className="bg-primary text-primary-content w-full">
                     <div className="container mx-auto grid grid-cols-1 gap-10 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                         <div className="flex flex-col gap-4">
-                            <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                {t('detail.apply_eyebrow')}
-                            </span>
                             <h2 className="text-primary-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                                 {t('detail.apply_headline')}
                             </h2>
@@ -237,9 +231,6 @@ export default async function CareerRolePage({ params }: RouteProps) {
                 <section className="bg-base-200 w-full border-secondary/15 border-t">
                     <div className="container mx-auto flex flex-col gap-10 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                         <div className="flex flex-col gap-3">
-                            <EyebrowLabel tone="soil" withRule>
-                                {t('openings.eyebrow')}
-                            </EyebrowLabel>
                             <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl">
                                 {t('openings.headline')}
                             </h2>
@@ -251,13 +242,13 @@ export default async function CareerRolePage({ params }: RouteProps) {
                                         href={`/${locale}/careers/${r.slug}`}
                                         className="group flex h-full flex-col gap-3 p-8 lg:p-10"
                                     >
-                                        <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                        <span className="text-secondary font-sans text-sm font-semibold">
                                             {t(`teams.${r.team}`)}
                                         </span>
                                         <h3 className="text-base-content font-serif text-lg font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">
                                             {pickLocale(r.title, locale)}
                                         </h3>
-                                        <span className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                                        <span className="text-secondary font-sans text-sm font-semibold">
                                             {r.location}
                                         </span>
                                         <span className="text-primary mt-auto inline-flex items-center gap-2 self-start font-sans text-sm font-semibold">

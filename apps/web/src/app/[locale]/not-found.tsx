@@ -9,7 +9,6 @@ export default async function LocaleNotFound() {
     <main className="bg-base-300 text-base-content min-h-screen">
       <ErrorState
         code="404"
-        eyebrow={t('404.eyebrow')}
         title={t('404.title')}
         description={t('404.description')}
         suggestionsLabel={t('suggestions_label')}

@@ -15,7 +15,7 @@ import React from 'react';
 // embedding Inter/Fraunces. The brand calls for those typefaces but each
 // custom font subset would add 100-200KB; the spec's < 500KB output budget
 // is tight enough that the v1 cert leans on built-ins. The visual stays
-// recognizably Tierra via palette + spacing + uppercase eyebrow tracking.
+// recognizably Tierra via palette and spacing.
 // TODO: subset-embed Inter when the storage budget grows.
 
 const PALETTE = {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         padding: 48,
         flexGrow: 1,
     },
-    eyebrow: {
+    docTitle: {
         fontFamily: 'Helvetica-Bold',
         fontSize: 9,
         letterSpacing: 2,
@@ -143,7 +143,7 @@ function CertDocument(a: CertArgs): React.ReactElement<DocumentProps> {
         >
             <Page size="LETTER" style={styles.page}>
                 <View style={styles.card}>
-                    <Text style={styles.eyebrow}>AGCONN · Certificate of Completion</Text>
+                    <Text style={styles.docTitle}>AGCONN · Certificate of Completion</Text>
                     <Text style={styles.h1}>{a.programTitleEn}</Text>
                     <Text style={styles.meta}>
                         Funded by {a.funder} · Issued by {a.orgName}
@@ -155,7 +155,7 @@ function CertDocument(a: CertArgs): React.ReactElement<DocumentProps> {
                     <View style={styles.accentRule} />
 
                     <View style={styles.esBlock}>
-                        <Text style={styles.eyebrow}>Certificado de Finalización</Text>
+                        <Text style={styles.docTitle}>Certificado de Finalización</Text>
                         <Text style={styles.h2}>{a.programTitleEs}</Text>
                         <Text style={styles.meta}>ha completado exitosamente este programa.</Text>
                     </View>
