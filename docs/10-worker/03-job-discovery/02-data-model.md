@@ -63,7 +63,7 @@ model SearchView {
 
 Used to power the admin "what are workers searching for" report and to detect dead-end searches (zero results) for content-gap analysis. Not surfaced to workers.
 
-> **Inferred:** Lightweight analytics (no per-page-view, just per-search) is enough for MVP. Full event analytics (impression / click / outbound) can come in Phase 2 with a proper analytics pipeline (Posthog or Plausible).
+> **Inferred:** Lightweight analytics (no per-page-view, just per-search) is enough for MVP. Full event analytics (impression / click / outbound) can come in Phase 2 with a proper analytics pipeline.
 
 ## RLS
 

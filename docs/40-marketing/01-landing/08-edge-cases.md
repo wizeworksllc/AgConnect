@@ -9,7 +9,7 @@ The user notes the `.com` domain may not be available, forcing a rebrand from "A
 - Wherever the literal name "AGCONN" appears in copy, route through an i18n key (e.g., `brand.product_name`) so a single string change updates every surface.
 - Keep the **Tierra theme** independent of the product name. The brand folder is named for the theme, not the product.
 - Logo, wordmark, and OG image generation are parameterized on `brand.product_name`.
-- Footer NAP "AGCONN, PBC" is also a key (`landing.footer.nap.org`); legal entity name swap is a config change, not a re-render.
+- Footer NAP "WizeWorks LLC" is also a key (`landing.footer.nap.org`); legal entity name swap is a config change, not a re-render.
 
 > **Inferred:** Adding a `brand.product_name` key now (even though it's "AGCONN" today) future-proofs the rename. Cost: trivial. Skipping it now: every component file gets edited later.
 
@@ -156,6 +156,6 @@ A page with three placeholder quotes labeled "PLACEHOLDER" in v1 is honest but v
 1. Standalone `/[locale]/impact` page — when does the public dashboard ship? Implied by the Impact Numbers section CTA.
 2. `/coming-soon` page — needed only if Phase A ships before auth (Phase 0 close). If they ship same week, skip and route directly to Clerk.
 3. Live chat / Intercom widget — explicitly NOT in scope (clutters the brand). Push back if requested.
-4. Cookie consent banner — needed only if we add analytics with cross-site tracking. With first-party Plausible (no cookies needed), defer.
+4. Cookie consent banner — removed with PostHog. Add one only if a future tool needs consent.
 5. A/B testing framework — out of scope MVP. Add at Phase 6+ if conversion needs tuning.
 6. Public-facing API for partner sites embedding our jobs — out of scope; consider after partner conversations.

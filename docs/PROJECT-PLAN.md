@@ -232,7 +232,7 @@ Document each version's mock vs. real in `40-marketing/01-landing/08-edge-cases.
 | ------------------------------------------------------------------ | ------------------ | ------------------------------ | ------------------------------------------ |
 | Public domain (`agconn.com` confirmed available?)                  | founder            | before Phase A                 | open — user noted .com may force a rebrand |
 | Brand name (Tierra theme stays regardless; legal name = ?)         | founder + legal    | before Phase A                 | open                                       |
-| California PBC formed and registered?                              | founder + legal    | before launch                  | open — footer copy says "AGCONN, PBC"      |
+| Operating company                                                  | founder            | done                           | WizeWorks LLC is the only operating company |
 | Twilio Messaging Service + A2P 10DLC campaign details              | engineer           | Day 1 of Phase 0               | open                                       |
 | Resend account, sending domain, DNS                                | engineer           | Day 1 of Phase 0               | open                                       |
 | Clerk account, SMS OTP enabled, Resend integration set             | engineer           | Day 1 of Phase 0               | open                                       |
@@ -245,7 +245,7 @@ Document each version's mock vs. real in `40-marketing/01-landing/08-edge-cases.
 
 ## Pre-launch human action items (not code)
 
-- Form California Public Benefit Corporation (or confirm existing entity).
+- Confirm the WizeWorks LLC details shown in the footer and legal pages.
 - Privacy policy + Terms of Service drafted by counsel; URL slots reserved (`/privacy`, `/terms`, `/accessibility`, `/privacidad`, `/términos`).
 - Engage a native Mexican-Spanish reviewer (regional Central Valley accent / register).
 - Engage a CDFA / EDD Local Area contact for grant-report column sign-off.

@@ -1034,8 +1034,8 @@ export const landing: TranslationBundle = {
         es: "Construido en Visalia, CA",
     },
     "legal.copyright": {
-        en: "© 2026 AGCONN, PBC · A California Public Benefit Corp.",
-        es: "© 2026 AGCONN, PBC · Una California Public Benefit Corp.",
+        en: "© 2026 WizeWorks LLC · AGCONN",
+        es: "© 2026 WizeWorks LLC · AGCONN",
     },
     "legal.llms_txt": {
         en: "llms.txt",
@@ -1064,10 +1064,6 @@ export const landing: TranslationBundle = {
     "legal.terms_es": {
         en: "Términos",
         es: "Términos",
-    },
-    "legal.cookie_preferences": {
-        en: "Cookie preferences",
-        es: "Preferencias de cookies",
     },
     "legal.subprocessors": {
         en: "Subprocessors",

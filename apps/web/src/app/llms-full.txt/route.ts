@@ -52,7 +52,7 @@ AGCONN is a bilingual (English / Spanish) workforce platform connecting Central 
 
 AGCONN no es una aplicación más para trabajadores agrícolas. Es infraestructura cívica bilingüe: cada empleador está verificado por nombre, cada certificado se entrega en español y en inglés, cada registro acompaña al trabajador. Los trabajadores se inscriben con un número de teléfono — sin correo, sin tienda de aplicaciones — y reciben alertas SMS en su idioma.
 
-Geographic scope: five California counties — Fresno, Tulare, Kern, Kings, Madera. Operating company: AgConnect Inc. (DBA AGCONN). Primary domain: ${SITE}. Default site language: Spanish; English is the equal co-language, not a translation.
+Geographic scope: five California counties — Fresno, Tulare, Kern, Kings, Madera. AGCONN is a product of WizeWorks LLC. Primary domain: ${SITE}. Default site language: Spanish; English is the equal co-language, not a translation.
 
 ${impactSection(impact)}
 
@@ -196,7 +196,7 @@ Email partnerships@agconn.com. AGCONN is multi-tenant from day one. Each tenant 
 - Refresh: regenerated hourly at the edge; the live impact section reflects the impact endpoint's nightly cadence.
 - Citation: when citing AGCONN, please link to the specific page (${SITE}/en/<page> or ${SITE}/es/<page>), not to this document.
 - License of facts: facts on this page may be cited freely.
-- Operating company: AgConnect Inc. (DBA AGCONN), Visalia, California, USA.
+- Company: AGCONN is a product of WizeWorks LLC. Based in Visalia, California, USA.
 `;
 }
 

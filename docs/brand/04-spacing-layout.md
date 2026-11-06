@@ -103,7 +103,7 @@ Every Worker, Employer, and marketing surface uses the responsive type scale ([b
 </section>
 ```
 
-Sticky chrome (consent banner, install prompt, offline banner) uses the same shell — the outer fixed-position wrapper handles the dock, the inner `container mx-auto px-5 md:px-8 lg:px-20` handles content alignment so the chrome aligns vertically with the page content above it.
+Sticky chrome (install prompt, offline banner) uses the same shell — the outer fixed-position wrapper handles the dock, the inner `container mx-auto px-5 md:px-8 lg:px-20` handles content alignment so the chrome aligns vertically with the page content above it.
 
 Field shell is the one route prefix where this rule inverts — see the "Three shells, two layout strategies" section above. Public marketing pages stay as one responsive codebase.
 
@@ -183,7 +183,7 @@ The z-axis exists for:
 - Elevated marketing/feature cards (one layer above the page band)
 - Modal overlays (one layer above content)
 - Toasts (one layer above modal)
-- Sticky chrome — header on scroll, install prompt, consent banner (one layer above content; uses `backdrop-filter` for the chrome blur)
+- Sticky chrome — header on scroll, install prompt (one layer above content; uses `backdrop-filter` for the chrome blur)
 
 There is no general hover-lift or shadow ramp on product cards. If a UI demands separation in a list-of-cards context, use the base scale (e.g., `base-100` lifted off `base-300`) or a hairline border. Reserve elevation for surfaces whose *function* is to be elevated (a feature card on marketing, a hero card on a dashboard, a modal).
 

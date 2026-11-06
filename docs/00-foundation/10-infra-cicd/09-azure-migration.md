@@ -186,7 +186,7 @@ SUPABASE_SERVICE_ROLE_KEY
 ```
 
 Plus Clerk (both instances), Twilio, Resend, Stripe (secret + webhook + 8 price
-ids), PostHog, Mapbox, Anthropic/OpenAI, and the AGCONN-generated
+ids), Mapbox, Anthropic/OpenAI, and the AGCONN-generated
 `AUDIT_HMAC_KEY`, `PARTICIPANT_PEPPER`, `ADMIN_BEARER_TOKEN`,
 `WAITLIST_TOKEN_SECRET`, `INTERNAL_REVALIDATE_SECRET`, `CLERK_ENCRYPTION_KEY`.
 

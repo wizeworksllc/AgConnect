@@ -663,7 +663,7 @@ const Footer = () => {
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 24, borderTop: '1px solid var(--c-line)', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ fontSize: 12.5, color: 'var(--c-ink-3)' }}>
-            © 2026 AGCONN PBC · Fresno, CA · Made with the United Farm Workers Foundation
+            © 2026 WizeWorks LLC · AGCONN
           </div>
           <div style={{ display: 'flex', gap: 20, fontSize: 12.5, color: 'var(--c-ink-3)' }}>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy</a>

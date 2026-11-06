@@ -37,17 +37,6 @@ export type {
   ErrorStateSuggestion,
 } from './error-state/error-state';
 
-export { ConsentProvider, useConsent } from './consent/consent-provider';
-export { ConsentBanner } from './consent/consent-banner';
-export type { ConsentBannerCopy } from './consent/consent-banner';
-export type { ConsentChoices, ConsentRecord } from './consent/types';
-export {
-  CONSENT_VERSION,
-  CONSENT_STORAGE_KEY,
-  defaultDenyChoices,
-  defaultAcceptChoices,
-} from './consent/types';
-
 export { InstallPrompt } from './pwa/install-prompt';
 export type { InstallPromptCopy } from './pwa/install-prompt';
 export { OfflineBanner } from './pwa/offline-banner';
