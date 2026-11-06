@@ -34,7 +34,7 @@ export async function FeaturedJobCard({ job, locale }: Props) {
                             {cardT('verified_flc')}
                         </span>
                     </div>
-                    <span className="text-secondary font-mono text-xs uppercase">{job.county}</span>
+                    <span className="text-secondary font-sans text-sm font-semibold">{job.county}</span>
                 </div>
 
                 <h3 className="card-title text-base-content font-serif text-xl font-semibold leading-tight tracking-tight">

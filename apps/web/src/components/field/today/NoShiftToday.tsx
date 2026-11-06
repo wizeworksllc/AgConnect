@@ -28,7 +28,7 @@ export function NoShiftToday({ locale, upcoming }: Props) {
                     aria-label={t('see_shift_details')}
                     className="border-base-300 hover:bg-base-200 active:bg-base-200 mt-5 block rounded-2xl border-t pt-5 text-left transition-colors -mx-5 px-5 pb-1"
                 >
-                    <p className="text-base-content/55 mb-1 font-mono text-[10px] uppercase tracking-wide">
+                    <p className="text-base-content mb-1 font-sans text-sm font-semibold">
                         {t('next_up')}
                     </p>
                     <p className="text-base-content text-base font-semibold tabular-nums slashed-zero">

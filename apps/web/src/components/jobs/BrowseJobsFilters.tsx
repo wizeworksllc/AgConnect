@@ -99,7 +99,7 @@ export function BrowseJobsFilters({ workerCounty }: Props = {}) {
 
     return (
         <div className="border-base-300 mb-[18px] flex flex-wrap items-center gap-2.5 rounded-2xl border bg-white px-3.5 py-3">
-            <span className="text-base-content/60 font-mono text-xs font-bold uppercase tracking-[0.06em] pr-1.5">
+            <span className="text-base-content pr-1.5 font-sans text-sm font-semibold">
                 {t('filters_label')}
             </span>
             {visibleKeys.map((k) => {

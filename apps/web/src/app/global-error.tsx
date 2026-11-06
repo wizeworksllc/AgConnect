@@ -33,26 +33,6 @@ export default function GlobalError({
         }}
       >
         <div style={{ maxWidth: '32rem', width: '100%' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.625rem',
-              fontSize: '0.75rem',
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: '#6B7280',
-              marginBottom: '1.25rem',
-            }}
-          >
-            <span style={{ fontFamily: 'ui-monospace, "JetBrains Mono", monospace' }}>
-              500
-            </span>
-            <span aria-hidden style={{ color: '#9CA3AF' }}>·</span>
-            <span>Server error / Error del servidor</span>
-          </div>
-
           <h1
             style={{
               fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
@@ -64,6 +44,23 @@ export default function GlobalError({
           >
             Something went wrong
           </h1>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.625rem',
+              fontSize: '0.875rem',
+              color: '#6B7280',
+              marginBottom: '1.25rem',
+            }}
+          >
+            <span style={{ fontFamily: 'ui-monospace, "JetBrains Mono", monospace' }}>
+              500
+            </span>
+            <span aria-hidden style={{ color: '#9CA3AF' }}>·</span>
+            <span>Server error / Error del servidor</span>
+          </div>
           <p
             style={{
               fontSize: '1rem',

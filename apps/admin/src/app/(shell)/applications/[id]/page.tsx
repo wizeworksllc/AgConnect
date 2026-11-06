@@ -188,7 +188,7 @@ function KV({ k, v, mono }: { k: string; v: string; mono?: boolean }) {
 function Note({ title, body }: { title: string; body: string }) {
     return (
         <div className="bg-base-200 mt-2 rounded p-3 first:mt-0">
-            <div className="text-base-content/60 text-xs uppercase tracking-wide">{title}</div>
+            <div className="text-base-content font-sans text-sm font-semibold">{title}</div>
             <p className="mt-1.5 whitespace-pre-wrap text-sm leading-relaxed">{body}</p>
         </div>
     );

@@ -87,7 +87,7 @@ export default async function ProgramDetailPage({ params }: Props) {
       </Link>
       <div className="grid gap-6">
         <div className="bg-primary/5 border-primary/20 grid gap-2 rounded-2xl border p-5">
-          <div className="text-primary text-xs font-semibold uppercase">
+          <div className="text-primary font-sans text-sm font-semibold">
             {t('fund_label', { fund: program.funder })} · {t('free')}
           </div>
           <div className="text-base font-semibold">{program.county} County</div>

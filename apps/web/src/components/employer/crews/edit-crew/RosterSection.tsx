@@ -184,7 +184,7 @@ export function RosterSection({ crewId, initial, onCountChanged }: Props) {
             )}
 
             <div>
-                <div className="text-base-content/60 mb-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="text-base-content mb-1.5 font-sans text-sm font-semibold">
                     {t('add_label')}
                 </div>
                 <ActiveHiresPicker

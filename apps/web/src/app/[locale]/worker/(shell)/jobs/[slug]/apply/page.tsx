@@ -23,7 +23,7 @@ export default async function ApplyPage({ params }: Props) {
       <WorkerPageHeader title={t('title', { jobTitle: title })} />
       <div className="grid gap-5">
         <div className="border-base-300 grid gap-3 rounded-2xl border bg-white p-5">
-          <h2 className="text-base-content/70 text-xs font-semibold uppercase tracking-wide">
+          <h2 className="text-base-content font-sans text-base font-semibold">
             {t('your_profile')}
           </h2>
           <p className="text-base-content/80">{t('privacy')}</p>

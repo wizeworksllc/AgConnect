@@ -74,7 +74,7 @@ export function SubmitButton({ busy, label }: { busy: boolean; label: string }) 
 
 export function OrDivider({ label }: { label: string }) {
   return (
-    <div className="text-base-content/40 mb-4 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+    <div className="text-base-content mb-4 flex items-center gap-3 font-sans text-sm font-semibold">
       <span className="bg-base-300 h-px flex-1" />
       {label}
       <span className="bg-base-300 h-px flex-1" />

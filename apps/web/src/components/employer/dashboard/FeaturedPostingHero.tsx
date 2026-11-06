@@ -120,8 +120,8 @@ export async function FeaturedPostingHero({ locale, job, applicants }: Props) {
                             />
                         ))}
                     </svg>
-                    <div className="text-base-100/60 absolute left-3 top-3 font-mono text-[10px] uppercase tracking-wider">
-                        {(job.city ?? job.county).toUpperCase()}
+                    <div className="text-base-100 absolute left-3 top-3 font-sans text-sm font-semibold">
+                        {job.city ?? job.county}
                     </div>
                     <div className="text-accent absolute bottom-3 left-3">
                         <FontAwesomeIcon icon={faLocationDot} className="h-4 w-4" />

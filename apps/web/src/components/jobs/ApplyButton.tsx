@@ -98,7 +98,7 @@ export function ApplyButton({ locale, jobId, alreadyAppliedStatus, applyWith }: 
 
                     {hasSummary && (
                         <div className="border-base-300 mt-4 grid gap-2 rounded-xl border p-4">
-                            <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
+                            <div className="text-base-content font-sans text-sm font-semibold">
                                 {t('confirm_summary_label')}
                             </div>
                             <ul className="text-[13.5px] grid gap-1">

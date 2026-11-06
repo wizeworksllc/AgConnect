@@ -39,7 +39,7 @@ export function ProgramCard({ program, locale }: Props) {
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
-          <div className="text-base-content/70 mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide">
+          <div className="text-base-content mb-1 flex items-center gap-2 font-sans text-sm font-semibold">
             <span className="bg-primary/10 text-primary rounded px-1.5 py-0.5">
               {program.funder}
             </span>

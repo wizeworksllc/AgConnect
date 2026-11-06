@@ -65,7 +65,7 @@ export function DiffPreviewModal({ open, before, after, submitting, onCancel, on
                                 key={c.labelKey}
                                 className="border-base-300 rounded-xl border p-3"
                             >
-                                <div className="text-base-content/55 mb-1 font-mono text-[10px] font-bold uppercase tracking-wider">
+                                <div className="text-base-content mb-1 font-sans text-sm font-semibold">
                                     {t(c.labelKey)}
                                 </div>
                                 <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-sm">

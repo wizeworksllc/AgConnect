@@ -78,7 +78,7 @@ function ProfilePreviewInner({ locale }: { locale: string }) {
 
             {profile.skills.length > 0 && (
               <div>
-                <h2 className="text-base-content/70 mb-2 text-xs font-semibold uppercase tracking-wide">
+                <h2 className="text-base-content mb-2 font-sans text-base font-semibold">
                   {t('skills')}
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -116,7 +116,7 @@ function ProfilePreviewInner({ locale }: { locale: string }) {
 
           <aside className="grid content-start gap-3.5">
             <div className="border-base-300 grid gap-2 rounded-2xl border bg-white p-5">
-              <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
+              <div className="text-base-content font-sans text-sm font-semibold">
                 {t('availability.label')}
               </div>
               <Pill tone="primary">{availabilityLabel}</Pill>
@@ -144,7 +144,7 @@ function ResumeBlock({
 }) {
   return (
     <div>
-      <h2 className="text-base-content/70 mb-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide">
+      <h2 className="text-base-content mb-2 inline-flex items-center gap-1.5 font-sans text-base font-semibold">
         <FontAwesomeIcon icon={icon} className="h-3 w-3" />
         {title}
       </h2>

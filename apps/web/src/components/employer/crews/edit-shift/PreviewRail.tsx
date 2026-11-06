@@ -34,7 +34,7 @@ export function PreviewRail({
     return (
         <aside aria-label={t('rail_label')} className="hidden xl:block">
             <div className="flex items-center justify-between px-1.5 pb-2.5">
-                <span className="text-base-content/60 font-mono text-xs font-bold uppercase tracking-[0.1em]">
+                <span className="text-base-content font-sans text-sm font-semibold">
                     {t('worker_preview')}
                 </span>
                 <div className="bg-base-200 border-base-300 join rounded-full border p-0.5">
@@ -73,7 +73,7 @@ export function PreviewRail({
             </div>
 
             <div className="bg-base-100 border-base-300 mt-3.5 rounded-2xl border p-3.5">
-                <div className="text-base-content/60 mb-2 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="text-base-content mb-2 font-sans text-sm font-semibold">
                     {t('confirmations_label')}
                 </div>
                 <div className="flex items-center gap-2">

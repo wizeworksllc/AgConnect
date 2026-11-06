@@ -63,7 +63,7 @@ function FieldTodayInner({ locale }: { locale: string }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-base-content/55 px-1 font-mono text-xs uppercase tracking-wide">
+      <h2 className="text-base-content px-1 font-sans text-base font-semibold">
         {t('greeting_today')}
       </h2>
       <ShiftCard row={todayShift} locale={locale} />

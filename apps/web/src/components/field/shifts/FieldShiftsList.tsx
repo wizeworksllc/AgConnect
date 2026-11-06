@@ -170,7 +170,7 @@ export function FieldShiftsList({ locale, buckets }: Props) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
         <section className="space-y-2">
-            <h2 className="text-base-content/55 px-1 font-mono text-xs uppercase tracking-wide">
+            <h2 className="text-base-content px-1 font-sans text-base font-semibold">
                 {title}
             </h2>
             <ul className="space-y-2">{children}</ul>
@@ -215,7 +215,7 @@ function ShiftLine({ row, title, subtitle, dateLabel, timeLabel, statusLabel, st
                 <span className="text-base-content text-sm font-bold tabular-nums slashed-zero">
                     {timeLabel}
                 </span>
-                <span className="text-base-content/55 text-[10px] uppercase tracking-wide">
+                <span className="text-base-content font-sans text-sm font-semibold">
                     {dateLabel}
                 </span>
                 <span

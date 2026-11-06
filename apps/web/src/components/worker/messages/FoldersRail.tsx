@@ -73,7 +73,7 @@ export function FoldersRail({ counts, locale: _locale, folder, channel }: Props)
                 })}
             </ul>
             <div className="border-base-300 mt-4 border-t pt-3">
-                <div className="text-base-content/60 mb-2 px-2 font-mono text-[10px] font-bold uppercase tracking-wider">
+                <div className="text-base-content mb-2 px-2 font-sans text-sm font-semibold">
                     {t('channels_label')}
                 </div>
                 <ul className="menu w-full p-0">

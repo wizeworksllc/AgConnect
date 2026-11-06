@@ -45,7 +45,7 @@ function ApplicantDetailInner({ id }: { id: string }) {
         </div>
 
         <div className="mt-6">
-          <h2 className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
+          <h2 className="text-base-content font-sans text-base font-semibold">
             {t('skills')} ({t('skills_match', { count: app.worker.skillsMatchCount })})
           </h2>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -59,7 +59,7 @@ function ApplicantDetailInner({ id }: { id: string }) {
 
         {app.worker.certifications.length > 0 && (
           <div className="mt-6">
-            <h2 className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
+            <h2 className="text-base-content font-sans text-base font-semibold">
               {t('certifications')}
             </h2>
             <div className="mt-2 flex flex-wrap gap-2">

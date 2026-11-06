@@ -93,7 +93,7 @@ export function ProfileEditor({ locale, initial }: Props) {
   return (
     <div className="grid gap-6">
       <div className="border-base-300 bg-base-100 grid gap-4 rounded-2xl border p-5">
-        <h2 className="text-base-content/70 text-xs font-semibold uppercase tracking-wide">
+        <h2 className="text-base-content font-sans text-base font-semibold">
           {t('section.contact')}
         </h2>
         <FieldRow label={t('contact.first_name')}>
@@ -227,7 +227,7 @@ function AvailabilitySection({
       id="availability"
       className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5 scroll-mt-24"
     >
-      <h2 className="text-base-content/70 text-xs font-semibold uppercase tracking-wide">
+      <h2 className="text-base-content font-sans text-base font-semibold">
         {t('title')}
       </h2>
       <p className="text-base-content/70 text-sm">{t('hint')}</p>
@@ -290,7 +290,7 @@ function SkillsSection({
   return (
     <div className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-base-content/70 text-xs font-semibold uppercase tracking-wide">
+        <h2 className="text-base-content font-sans text-base font-semibold">
           {title}
         </h2>
         <button
@@ -384,7 +384,7 @@ function ResumeSection2({
   return (
     <div className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-base-content/70 text-xs font-semibold uppercase tracking-wide">
+        <h2 className="text-base-content font-sans text-base font-semibold">
           {title}
         </h2>
         <button

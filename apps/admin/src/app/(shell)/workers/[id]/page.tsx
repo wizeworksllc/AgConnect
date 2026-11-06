@@ -65,7 +65,7 @@ export default async function WorkerDetailPage({
                     />
                     <KV k="Onboarded at" v={w.profile.onboardedAt ?? '—'} mono />
                     <div className="mt-2">
-                        <div className="text-base-content/60 text-xs uppercase tracking-wide">Skills</div>
+                        <div className="text-base-content font-sans text-sm font-semibold">Skills</div>
                         <div className="mt-1.5 flex flex-wrap gap-1">
                             {w.profile.skills.length === 0 ? (
                                 <span className="text-base-content/40 text-xs">none</span>

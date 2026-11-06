@@ -89,7 +89,7 @@ function PayrollInner() {
         </DarkHeroCard>
         <div className="grid grid-rows-2 gap-4">
           <div className="bg-base-100 border-base-300 rounded-2xl border p-5">
-            <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-wider">
+            <div className="text-base-content font-sans text-sm font-semibold">
               {t('season_to_date')}
             </div>
             <div className="text-primary font-display mt-2 text-3xl font-light tracking-tight">
@@ -148,7 +148,7 @@ function PayrollInner() {
                   : t('h2a_sub_idle')}
               </div>
               {h2a.effectiveFrom ? (
-                <div className="mt-2 font-mono text-[10px] uppercase tracking-wider opacity-70">
+                <div className="mt-2 font-sans text-sm font-semibold">
                   {t('h2a_effective', { date: h2a.effectiveFrom })}
                 </div>
               ) : null}

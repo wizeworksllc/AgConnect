@@ -39,7 +39,7 @@ export function Sidebar({ scope, tenantId }: SidebarProps) {
                 </div>
                 <div className="leading-tight">
                     <div className="font-serif text-sm font-medium">AGCONN</div>
-                    <div className="text-base-content/60 text-xs tracking-wide uppercase">Admin</div>
+                    <div className="text-base-content font-sans text-sm font-semibold">Admin</div>
                 </div>
             </div>
             <nav className="flex-1 overflow-y-auto px-3 py-4">

@@ -88,13 +88,13 @@ export function ActiveHiresPicker({
                     <>
                         {suggested.length > 0 && (
                             <>
-                                <div className="text-base-content/60 mt-1 px-1 font-mono text-[10px] font-bold uppercase tracking-wider">
+                                <div className="text-base-content mt-1 px-1 font-sans text-sm font-semibold">
                                     {t('suggested_label')}
                                 </div>
                                 {suggested.map((h) => (
                                     <HireRow key={h.workerUserId} hire={h} busy={busy} onSelect={onSelect} />
                                 ))}
-                                <div className="text-base-content/60 mt-2 px-1 font-mono text-[10px] font-bold uppercase tracking-wider">
+                                <div className="text-base-content mt-2 px-1 font-sans text-sm font-semibold">
                                     {t('all_label')}
                                 </div>
                             </>

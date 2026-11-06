@@ -123,7 +123,7 @@ export function ApplyList({ locale, jobs, smsApply }: Props) {
                                         {fmtLocation(job)}
                                     </p>
                                     {(job.housing || job.transport) && (
-                                        <p className="text-primary/85 mt-1.5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wide">
+                                        <p className="text-primary mt-1.5 flex items-center gap-2 font-sans text-sm font-semibold">
                                             {job.housing && (
                                                 <span className="inline-flex items-center gap-1">
                                                     <FontAwesomeIcon

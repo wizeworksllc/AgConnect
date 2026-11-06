@@ -73,7 +73,7 @@ function ProfileInner() {
 
         <aside className="flex flex-col gap-4">
           <div className="bg-base-100 border-base-300 rounded-2xl border p-5">
-            <h2 className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-wider">
+            <h2 className="text-base-content font-sans text-base font-semibold">
               {t('sidebar.status_label')}
             </h2>
             <div

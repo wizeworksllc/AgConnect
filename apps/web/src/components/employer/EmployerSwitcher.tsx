@@ -45,7 +45,7 @@ export function EmployerSwitcher({ options, activeEmployerId }: Props) {
                     className="text-base-content/50 h-3.5 w-3.5 shrink-0"
                 />
                 <span className="min-w-0 flex-1">
-                    <span className="text-base-content/50 block font-mono text-[10px] uppercase tracking-wider">
+                    <span className="text-base-content block font-sans text-sm font-semibold">
                         {t('label')}
                     </span>
                     <span className="block truncate text-sm font-semibold">
