@@ -24,7 +24,7 @@ export function MagicLinkForm() {
 
     return (
         <div className="bg-base-100 border-base-300 w-full max-w-sm rounded-box border p-8 shadow-[var(--shadow-card)]">
-            <p className="eyebrow text-primary">AGCONN Admin</p>
+            <p className="text-sm font-semibold text-primary">AGCONN Admin</p>
             <h1 className="mt-2 font-serif text-2xl font-medium">Sign in</h1>
             {state.kind === 'sent' ? (
                 <p className="text-base-content/70 mt-4 text-sm leading-relaxed" role="status">

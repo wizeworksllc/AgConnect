@@ -40,8 +40,8 @@ export const flcLicenseBasics: ResourceArticle = {
                 es: 'Qué reprueba la auditoría más rápido',
             },
             body: {
-                en: 'In our review of recent enforcement actions, the top three audit failures are: incomplete itemized wage statements (no piece-rate breakdown, missing crew or field identifier), gaps in vehicle registration or driver licensing for crew transport, and missing or expired pesticide handler training certificates for crews working in treated fields. Each of these is a deficiency you can fix today before an inspector ever shows up.',
-                es: 'En nuestra revisión de acciones de cumplimiento recientes, las tres principales fallas de auditoría son: declaraciones de salarios desglosadas incompletas (sin desglose de pago a destajo, falta de identificador de cuadrilla o campo), brechas en el registro de vehículos o licencias de conducir para transporte de cuadrillas, y certificados de capacitación de manejo de pesticidas faltantes o vencidos para cuadrillas que trabajan en campos tratados. Cada uno de estos es una deficiencia que puede corregir hoy antes de que un inspector aparezca.',
+                en: 'Three things to check before an audit: incomplete itemized wage statements (no piece-rate breakdown, missing crew or field identifier), gaps in vehicle registration or driver licensing for crew transport, and missing or expired pesticide handler training certificates for crews working in treated fields. Each of these is a deficiency you can fix today before an inspector ever shows up.',
+                es: 'Tres cosas para revisar antes de una auditoría: declaraciones de salarios desglosadas incompletas (sin desglose de pago a destajo, falta de identificador de cuadrilla o campo), brechas en el registro de vehículos o licencias de conducir para transporte de cuadrillas, y certificados de capacitación de manejo de pesticidas faltantes o vencidos para cuadrillas que trabajan en campos tratados. Cada uno de estos es una deficiencia que puede corregir hoy antes de que un inspector aparezca.',
             },
         },
         {
@@ -60,8 +60,8 @@ export const flcLicenseBasics: ResourceArticle = {
                 es: 'Cómo AGCONN maneja la verificación',
             },
             body: {
-                en: 'When you create an employer tenant on AGCONN, we verify your CA FLC license number against the Division of Labor Standards Enforcement public registry and check MSPA status with the U.S. Department of Labor. Verified employers display a badge to job seekers, which materially improves application rates. We re-verify annually.',
-                es: 'Cuando crea un inquilino empleador en AGCONN, verificamos su número de licencia FLC de CA contra el registro público de la División de Cumplimiento de Estándares Laborales y verificamos el estado MSPA con el Departamento de Trabajo de EE. UU. Los empleadores verificados muestran una insignia a los solicitantes de empleo, lo que mejora materialmente las tasas de solicitud. Re-verificamos anualmente.',
+                en: 'When you create an employer account on AGCONN, an admin reviews your CA FLC license number. AGCONN then re-checks the license against the state registry every night. Verified employers display a badge to job seekers.',
+                es: 'Cuando crea una cuenta de empleador en AGCONN, un administrador revisa su número de licencia FLC de CA. Después AGCONN revisa la licencia contra el registro estatal cada noche. Los empleadores verificados muestran una insignia a los solicitantes de empleo.',
             },
         },
     ],

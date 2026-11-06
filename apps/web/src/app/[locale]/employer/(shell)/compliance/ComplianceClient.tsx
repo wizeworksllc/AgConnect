@@ -66,7 +66,7 @@ function ComplianceInner() {
     <div className=" px-5 pb-16 pt-8">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-base-content/60 text-xs font-semibold uppercase tracking-[0.18em]">
+          <p className="text-base-content/60 font-sans text-sm font-semibold">
             {t('title')}
           </p>
           <h1 className="font-display mt-2 text-4xl font-semibold leading-tight tracking-tight tabular-nums slashed-zero md:text-5xl">

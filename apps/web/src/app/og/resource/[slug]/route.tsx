@@ -10,26 +10,14 @@ export const revalidate = 86400;
 
 const COPY = {
     en: {
-        eyebrow: 'Field guide',
         publishedLabel: 'Published',
         readingLabel: 'Reading time',
         fallbackTitle: 'AGCONN field guides for farmworkers and employers',
-        categories: {
-            workers_rights: 'Workers rights',
-            employer_guides: 'Employer guides',
-            training_explainers: 'Training explainers',
-        },
     },
     es: {
-        eyebrow: 'Guía de campo',
         publishedLabel: 'Publicado',
         readingLabel: 'Tiempo de lectura',
         fallbackTitle: 'Guías de campo de AGCONN para trabajadores y empleadores',
-        categories: {
-            workers_rights: 'Derechos del trabajador',
-            employer_guides: 'Guías para empleadores',
-            training_explainers: 'Guías de capacitación',
-        },
     },
 } as const;
 
@@ -56,7 +44,6 @@ export async function GET(req: Request, { params }: Props) {
 
     const article = getResourceBySlug(slug);
     const title = article ? pickLocale(article.title, locale) : t.fallbackTitle;
-    const categoryLabel = article ? t.categories[article.category] : t.eyebrow;
     const published = article ? formatDate(article.publishedAt, locale) : '';
     const minutes = article ? String(article.readingMinutes) : '';
     const readingLabel = locale === 'es' ? `${minutes} min` : `${minutes} min`;
@@ -73,7 +60,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={categoryLabel}
                 footerLeft={
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                         <div

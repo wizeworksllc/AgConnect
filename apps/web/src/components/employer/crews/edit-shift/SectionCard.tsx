@@ -6,7 +6,7 @@ type Props = {
 };
 
 // Mirrors the design-template Section: white card, hairline border, 1rem
-// rounded, display-font heading + base-content/60 mono eyebrow rule below.
+// rounded, display-font heading.
 export function SectionCard({ id, title, sub, children }: Props) {
   return (
     <section

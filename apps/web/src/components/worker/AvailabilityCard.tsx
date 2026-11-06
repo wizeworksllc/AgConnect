@@ -37,9 +37,6 @@ export function AvailabilityCard() {
         <section className="bg-base-100 border-base-300 rounded-2xl border p-4">
             <header className="flex items-start justify-between">
                 <div>
-                    <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-base-content/60">
-                        {t('eyebrow')}
-                    </div>
                     <h3 className="font-serif mt-0.5 text-xl font-medium tracking-tight">
                         {t('title')}
                     </h3>

@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faLanguage, faShieldHalved, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -42,7 +41,6 @@ export default async function AboutPage({ params }: RouteProps) {
             <Breadcrumb locale={locale} path="/about" />
 
             <MarketingPageHero
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
             />
@@ -50,9 +48,6 @@ export default async function AboutPage({ params }: RouteProps) {
             <section id="mission" className="bg-primary text-primary-content w-full">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('mission.eyebrow')}
-                        </span>
                         <h2 className="text-primary-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('mission.headline')}
                         </h2>
@@ -66,9 +61,6 @@ export default async function AboutPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('values.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('values.headline')}
                         </h2>
@@ -92,9 +84,6 @@ export default async function AboutPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('org.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('org.headline')}
                         </h2>

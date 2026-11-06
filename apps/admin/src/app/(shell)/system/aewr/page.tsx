@@ -26,7 +26,6 @@ export default async function AewrPage({
                 </Link>
             </div>
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">AEWR rates</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Federal H-2A Adverse Effect Wage Rate, set annually by USDOL ETA. AGCONN cites

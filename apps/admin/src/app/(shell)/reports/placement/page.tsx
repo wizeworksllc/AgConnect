@@ -67,7 +67,6 @@ export default async function PlacementReportPage({
     return (
         <div className="space-y-6">
             <div>
-                <p className="eyebrow text-base-content/60">Platform / Reports</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Placement report</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     WIOA / CalJOBS-aligned hire export with anonymized participant IDs. All

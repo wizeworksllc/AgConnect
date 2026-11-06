@@ -40,8 +40,8 @@ export const foodSafetyGap: ResourceArticle = {
                 es: 'Inversión de costo y tiempo',
             },
             body: {
-                en: 'Course fees range from free (when offered through county Ag Extension) to about $150 through private providers. The certificate is permanent — no renewal required as long as you stay in the role. Some employers reimburse the fee after a successful completion. AGCONN lists active sessions across the Central Valley, with bilingual options highlighted.',
-                es: 'Las tarifas del curso van de gratis (cuando se ofrece a través de Extensión Agrícola del condado) a aproximadamente $150 a través de proveedores privados. El certificado es permanente — no se requiere renovación mientras se mantenga en el puesto. Algunos empleadores reembolsan la tarifa después de una finalización exitosa. AGCONN lista las sesiones activas en todo el Valle Central, con opciones bilingües destacadas.',
+                en: 'Course fees vary. Ask your county Ag Extension office and private providers. The certificate is permanent — no renewal required as long as you stay in the role. Some employers reimburse the fee after a successful completion. AGCONN lists active sessions across the Central Valley, with bilingual options highlighted.',
+                es: 'Las tarifas del curso varían. Pregunte en la oficina de Extensión Agrícola de su condado y con proveedores privados. El certificado es permanente — no se requiere renovación mientras se mantenga en el puesto. Algunos empleadores reembolsan la tarifa después de una finalización exitosa. AGCONN lista las sesiones activas en todo el Valle Central, con opciones bilingües destacadas.',
             },
         },
         {
@@ -50,8 +50,8 @@ export const foodSafetyGap: ResourceArticle = {
                 es: 'Cómo cambia su búsqueda',
             },
             body: {
-                en: 'A PSA certificate puts you on the list for crew-lead roles in fresh-market operations: berries, leafy greens, stone fruit, table grapes. Lead pay is typically $2 to $4 per hour above general crew pay, plus you become a stable point of contact for the grower across seasons. That stability matters when the season ends and you are deciding whether to wait for the next round or relocate.',
-                es: 'Un certificado de PSA lo pone en la lista para puestos de líder de cuadrilla en operaciones de mercado fresco: bayas, verduras de hoja, fruta de hueso, uvas de mesa. El pago de líder es generalmente de $2 a $4 por hora por encima del pago general de la cuadrilla, además de que se convierte en un punto de contacto estable para el agricultor a través de las temporadas. Esa estabilidad importa cuando la temporada termina y está decidiendo si esperar la próxima ronda o reubicarse.',
+                en: 'A PSA certificate puts you on the list for crew-lead roles in fresh-market operations: berries, leafy greens, stone fruit, table grapes. You can also become a stable point of contact for the grower across seasons. That stability matters when the season ends and you are deciding whether to wait for the next round or relocate.',
+                es: 'Un certificado de PSA lo pone en la lista para puestos de líder de cuadrilla en operaciones de mercado fresco: bayas, verduras de hoja, fruta de hueso, uvas de mesa. También puede convertirse en un punto de contacto estable para el agricultor a través de las temporadas. Esa estabilidad importa cuando la temporada termina y está decidiendo si esperar la próxima ronda o reubicarse.',
             },
         },
     ],

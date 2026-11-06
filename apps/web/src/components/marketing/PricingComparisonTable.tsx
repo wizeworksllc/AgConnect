@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 
 type Row = { id: string };
 type Section = { id: string; rows: Row[] };
@@ -13,7 +12,6 @@ const SECTIONS: Section[] = [
             { id: 'active_postings' },
             { id: 'applicant_kanban' },
             { id: 'worker_search' },
-            { id: 'priority_listing' },
             { id: 'auto_match' },
             { id: 'screening' },
             { id: 'seo_board' },
@@ -26,10 +24,6 @@ const SECTIONS: Section[] = [
             { id: 'audit_log' },
             { id: 'compliance_checklist' },
             { id: 'compliance_print' },
-            { id: 'wioa_exports' },
-            { id: 'pirl_export' },
-            { id: 'branded_grant' },
-            { id: 'counsel_review' },
         ],
     },
     {
@@ -57,10 +51,7 @@ const SECTIONS: Section[] = [
         rows: [
             { id: 'single_user' },
             { id: 'multi_user' },
-            { id: 'custom_counties' },
             { id: 'hire_metrics' },
-            { id: 'tenant_isolation' },
-            { id: 'success_sla' },
         ],
     },
 ];
@@ -77,9 +68,6 @@ export async function PricingComparisonTable({ locale }: Props) {
         <section className="bg-base-100 w-full border-secondary/15 border-t">
             <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                 <div className="flex flex-col gap-4">
-                    <EyebrowLabel tone="soil" withRule>
-                        {t('eyebrow')}
-                    </EyebrowLabel>
                     <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                         {t('headline')}
                     </h2>

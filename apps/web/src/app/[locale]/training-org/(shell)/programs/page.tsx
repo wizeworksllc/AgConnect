@@ -36,7 +36,7 @@ export default async function ProgramsListPage({ params }: Props) {
   return (
     <div className="px-6 pb-16 pt-8 lg:px-8">
       <header className="mb-6">
-        <p className="text-base-content/55 font-mono text-xs uppercase tracking-[0.18em]">
+        <p className="text-base-content/55 font-sans text-sm font-semibold">
           {isEs ? 'Capacitación' : 'Training'}
         </p>
         <h1 className="font-serif mt-2 text-[28px] font-normal leading-tight tracking-[-0.025em] sm:text-[36px]">

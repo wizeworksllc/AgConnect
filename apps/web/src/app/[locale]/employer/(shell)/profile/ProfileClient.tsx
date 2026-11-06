@@ -31,9 +31,6 @@ function ProfileInner() {
   return (
     <div className=" px-5 pb-16 pt-8">
       <div className="mb-7">
-        <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-          {t('eyebrow')}
-        </p>
         <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
           {t('title_a')} <em className="text-primary not-italic font-light">{t('title_b')}</em>
         </h1>

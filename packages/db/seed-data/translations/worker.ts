@@ -273,11 +273,7 @@ export const worker: TranslationBundle = {
         en: "You haven't applied to any jobs yet.",
         es: "Aún no has aplicado a ningún trabajo.",
     },
-    "applications_dense.eyebrow": {
-        en: "5 active · 2 awaiting reply · last sync 2m ago",
-        es: "5 activas · 2 esperando respuesta · sincronizado hace 2m",
-    },
-    "applications_dense.eyebrow_n": {
+    "applications_dense.summary_n": {
         en: "{active} active · {waiting} awaiting reply",
         es: "{active} activas · {waiting} esperando respuesta",
     },
@@ -469,10 +465,6 @@ export const worker: TranslationBundle = {
         en: "Edit",
         es: "Editar",
     },
-    "dashboard.availability.eyebrow": {
-        en: "This week",
-        es: "Esta semana",
-    },
     "dashboard.availability.footer": {
         en: "{open, plural, =0 {No days marked open} =1 {1 day open} other {# days open}}{conflicts, plural, =0 {} =1 { · 1 conflict} other { · # conflicts}}",
         es: "{open, plural, =0 {Sin días marcados} =1 {1 día abierto} other {# días abiertos}}{conflicts, plural, =0 {} =1 { · 1 conflicto} other { · # conflictos}}",
@@ -493,7 +485,7 @@ export const worker: TranslationBundle = {
         en: "{date}{county, select, _none {} other { · {county}, CA}}",
         es: "{date}{county, select, _none {} other { · {county}, CA}}",
     },
-    "dashboard.greeting.earnings_eyebrow": {
+    "dashboard.greeting.earnings_label": {
         en: "Earnings · 12 wk",
         es: "Ganancias · 12 sem",
     },
@@ -629,7 +621,7 @@ export const worker: TranslationBundle = {
         en: "Aug 8",
         es: "8 de ago",
     },
-    "dashboard.paycheck.eyebrow": {
+    "dashboard.paycheck.caption": {
         en: "Next paycheck",
         es: "Próximo pago",
     },
@@ -761,7 +753,7 @@ export const worker: TranslationBundle = {
         en: "Enroll free",
         es: "Inscribirse gratis",
     },
-    "dashboard.training.eyebrow": {
+    "dashboard.training.caption": {
         en: "Training in your area",
         es: "Capacitación cerca de ti",
     },
@@ -778,8 +770,8 @@ export const worker: TranslationBundle = {
         es: "en tu área",
     },
     "dashboard.training.meta": {
-        en: "2 weeks · Reedley College · CDFA-funded",
-        es: "2 semanas · Reedley College · Financiado por CDFA",
+        en: "Training in your area",
+        es: "Capacitación en tu área",
     },
     "dashboard.up_next.call_foreman": {
         en: "Call foreman",
@@ -796,10 +788,6 @@ export const worker: TranslationBundle = {
     "dashboard.up_next.directions": {
         en: "Directions",
         es: "Direcciones",
-    },
-    "dashboard.up_next.eyebrow": {
-        en: "Tomorrow · 6:00 AM",
-        es: "Mañana · 6:00 AM",
     },
     "dashboard.up_next.location": {
         en: "Madera County",
@@ -821,10 +809,6 @@ export const worker: TranslationBundle = {
         en: "Grape Harvest at Sunridge Vineyards",
         es: "Cosecha de uva en Sunridge Vineyards",
     },
-    "dashboard.up_next.empty_eyebrow": {
-        en: "No upcoming shifts",
-        es: "Sin turnos próximos",
-    },
     "dashboard.up_next.empty_title": {
         en: "Apply to a job and your next shift will land here.",
         es: "Aplica a un trabajo y tu próximo turno aparecerá aquí.",
@@ -833,11 +817,11 @@ export const worker: TranslationBundle = {
         en: "Browse jobs",
         es: "Buscar trabajos",
     },
-    "dashboard.up_next.confirmed_eyebrow": {
+    "dashboard.up_next.confirmed_label": {
         en: "Confirmed",
         es: "Confirmado",
     },
-    "dashboard.up_next.declined_eyebrow": {
+    "dashboard.up_next.declined_label": {
         en: "Declined",
         es: "Rechazado",
     },
@@ -849,7 +833,7 @@ export const worker: TranslationBundle = {
         en: "Couldn't confirm. Try again.",
         es: "No se pudo confirmar. Inténtalo de nuevo.",
     },
-    "dashboard.paycheck.empty_eyebrow": {
+    "dashboard.paycheck.empty_label": {
         en: "No paycheck yet",
         es: "Aún sin pago",
     },
@@ -877,7 +861,7 @@ export const worker: TranslationBundle = {
         en: "Verified employers see complete profiles first. Add what's missing below.",
         es: "Los empleadores verificados ven primero los perfiles completos. Agrega lo que falta abajo.",
     },
-    "documents.completeness.eyebrow": {
+    "documents.completeness.caption": {
         en: "Profile completeness",
         es: "Perfil completo",
     },
@@ -908,10 +892,6 @@ export const worker: TranslationBundle = {
     "documents.cta_upload": {
         en: "Upload document",
         es: "Subir documento",
-    },
-    "documents.eyebrow": {
-        en: "{date, select, _none {Documents} other {Last verified {date}}}",
-        es: "{date, select, _none {Documentos} other {Última verificación {date}}}",
     },
     "documents.group.on_file": {
         en: "{n} on file",
@@ -1169,7 +1149,7 @@ export const worker: TranslationBundle = {
         en: "Open full map →",
         es: "Abrir mapa completo →",
     },
-    "jobs.browse.aside.map.eyebrow": {
+    "jobs.browse.aside.map.caption": {
         en: "Map preview",
         es: "Vista del mapa",
     },
@@ -1177,7 +1157,7 @@ export const worker: TranslationBundle = {
         en: "Madera Co.",
         es: "Cdo. de Madera",
     },
-    "jobs.browse.aside.saved.eyebrow": {
+    "jobs.browse.aside.saved.caption": {
         en: "Saved searches",
         es: "Búsquedas guardadas",
     },
@@ -1189,7 +1169,7 @@ export const worker: TranslationBundle = {
         en: "Text <text>{keyword}</text> to <num>{number}</num>",
         es: "Envía <text>{keyword}</text> al <num>{number}</num>",
     },
-    "jobs.browse.aside.sms.eyebrow": {
+    "jobs.browse.aside.sms.caption": {
         en: "SMS apply",
         es: "Aplica por SMS",
     },
@@ -1225,7 +1205,7 @@ export const worker: TranslationBundle = {
         en: "Tomatoes",
         es: "Tomates",
     },
-    "jobs.browse.eyebrow": {
+    "jobs.browse.caption": {
         en: "{count, plural, =0 {No open jobs} =1 {1 open job} other {# open jobs}} · {county}",
         es: "{count, plural, =0 {Sin trabajos abiertos} =1 {1 trabajo abierto} other {# trabajos abiertos}} · {county}",
     },
@@ -1497,11 +1477,7 @@ export const worker: TranslationBundle = {
         en: "Select a conversation",
         es: "Selecciona una conversación",
     },
-    "messages.eyebrow": {
-        en: "Inbox",
-        es: "Bandeja de entrada",
-    },
-    "messages.eyebrow_n": {
+    "messages.summary_n": {
         en: "{unread, plural, =0 {No unread} =1 {1 unread} other {# unread}} · {count, plural, =0 {no conversations} =1 {1 conversation} other {# conversations}}",
         es: "{unread, plural, =0 {Sin leer: 0} =1 {1 sin leer} other {# sin leer}} · {count, plural, =0 {sin conversaciones} =1 {1 conversación} other {# conversaciones}}",
     },
@@ -1801,11 +1777,7 @@ export const worker: TranslationBundle = {
         en: "Mobile phone number",
         es: "Número de teléfono móvil",
     },
-    "onboarding.pitch.badge": {
-        en: "Grant-aligned",
-        es: "Alineado con subvenciones",
-    },
-    "onboarding.pitch.eyebrow": {
+    "onboarding.pitch.caption": {
         en: "Worker onboarding",
         es: "Registro de trabajador",
     },
@@ -2101,7 +2073,7 @@ export const worker: TranslationBundle = {
         en: "Download paystub",
         es: "Descargar talón",
     },
-    "pay.deposit.eyebrow": {
+    "pay.deposit.caption": {
         en: "{date, select, _none {Next deposit} other {Next deposit · {date}}}",
         es: "{date, select, _none {Próximo depósito} other {Próximo depósito · {date}}}",
     },
@@ -2129,7 +2101,7 @@ export const worker: TranslationBundle = {
         en: "Bank of America · Verified",
         es: "Bank of America · Verificado",
     },
-    "pay.direct_deposit.eyebrow": {
+    "pay.direct_deposit.caption": {
         en: "Direct deposit",
         es: "Depósito directo",
     },
@@ -2140,10 +2112,6 @@ export const worker: TranslationBundle = {
     "pay.direct_deposit.empty_body": {
         en: "Set your bank for direct deposit so paychecks land in days, not weeks.",
         es: "Configura tu banco para depósito directo y recibe el pago en días, no semanas.",
-    },
-    "pay.eyebrow": {
-        en: "YTD · 2026",
-        es: "YTD · 2026",
     },
     "pay.meta.title": {
         en: "Pay & timesheets",
@@ -2237,7 +2205,7 @@ export const worker: TranslationBundle = {
         en: "Weekly paystubs",
         es: "Talones semanales",
     },
-    "pay.tax_docs.eyebrow": {
+    "pay.tax_docs.caption": {
         en: "Tax documents",
         es: "Documentos fiscales",
     },
@@ -2265,7 +2233,7 @@ export const worker: TranslationBundle = {
         en: "See county wage data →",
         es: "Ver datos de salario del condado →",
     },
-    "pay.wage.eyebrow": {
+    "pay.wage.caption": {
         en: "Wage transparency",
         es: "Transparencia de salario",
     },
@@ -2553,10 +2521,6 @@ export const worker: TranslationBundle = {
         en: "No saved searches yet.",
         es: "No tienes búsquedas guardadas.",
     },
-    "saved_searches.eyebrow": {
-        en: "Get notified when matches appear",
-        es: "Recibe avisos cuando aparezcan coincidencias",
-    },
     "saved_searches.form.alert_channel": {
         en: "Notify me by",
         es: "Avisarme por",
@@ -2741,7 +2705,7 @@ export const worker: TranslationBundle = {
         en: "Sync to phone",
         es: "Sincronizar al teléfono",
     },
-    "shifts.eyebrow": {
+    "shifts.caption": {
         en: "{month}{county, select, _none {} other { · {county}, CA}}",
         es: "{month}{county, select, _none {} other { · {county}, CA}}",
     },
@@ -2757,7 +2721,7 @@ export const worker: TranslationBundle = {
         en: "Employers",
         es: "Empleadores",
     },
-    "shifts.summary.eyebrow": {
+    "shifts.summary.caption": {
         en: "This month",
         es: "Este mes",
     },
@@ -2909,11 +2873,7 @@ export const worker: TranslationBundle = {
         en: "You can't unenroll once the program has started.",
         es: "No puedes cancelar una vez que el programa ha empezado.",
     },
-    "training_hub.eyebrow": {
-        en: "Free programs in your area",
-        es: "Programas gratis en tu zona",
-    },
-    "training_hub.eyebrow_n": {
+    "training_hub.summary_n": {
         en: "{n} free programs in your area",
         es: "{n} programas gratis en tu zona",
     },
@@ -2929,7 +2889,7 @@ export const worker: TranslationBundle = {
         en: "View schedule",
         es: "Ver horario",
     },
-    "training_hub.in_progress.eyebrow": {
+    "training_hub.in_progress.caption": {
         en: "In progress · {funder}",
         es: "En progreso · {funder}",
     },
@@ -2966,8 +2926,8 @@ export const worker: TranslationBundle = {
         es: "Más info",
     },
     "training_hub.recommended.sub": {
-        en: "Funded by CDFA & F3 · Stipend during training",
-        es: "Financiado por CDFA y F3 · Estipendio durante capacitación",
+        en: "Each program lists its own dates and costs",
+        es: "Cada programa indica sus fechas y costos",
     },
     "training_hub.recommended.title": {
         en: "Recommended for you",
@@ -3006,8 +2966,8 @@ export const worker: TranslationBundle = {
         es: "actualmente inscrito",
     },
     "training_hub.sub": {
-        en: "Free certifications funded by California Department of Food & Agriculture and the F3 initiative. Most pay a stipend during training.",
-        es: "Certificaciones gratuitas financiadas por el Departamento de Alimentos y Agricultura de California y la iniciativa F3. La mayoría paga un estipendio durante la capacitación.",
+        en: "Training programs listed by training organizations. Each one shows its own dates and costs.",
+        es: "Programas publicados por organizaciones de capacitación. Cada uno indica sus fechas y costos.",
     },
     "training_hub.title.em": {
         en: "learn more",
@@ -3205,7 +3165,7 @@ export const worker: TranslationBundle = {
         en: "verified.",
         es: "verificadas.",
     },
-    "wallet.sample.eyebrow": {
+    "wallet.sample.caption": {
         en: "Preview · what a credential looks like",
         es: "Vista previa · cómo se ve una credencial",
     },
@@ -3218,8 +3178,8 @@ export const worker: TranslationBundle = {
         es: "Operador de montacargas · OSHA",
     },
     "wallet.sample.meta": {
-        en: "WIOA · Madera Workforce · Sample preview",
-        es: "WIOA · Workforce de Madera · Muestra",
+        en: "Sample preview",
+        es: "Muestra",
     },
     "wallet.sample.hint": {
         en: "Each AGCONN credential includes a QR code that employers can scan to verify it on the spot.",
@@ -3313,7 +3273,7 @@ export const worker: TranslationBundle = {
         en: "Today",
         es: "Hoy",
     },
-    "field.today.eyebrow": {
+    "field.today.caption": {
         en: "Today's shift",
         es: "El turno de hoy",
     },
@@ -3473,7 +3433,7 @@ export const worker: TranslationBundle = {
         en: "Applied",
         es: "Aplicado",
     },
-    "field.apply.confirm_eyebrow": {
+    "field.apply.confirm_label": {
         en: "Apply to",
         es: "Aplicar a",
     },
@@ -3601,7 +3561,7 @@ export const worker: TranslationBundle = {
         en: "Withdrawn",
         es: "Retirada",
     },
-    "field.applications.sheet_eyebrow": {
+    "field.applications.sheet_label": {
         en: "Application",
         es: "Solicitud",
     },
@@ -3661,7 +3621,7 @@ export const worker: TranslationBundle = {
         en: "Messages",
         es: "Mensajes",
     },
-    "field.messages.thread.eyebrow": {
+    "field.messages.thread.caption": {
         en: "Conversation with",
         es: "Conversación con",
     },
@@ -3708,10 +3668,6 @@ export const worker: TranslationBundle = {
     "field.soft_prompt.dismiss_aria": {
         en: "Dismiss",
         es: "Descartar",
-    },
-    "field.placeholder.eyebrow": {
-        en: "Field Mode",
-        es: "Modo de campo",
     },
     "field.placeholder.title": {
         en: "Field Mode is on its way",

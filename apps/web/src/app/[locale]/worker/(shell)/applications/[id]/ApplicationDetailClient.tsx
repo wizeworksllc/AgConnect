@@ -108,7 +108,7 @@ function ApplicationDetailInner({ id }: { id: string }) {
 
         <aside className="grid gap-3.5 self-start">
           <div className="border-base-300 bg-base-100 grid gap-3 rounded-2xl border p-5">
-            <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
+            <div className="text-base-content/60 font-sans text-sm font-semibold">
               {locale === 'es' ? 'Empleador' : 'Employer'}
             </div>
             <div className="text-[15px] font-semibold">{employer.name}</div>

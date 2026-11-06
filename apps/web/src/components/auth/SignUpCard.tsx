@@ -29,9 +29,6 @@ export function SignUpCard({ locale, role, namespace, footerLinks }: Props) {
   return (
     <div className="bg-base-100 border-base-300 rounded-2xl border p-7 shadow-md">
       <div className="mb-6">
-        <p className="text-base-content/60 font-mono text-[10px] font-bold uppercase tracking-[0.18em]">
-          {t('eyebrow')}
-        </p>
         <h1 className="font-display mt-2 text-3xl font-light leading-tight tracking-tight">
           {t('title_a')} <em className="text-primary not-italic font-light">{t('title_b')}</em>
         </h1>

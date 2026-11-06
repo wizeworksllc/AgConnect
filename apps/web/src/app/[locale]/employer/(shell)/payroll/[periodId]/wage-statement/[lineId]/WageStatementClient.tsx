@@ -57,12 +57,10 @@ function WageStatementInner({ periodId, lineId }: { periodId: string; lineId: st
 
       <article className="doc-binder mx-auto max-w-[7in] px-6 pb-12 print:px-0">
         <header className="border-b-2 border-black pb-4">
-          <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-black/70">
-            {t('header_eyebrow')}
-          </div>
           <h1 className="font-serif mt-1 text-2xl font-semibold leading-tight tracking-tight">
             {t('header_title')}
           </h1>
+          <p className="mt-1 text-sm">{t('header_label')}</p>
           <div className="mt-3 grid grid-cols-2 gap-4 text-[12px] leading-snug">
             <div>
               <div className="text-black/60">{t('employer_label')}</div>

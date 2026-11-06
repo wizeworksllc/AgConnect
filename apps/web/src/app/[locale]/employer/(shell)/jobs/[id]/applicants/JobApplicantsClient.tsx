@@ -31,9 +31,6 @@ function JobApplicantsInner({ id }: { id: string }) {
 
   const title = locale === 'es' ? job.titleEs : job.titleEn;
   const wageLabel = formatWage(job.wageMin, job.wageMax, locale);
-  const eyebrowParts = [title.toUpperCase()];
-  if (job.humanId) eyebrowParts.push(`#${job.humanId}`);
-  const eyebrow = eyebrowParts.join(' · ');
 
   const lanes: KanbanLaneInput[] = LANE_KEYS.map((key) => ({
     key,
@@ -65,13 +62,11 @@ function JobApplicantsInner({ id }: { id: string }) {
           <FontAwesomeIcon icon={faChevronLeft} className="mr-2 h-3 w-3" />
           {tForm('back')}
         </Link>
-        <div className="text-base-content/55 mt-3 font-mono text-xs font-bold uppercase tracking-wider">
-          {eyebrow}
-        </div>
         <h1 className="font-display mt-1.5 text-4xl font-light leading-tight tracking-tight md:text-5xl">
           {tKan('applied')} <em className="text-primary font-light italic">{title}</em>
         </h1>
         <p className="text-base-content/60 mt-2 text-sm">
+          {job.humanId ? `#${job.humanId} · ` : ''}
           {job.county}
           {wageLabel ? ` · ${wageLabel}` : ''}
           {' · '}

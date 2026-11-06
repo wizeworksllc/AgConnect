@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
       : 'SMS opt-in flyer — AGCONN';
   const description =
     locale === 'es'
-      ? 'Volante imprimible de doble opt-in por SMS de AGCONN. Para distribución en ferias de empleo y por organizaciones aliadas.'
-      : 'AGCONN printable SMS double opt-in flyer. For distribution at job fairs and through partner organizations.';
+      ? 'Volante imprimible de doble opt-in por SMS de AGCONN. Para distribución en ferias de empleo y por organizaciones comunitarias.'
+      : 'AGCONN printable SMS double opt-in flyer. For distribution at job fairs and through community organizations.';
   return {
     title,
     description,

@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faBookmark } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { NestedBreadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -118,23 +117,21 @@ export default async function ResourceArticlePage({ params }: RouteProps) {
                         </Link>
 
                         <div className="flex flex-col gap-6 max-w-4xl">
-                            <div className="flex flex-wrap items-center gap-4">
-                                <EyebrowLabel tone="soil" withRule>
-                                    {t(`categories.${article.category}.label`)}
-                                </EyebrowLabel>
-                                <span className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
-                                    {t('detail.published', { date: formatDate(article.publishedAt, locale) })}
-                                </span>
-                                <span className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
-                                    {t('detail.reading_time', { n: article.readingMinutes })}
-                                </span>
-                            </div>
                             <h1 className="text-base-content font-serif text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
                                 {pickLocale(article.title, locale)}
                             </h1>
                             <p className="text-base-content max-w-prose font-sans text-lg leading-relaxed">
                                 {pickLocale(article.summary, locale)}
                             </p>
+                            <div className="flex flex-wrap items-center gap-4">
+                                <span className="text-secondary font-sans text-sm font-semibold">{t(`categories.${article.category}.label`)}</span>
+                                <span className="text-secondary font-sans text-sm font-semibold">
+                                    {t('detail.published', { date: formatDate(article.publishedAt, locale) })}
+                                </span>
+                                <span className="text-secondary font-sans text-sm font-semibold">
+                                    {t('detail.reading_time', { n: article.readingMinutes })}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </header>
@@ -143,9 +140,6 @@ export default async function ResourceArticlePage({ params }: RouteProps) {
                     <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-16 md:px-8 md:py-20 lg:grid-cols-[minmax(0,0.25fr)_minmax(0,1fr)] lg:px-20 lg:gap-16 lg:py-24">
                         <aside className="hidden lg:block">
                             <nav aria-label="Sections" className="sticky top-24 flex flex-col gap-3 border-secondary/15 border-l pl-6">
-                                <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                    {t('list.eyebrow')}
-                                </span>
                                 <ul className="flex flex-col gap-2.5">
                                     {article.sections.map((s, i) => (
                                         <li key={i}>
@@ -185,9 +179,6 @@ export default async function ResourceArticlePage({ params }: RouteProps) {
                 <section className="bg-base-200 w-full border-secondary/15 border-t">
                     <div className="container mx-auto flex flex-col gap-10 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                         <div className="flex flex-col gap-3">
-                            <EyebrowLabel tone="soil" withRule>
-                                {t('detail.related_eyebrow')}
-                            </EyebrowLabel>
                             <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl">
                                 {t('detail.related_headline')}
                             </h2>
@@ -199,15 +190,15 @@ export default async function ResourceArticlePage({ params }: RouteProps) {
                                         href={`/${locale}/resources/${a.slug}`}
                                         className="group flex h-full flex-col gap-4 p-8 lg:p-10"
                                     >
-                                        <div className="flex items-center gap-2">
-                                            <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
-                                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                                {t('card.minutes', { n: a.readingMinutes })}
-                                            </span>
-                                        </div>
                                         <h3 className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">
                                             {pickLocale(a.title, locale)}
                                         </h3>
+                                        <div className="flex items-center gap-2">
+                                            <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
+                                            <span className="text-secondary font-sans text-sm font-semibold">
+                                                {t('card.minutes', { n: a.readingMinutes })}
+                                            </span>
+                                        </div>
                                         <span className="text-primary mt-auto inline-flex items-center gap-2 self-start font-sans text-sm font-semibold">
                                             <span>{t('card.read_article')}</span>
                                             <FontAwesomeIcon icon={faArrowRight} className="text-xs transition-transform group-hover:translate-x-1" />

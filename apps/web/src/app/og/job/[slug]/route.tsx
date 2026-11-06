@@ -9,7 +9,6 @@ export const revalidate = 86400;
 
 const COPY = {
     en: {
-        eyebrow: 'Seasonal job',
         wageLabel: 'Wage',
         locLabel: 'Location',
         startsLabel: 'Starts',
@@ -18,7 +17,6 @@ const COPY = {
         fallbackLoc: 'Central Valley, California',
     },
     es: {
-        eyebrow: 'Trabajo de temporada',
         wageLabel: 'Pago',
         locLabel: 'Ubicación',
         startsLabel: 'Empieza',
@@ -81,7 +79,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={t.eyebrow}
                 footerLeft={
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                         <div

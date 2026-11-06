@@ -58,9 +58,6 @@ function MessagesInner() {
     <div className="px-5 pb-16 pt-8 flex flex-col flex-1 min-h-0">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-4 flex-none">
         <div>
-          <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-            {t('eyebrow')}
-          </p>
           <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
             {t('title_a')}{' '}
             <em
@@ -307,8 +304,8 @@ function Conversation({
         {thread.category === 'crew' && (
           <div className="bg-base-content text-base-100 mb-5 rounded-xl p-3.5">
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-accent inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-wider">
-                <FontAwesomeIcon icon={faThumbtack} className="h-3 w-3" /> {t('pinned_eyebrow')}
+              <span className="text-accent inline-flex items-center gap-1.5 font-sans text-sm font-semibold">
+                <FontAwesomeIcon icon={faThumbtack} className="h-3 w-3" /> {t('pinned_label')}
               </span>
             </div>
             <div className="font-display mb-1.5 text-lg font-light tracking-tight">

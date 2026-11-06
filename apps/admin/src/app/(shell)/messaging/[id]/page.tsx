@@ -30,8 +30,8 @@ export default async function ConversationDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Conversation</p>
                         <h1 className="font-serif text-xl font-medium tracking-tight">{c.title}</h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Conversation</p>
                         <p className="text-base-content/60 mt-1 text-sm">
                             <span className="badge badge-ghost badge-sm">{c.channel}</span>
                             {c.isGroup && <span className="badge badge-info badge-sm ml-1">group</span>}{' '}

@@ -57,9 +57,6 @@ export function BrowseJobsHeader({ totalCount, county, locale }: Props) {
     return (
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-                <span className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-                    {t('eyebrow', { count: totalCount, county })}
-                </span>
                 <h1 className="font-serif mt-2 text-[32px] font-normal leading-[1.05] tracking-[-0.025em] sm:text-[44px]">
                     {t.rich('headline', {
                         shift: (chunks) => (
@@ -67,6 +64,9 @@ export function BrowseJobsHeader({ totalCount, county, locale }: Props) {
                         ),
                     })}
                 </h1>
+                <p className="mt-1 font-sans text-sm">
+                    {t('caption', { count: totalCount, county })}
+                </p>
                 <p className="text-base-content/70 mt-1.5 max-w-[640px] text-[14.5px]">
                     {t('sub')}
                 </p>

@@ -13,7 +13,6 @@ function SavedSearchesInner({ locale }: { locale: string }) {
   return (
     <div className=" px-5 pb-16 pt-8">
       <WorkerPageHeader
-        eyebrow={t('eyebrow')}
         title={
           <>
             {t('title.lead')}{' '}

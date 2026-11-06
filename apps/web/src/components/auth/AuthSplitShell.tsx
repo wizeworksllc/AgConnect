@@ -53,14 +53,6 @@ export async function AuthSplitShell({ locale, variant, children }: Props) {
 
                     {/* Hero block — typographic, not hero-metric. Asymmetric column. */}
                     <div className="my-auto max-w-md py-10 lg:py-12">
-                        <p
-                            className={[
-                                'font-mono text-[10px] font-bold uppercase tracking-[0.22em]',
-                                isDark ? 'text-accent' : 'text-primary',
-                            ].join(' ')}
-                        >
-                            {t('eyebrow')}
-                        </p>
                         <h2
                             className={[
                                 'font-display mt-5 text-balance font-light leading-[1.05] tracking-tight',
@@ -72,6 +64,9 @@ export async function AuthSplitShell({ locale, variant, children }: Props) {
                         >
                             {t('lead')}
                         </h2>
+                        <p className="mt-1 font-sans text-sm">
+                            {t('caption')}
+                        </p>
 
                         <ul className="mt-9 grid gap-3.5">
                             {(['p1', 'p2', 'p3'] as const).map((k) => (
@@ -104,7 +99,7 @@ export async function AuthSplitShell({ locale, variant, children }: Props) {
                             isDark ? 'text-base-100/45' : 'text-base-content/45',
                         ].join(' ')}
                     >
-                        <span className="font-mono uppercase tracking-[0.18em]">
+                        <span className="font-sans text-sm font-semibold">
                             {tShared('grant_aligned')}
                         </span>
                         <Link

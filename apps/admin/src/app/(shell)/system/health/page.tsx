@@ -42,7 +42,6 @@ export default async function HealthPage() {
             </div>
             <div className="flex items-baseline justify-between">
                 <div>
-                    <p className="eyebrow text-base-content/60">Platform</p>
                     <h1 className="font-serif text-2xl font-medium tracking-tight">Service health</h1>
                     <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                         Live /health pings paired with a recency probe from the database. The combination

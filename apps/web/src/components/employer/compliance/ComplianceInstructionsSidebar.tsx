@@ -72,7 +72,7 @@ export function ComplianceInstructionsSidebar({ instructions }: Props) {
 function Section({ heading, children }: { heading: string; children: React.ReactNode }) {
     return (
         <section>
-            <h3 className="text-base-content/60 mb-1.5 text-xs font-semibold uppercase tracking-[0.18em]">
+            <h3 className="text-base-content/60 mb-1.5 font-sans text-sm font-semibold">
                 {heading}
             </h3>
             {children}

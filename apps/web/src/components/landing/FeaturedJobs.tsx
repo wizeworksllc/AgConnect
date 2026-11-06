@@ -1,7 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { FeaturedJobCard } from './FeaturedJobCard';
 import { getFeaturedJobs, getImpact } from '@/lib/api/landing';
 
@@ -18,7 +17,6 @@ export async function FeaturedJobs() {
     if (jobs.length === 0) return null;
 
     const activeCount = impact?.activePostings ?? 0;
-    const eyebrow = activeCount > 0 ? t('eyebrow_dynamic', { count: activeCount }) : t('eyebrow');
     const viewAll = activeCount > 0 ? t('view_all_dynamic', { count: activeCount }) : t('view_all');
 
     return (
@@ -26,9 +24,6 @@ export async function FeaturedJobs() {
             <div className="mx-auto flex flex-col gap-16 px-5 py-24 md:px-8 md:py-28 lg:px-20 lg:py-30">
                 <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-end lg:gap-16">
                     <div className="flex flex-1 flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {eyebrow}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-4xl font-medium leading-tight tracking-tight md:text-5xl lg:text-6xl">
                             {t('headline')}
                         </h2>

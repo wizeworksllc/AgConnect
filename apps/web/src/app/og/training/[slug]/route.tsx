@@ -9,18 +9,16 @@ export const revalidate = 86400;
 
 const COPY = {
     en: {
-        eyebrow: 'Funded training',
         funderLabel: 'Funded by',
         whenLabel: 'When',
-        certLabel: 'Certificate · Free',
-        fallbackTitle: 'CDFA-funded training in the Central Valley',
+        certLabel: 'Certificate',
+        fallbackTitle: 'Training in the Central Valley',
     },
     es: {
-        eyebrow: 'Capacitación financiada',
         funderLabel: 'Fondos de',
         whenLabel: 'Cuándo',
-        certLabel: 'Certificado · Gratis',
-        fallbackTitle: 'Capacitación financiada por CDFA en el Valle Central',
+        certLabel: 'Certificado',
+        fallbackTitle: 'Capacitación en el Valle Central',
     },
 } as const;
 
@@ -61,7 +59,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={t.eyebrow}
                 footerLeft={
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                         <div

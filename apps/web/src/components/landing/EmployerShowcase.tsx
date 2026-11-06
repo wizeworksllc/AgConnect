@@ -17,10 +17,6 @@ export function EmployerShowcase() {
         <section id="employers" className="bg-neutral text-neutral-content w-full">
             <div className="mx-auto grid grid-cols-1 items-start gap-16 px-5 py-24 md:px-8 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20 lg:px-20 lg:py-30">
                 <div className="flex flex-col gap-8">
-                    <div className="flex items-center gap-3.5">
-                        <span className="bg-accent h-px w-8 shrink-0" aria-hidden />
-                        <span className="text-accent eyebrow">{t('eyebrow')}</span>
-                    </div>
                     <h2 className="font-serif text-4xl font-medium leading-tight tracking-tight md:text-5xl lg:text-6xl">
                         {t('headline')}
                     </h2>

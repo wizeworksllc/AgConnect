@@ -21,7 +21,6 @@ export default async function UsersPage({
     return (
         <div className="space-y-4">
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Users</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Cross-tenant user search by user ID, email, or phone. Includes platform-level workers

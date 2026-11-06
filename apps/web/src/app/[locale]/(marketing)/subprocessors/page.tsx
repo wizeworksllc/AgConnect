@@ -9,7 +9,6 @@ import {
     faHandshake,
     faShieldHalved,
 } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -72,11 +71,10 @@ export default async function SubprocessorsPage({ params }: RouteProps) {
             <Breadcrumb locale={locale} path="/subprocessors" />
 
             <MarketingPageHero
-                eyebrow={t('eyebrow')}
                 headline={t('headline')}
                 intro={t('intro')}
                 accent={
-                    <p className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                    <p className="text-secondary font-sans text-sm font-semibold">
                         {t('last_reviewed_label')} · {LAST_REVIEWED}
                     </p>
                 }
@@ -88,7 +86,7 @@ export default async function SubprocessorsPage({ params }: RouteProps) {
                         {(['name', 'purpose', 'data', 'location', 'dpa'] as const).map((col) => (
                             <span
                                 key={col}
-                                className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]"
+                                className="text-secondary font-sans text-sm font-semibold"
                             >
                                 {t(`table.col.${col}`)}
                             </span>
@@ -155,9 +153,7 @@ export default async function SubprocessorsPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('commitments.headline')}
-                        </EyebrowLabel>
+                        <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl">{t('commitments.headline')}</h2>
                         <p className="text-base-content max-w-prose font-sans text-base leading-relaxed">
                             {t('commitments.intro')}
                         </p>

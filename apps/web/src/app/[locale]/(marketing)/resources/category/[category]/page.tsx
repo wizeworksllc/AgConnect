@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faBookmark } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { NestedBreadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -77,16 +76,13 @@ export default async function ResourceCategoryPage({ params }: RouteProps) {
                     </Link>
 
                     <div className="flex flex-col gap-6 max-w-3xl">
-                        <EyebrowLabel tone="soil" withRule>
-                            {label}
-                        </EyebrowLabel>
                         <h1 className="text-base-content font-serif text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
                             {headline}
                         </h1>
                         <p className="text-base-content max-w-prose font-sans text-lg leading-relaxed">
                             {body}
                         </p>
-                        <p className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                        <p className="text-secondary font-sans text-sm font-semibold">
                             {t('category.intro', { count: articles.length })}
                         </p>
                     </div>
@@ -105,15 +101,15 @@ export default async function ResourceCategoryPage({ params }: RouteProps) {
                                         href={`/${locale}/resources/${a.slug}`}
                                         className="group flex h-full flex-col gap-4 p-8 lg:p-10"
                                     >
-                                        <div className="flex items-center gap-2">
-                                            <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
-                                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                                {t('card.minutes', { n: a.readingMinutes })}
-                                            </span>
-                                        </div>
                                         <h2 className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">
                                             {pickLocale(a.title, locale)}
                                         </h2>
+                                        <div className="flex items-center gap-2">
+                                            <FontAwesomeIcon icon={faBookmark} className="text-accent text-xs" />
+                                            <span className="text-secondary font-sans text-sm font-semibold">
+                                                {t('card.minutes', { n: a.readingMinutes })}
+                                            </span>
+                                        </div>
                                         <p className="text-secondary font-sans text-sm leading-relaxed">
                                             {pickLocale(a.summary, locale)}
                                         </p>
@@ -131,9 +127,7 @@ export default async function ResourceCategoryPage({ params }: RouteProps) {
 
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-8 px-5 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24">
-                    <EyebrowLabel tone="soil" withRule>
-                        {t('category.other_categories')}
-                    </EyebrowLabel>
+                    <h2 className="font-sans text-base font-semibold">{t('category.other_categories')}</h2>
                     <ul className="grid grid-cols-1 gap-px bg-secondary/15 md:grid-cols-2">
                         {otherCategories.map((c) => (
                             <li key={c} className="bg-base-100">
@@ -141,7 +135,7 @@ export default async function ResourceCategoryPage({ params }: RouteProps) {
                                     href={`/${locale}/resources/category/${c}`}
                                     className="group flex h-full flex-col gap-3 p-8 lg:p-10"
                                 >
-                                    <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                    <span className="text-accent font-sans text-sm font-semibold">
                                         {t(`categories.${c}.label`)}
                                     </span>
                                     <h3 className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">

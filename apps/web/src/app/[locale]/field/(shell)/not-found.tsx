@@ -8,7 +8,6 @@ export default async function FieldNotFound() {
   return (
     <ErrorState
       code="404"
-      eyebrow={t('404.eyebrow')}
       title={t('section.field.404.title')}
       description={t('section.field.404.description')}
       primaryAction={{

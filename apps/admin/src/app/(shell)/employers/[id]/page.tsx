@@ -26,10 +26,10 @@ export default async function EmployerDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Employer</p>
                         <h1 className="font-serif text-2xl font-medium tracking-tight">
                             {e.legalName}
                         </h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Employer</p>
                         {e.dbaName && (
                             <p className="text-base-content/60 mt-0.5 text-sm">DBA: {e.dbaName}</p>
                         )}

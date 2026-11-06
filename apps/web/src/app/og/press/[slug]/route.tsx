@@ -12,13 +12,11 @@ type Locale = 'en' | 'es';
 
 const COPY = {
     en: {
-        eyebrow: 'Press release',
         datelineLabel: 'Dateline',
         publishedLabel: 'Published',
         fallbackTitle: 'AGCONN press and announcements',
     },
     es: {
-        eyebrow: 'Comunicado de prensa',
         datelineLabel: 'Lugar',
         publishedLabel: 'Publicado',
         fallbackTitle: 'Prensa y anuncios de AGCONN',
@@ -64,7 +62,6 @@ export async function GET(req: Request, { params }: Props) {
         (
             <OgFrame
                 locale={locale}
-                eyebrow={t.eyebrow}
                 footerLeft={
                     dateline ? (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>

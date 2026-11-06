@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCheck } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { FounderBadge } from './FounderBadge';
 import type { FounderSlots } from '@/lib/api/landing';
 
@@ -19,7 +18,11 @@ const PLANS: { id: PlanId; highlighted?: boolean; isPaid: boolean; href: string 
     { id: 'farm', isPaid: true, href: 'mailto:sales@agconn.com?subject=Farm%20plan' },
 ];
 
-const FEATURES = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'] as const;
+const FEATURES = {
+    seed: ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'],
+    field: ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'],
+    farm: ['f1', 'f2', 'f4'],
+} as const;
 
 type Props = { locale: Locale; founderSlots: FounderSlots };
 
@@ -33,9 +36,6 @@ export function PricingPlanGrid({ locale, founderSlots }: Props) {
             <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                 <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('plans.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('plans.headline')}
                         </h2>
@@ -109,7 +109,6 @@ function PlanCardCell({ plan, cycle, cohort, locale, t }: CellProps) {
     const cardClasses = isHighlighted
         ? 'bg-primary text-primary-content lg:-my-4 lg:py-12'
         : 'bg-base-100 text-base-content';
-    const eyebrowClasses = isHighlighted ? 'text-accent' : 'text-secondary';
     const bodyTextClasses = isHighlighted ? 'text-primary-content/85' : 'text-secondary';
     const checkColor = isHighlighted ? 'text-accent' : 'text-primary';
     const featureTextClasses = isHighlighted ? 'text-primary-content/95' : 'text-base-content';
@@ -132,16 +131,7 @@ function PlanCardCell({ plan, cycle, cohort, locale, t }: CellProps) {
 
     return (
         <article className={`${cardClasses} flex flex-col gap-6 p-8 lg:p-10 relative`}>
-            {isHighlighted ? (
-                <span className="bg-accent text-neutral absolute -top-3 left-8 font-mono text-xs font-bold uppercase tracking-[0.22em] px-3 py-1">
-                    {t('plans.field.badge')}
-                </span>
-            ) : null}
-
             <div className="flex flex-col gap-2">
-                <span className={`${eyebrowClasses} font-mono text-xs font-bold uppercase tracking-[0.22em]`}>
-                    {t(`plans.${plan.id}.label`)}
-                </span>
                 <h3 className="font-serif text-2xl font-semibold leading-tight tracking-tight">
                     {t(`plans.${plan.id}.name`)}
                 </h3>
@@ -149,7 +139,7 @@ function PlanCardCell({ plan, cycle, cohort, locale, t }: CellProps) {
 
             <div className="flex flex-col gap-1">
                 <div className="flex items-baseline gap-3">
-                    <span className={`${isHighlighted ? 'text-accent' : 'text-base-content'} font-mono text-4xl font-bold leading-none tracking-tight tabular-nums`}>
+                    <span className={`${isHighlighted ? 'text-primary-content' : 'text-base-content'} font-mono text-4xl font-bold leading-none tracking-tight tabular-nums`}>
                         {t(activeAmountKey)}
                     </span>
                     {showFounder ? (
@@ -158,11 +148,11 @@ function PlanCardCell({ plan, cycle, cohort, locale, t }: CellProps) {
                         </span>
                     ) : null}
                 </div>
-                <span className={`${periodClasses} font-mono text-xs uppercase tracking-[0.18em]`}>
+                <span className={`${periodClasses} font-sans text-sm font-semibold`}>
                     {t(unitKey)}
                 </span>
                 {showFounder ? (
-                    <span className={`${isHighlighted ? 'text-accent' : 'text-primary'} font-mono text-xs uppercase tracking-[0.18em] mt-1`}>
+                    <span className={`${isHighlighted ? 'text-primary-content' : 'text-primary'} font-sans text-sm font-semibold mt-1`}>
                         {t('founder.note')}
                     </span>
                 ) : null}
@@ -173,7 +163,7 @@ function PlanCardCell({ plan, cycle, cohort, locale, t }: CellProps) {
             </p>
 
             <ul className={`${isHighlighted ? 'border-accent/30' : 'border-secondary/20'} flex flex-col gap-3 border-t pt-6`}>
-                {FEATURES.map((f) => (
+                {FEATURES[plan.id].map((f) => (
                     <li key={f} className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faCheck} className={`${checkColor} mt-1 text-xs shrink-0`} />
                         <span className={`${featureTextClasses} font-sans text-sm leading-snug`}>

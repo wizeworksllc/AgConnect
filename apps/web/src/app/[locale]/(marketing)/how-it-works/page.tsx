@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -42,7 +41,7 @@ export default async function HowItWorksPage({ params }: RouteProps) {
             <JsonLd data={organizationJsonLd()} />
             <Breadcrumb locale={locale} path="/how-it-works" />
 
-            <MarketingPageHero eyebrow={t('eyebrow')} headline={t('headline')} intro={t('intro')} />
+            <MarketingPageHero headline={t('headline')} intro={t('intro')} />
 
             {SECTIONS.map((s, i) => (
                 <section
@@ -53,9 +52,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
                     <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,1fr)] lg:gap-16">
                             <div className="flex flex-col gap-4">
-                                <EyebrowLabel tone="soil" withRule>
-                                    {t(`${s.id}.eyebrow`)}
-                                </EyebrowLabel>
                                 <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                                     {t(`${s.id}.headline`)}
                                 </h2>
@@ -83,9 +79,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
             <section id="trust" className="bg-primary text-primary-content w-full scroll-mt-24">
                 <div className="container mx-auto grid grid-cols-1 gap-10 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:px-20 lg:gap-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('trust.eyebrow')}
-                        </span>
                         <h2 className="text-primary-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('trust.headline')}
                         </h2>
@@ -109,9 +102,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-10 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('cta.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('cta.headline')}
                         </h2>
@@ -121,9 +111,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
                             href={`/${locale}/workers`}
                             className="bg-base-100 hover:bg-base-200 group flex flex-col gap-3 p-8 transition-colors lg:p-10"
                         >
-                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                {t('workers.eyebrow')}
-                            </span>
                             <span className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight">
                                 {t('cta.button_workers')}
                             </span>
@@ -136,9 +123,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
                             href={`/${locale}/employers`}
                             className="bg-base-100 hover:bg-base-200 group flex flex-col gap-3 p-8 transition-colors lg:p-10"
                         >
-                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                {t('employers.eyebrow')}
-                            </span>
                             <span className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight">
                                 {t('cta.button_employers')}
                             </span>
@@ -151,9 +135,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
                             href={`/${locale}/partners#training-orgs`}
                             className="bg-base-100 hover:bg-base-200 group flex flex-col gap-3 p-8 transition-colors lg:p-10"
                         >
-                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                {t('training.eyebrow')}
-                            </span>
                             <span className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight">
                                 {t('cta.button_training')}
                             </span>
@@ -166,9 +147,6 @@ export default async function HowItWorksPage({ params }: RouteProps) {
                             href={`/${locale}/partners#workforce-boards`}
                             className="bg-base-100 hover:bg-base-200 group flex flex-col gap-3 p-8 transition-colors lg:p-10"
                         >
-                            <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                                {t('workforce.eyebrow')}
-                            </span>
                             <span className="text-base-content font-serif text-xl font-medium leading-tight tracking-tight">
                                 {t('cta.button_workforce')}
                             </span>

@@ -10,8 +10,8 @@ export const forkliftCertification: ResourceArticle = {
         es: 'Certificación de montacargas para trabajo en almacenes y empacadoras: qué es y por qué paga',
     },
     summary: {
-        en: 'OSHA-compliant forklift training opens packing-shed and cold-storage roles that pay $4–$7 more per hour. Here is what the course covers and where to take it.',
-        es: 'La capacitación de montacargas que cumple con OSHA abre puestos en empacadoras y almacenamiento en frío que pagan $4–$7 más por hora. Esto es lo que cubre el curso y dónde tomarlo.',
+        en: 'OSHA-compliant forklift training can open packing-shed and cold-storage roles. Here is what the course covers and where to take it.',
+        es: 'La capacitación de montacargas que cumple con OSHA puede abrir puestos en empacadoras y almacenamiento en frío. Esto es lo que cubre el curso y dónde tomarlo.',
     },
     sections: [
         {
@@ -30,8 +30,8 @@ export const forkliftCertification: ResourceArticle = {
                 es: 'La capacitación bilingüe está reconocida',
             },
             body: {
-                en: 'OSHA explicitly accepts training delivered in Spanish. The certification card and the workplace evaluation are recognized just as in English. AGCONN\'s partner training organizations deliver the formal instruction in Spanish, and the practical evaluation is conducted by a certified bilingual trainer at the equipment site.',
-                es: 'OSHA acepta explícitamente la capacitación impartida en español. La tarjeta de certificación y la evaluación en el lugar de trabajo se reconocen igual que en inglés. Las organizaciones de capacitación asociadas con AGCONN imparten la instrucción formal en español, y la evaluación práctica la realiza un entrenador bilingüe certificado en el sitio del equipo.',
+                en: 'OSHA explicitly accepts training delivered in Spanish. The certification card and the workplace evaluation are recognized just as in English. Ask the training provider whether the instruction and the practical evaluation are in Spanish.',
+                es: 'OSHA acepta explícitamente la capacitación impartida en español. La tarjeta de certificación y la evaluación en el lugar de trabajo se reconocen igual que en inglés. Pregunte al proveedor de capacitación si la instrucción y la evaluación práctica son en español.',
             },
         },
         {
@@ -50,8 +50,8 @@ export const forkliftCertification: ResourceArticle = {
                 es: 'Por qué paga',
             },
             body: {
-                en: 'In Central Valley packing sheds and cold-storage facilities, certified forklift operators earn $4 to $7 per hour more than uncertified packing-line workers. The certification also extends your work calendar — packing operations run year-round in many crops, while picking work is often seasonal. The course pays for itself in roughly two weeks of subsequent work.',
-                es: 'En las empacadoras y instalaciones de almacenamiento en frío del Valle Central, los operadores de montacargas certificados ganan de $4 a $7 más por hora que los trabajadores no certificados de la línea de empaque. La certificación también extiende su calendario de trabajo — las operaciones de empaque funcionan todo el año en muchos cultivos, mientras que el trabajo de cosecha suele ser estacional. El curso se paga por sí mismo en aproximadamente dos semanas de trabajo posterior.',
+                en: 'In Central Valley packing sheds and cold-storage facilities, a forklift certification can open roles beyond the packing line. The certification can also extend your work calendar — packing operations run year-round in many crops, while picking work is often seasonal.',
+                es: 'En las empacadoras y instalaciones de almacenamiento en frío del Valle Central, una certificación de montacargas puede abrir puestos más allá de la línea de empaque. La certificación también puede extender su calendario de trabajo — las operaciones de empaque funcionan todo el año en muchos cultivos, mientras que el trabajo de cosecha suele ser estacional.',
             },
         },
     ],

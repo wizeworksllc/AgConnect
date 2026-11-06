@@ -47,8 +47,8 @@ export function BrowseJobsAside({ locale, savedSearches }: Props) {
                         }}
                     />
                     <div className="relative">
-                        <div className="text-accent font-mono text-xs font-semibold uppercase tracking-[0.12em]">
-                            {t('sms.eyebrow')}
+                        <div className="text-accent font-sans text-sm font-semibold">
+                            {t('sms.caption')}
                         </div>
                         <div className="font-serif mt-1.5 text-[22px] leading-[1.2] tracking-[-0.02em]">
                             {t.rich('sms.body', {
@@ -68,8 +68,8 @@ export function BrowseJobsAside({ locale, savedSearches }: Props) {
             )}
 
             <div id="map" className="border-base-300 rounded-2xl border bg-white p-[18px] scroll-mt-24">
-                <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.12em]">
-                    {t('map.eyebrow')}
+                <div className="text-base-content/60 font-sans text-sm font-semibold">
+                    {t('map.caption')}
                 </div>
                 <div
                     className="border-base-300 relative mt-3 h-[220px] overflow-hidden rounded-[10px] border"
@@ -136,8 +136,8 @@ export function BrowseJobsAside({ locale, savedSearches }: Props) {
 
             <div className="border-base-300 rounded-2xl border bg-white p-[18px]">
                 <div className="flex items-center justify-between">
-                    <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.12em]">
-                        {t('saved.eyebrow')}
+                    <div className="text-base-content/60 font-sans text-sm font-semibold">
+                        {t('saved.caption')}
                     </div>
                     <Link
                         href={`/${locale}/worker/saved-searches`}

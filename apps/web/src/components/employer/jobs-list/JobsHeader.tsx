@@ -5,7 +5,6 @@ import { faPlus, faCopy } from '@fortawesome/free-solid-svg-icons';
 import type { ReactNode } from 'react';
 
 type Props = {
-    eyebrow: string;
     titleA: string;
     titleB: string;
     summary: ReactNode;
@@ -17,7 +16,6 @@ type Props = {
 };
 
 export function JobsHeader({
-    eyebrow,
     titleA,
     titleB,
     summary,
@@ -30,9 +28,6 @@ export function JobsHeader({
     return (
         <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-                <p className="text-base-content/60 font-mono text-xs uppercase tracking-wider">
-                    {eyebrow}
-                </p>
                 <h1 className="font-display mt-2 text-4xl font-light leading-tight tracking-tight md:text-5xl">
                     {titleA} <em className="text-primary not-italic font-light">{titleB}</em>
                 </h1>

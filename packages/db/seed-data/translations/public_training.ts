@@ -74,16 +74,16 @@ export const publicTraining: TranslationBundle = {
         es: "Capacitación agrícola gratuita",
     },
     "intro": {
-        en: "Free certifications funded by CDFA and the F3 initiative. Most pay a stipend during training and unlock higher-paying roles.",
-        es: "Certificaciones gratuitas financiadas por CDFA y la iniciativa F3. La mayoría paga un estipendio durante la capacitación y desbloquean puestos mejor pagados.",
+        en: "Training programs across the Central Valley. Each one shows its own dates and costs.",
+        es: "Programas de capacitación en el Valle Central. Cada uno indica sus fechas y costos.",
     },
     "load_more": {
         en: "Load more →",
         es: "Cargar más →",
     },
     "meta.description": {
-        en: "CDFA + F3-funded farm training programs across the Central Valley. Earn certifications that raise your wage.",
-        es: "Programas de capacitación agrícola financiados por CDFA y F3 en el Valle Central. Obtén certificaciones que aumentan tu salario.",
+        en: "Farm training programs across the Central Valley.",
+        es: "Programas de capacitación agrícola en el Valle Central.",
     },
     "meta.title": {
         en: "Free agriculture training · AGCONN",

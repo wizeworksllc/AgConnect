@@ -93,12 +93,12 @@ export function WorkerGreeting() {
     return (
         <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <div>
-                <span className="font-mono text-xs uppercase tracking-[0.18em] text-base-content/60">
-                    {formatContext(locale, county)}
-                </span>
                 <h1 className="font-serif mt-2 text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl">
                     {t('salutation', { name })}
                 </h1>
+                <p className="mt-1 font-sans text-sm">
+                    {formatContext(locale, county)}
+                </p>
                 <p className="text-base-content/70 mt-1.5 text-base">
                     {isFresh
                         ? t('summary_empty')
@@ -107,13 +107,13 @@ export function WorkerGreeting() {
             </div>
             {showSpark && (
                 <div className="bg-base-100 border-base-300 rounded-2xl border p-3.5">
-                    <div className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-base-content/60">
-                        {t('earnings_eyebrow')}
+                    <div className="text-base-content/60 font-sans text-sm font-semibold">
+                        {t('earnings_label')}
                     </div>
                     <div className="mt-1">
                         <Spark
                             points={earningsTrend!}
-                            ariaLabel={t('earnings_eyebrow')}
+                            ariaLabel={t('earnings_label')}
                         />
                     </div>
                 </div>

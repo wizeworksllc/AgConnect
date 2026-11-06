@@ -26,7 +26,7 @@ export default async function ProgramEditPage({ params }: Props) {
 
       <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-base-content/55 font-mono text-xs uppercase tracking-[0.18em]">
+          <p className="text-base-content/55 font-sans text-sm font-semibold">
             {isEs ? 'Editar' : 'Edit'}
           </p>
           <h1 className="font-serif mt-2 text-[26px] font-normal leading-tight tracking-[-0.025em] sm:text-[32px]">

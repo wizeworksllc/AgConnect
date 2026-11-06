@@ -28,7 +28,7 @@ export async function BillingSnapshot({ locale, billing, hidePaymentCta = false 
                 className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_100%_0%,rgba(245,158,11,0.3),transparent_60%)]"
             />
             <div className="relative">
-                <div className="opacity-75 font-mono text-xs font-semibold uppercase tracking-wider">
+                <div className="opacity-75 font-sans text-sm font-semibold">
                     {renewsLine}
                 </div>
                 <h2 className="font-display mt-2 text-3xl font-light leading-none tracking-tight">

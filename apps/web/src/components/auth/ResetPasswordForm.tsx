@@ -46,9 +46,6 @@ export function ResetPasswordForm({ locale, token }: Props) {
   return (
     <div className="bg-base-100 border-base-300 rounded-2xl border p-7 shadow-md">
       <div className="mb-6">
-        <p className="text-base-content/60 font-mono text-[10px] font-bold uppercase tracking-[0.18em]">
-          {t('eyebrow')}
-        </p>
         <h1 className="font-display mt-2 text-3xl font-light leading-tight tracking-tight">
           {linkDead ? t('invalid_title') : t('title')}
         </h1>

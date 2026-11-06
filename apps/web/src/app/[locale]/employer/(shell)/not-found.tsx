@@ -16,7 +16,6 @@ export default async function EmployerShellNotFound() {
   return (
     <DashboardErrorState
       code="404"
-      eyebrow={t('404.eyebrow')}
       title={t('404.title')}
       description={t('section.employer.404.description')}
       primaryAction={{

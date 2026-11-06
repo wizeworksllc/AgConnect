@@ -57,7 +57,7 @@ export default async function VerifyPage({ params }: Props) {
                         </div>
 
                         <div className="mt-12">
-                            <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-75">
+                            <div className="opacity-75 font-sans text-sm font-semibold">
                                 {t('certificate_of_completion')}
                             </div>
                             <h2 className="font-serif mt-3 text-[36px] leading-tight tracking-[-0.025em]">

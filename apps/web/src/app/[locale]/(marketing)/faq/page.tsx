@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { FaqAccordion, type FaqEntry } from '@/components/landing/FaqAccordion';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
@@ -16,7 +15,6 @@ const EXTRA_IDS = [
     'training_cert_validity',
     'employer_payouts',
     'tenant_onboarding',
-    'platform_uptime',
 ] as const;
 
 type Locale = 'en' | 'es';
@@ -88,9 +86,6 @@ export default async function FaqPage({ params }: RouteProps) {
                     <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,1fr)] lg:gap-20">
                         <aside className="relative flex flex-col gap-6 lg:sticky lg:top-12 lg:self-start lg:pr-4">
                             <SunOrnament />
-                            <EyebrowLabel tone="soil" withRule>
-                                {pageT('eyebrow')}
-                            </EyebrowLabel>
                             <h1 className="text-base-content font-serif text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-[64px]">
                                 {pageT('headline')}
                             </h1>
@@ -98,7 +93,7 @@ export default async function FaqPage({ params }: RouteProps) {
                                 {pageT('intro')}
                             </p>
                             <div className="border-secondary/20 mt-4 max-w-md border bg-base-200 p-6">
-                                <p className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                                <p className="text-secondary font-sans text-sm font-semibold">
                                     {pageT('still_questions.headline')}
                                 </p>
                                 <p className="text-base-content mt-2 font-sans text-sm leading-relaxed">
@@ -119,7 +114,7 @@ export default async function FaqPage({ params }: RouteProps) {
 
                             <div className="my-12 flex items-center gap-6">
                                 <span className="border-secondary/30 flex-1 border-t" aria-hidden />
-                                <span className="text-secondary font-mono text-xs uppercase tracking-[0.22em]">
+                                <span className="text-secondary font-sans text-sm font-semibold">
                                     {pageT('extras_label')}
                                 </span>
                                 <span className="border-secondary/30 flex-1 border-t" aria-hidden />
@@ -134,7 +129,6 @@ export default async function FaqPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto grid grid-cols-1 gap-12 px-5 py-20 md:px-8 md:py-24 lg:grid-cols-2 lg:px-20 lg:gap-16">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil">{pageT('still_questions.next_label')}</EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl">
                             {pageT('still_questions.headline')}
                         </h2>
@@ -156,7 +150,7 @@ export default async function FaqPage({ params }: RouteProps) {
                         </div>
                     </div>
                     <div className="flex flex-col gap-3 self-end">
-                        <p className="text-secondary font-mono text-xs uppercase tracking-[0.18em]">
+                        <p className="text-secondary font-sans text-sm font-semibold">
                             {pageT('still_questions.next_label')}
                         </p>
                         <ul className="border-secondary/20 flex flex-col border-y">

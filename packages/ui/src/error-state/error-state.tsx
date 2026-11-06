@@ -13,7 +13,6 @@ export type ErrorStateSuggestion = {
 
 export type ErrorStateProps = {
   code: string;
-  eyebrow: string;
   title: string;
   description?: string;
   attempted?: string;
@@ -30,7 +29,6 @@ export type ErrorStateProps = {
 
 export function ErrorState({
   code,
-  eyebrow,
   title,
   description,
   attempted,
@@ -55,11 +53,7 @@ export function ErrorState({
     >
       <div className="flex w-full max-w-xl flex-col items-center gap-6 text-center">
         <div className="text-base-content/60 flex items-center justify-center gap-2.5">
-          <span className="font-mono text-xs tabular-nums tracking-[0.18em]">{code}</span>
-          <span aria-hidden className="text-base-content/30 select-none">
-            ·
-          </span>
-          <span className="eyebrow text-xs">{eyebrow}</span>
+          <span className="font-mono text-sm tabular-nums">{code}</span>
         </div>
 
         <h1
@@ -78,7 +72,7 @@ export function ErrorState({
         {attempted && (
           <div className="bg-base-200 border-base-300 flex w-full max-w-md flex-col gap-1 rounded-box border px-4 py-3 text-left">
             {attemptedLabel && (
-              <span className="text-base-content/60 eyebrow text-[0.65rem]">
+              <span className="text-base-content/60 text-sm font-semibold">
                 {attemptedLabel}
               </span>
             )}
@@ -111,7 +105,7 @@ export function ErrorState({
         {hasSuggestions && (
           <div className="border-base-300 mt-6 flex w-full max-w-md flex-col gap-3 border-t pt-6">
             {suggestionsLabel && (
-              <p className="text-base-content/60 eyebrow text-center text-[0.65rem]">
+              <p className="text-base-content/60 text-center text-sm font-semibold">
                 {suggestionsLabel}
               </p>
             )}

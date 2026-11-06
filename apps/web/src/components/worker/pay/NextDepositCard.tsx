@@ -19,8 +19,8 @@ export function NextDepositCard({ nextDeposit, locale }: Props) {
     if (!nextDeposit) {
         return (
             <div className="bg-primary text-primary-content relative overflow-hidden rounded-2xl p-[22px]">
-                <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] opacity-75">
-                    {t('eyebrow', { date: '_none' })}
+                <div className="opacity-75 font-sans text-sm font-semibold">
+                    {t('caption', { date: '_none' })}
                 </div>
                 <div className="font-serif mt-3 text-[36px] leading-tight tracking-[-0.02em]">
                     —
@@ -49,8 +49,8 @@ export function NextDepositCard({ nextDeposit, locale }: Props) {
                 }}
             />
             <div className="relative">
-                <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] opacity-75">
-                    {t('eyebrow', { date: payDateLabel })}
+                <div className="opacity-75 font-sans text-sm font-semibold">
+                    {t('caption', { date: payDateLabel })}
                 </div>
                 <div className="font-serif mt-3 text-[56px] leading-none tracking-[-0.03em]">
                     ${whole}

@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/landing/Hero';
-import { TrustStrip } from '@/components/landing/TrustStrip';
 import { AudienceSplit } from '@/components/landing/AudienceSplit';
 import { HowItWorks } from '@/components/landing/HowItWorks';
 import { EmployerShowcase } from '@/components/landing/EmployerShowcase';
@@ -8,7 +7,6 @@ import { VerificationSpotlight } from '@/components/landing/VerificationSpotligh
 import { ImpactNumbers } from '@/components/landing/ImpactNumbers';
 import { FeaturedJobs } from '@/components/landing/FeaturedJobs';
 import { FeaturedTraining } from '@/components/landing/FeaturedTraining';
-import { Testimonials } from '@/components/landing/Testimonials';
 import { Pricing } from '@/components/landing/Pricing';
 import { Faq } from '@/components/landing/Faq';
 import { FinalCta } from '@/components/landing/FinalCta';
@@ -49,14 +47,12 @@ export default async function HomePage({ params }: RouteProps) {
             {jobs.length > 0 ? <JsonLd data={jobItemListJsonLd({ locale, jobs })} /> : null}
             {programs.length > 0 ? <JsonLd data={trainingItemListJsonLd({ locale, programs })} /> : null}
             <Hero />
-            <TrustStrip />
             <AudienceSplit />
             <HowItWorks />
             <EmployerShowcase />
             <VerificationSpotlight />
             <ImpactNumbers />
             <FeaturedJobs />
-            <Testimonials />
             <FeaturedTraining />
             <Pricing />
             <Faq />

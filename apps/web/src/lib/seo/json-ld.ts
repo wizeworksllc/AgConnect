@@ -63,8 +63,8 @@ export function impactDatasetJsonLd(args: {
             : 'AGCONN public impact dashboard';
     const description =
         args.locale === 'es'
-            ? `Colocaciones, salarios medianos, capacitaciones completadas y empleadores verificados de AGCONN en el Valle Central de California. Ventana móvil de ${args.windowMonths} meses, refrescado todas las noches, alineado con WIOA.`
-            : `AGCONN placements, median wages, training completions, and verified employers in the California Central Valley. Trailing ${args.windowMonths}-month window, refreshed nightly, WIOA-aligned.`;
+            ? `Colocaciones, salarios medianos, capacitaciones completadas y empleadores verificados de AGCONN en el Valle Central de California. Ventana móvil de ${args.windowMonths} meses, de nuestros propios registros.`
+            : `AGCONN placements, median wages, training completions, and verified employers in the California Central Valley. Trailing ${args.windowMonths}-month window, from our own records.`;
     return {
         '@context': 'https://schema.org',
         '@type': 'Dataset',
@@ -105,8 +105,7 @@ export function impactDatasetJsonLd(args: {
         keywords: [
             'farmworker placements',
             'agricultural wages',
-            'CDFA training',
-            'WIOA',
+            'farmworker training',
             'Central Valley',
             'verified employers',
         ],

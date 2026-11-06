@@ -32,7 +32,6 @@ export default async function BillingPage({
         <div className="space-y-4">
             <div className="flex items-baseline justify-between">
                 <div>
-                    <p className="eyebrow text-base-content/60">Platform</p>
                     <h1 className="font-serif text-2xl font-medium tracking-tight">Billing</h1>
                     <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                         Stripe webhook event log. Use the unprocessed filter to find webhooks that errored

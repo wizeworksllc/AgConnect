@@ -27,8 +27,8 @@ function FieldThreadInner({ locale, id }: { locale: string; id: string }) {
         {t('back')}
       </Link>
       <header className="px-1">
-        <p className="text-base-content/55 mb-0.5 font-mono text-xs uppercase tracking-wide">
-          {t('eyebrow')}
+        <p className="text-base-content/55 mb-0.5 font-sans text-sm font-semibold">
+          {t('caption')}
         </p>
         <h1 className="text-base-content text-xl font-semibold leading-tight">
           {detail.conversation.employer}

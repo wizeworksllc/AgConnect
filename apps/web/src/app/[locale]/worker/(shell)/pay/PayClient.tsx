@@ -63,9 +63,8 @@ function PayInner({ locale }: { locale: string }) {
   ];
 
   return (
-    <div className=" px-5 pb-16 pt-8">
+    <div className="px-5 pb-16 pt-8 font-sans text-sm font-semibold">
       <WorkerPageHeader
-        eyebrow={t('eyebrow')}
         title={
           <>
             {t('title.lead')}{' '}
@@ -111,8 +110,8 @@ function DirectDepositCard({ locale }: { locale: string }) {
   const t = useTranslations('worker.pay.direct_deposit');
   return (
     <div className="border-base-300 bg-base-100 rounded-2xl border p-[18px]">
-      <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-        {t('eyebrow')}
+      <div className="text-base-content/60 font-sans text-sm font-semibold">
+        {t('caption')}
       </div>
       <p className="text-base-content/70 mt-3 text-[13px]">{t('empty_body')}</p>
       <Link
@@ -129,8 +128,8 @@ function TaxDocsCard({ onExport }: { onExport: () => void }) {
   const t = useTranslations('worker.pay.tax_docs');
   return (
     <div className="border-base-300 bg-base-100 rounded-2xl border p-[18px]">
-      <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-        {t('eyebrow')}
+      <div className="text-base-content/60 font-sans text-sm font-semibold">
+        {t('caption')}
       </div>
       <p className="text-base-content/70 mt-3 text-[13px]">{t('empty_body')}</p>
       <button
@@ -148,8 +147,8 @@ function WageTransparencyCard({ locale, avgHourly }: { locale: string; avgHourly
   const t = useTranslations('worker.pay.wage');
   return (
     <div className="border-base-300 bg-base-100 rounded-2xl border p-[18px]">
-      <div className="text-base-content/60 font-mono text-xs font-semibold uppercase tracking-[0.18em]">
-        {t('eyebrow')}
+      <div className="text-base-content/60 font-sans text-sm font-semibold">
+        {t('caption')}
       </div>
       <p className="text-base-content/80 mt-3 text-[13px] leading-relaxed">
         {avgHourly && avgHourly !== '$0.00/hr'

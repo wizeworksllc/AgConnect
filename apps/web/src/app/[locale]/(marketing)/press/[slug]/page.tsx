@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { NestedBreadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -94,18 +93,15 @@ export default async function PressReleasePage({ params }: RouteProps) {
                         </Link>
 
                         <div className="flex flex-col gap-6 max-w-4xl">
-                            <EyebrowLabel tone="soil" withRule>
-                                {t('eyebrow')}
-                            </EyebrowLabel>
                             <h1 className="text-base-content font-serif text-4xl font-semibold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
                                 {pickLocale(release.headline, locale)}
                             </h1>
                             <div className="border-secondary/20 flex flex-wrap items-center gap-x-6 gap-y-2 border-y py-4">
-                                <span className="text-base-content font-mono text-sm font-bold uppercase tracking-[0.18em]">
+                                <span className="text-base-content font-sans text-sm font-semibold">
                                     {release.location}
                                 </span>
                                 <span className="text-secondary/60" aria-hidden>·</span>
-                                <span className="text-secondary font-mono text-sm uppercase tracking-[0.18em]">
+                                <span className="text-secondary font-sans text-sm font-semibold">
                                     {formattedDate}
                                 </span>
                             </div>
@@ -133,7 +129,7 @@ export default async function PressReleasePage({ params }: RouteProps) {
                             ))}
 
                             <div className="border-secondary/15 mt-8 flex flex-col gap-3 border-t pt-8">
-                                <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                <span className="text-secondary font-sans text-sm font-semibold">
                                     {t('detail.about_label')}
                                 </span>
                                 <p className="text-base-content font-sans text-sm leading-relaxed">
@@ -142,7 +138,7 @@ export default async function PressReleasePage({ params }: RouteProps) {
                             </div>
 
                             <div className="border-secondary/15 flex flex-col gap-3 border-t pt-8">
-                                <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                <span className="text-secondary font-sans text-sm font-semibold">
                                     {t('detail.media_contact')}
                                 </span>
                                 <p className="text-base-content font-sans text-sm leading-relaxed">
@@ -165,9 +161,6 @@ export default async function PressReleasePage({ params }: RouteProps) {
                 <section className="bg-base-200 w-full border-secondary/15 border-t">
                     <div className="container mx-auto flex flex-col gap-10 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                         <div className="flex flex-col gap-3">
-                            <EyebrowLabel tone="soil" withRule>
-                                {t('releases.eyebrow')}
-                            </EyebrowLabel>
                             <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl">
                                 {t('releases.headline')}
                             </h2>
@@ -179,7 +172,7 @@ export default async function PressReleasePage({ params }: RouteProps) {
                                         href={`/${locale}/press/${r.slug}`}
                                         className="group flex h-full flex-col gap-3 p-8 lg:p-10"
                                     >
-                                        <span className="text-secondary font-mono text-xs font-bold uppercase tracking-[0.22em]">
+                                        <span className="text-secondary font-sans text-sm font-semibold">
                                             {formatDate(r.publishedAt, locale)}
                                         </span>
                                         <h3 className="text-base-content font-serif text-lg font-medium leading-tight tracking-tight group-hover:text-primary transition-colors">

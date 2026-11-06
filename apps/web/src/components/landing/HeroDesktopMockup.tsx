@@ -18,49 +18,14 @@ export function HeroDesktopMockup() {
 
             <div className="grid grid-cols-[180px_1fr]">
                 <div className="border-base-300 flex flex-col gap-4 border-r p-4" aria-hidden>
-                    <span className="eyebrow text-secondary">Counties</span>
-                    <ul className="menu menu-sm gap-1 p-0">
-                        <li>
-                            <a className="bg-primary text-primary-content active rounded-none">Fresno · 48</a>
-                        </li>
-                        <li>
-                            <a className="rounded-none">Tulare · 31</a>
-                        </li>
-                        <li>
-                            <a className="rounded-none">Kern · 22</a>
-                        </li>
-                        <li>
-                            <a className="rounded-none">Madera · 19</a>
-                        </li>
-                        <li>
-                            <a className="rounded-none">Kings · 14</a>
-                        </li>
+                    <p className="text-base-content font-sans text-sm font-semibold">{t('counties')}</p>
+                    <ul className="flex flex-col gap-1 font-sans text-sm">
+                        <li className="bg-primary text-primary-content px-3 py-1.5">Fresno</li>
+                        <li className="text-base-content px-3 py-1.5">Tulare</li>
+                        <li className="text-base-content px-3 py-1.5">Kern</li>
+                        <li className="text-base-content px-3 py-1.5">Madera</li>
+                        <li className="text-base-content px-3 py-1.5">Kings</li>
                     </ul>
-                    <div className="border-base-300 border-t pt-3">
-                        <span className="eyebrow text-secondary">Verified</span>
-                        <ul className="mt-2 flex flex-col gap-2">
-                            <li>
-                                <label className="flex items-center gap-2">
-                                    <input
-                                        type="checkbox"
-                                        defaultChecked
-                                        className="checkbox checkbox-xs checkbox-primary"
-                                    />
-                                    <span className="text-base-content text-xs">FLC</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label className="flex items-center gap-2">
-                                    <input
-                                        type="checkbox"
-                                        defaultChecked
-                                        className="checkbox checkbox-xs checkbox-primary"
-                                    />
-                                    <span className="text-base-content text-xs">Grower</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div className="flex flex-col gap-3 p-4">
@@ -68,7 +33,6 @@ export function HeroDesktopMockup() {
                         <p className="text-base-content font-serif text-lg font-semibold tracking-tight">
                             {t('jobs_near')}
                         </p>
-                        <span className="badge badge-ghost text-xs">142 results</span>
                     </div>
 
                     <article className="card card-bordered border-base-300 bg-base-100">
@@ -88,9 +52,9 @@ export function HeroDesktopMockup() {
                             <p className="text-secondary font-sans text-xs">{t('employer')}</p>
                             <div className="border-base-300 mt-1 flex items-center justify-between border-t pt-2">
                                 <span className="text-primary font-serif text-sm font-semibold">{t('wage')}</span>
-                                <button type="button" className="btn btn-primary ">
+                                <span className="btn btn-primary pointer-events-none" aria-hidden>
                                     {t('apply')}
-                                </button>
+                                </span>
                             </div>
                         </div>
                     </article>

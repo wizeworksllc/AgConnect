@@ -71,7 +71,7 @@ function MessagesInner({ locale }: { locale: string }) {
   return (
     <div className="px-5 pb-16 pt-8 flex flex-col flex-1 min-h-0">
       <WorkerPageHeader
-        eyebrow={t('eyebrow_n', { unread: totalUnread, count: threads.length })}
+        meta={t('summary_n', { unread: totalUnread, count: threads.length })}
         title={
           <>
             {t('title.lead')}{' '}

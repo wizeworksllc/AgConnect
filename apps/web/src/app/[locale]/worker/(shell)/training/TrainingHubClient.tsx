@@ -59,7 +59,7 @@ function TrainingHubInner({ locale }: { locale: string }) {
   return (
     <div className=" px-5 pb-16 pt-8">
       <WorkerPageHeader
-        eyebrow={t('eyebrow_n', { n: programs.length })}
+        meta={t('summary_n', { n: programs.length })}
         title={
           <>
             {t('title.lead')}{' '}

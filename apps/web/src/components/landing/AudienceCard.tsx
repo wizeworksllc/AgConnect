@@ -3,7 +3,7 @@ import { faCircleCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export type AudienceCardProps = {
     surface: 'moss' | 'bone' | 'sage';
-    eyebrow: string;
+    audience: string;
     headline: string;
     bullets: [string, string, string, string];
     ctaText: string;
@@ -21,7 +21,6 @@ export function AudienceCard(props: AudienceCardProps) {
         : isBone
             ? 'card-bordered bg-base-100 border-primary border-2'
             : 'bg-base-300';
-    const eyebrowTone = isMoss ? 'text-accent' : 'text-secondary';
     const headlineTone = isMoss ? 'text-primary-content' : 'text-base-content';
     const bulletTextTone = isMoss ? 'text-primary-content' : 'text-base-content';
     const checkTone = isMoss ? 'text-accent' : 'text-primary';
@@ -31,13 +30,12 @@ export function AudienceCard(props: AudienceCardProps) {
     return (
         <article className={`card ${containerClass}`}>
             <div className="card-body p-10 gap-6">
-                <span className={`label ${eyebrowTone}`}>{props.eyebrow}</span>
-
                 <h3
                     className={`card-title font-serif text-3xl font-semibold tracking-tight md:text-4xl ${headlineTone}`}
                 >
                     {props.headline}
                 </h3>
+                <p className={`font-sans text-sm font-semibold ${headlineTone}`}>{props.audience}</p>
 
                 <ul className="flex flex-col gap-3.5 pt-2">
                     {props.bullets.map((bullet, i) => (

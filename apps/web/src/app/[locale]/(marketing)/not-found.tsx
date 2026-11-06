@@ -8,7 +8,6 @@ export default async function MarketingNotFound() {
   return (
     <ErrorState
       code="404"
-      eyebrow={t('404.eyebrow')}
       title={t('404.title')}
       description={t('404.description')}
       suggestionsLabel={t('suggestions_label')}

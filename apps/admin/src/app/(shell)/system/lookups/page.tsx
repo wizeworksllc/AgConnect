@@ -33,7 +33,6 @@ export default async function LookupsPage({
                 </Link>
             </div>
             <div>
-                <p className="eyebrow text-base-content/60">Platform</p>
                 <h1 className="font-serif text-2xl font-medium tracking-tight">Lookup tables</h1>
                 <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                     Bilingual reference data shared across the platform. Edits save on blur. Deletes

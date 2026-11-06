@@ -26,8 +26,8 @@ export default async function JobDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Job</p>
                         <h1 className="font-serif text-2xl font-medium tracking-tight">{j.titleEn}</h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Job</p>
                         <p className="text-base-content/60 mt-1 text-sm">
                             <Link href={`/employers/${j.employerId}`} className="link link-hover">
                                 {j.employerName}

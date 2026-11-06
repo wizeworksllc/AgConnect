@@ -4,7 +4,6 @@ import { wageTheftRecovery } from './wage-theft-recovery';
 import { paidSickLeave } from './paid-sick-leave';
 import { flcLicenseBasics } from './flc-license-basics';
 import { mspaComplianceEssentials } from './mspa-compliance-essentials';
-import { postingJobsThatFill } from './posting-jobs-that-fill';
 import { forkliftCertification } from './forklift-certification';
 import { pesticideHandlerCard } from './pesticide-handler-card';
 import { foodSafetyGap } from './food-safety-gap';
@@ -15,7 +14,6 @@ const ALL: ResourceArticle[] = [
     paidSickLeave,
     flcLicenseBasics,
     mspaComplianceEssentials,
-    postingJobsThatFill,
     forkliftCertification,
     pesticideHandlerCard,
     foodSafetyGap,

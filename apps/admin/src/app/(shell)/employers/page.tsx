@@ -28,7 +28,6 @@ export default async function EmployersDirectoryPage({
         <div className="space-y-4">
             <div className="flex items-baseline justify-between">
                 <div>
-                    <p className="eyebrow text-base-content/60">Platform</p>
                     <h1 className="font-serif text-2xl font-medium tracking-tight">Employers</h1>
                     <p className="text-base-content/70 mt-1 max-w-2xl text-sm">
                         Directory of all employer profiles across tenants. Use the verification filter to

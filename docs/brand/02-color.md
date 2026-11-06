@@ -134,7 +134,7 @@ In-app dashboards, lists, forms, settings — anywhere a worker / employer / adm
 - **Cards, modals, popovers, dropdowns, inputs, stats shelves, training tiles, cert tiles**: `base-100` — the everywhere card surface. This is where reading happens.
 - **Set-apart inside a card** (table headers, sub-panels): `base-200` on `base-100` — a quiet step *down* in lightness, the inverse of how the card lifts off the page.
 - **Inset content on chrome** (search input in a top bar, active item in a sidebar): `base-100` on `base-200` — same content surface inside the chrome region. Hairline does the separation.
-- **Above-the-card differentiation** (active sidebar item, focused row, selected card, hover state): there is no surface lighter than `base-100`, so use a non-color cue: a `primary` / `accent` rule, a `base-300` "pressed" tint, a bolder border, the eyebrow weight + position, or an explicit selected-state border-color.
+- **Above-the-card differentiation** (active sidebar item, focused row, selected card, hover state): there is no surface lighter than `base-100`, so use a non-color cue: a `primary` / `accent` rule, a `base-300` "pressed" tint, a bolder border, or an explicit selected-state border-color.
 
 Most of the visible product surface is `base-100` on `base-300`. `base-200` shows up at the edges (sidebar, top bar) and in the seams (table headers, sub-panels).
 

@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faSeedling } from '@fortawesome/free-solid-svg-icons';
-import { EyebrowLabel } from '@/components/primitives/EyebrowLabel';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Breadcrumb } from '@/components/seo/Breadcrumb';
 import { marketingMetadata } from '@/lib/seo/metadata';
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }: RouteProps) {
     });
 }
 
-const FAQ = ['q1', 'q2', 'q3', 'q4', 'q5'] as const;
+const FAQ = ['q1', 'q2', 'q3', 'q5'] as const;
 
 export default async function PricingPage({ params }: RouteProps) {
     const { locale } = await params;
@@ -41,7 +40,7 @@ export default async function PricingPage({ params }: RouteProps) {
             <JsonLd data={organizationJsonLd()} />
             <Breadcrumb locale={locale} path="/pricing" />
 
-            <MarketingPageHero eyebrow={t('eyebrow')} headline={t('headline')} intro={t('intro')} />
+            <MarketingPageHero headline={t('headline')} intro={t('intro')} />
 
             <PricingPlanGrid locale={locale} founderSlots={founderSlots} />
 
@@ -50,9 +49,6 @@ export default async function PricingPage({ params }: RouteProps) {
             <section className="bg-base-200 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('always_free.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('always_free.headline')}
                         </h2>
@@ -98,9 +94,6 @@ export default async function PricingPage({ params }: RouteProps) {
             <section className="bg-base-100 w-full border-secondary/15 border-t">
                 <div className="container mx-auto flex flex-col gap-12 px-5 py-20 md:px-8 md:py-24 lg:px-20 lg:py-28">
                     <div className="flex flex-col gap-4">
-                        <EyebrowLabel tone="soil" withRule>
-                            {t('faq.eyebrow')}
-                        </EyebrowLabel>
                         <h2 className="text-base-content font-serif text-3xl font-medium leading-tight tracking-tight md:text-4xl lg:text-5xl">
                             {t('faq.headline')}
                         </h2>
@@ -126,9 +119,6 @@ export default async function PricingPage({ params }: RouteProps) {
             <section className="bg-primary text-primary-content w-full">
                 <div className="container mx-auto flex flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:px-8 md:py-20 lg:px-20">
                     <div className="flex flex-col gap-2">
-                        <span className="text-accent font-mono text-xs font-bold uppercase tracking-[0.22em]">
-                            {t('closing.eyebrow')}
-                        </span>
                         <p className="text-primary-content font-serif text-2xl leading-tight md:text-3xl">
                             {t('closing.headline')}
                         </p>

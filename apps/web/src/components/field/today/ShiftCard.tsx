@@ -56,8 +56,8 @@ export function ShiftCard({ row, locale }: Props) {
     return (
         <article className="bg-base-100 border-base-300 overflow-hidden rounded-2xl border">
             <header className="border-base-300 border-b px-5 py-4">
-                <p className="text-base-content/55 mb-1 font-mono text-xs uppercase tracking-wide">
-                    {t('eyebrow')}
+                <p className="text-base-content/55 mb-1 font-sans text-sm font-semibold">
+                    {t('caption')}
                 </p>
                 <p className="text-base-content text-3xl font-bold tabular-nums slashed-zero">
                     {formatTimeRange(row.shift.startTime, row.shift.endTime, formatter)}

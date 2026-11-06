@@ -67,8 +67,8 @@ Cards are the product's primary container. The default product card uses hairlin
 - Border-radius: `--radius-box` (`1rem`, daisyUI default). Inner cards within a card (KPI tiles inside a dashboard region) may use the Paper `--r-md` (14px) for a tighter inner curve.
 - Padding: 24px (desktop), 20px (mobile)
 - Shadow: **none** on default product cards (dashboard tiles, list items, table-style cards). Elevated marketing/feature cards use `--shadow-card`. See [04-spacing-layout.md § Borders, dividers, and elevation](04-spacing-layout.md).
-- Internal type: title (Inter 24px weight 600, line-height 1.20, tracking -0.015em), body (Inter 16px line-height 1.55), eyebrow above title — see [03-typography.md § Eyebrow / label variants](03-typography.md).
-- Internal stack: eyebrow → title → body → metadata strip (middot-delimited)
+- Internal type: title (Inter 24px weight 600, line-height 1.20, tracking -0.015em), body (Inter 16px line-height 1.55).
+- Internal stack: title → body → metadata strip (middot-delimited)
 
 A card with an internal CTA places the CTA bottom-right or bottom-full-width depending on density. For grids of cards with bottom-CTA rows, the CTA must be **baseline-aligned across all cards in the row**: ensure card heights are stretched to equal in the grid (via `grid-template-rows: 1fr` or `align-items: stretch`) and push the CTA with `margin-top: auto`.
 
@@ -81,7 +81,7 @@ A signature pattern on dashboards and marketing — a feature card sitting on a 
 - Border-radius: `--radius-box` (1rem) or Paper `--r-lg` (22px) for larger composition
 - Padding: 24px (desktop)
 - Ambient overlay: `radial-gradient(ellipse 60% 100% at 100% 0%, color-mix(in oklab, var(--color-accent) 28%, transparent), transparent 60%)` — gold radial pinned top-right, fades to transparent. Use `var(--color-accent)`, never a hardcoded hex.
-- Internal type: eyebrow in `accent` (gold) or `accent` at higher opacity, title in `neutral-content` weight 500–600, body in `neutral-content` at ~75% opacity
+- Internal type: title in `neutral-content` weight 500–600, body in `neutral-content` at ~75% opacity
 - Internal CTA: an accent-fill button (`bg-accent text-accent-content`) is the canonical primary action. Secondary actions are ghost buttons with `1px rgba(255,255,255,0.25)` borders.
 
 These cards exist for the one or two genuinely "look at this" moments per page (the next shift, the paycheck preview). Don't multiply them — when everything is a hero card, nothing is.
@@ -97,7 +97,7 @@ Three distinct elements:
 ### Badge
 
 - Background: `base-300` (default `badge`)
-- Text: `base-content`, Inter 11px uppercase, weight 600, 0.18em tracking — same pattern as eyebrow labels
+- Text: `base-content`, Inter 11px uppercase, weight 600, 0.18em tracking
 - Padding: 4px 8px (theme-default `--radius-selector` applies)
 - Variants for status:
   - `info` — `bg-info text-info-content`
@@ -173,15 +173,14 @@ Tables on mobile collapse to card rows, not horizontally scrolled tables. Each c
 
 ## Section headers
 
-A signature Tierra pattern. Three pieces stacked, top-aligned to the section.
+A signature Tierra pattern. Two pieces stacked, top-aligned to the section.
 
 ```
-LABEL                 ← eyebrow, Inter 11px UPPER 0.18em base-content @ 60% (used sparingly, not on every section)
 Headline              ← Inter, weight 600–700, tracking -0.02em. Hero: 56–72px. Section: 32–48px.
 Optional description  ← Inter 16px base-content, max-width ~640px
 ```
 
-Spacing: 8px between label and headline, 16px between headline and description, 32–48px between description and the section content below.
+Spacing: 16px between headline and description, 32–48px between description and the section content below.
 
 ## Header (top nav)
 
@@ -213,7 +212,7 @@ Spacing: 8px between label and headline, 16px between headline and description, 
 - Padding: 32px
 - Shadow: `--shadow-pop` for the lift off the backdrop
 - Close button: top-right, 24×24 hit target, an `×` glyph in `base-content` (FontAwesome `xmark` per [07-imagery.md](07-imagery.md))
-- Header: title (Inter 24px weight 600), optional eyebrow above
+- Header: title (Inter 24px weight 600)
 - Body: Inter 16px
 - Footer: ghost (left) and primary (right) buttons, right-aligned
 

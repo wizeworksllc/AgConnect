@@ -26,8 +26,8 @@ export default async function TenantDetailPage({
             <header className="bg-base-100 border-base-300 rounded-box border p-6">
                 <div className="flex items-baseline justify-between">
                     <div>
-                        <p className="eyebrow text-base-content/60">Tenant</p>
                         <h1 className="font-serif text-2xl font-medium tracking-tight">{t.name}</h1>
+                        <p className="text-base-content/60 mt-1 text-sm">Tenant</p>
                         <p className="text-base-content/60 mt-1 font-mono text-xs">{t.slug}</p>
                         <p className="text-base-content/50 mt-0.5 font-mono text-xs">{t.id}</p>
                     </div>

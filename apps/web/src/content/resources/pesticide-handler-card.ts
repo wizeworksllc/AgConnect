@@ -50,8 +50,8 @@ export const pesticideHandlerCard: ResourceArticle = {
                 es: 'Puestos que abre',
             },
             body: {
-                en: 'A QAC holder qualifies for spray crew lead, mix-load specialist, vineyard or orchard pesticide tech, and IPM (integrated pest management) field roles. Pay typically starts at $24 to $32 per hour in the Central Valley. Many growers offer additional certification stipends and a pesticide-handler differential during high-application seasons.',
-                es: 'Un titular de QAC califica para líder de cuadrilla de aspersión, especialista en mezcla y carga, técnico de pesticidas de viñedo o huerto, y puestos de campo de IPM (manejo integrado de plagas). El pago generalmente comienza en $24 a $32 por hora en el Valle Central. Muchos agricultores ofrecen estipendios adicionales de certificación y un diferencial de manejo de pesticidas durante las temporadas de alta aplicación.',
+                en: 'A QAC holder qualifies for spray crew lead, mix-load specialist, vineyard or orchard pesticide tech, and IPM (integrated pest management) field roles.',
+                es: 'Un titular de QAC califica para líder de cuadrilla de aspersión, especialista en mezcla y carga, técnico de pesticidas de viñedo o huerto, y puestos de campo de IPM (manejo integrado de plagas).',
             },
         },
     ],
